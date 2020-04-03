@@ -1,0 +1,25 @@
+1.Did you get done what you said you would for today?
+2.What are you going to do tomorrow?
+3.Any obstacles in your way?
+
+4/1/20
+	Everyone
+		2. Install MySQL
+
+4/2/20
+	Riley
+		1. yes
+		2. Work on inserting and retrieving data from the tables
+		3. no
+
+	Bas
+		1. Yes I did
+		2. I will make the user and match history classes
+		3. no
+
+	Johnny
+		1. 
+		2. 
+		3. 
+
+4/3/20

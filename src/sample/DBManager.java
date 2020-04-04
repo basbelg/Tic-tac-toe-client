@@ -41,10 +41,27 @@ public class DBManager
     public String getPassword(String username) {
         String password = null;
 
-
-
         return password;
     }
+
+    public boolean addUser(User user) {
+        boolean wasSuccessful = true;
+
+        return wasSuccessful;
+    }
+
+    public boolean updateUser(User user) {
+        boolean wasSuccessful = true;
+
+        return wasSuccessful;
+    }
+
+    public boolean softRemoveUser(String username) {
+        boolean wasSuccessful = true;
+
+        return wasSuccessful;
+    }
+
 
 
 }

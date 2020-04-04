@@ -9,25 +9,26 @@ public class DBManager
 {
     private static DBManager instance = new DBManager();
 
-    private DBManager() { }
+    Connection con = null;
+
+    private DBManager() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb1","root","<password>");
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static DBManager getInstance()
     {
         return instance;
     }
 
-    private static Connection getConnection()throws ClassNotFoundException, SQLException
-    {
-
-        Connection con = null;
-        Class.forName("com.mysql.jdbc.Driver");
-        con= DriverManager.getConnection("jdbc:mysql://localhost:3306/<database>","root","<password>");
-        return con;
-
-    }
-
     public boolean addUser(User user) {
         boolean wasSuccessful = true;
+
+
 
         return wasSuccessful;
     }
@@ -69,5 +70,19 @@ public class DBManager
         List<User> users = new ArrayList<>();
 
         return users;
+    }
+
+    public void close() {
+        try {
+            con.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        close();
     }
 }

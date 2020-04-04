@@ -26,24 +26,6 @@ public class DBManager
 
     }
 
-    public List<User> getAllUsers() {
-        List<User> users = new ArrayList<>();
-
-        return users;
-    }
-
-    public List<User> getFilteredUsers(String filter) {
-        List<User> users = new ArrayList<>();
-
-        return users;
-    }
-
-    public String getPassword(String username) {
-        String password = null;
-
-        return password;
-    }
-
     public boolean addUser(User user) {
         boolean wasSuccessful = true;
 
@@ -56,24 +38,36 @@ public class DBManager
         return wasSuccessful;
     }
 
-    public boolean deactivateUser(String username) {
+    public boolean modifyUserStatus(String status, String username) {
         boolean wasSuccessful = true;
+
+        if(status == "delete") {
+            // delete user
+
+        }
+        else {
+            // set appropriate status to user
+
+        }
 
         return wasSuccessful;
     }
 
-    public boolean activateUser(String username) {
-        boolean wasSuccessful = true;
+    public String getPassword(String username) {
+        String password = null;
 
-        return wasSuccessful;
+        return password;
     }
 
-    public boolean deleteUser(String username) {
-        boolean wasSuccessful = true;
+    public List<User> getAllUsers() {
+        List<User> users = new ArrayList<>();
 
-        return wasSuccessful;
+        return users;
     }
 
+    public List<User> getFilteredUsers(String filter) {
+        List<User> users = new ArrayList<>();
 
-
+        return users;
+    }
 }

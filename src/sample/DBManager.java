@@ -56,7 +56,13 @@ public class DBManager
         return wasSuccessful;
     }
 
-    public boolean softRemoveUser(String username) {
+    public boolean deactivateUser(String username) {
+        boolean wasSuccessful = true;
+
+        return wasSuccessful;
+    }
+
+    public boolean activateUser(String username) {
         boolean wasSuccessful = true;
 
         return wasSuccessful;

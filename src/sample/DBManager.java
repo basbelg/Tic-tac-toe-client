@@ -68,6 +68,12 @@ public class DBManager
         return wasSuccessful;
     }
 
+    public boolean deleteUser(String username) {
+        boolean wasSuccessful = true;
+
+        return wasSuccessful;
+    }
+
 
 
 }

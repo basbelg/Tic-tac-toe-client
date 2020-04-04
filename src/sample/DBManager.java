@@ -20,8 +20,20 @@ public class DBManager
 
         Connection con = null;
         Class.forName("com.mysql.jdbc.Driver");
-        con= DriverManager.getConnection();
+        con= DriverManager.getConnection("jdbc:mysql://localhost:3306/mysqljdbc","system","password");
         return con;
 
+    }
+
+    public List<User> getAllUsers() {
+
+    }
+
+    public String getPassword(String username) {
+        String password = null;
+
+
+
+        return password;
     }
 }

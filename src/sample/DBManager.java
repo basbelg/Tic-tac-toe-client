@@ -16,14 +16,14 @@ public class DBManager
         return instance;
     }
 
-    private static Connection getConnection()throws ClassNotFoundException, SQLException
+    private Connection getConnection()throws ClassNotFoundException, SQLException
     {
         Connection con = null;
-        con = DriverManager.getConnection(/*URL, user, password*/);
+        con = DriverManager.getConnection(/*jdbc:mysql://localhost:portnumber/dbname, user, password*/);
         return con;
     }
 
-    public static Statement getStatement()
+    public Statement getStatement()
     {
         Statement s = null;
         try

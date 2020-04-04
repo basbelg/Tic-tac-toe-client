@@ -3,6 +3,7 @@ package sample;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DBManager
 {
@@ -17,11 +18,22 @@ public class DBManager
 
     private static Connection getConnection()throws ClassNotFoundException, SQLException
     {
-
         Connection con = null;
-        Class.forName("com.mysql.jdbc.Driver");
-        con= DriverManager.getConnection();
+        con = DriverManager.getConnection(/*URL, user, password*/);
         return con;
+    }
 
+    public static Statement getStatement()
+    {
+        Statement s = null;
+        try
+        {
+            s = getConnection().createStatement();
+        }
+        catch(ClassNotFoundException | SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return s;
     }
 }

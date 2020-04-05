@@ -33,12 +33,16 @@ public class DBManager
         PreparedStatement statement = null;
 
         try {
-            statement = connection.prepareStatement("");
-
-
+            statement = connection.prepareStatement("insert into user (username, password, fname, lname, isActive) values (?,?,?,?,?);");
+            statement.setString(1, user.getUsername());
+            statement.setString(2, user.getPassword());
+            statement.setString(3, user.getFirstName());
+            statement.setString(4, user.getLastName());
+            statement.setBoolean(5, true);
 
         } catch (SQLException e) {
             e.printStackTrace();
+            wasSuccessful = false;
         }
         finally {
             if(connection != null)
@@ -56,7 +60,7 @@ public class DBManager
         PreparedStatement statement = null;
 
         try {
-            statement = connection.prepareStatement("update user set username = ?, password = ?, fname = ?, lname = ?, isActive = ? where id = ?");
+            statement = connection.prepareStatement("update user set username = ?, password = ?, fname = ?, lname = ?, isActive = ? where id = ?;");
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getFirstName());
@@ -65,9 +69,10 @@ public class DBManager
             statement.setInt(6, user.getId());
 
             statement.executeUpdate();
-            
+
         } catch (SQLException e) {
             e.printStackTrace();
+            wasSuccessful = false;
         }
         finally {
             if(connection != null)
@@ -109,14 +114,14 @@ public class DBManager
 
             switch (filter) {
                 case "active":
-                    resultSet = statement.executeQuery("select * from user where active=true");
+                    resultSet = statement.executeQuery("select * from user where active=true;");
                     break;
                 case "deactive":
-                    resultSet = statement.executeQuery("select * from user where active=false");
+                    resultSet = statement.executeQuery("select * from user where active=false;");
                     break;
                 case "all":
                 default:
-                    resultSet = statement.executeQuery("select * from user");
+                    resultSet = statement.executeQuery("select * from user;");
             }
 
             while(resultSet.next())

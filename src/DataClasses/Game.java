@@ -22,5 +22,31 @@ public class Game {
         this.winningPlayerId = -1;
     }
 
-    
+    public String getId() {
+        return id;
+    }
+
+    public Date getStartingTime() {
+        return startingTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public int getPlayer1Id() {
+        return player1Id;
+    }
+
+    public int getPlayer2Id() {
+        return player2Id;
+    }
+
+    public int getStartingPlayerId() {
+        return startingPlayerId;
+    }
+
+    public int getWinningPlayerId() {
+        return winningPlayerId;
+    }
 }

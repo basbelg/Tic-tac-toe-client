@@ -49,4 +49,12 @@ public class Game {
     public int getWinningPlayerId() {
         return winningPlayerId;
     }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public void setWinningPlayerId(int winningPlayerId) {
+        this.winningPlayerId = winningPlayerId;
+    }
 }

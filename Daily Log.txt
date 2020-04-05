@@ -37,3 +37,19 @@
 		1. Yes
 		2. Finish the initialization of the singleton manager class
 		3. I don't have any obstacles at the moment
+		
+4/4/20
+	Riley
+		1. Yes
+		2. I will finish creating the mysql database, and I will continue on inserting and retrieving data
+		3. No
+
+	Bas
+		1. Yes
+		2. I will write driver code to test the DB
+		3. No
+
+	Johnny
+		1. Yes
+		2. testing the DBManager class
+		3. no

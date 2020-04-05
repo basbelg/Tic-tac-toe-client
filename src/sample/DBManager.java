@@ -28,8 +28,6 @@ public class DBManager
     public boolean addUser(User user) {
         boolean wasSuccessful = true;
 
-
-
         return wasSuccessful;
     }
 

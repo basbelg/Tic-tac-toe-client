@@ -9,4 +9,5 @@ public class Game {
     private int player1Id;
     private int player2Id;
     private int startingPlayerId;
+    private int winningPlayerId;
 }

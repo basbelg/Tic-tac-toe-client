@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataClasses/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/User.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -196,7 +197,8 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1585022140072" duration="9000" />
       <workItem from="1585986468859" duration="61000" />
-      <workItem from="1585987753551" duration="1687000" />
+      <workItem from="1585987753551" duration="2017000" />
+      <workItem from="1586067413398" duration="235000" />
     </task>
     <servers />
   </component>

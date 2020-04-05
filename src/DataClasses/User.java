@@ -30,6 +30,10 @@ public class User {
         return lastName;
     }
 
+    public String getFullName() {
+        return lastName + ", " + firstName;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -47,6 +51,11 @@ public class User {
     }
 
     public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setFullName(String firstName, String lastName) {
+        this.firstName = firstName;
         this.lastName = lastName;
     }
 

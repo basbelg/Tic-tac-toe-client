@@ -7,4 +7,5 @@ public class Game {
     private Date startingTime;
     private Date endTime;
     private int player1Id;
+    private int player2Id;
 }

@@ -1,11 +1,11 @@
 package sample;
 
-import DataClasses.User;
+import DataClasses.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 class DBManagerTest {
-
     @org.junit.jupiter.api.Test
     void addUser() {
         boolean wasSuccess;
@@ -42,5 +42,25 @@ class DBManagerTest {
 
         for(User user: users)
             DBManager.getInstance().deleteUser(user);
+    }
+
+    @org.junit.jupiter.api.Test
+    void addGame() {
+        Game gameLocal;
+        Game gameFromDB;
+
+        User startingPlayer = DBManager.getInstance().getUser("updated_rbradt");
+        User player2 = DBManager.getInstance().getUser("rbradt2");
+        gameLocal = new Game(LocalDateTime.now(), startingPlayer.getId(), player2.getId(), startingPlayer.getId());
+
+        DBManager.getInstance().addGame(gameLocal);
+
+        gameFromDB = DBManager.getInstance().getGame(gameLocal.getId());
+
+        System.out.printf("id: %s | start: %s | end: %s | p1: %d | p2: %d | sp: %d | wp: %d ",
+                gameFromDB.getId(), gameFromDB.getStartingTime().toString(),
+                (gameFromDB.getEndTime() == null)? "null": gameFromDB.getEndTime().toString(),
+                gameFromDB.getPlayer1Id(), gameFromDB.getPlayer2Id(), gameFromDB.getStartingPlayerId(),
+                gameFromDB.getWinningPlayerId());
     }
 }

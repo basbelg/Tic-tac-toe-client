@@ -5,6 +5,7 @@ import DataClasses.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -217,7 +218,7 @@ public class DBManager
                     " starting_player, winner) values (?,?,?,?,?,?,?);");
             statement.setString(1, game.getId());
             statement.setTimestamp(2, Timestamp.valueOf(game.getStartingTime()));
-            statement.setTimestamp(3, Timestamp.valueOf(game.getEndTime()));
+            statement.setTimestamp(3, null);
             statement.setInt(4, game.getPlayer1Id());
             statement.setInt(5, game.getPlayer2Id());
             statement.setInt(6, game.getStartingPlayerId());
@@ -246,7 +247,7 @@ public class DBManager
             statement = connection.prepareStatement("update game set start_time = ?, end_time = ?, player1 = ?," +
                     " player2 = ?, starting_player = ?, winner = ? where id = ?;");
             statement.setTimestamp(1, Timestamp.valueOf(game.getStartingTime()));
-            statement.setTimestamp(2, Timestamp.valueOf(game.getEndTime()));
+            statement.setTimestamp(2, (game.getEndTime() == null)? null :Timestamp.valueOf(game.getEndTime()));
             statement.setInt(3, game.getPlayer1Id());
             statement.setInt(4, game.getPlayer2Id());
             statement.setInt(5, game.getStartingPlayerId());
@@ -279,9 +280,11 @@ public class DBManager
             resultSet = statement.executeQuery();
 
             resultSet.next();
+            Timestamp end_time = resultSet.getTimestamp("end_time");
+            LocalDateTime end_time_ldt = (end_time == null)? null : end_time.toLocalDateTime();
             game = new Game(resultSet.getString("id"),
                     resultSet.getTimestamp("start_time").toLocalDateTime(),
-                    resultSet.getTimestamp("end_time").toLocalDateTime(),
+                    end_time_ldt,
                     resultSet.getInt("player1"), resultSet.getInt("player2"),
                     resultSet.getInt("starting_player"), resultSet.getInt("winner"));
         } catch (SQLException e) {e.printStackTrace();}

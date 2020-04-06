@@ -23,6 +23,16 @@ public class Game {
         this.winningPlayerId = -1;
     }
 
+    public Game(String id, LocalDateTime startingTime, LocalDateTime endTime, int player1Id, int player2Id, int startingPlayerId, int winningPlayerId) {
+        this.id = id;
+        this.startingTime = startingTime;
+        this.endTime = endTime;
+        this.player1Id = player1Id;
+        this.player2Id = player2Id;
+        this.startingPlayerId = startingPlayerId;
+        this.winningPlayerId = winningPlayerId;
+    }
+
     public String getId() {
         return id;
     }

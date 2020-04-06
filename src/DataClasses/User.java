@@ -13,6 +13,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        isActive = true;
     }
 
     public User(int id, String username, String firstName, String lastName, String password, boolean isActive) {

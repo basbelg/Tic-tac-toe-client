@@ -18,7 +18,7 @@ public class DBManager
         Connection connection = null;
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb1","root","<password>");
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -39,6 +39,8 @@ public class DBManager
             statement.setString(3, user.getFirstName());
             statement.setString(4, user.getLastName());
             statement.setBoolean(5, true);
+
+            statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
             wasSuccessful = false;
@@ -83,14 +85,13 @@ public class DBManager
         return wasSuccessful;
     }
 
-    public boolean modifyUserStatus(String status, String username) {
+    public boolean modifyUserStatus(String username) {
         boolean wasSuccessful = true;
 
-        if(status == "delete") {
+        if (status == "delete") {
             // delete user
 
-        }
-        else {
+        } else {
             // set appropriate status to user
 
         }

@@ -210,27 +210,23 @@ public class DBManager
         boolean wasSuccessful = true;
         Connection connection = getConnection();
         PreparedStatement statement = null;
-        ResultSet resultSet = null;
 
         try {
             // insert user into database
-            statement = connection.prepareStatement("insert into game (username, password, fname, lname, isActive) values (?,?,?,?,?);");
-            statement.setInt(1, game.getId());
+            statement = connection.prepareStatement("insert into game (id, start, end, player1, player2, startingPlayer, winner) values (?,?,?,?,?,?,?);");
+            statement.setString(1, game.getId());
             statement.setDate(2, game.getStartingTime());
             statement.setDate(3, game.getEndTime());
             statement.setInt(4, game.getPlayer1Id());
             statement.setInt(5, game.getPlayer2Id());
-            statement.setInt(5, game.getStartingPlayerId());
-            statement.setInt(5, game.getWinningPlayerId());
+            statement.setInt(6, game.getStartingPlayerId());
+            statement.setInt(7, game.getWinningPlayerId());
             statement.executeUpdate();
-            user.setId(resultSet.getInt("id"));
         } catch (SQLException e) {
             e.printStackTrace();
             wasSuccessful = false;
         }
         finally {
-            if(resultSet != null)
-                try {resultSet.close();} catch (SQLException e) {e.printStackTrace();}
             if(connection != null)
                 try {connection.close();} catch (SQLException e) {e.printStackTrace();}
             if(statement != null)

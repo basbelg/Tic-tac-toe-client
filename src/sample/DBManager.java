@@ -29,7 +29,8 @@ public class DBManager
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb1","root", sql_password);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb1","root",
+                    sql_password);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -37,6 +38,9 @@ public class DBManager
         return connection;
     }
 
+    //------------------------------------------------------------------------------------------------------------------
+    //                                          USER TABLE FUNCTIONS
+    //------------------------------------------------------------------------------------------------------------------
     public boolean addUser(User user) {
         boolean wasSuccessful = true;
         Connection connection = getConnection();
@@ -45,7 +49,8 @@ public class DBManager
 
         try {
             // insert user into database
-            statement = connection.prepareStatement("insert into user (username, password, fname, lname, isActive) values (?,?,?,?,?);");
+            statement = connection.prepareStatement("insert into user (username, password, fname, lname," +
+                    " isActive) values (?,?,?,?,?);");
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getFirstName());
@@ -82,7 +87,8 @@ public class DBManager
         PreparedStatement statement = null;
 
         try {
-            statement = connection.prepareStatement("update user set username = ?, password = ?, fname = ?, lname = ?, isActive = ? where id = ?;");
+            statement = connection.prepareStatement("update user set username = ?, password = ?, fname = ?," +
+                    " lname = ?, isActive = ? where id = ?;");
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getFirstName());
@@ -182,8 +188,8 @@ public class DBManager
 
             while(resultSet.next())
                 users.add(new User(resultSet.getInt("id"), resultSet.getString("username"),
-                                    resultSet.getString("password"), resultSet.getString("fname"),
-                                    resultSet.getString("lname"), resultSet.getBoolean("isActive")));
+                        resultSet.getString("password"), resultSet.getString("fname"),
+                        resultSet.getString("lname"), resultSet.getBoolean("isActive")));
         } catch (SQLException e) {e.printStackTrace();}
         finally {
             if(resultSet != null)
@@ -195,5 +201,42 @@ public class DBManager
         }
 
         return users;
+    }
+
+    //------------------------------------------------------------------------------------------------------------------
+    //                                          GAME TABLE FUNCTIONS
+    //------------------------------------------------------------------------------------------------------------------
+    public boolean addGame(Game game) {
+        boolean wasSuccessful = true;
+        Connection connection = getConnection();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            // insert user into database
+            statement = connection.prepareStatement("insert into game (username, password, fname, lname, isActive) values (?,?,?,?,?);");
+            statement.setInt(1, game.getId());
+            statement.setDate(2, game.getStartingTime());
+            statement.setDate(3, game.getEndTime());
+            statement.setInt(4, game.getPlayer1Id());
+            statement.setInt(5, game.getPlayer2Id());
+            statement.setInt(5, game.getStartingPlayerId());
+            statement.setInt(5, game.getWinningPlayerId());
+            statement.executeUpdate();
+            user.setId(resultSet.getInt("id"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            wasSuccessful = false;
+        }
+        finally {
+            if(resultSet != null)
+                try {resultSet.close();} catch (SQLException e) {e.printStackTrace();}
+            if(connection != null)
+                try {connection.close();} catch (SQLException e) {e.printStackTrace();}
+            if(statement != null)
+                try {statement.close();} catch (SQLException e) {e.printStackTrace();}
+        }
+
+        return wasSuccessful;
     }
 }

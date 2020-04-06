@@ -213,7 +213,8 @@ public class DBManager
 
         try {
             // insert user into database
-            statement = connection.prepareStatement("insert into game (id, start, end, player1, player2, startingPlayer, winner) values (?,?,?,?,?,?,?);");
+            statement = connection.prepareStatement("insert into game (id, start, end, player1, player2," +
+                    " startingPlayer, winner) values (?,?,?,?,?,?,?);");
             statement.setString(1, game.getId());
             statement.setDate(2, game.getStartingTime());
             statement.setDate(3, game.getEndTime());

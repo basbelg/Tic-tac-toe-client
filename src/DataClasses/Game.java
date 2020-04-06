@@ -1,18 +1,19 @@
 package DataClasses;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
 public class Game {
     private String id;
-    private Date startingTime;
-    private Date endTime;
+    private LocalDateTime startingTime;
+    private LocalDateTime endTime;
     private int player1Id;
     private int player2Id;
     private int startingPlayerId;
     private int winningPlayerId;
 
-    public Game(Date startingTime, int player1Id, int player2Id, int startingPlayerId) {
+    public Game(LocalDateTime startingTime, int player1Id, int player2Id, int startingPlayerId) {
         id = UUID.randomUUID().toString();
         this.startingTime = startingTime;
         this.endTime = null;
@@ -26,11 +27,11 @@ public class Game {
         return id;
     }
 
-    public Date getStartingTime() {
+    public LocalDateTime getStartingTime() {
         return startingTime;
     }
 
-    public Date getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
@@ -50,7 +51,7 @@ public class Game {
         return winningPlayerId;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 

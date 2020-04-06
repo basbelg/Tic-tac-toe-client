@@ -16,7 +16,7 @@ public class User {
         isActive = true;
     }
 
-    public User(int id, String username, String firstName, String lastName, String password, boolean isActive) {
+    public User(int id, String username, String password, String firstName, String lastName, boolean isActive) {
         this.id = id;
         this.username = username;
         this.firstName = firstName;

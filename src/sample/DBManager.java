@@ -39,7 +39,6 @@ public class DBManager
             statement.setString(3, user.getFirstName());
             statement.setString(4, user.getLastName());
             statement.setBoolean(5, true);
-
         } catch (SQLException e) {
             e.printStackTrace();
             wasSuccessful = false;
@@ -114,10 +113,10 @@ public class DBManager
 
             switch (filter) {
                 case "active":
-                    resultSet = statement.executeQuery("select * from user where active=true;");
+                    resultSet = statement.executeQuery("select * from user where isActive=true;");
                     break;
                 case "deactive":
-                    resultSet = statement.executeQuery("select * from user where active=false;");
+                    resultSet = statement.executeQuery("select * from user where isActive=false;");
                     break;
                 case "all":
                 default:

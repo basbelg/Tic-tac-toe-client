@@ -3,6 +3,7 @@ package sample;
 import DataClasses.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,17 +12,24 @@ import java.util.Scanner;
 public class DBManager
 {
     private static DBManager instance = new DBManager();
+    private String sql_password;
 
-    private DBManager() {}
+    private DBManager() {
+        try {
+            File file = new File("R:\\CS4B\\SQL_Password.txt");
+            Scanner scanner = new Scanner(file);
+            sql_password = scanner.next();
+        } catch (FileNotFoundException e) {e.printStackTrace();}
+    }
 
     public static DBManager getInstance() {return instance;}
 
-    private static Connection getConnection() {
+    private Connection getConnection() {
         Connection connection = null;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb1","root","<password>");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb1","root", sql_password);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }

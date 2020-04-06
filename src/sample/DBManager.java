@@ -5,6 +5,7 @@ import DataClasses.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -212,7 +213,7 @@ public class DBManager
         PreparedStatement statement = null;
 
         try {
-            // insert user into database
+            // insert game into database
             statement = connection.prepareStatement("insert into game (id, start, end, player1, player2," +
                     " startingPlayer, winner) values (?,?,?,?,?,?,?);");
             statement.setString(1, game.getId());
@@ -235,5 +236,34 @@ public class DBManager
         }
 
         return wasSuccessful;
+    }
+
+    public Game getGame(String id) {
+        Connection connection = getConnection();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        Game game = null;
+
+        try {
+            statement = connection.prepareStatement("select * from game where id = ?;");
+            statement.setString(1, id);
+            resultSet = statement.executeQuery();
+
+            resultSet.next();
+            game = new Game(resultSet.getString("id"), resultSet.getTimestamp("start").toLocalDateTime(),
+                    resultSet.getTimestamp("end").toLocalDateTime(), resultSet.getInt("player1"),
+                    resultSet.getInt("player2"), resultSet.getInt("startingPlayer"),
+                    resultSet.getInt("winner"));
+        } catch (SQLException e) {e.printStackTrace();}
+        finally {
+            if(resultSet != null)
+                try {resultSet.close();} catch (SQLException e) {e.printStackTrace();}
+            if(connection != null)
+                try {connection.close();} catch (SQLException e) {e.printStackTrace();}
+            if(statement != null)
+                try {statement.close();} catch (SQLException e) {e.printStackTrace();}
+        }
+
+        return game;
     }
 }

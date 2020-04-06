@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/DataClasses/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/DBManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +136,7 @@
       <workItem from="1586073888312" duration="23000" />
       <workItem from="1586073922950" duration="52000" />
       <workItem from="1586084580420" duration="13362000" />
-      <workItem from="1586149913158" duration="19542000" />
+      <workItem from="1586149913158" duration="19997000" />
     </task>
     <servers />
   </component>

@@ -238,6 +238,36 @@ public class DBManager
         return wasSuccessful;
     }
 
+    public boolean updateGame(Game game) {
+        boolean wasSuccessful = true;
+        Connection connection = getConnection();
+        PreparedStatement statement = null;
+
+        try {
+            statement = connection.prepareStatement("update game set start = ?, end = ?, player1 = ?," +
+                    " player2 = ?, startingPlayer = ?, winner = ? where id = ?;");
+            statement.setTimestamp(1, Timestamp.valueOf(game.getStartingTime()));
+            statement.setTimestamp(2, Timestamp.valueOf(game.getEndTime()));
+            statement.setInt(3, game.getPlayer1Id());
+            statement.setInt(4, game.getPlayer2Id());
+            statement.setInt(5, game.getStartingPlayerId());
+            statement.setInt(5, game.getWinningPlayerId());
+            statement.setString(6, game.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            wasSuccessful = false;
+        }
+        finally {
+            if(connection != null)
+                try {connection.close();} catch (SQLException e) {e.printStackTrace();}
+            if(statement != null)
+                try {statement.close();} catch (SQLException e) {e.printStackTrace();}
+        }
+
+        return wasSuccessful;
+    }
+
     public Game getGame(String id) {
         Connection connection = getConnection();
         PreparedStatement statement = null;

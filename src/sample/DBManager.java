@@ -65,7 +65,7 @@ public class DBManager
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getFirstName());
             statement.setString(4, user.getLastName());
-            statement.setBoolean(5, user.getIsActive());
+            statement.setBoolean(5, user.isActive());
             statement.setInt(6, user.getId());
 
             statement.executeUpdate();

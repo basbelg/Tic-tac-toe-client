@@ -5,7 +5,6 @@ import DataClasses.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -30,7 +29,7 @@ public class DBManager
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb1","root",
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/tic-tac-toe","root",
                     sql_password);
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -51,7 +50,7 @@ public class DBManager
         try {
             // insert user into database
             statement = connection.prepareStatement("insert into user (username, password, fname, lname," +
-                    " isActive) values (?,?,?,?,?);");
+                    " is_active) values (?,?,?,?,?);");
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getFirstName());
@@ -89,7 +88,7 @@ public class DBManager
 
         try {
             statement = connection.prepareStatement("update user set username = ?, password = ?, fname = ?," +
-                    " lname = ?, isActive = ? where id = ?;");
+                    " lname = ?, is_active = ? where id = ?;");
             statement.setString(1, user.getUsername());
             statement.setString(2, user.getPassword());
             statement.setString(3, user.getFirstName());
@@ -127,7 +126,7 @@ public class DBManager
             resultSet.next();
             user = new User(resultSet.getInt("id"), resultSet.getString("username"),
                     resultSet.getString("password"), resultSet.getString("fname"),
-                    resultSet.getString("lname"), resultSet.getBoolean("isActive"));
+                    resultSet.getString("lname"), resultSet.getBoolean("is_active"));
         } catch (SQLException e) {e.printStackTrace();}
         finally {
             if(resultSet != null)
@@ -177,10 +176,10 @@ public class DBManager
 
             switch (filter) {
                 case "active":
-                    resultSet = statement.executeQuery("select * from user where isActive = true;");
+                    resultSet = statement.executeQuery("select * from user where is_active = true;");
                     break;
                 case "deactive":
-                    resultSet = statement.executeQuery("select * from user where isActive = false;");
+                    resultSet = statement.executeQuery("select * from user where is_active = false;");
                     break;
                 case "all":
                 default:
@@ -190,7 +189,7 @@ public class DBManager
             while(resultSet.next())
                 users.add(new User(resultSet.getInt("id"), resultSet.getString("username"),
                         resultSet.getString("password"), resultSet.getString("fname"),
-                        resultSet.getString("lname"), resultSet.getBoolean("isActive")));
+                        resultSet.getString("lname"), resultSet.getBoolean("is_active")));
         } catch (SQLException e) {e.printStackTrace();}
         finally {
             if(resultSet != null)
@@ -214,8 +213,8 @@ public class DBManager
 
         try {
             // insert game into database
-            statement = connection.prepareStatement("insert into game (id, start, end, player1, player2," +
-                    " startingPlayer, winner) values (?,?,?,?,?,?,?);");
+            statement = connection.prepareStatement("insert into game (id, start_time, end_time, player1, player2," +
+                    " starting_player, winner) values (?,?,?,?,?,?,?);");
             statement.setString(1, game.getId());
             statement.setTimestamp(2, Timestamp.valueOf(game.getStartingTime()));
             statement.setTimestamp(3, Timestamp.valueOf(game.getEndTime()));
@@ -244,8 +243,8 @@ public class DBManager
         PreparedStatement statement = null;
 
         try {
-            statement = connection.prepareStatement("update game set start = ?, end = ?, player1 = ?," +
-                    " player2 = ?, startingPlayer = ?, winner = ? where id = ?;");
+            statement = connection.prepareStatement("update game set start_time = ?, end_time = ?, player1 = ?," +
+                    " player2 = ?, starting_player = ?, winner = ? where id = ?;");
             statement.setTimestamp(1, Timestamp.valueOf(game.getStartingTime()));
             statement.setTimestamp(2, Timestamp.valueOf(game.getEndTime()));
             statement.setInt(3, game.getPlayer1Id());
@@ -280,10 +279,11 @@ public class DBManager
             resultSet = statement.executeQuery();
 
             resultSet.next();
-            game = new Game(resultSet.getString("id"), resultSet.getTimestamp("start").toLocalDateTime(),
-                    resultSet.getTimestamp("end").toLocalDateTime(), resultSet.getInt("player1"),
-                    resultSet.getInt("player2"), resultSet.getInt("startingPlayer"),
-                    resultSet.getInt("winner"));
+            game = new Game(resultSet.getString("id"),
+                    resultSet.getTimestamp("start_time").toLocalDateTime(),
+                    resultSet.getTimestamp("end_time").toLocalDateTime(),
+                    resultSet.getInt("player1"), resultSet.getInt("player2"),
+                    resultSet.getInt("starting_player"), resultSet.getInt("winner"));
         } catch (SQLException e) {e.printStackTrace();}
         finally {
             if(resultSet != null)

@@ -216,8 +216,8 @@ public class DBManager
             statement = connection.prepareStatement("insert into game (id, start, end, player1, player2," +
                     " startingPlayer, winner) values (?,?,?,?,?,?,?);");
             statement.setString(1, game.getId());
-            statement.setDate(2, game.getStartingTime());
-            statement.setDate(3, game.getEndTime());
+            statement.setTimestamp(2, Timestamp.valueOf(game.getStartingTime()));
+            statement.setTimestamp(3, Timestamp.valueOf(game.getEndTime()));
             statement.setInt(4, game.getPlayer1Id());
             statement.setInt(5, game.getPlayer2Id());
             statement.setInt(6, game.getStartingPlayerId());

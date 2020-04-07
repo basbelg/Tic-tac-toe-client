@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class DBManager
-{
+public class DBManager implements DataSource {
     private static DBManager instance = new DBManager();
     private String sql_password;
 
@@ -298,5 +297,90 @@ public class DBManager
         }
 
         return game;
+    }
+
+    private ResultSet executeQuery(String sql) {
+        Connection connection = getConnection();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            statement = connection.prepareStatement(sql);
+            resultSet = statement.executeQuery();
+        } catch (SQLException e) {e.printStackTrace();}
+        finally {
+            if(connection != null)
+                try {connection.close();} catch (SQLException e) {e.printStackTrace();}
+            if(statement != null)
+                try {statement.close();} catch (SQLException e) {e.printStackTrace();}
+        }
+
+        return resultSet;
+    }
+
+    private boolean executeUpdate(String sql) {
+        boolean wasSuccessful = true;
+        Connection connection = getConnection();
+        PreparedStatement statement = null;
+
+        try {
+            statement = connection.prepareStatement(sql);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            wasSuccessful = false;
+        }
+        finally {
+            if(connection != null)
+                try {connection.close();} catch (SQLException e) {e.printStackTrace();}
+            if(statement != null)
+                try {statement.close();} catch (SQLException e) {e.printStackTrace();}
+        }
+
+        return wasSuccessful;
+    }
+
+    @Override
+    public boolean insert(Object obj) {
+        boolean wasSuccessful = true;
+
+        if(obj instanceof Game) {
+            // insert game into database
+            Game game = (Game) obj;
+            executeUpdate("insert into game (id, start_time, end_time, player1, player2," +
+                    " starting_player, winner) values (" + game.getId() + "," + Timestamp.valueOf(game.getStartingTime()) +
+                    "," + null + "," + game.getPlayer1Id() + "," + game.getPlayer2Id() + "," + game.getStartingPlayerId() +
+                    "," + game.getWinningPlayerId() + ");");
+        }
+        else if(obj instanceof User) {
+
+        }
+
+        return;
+    }
+
+    @Override
+    public boolean delete(Object obj) {
+        return;
+    }
+
+    @Override
+    public boolean update(Object obj) {
+        return;
+    }
+
+    @Override
+    public Object get(String s) {
+        return;
+    }
+
+    @Override
+    public List<Object> list(Object obj) {
+        return;
+    }
+
+    @Override
+    public List<Object> query(Object obj, String filter) {
+        return;
     }
 }

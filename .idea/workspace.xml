@@ -4,6 +4,7 @@
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/sample/DBManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/sample/DBManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="JUnit.DBManagerTest.addUser">
+  <component name="RunManager" selected="JUnit.DBManagerTest.addGame">
     <configuration name="DBManagerTest.addGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Tic-Tac-Toe" />
       <extension name="coverage">
@@ -120,9 +121,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DBManagerTest.addGame" />
         <item itemvalue="JUnit.DBManagerTest.addUser" />
         <item itemvalue="JUnit.DBManagerTest.printAllActiveUsers" />
-        <item itemvalue="JUnit.DBManagerTest.addGame" />
         <item itemvalue="JUnit.DBManagerTest.updateUser" />
         <item itemvalue="JUnit.DBManagerTest.clearUsers" />
       </list>
@@ -145,7 +146,8 @@
       <workItem from="1586073922950" duration="52000" />
       <workItem from="1586084580420" duration="13362000" />
       <workItem from="1586149913158" duration="25694000" />
-      <workItem from="1586225667526" duration="10542000" />
+      <workItem from="1586225667526" duration="10571000" />
+      <workItem from="1586351860767" duration="5204000" />
     </task>
     <servers />
   </component>
@@ -173,29 +175,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1586169835319" />
-    <state width="1236" height="212" key="GridCell.Tab.0.bottom" timestamp="1586198773414">
+    <state width="2517" height="213" key="GridCell.Tab.0.bottom" timestamp="1586357303605">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1236" height="212" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586198773414" />
-    <state width="1236" height="212" key="GridCell.Tab.0.center" timestamp="1586198773414">
+    <state width="2517" height="213" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586357303605" />
+    <state width="2517" height="213" key="GridCell.Tab.0.center" timestamp="1586357303605">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1236" height="212" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586198773414" />
-    <state width="1236" height="212" key="GridCell.Tab.0.left" timestamp="1586198773414">
+    <state width="2517" height="213" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586357303605" />
+    <state width="2517" height="213" key="GridCell.Tab.0.left" timestamp="1586357303605">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1236" height="212" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586198773414" />
-    <state width="1236" height="212" key="GridCell.Tab.0.right" timestamp="1586198773414">
+    <state width="2517" height="213" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586357303605" />
+    <state width="2517" height="213" key="GridCell.Tab.0.right" timestamp="1586357303605">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1236" height="212" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586198773414" />
+    <state width="2517" height="213" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586357303605" />
     <state x="432" y="317" key="SettingsEditor" timestamp="1586197217080">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586197217080" />
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1586225755688">
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1586352692320">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586225755688" />
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586352692320" />
   </component>
 </project>

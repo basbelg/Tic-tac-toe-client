@@ -2,6 +2,7 @@ package database;
 
 import DataClasses.*;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.sql.*;
@@ -347,40 +348,101 @@ public class DBManager implements DataSource {
         if(obj instanceof Game) {
             // insert game into database
             Game game = (Game) obj;
-            executeUpdate("insert into game (id, start_time, end_time, player1, player2," +
-                    " starting_player, winner) values (" + game.getId() + "," + Timestamp.valueOf(game.getStartingTime()) +
-                    "," + null + "," + game.getPlayer1Id() + "," + game.getPlayer2Id() + "," + game.getStartingPlayerId() +
-                    "," + game.getWinningPlayerId() + ");");
+            StringBuilder sql = new StringBuilder("insert into game (id, start_time, player1, player2, starting_player, winner) values (?,?,?,?,?,?);");
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), game.getId());
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), Timestamp.valueOf(game.getStartingTime()).toString());
+   //         sql.replace(sql.indexOf("?"), sql.indexOf("?"), String.valueOf(game.getPlayer1Id())));
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), String.valueOf(game.getPlayer2Id()));
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), String.valueOf(game.getStartingPlayerId()));
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), String.valueOf(game.getWinningPlayerId()));
+
+            wasSuccessful = executeUpdate(sql.toString());
         }
         else if(obj instanceof User) {
+            ResultSet resultSet;
+            User user = (User) obj;
 
+            StringBuilder sql = new StringBuilder("insert into user (username, password, fname, lname, is_active) values (?,?,?,?,?);");
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), user.getUsername());
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), user.getPassword());
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), user.getFirstName());
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), user.getLastName());
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), String.valueOf(true));
+
+            wasSuccessful = executeUpdate(sql.toString());
+
+            // retrieve auto-generated id
+            sql = new StringBuilder("select id from user where username = ?;");
+            sql.replace(sql.indexOf("?"), sql.indexOf("?"), user.getUsername());
+            resultSet = executeQuery(sql.toString());
+            try {
+                resultSet.next();
+                user.setId(resultSet.getInt("id"));
+            } catch (SQLException e) {e.printStackTrace();}
+            finally {
+                if(resultSet != null)
+                    try {resultSet.close();} catch (SQLException e) {e.printStackTrace();}
+            }
         }
 
-        return;
+        return wasSuccessful;
     }
 
     @Override
     public boolean delete(Object obj) {
-        return;
+        return true;
     }
 
     @Override
     public boolean update(Object obj) {
-        return;
+        return true;
     }
 
     @Override
     public Object get(String s) {
-        return;
+        ResultSet resultSet = null;
+        Object obj;
+
+
+        if(s.indexOf('-') == -1) {
+            // user
+        }
+        else {
+            // game
+            try {
+                    statement = connection.prepareStatement("select * from game where id = ?;");
+                    statement.setString(1, id);
+                    resultSet = statement.executeQuery();
+
+                    resultSet.next();
+                    Timestamp end_time = resultSet.getTimestamp("end_time");
+                    LocalDateTime end_time_ldt = (end_time == null)? null : end_time.toLocalDateTime();
+                    obj = new Game(resultSet.getString("id"),
+                            resultSet.getTimestamp("start_time").toLocalDateTime(),
+                            end_time_ldt,
+                            resultSet.getInt("player1"), resultSet.getInt("player2"),
+                            resultSet.getInt("starting_player"), resultSet.getInt("winner"));
+                } catch (SQLException e) {e.printStackTrace();}
+                finally {
+                    if (resultSet != null)
+                        try {resultSet.close();} catch (SQLException e) {e.printStackTrace();}
+                }
+        }
+
+
+
+        return true;
     }
 
     @Override
     public List<Object> list(Object obj) {
-        return;
+
+
+        return new ArrayList<>();
     }
 
     @Override
     public List<Object> query(Object obj, String filter) {
-        return;
+        return new ArrayList<>();
     }
 }

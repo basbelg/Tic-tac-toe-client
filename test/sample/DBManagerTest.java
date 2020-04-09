@@ -29,12 +29,15 @@ class DBManagerTest {
 
     @org.junit.jupiter.api.Test
     void printAllActiveUsers() {
-        List<User> users = DBManager.getInstance().getFilteredUsers("active");
+        //List<User> users = DBManager.getInstance().getFilteredUsers("active");
+        List<Object> users = DBManager.getInstance().list(User.class);
 
         System.out.println("Active Users:");
-        for(User user: users)
+        for(Object obj: users) {
+            User user = (User) obj;
             System.out.printf("id: %d | user: %s | pass: %s | first name: %s | last name: %s\n",
                     user.getId(), user.getUsername(), user.getPassword(), user.getFirstName(), user.getLastName());
+        }
     }
 
     @org.junit.jupiter.api.Test
@@ -63,5 +66,10 @@ class DBManagerTest {
                 (gameFromDB.getEndTime() == null)? "null": gameFromDB.getEndTime().toString(),
                 gameFromDB.getPlayer1Id(), gameFromDB.getPlayer2Id(), gameFromDB.getStartingPlayerId(),
                 gameFromDB.getWinningPlayerId());
+    }
+
+    @org.junit.jupiter.api.Test
+    void newMethodTest() {
+        DBManager.getInstance().list(User.class);
     }
 }

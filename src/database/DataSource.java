@@ -6,7 +6,7 @@ public interface DataSource {
     boolean insert(Object obj);
     boolean delete(Object obj);
     boolean update(Object obj);
-    Object get(String s);
-    List<Object> list(Object obj);
-    List<Object> query(Object obj, String filter);
+    Object get(Class classType, String s);
+    List<Object> list(Class classType);
+    List<Object> query(Class classType, String filter);
 }

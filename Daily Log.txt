@@ -101,3 +101,19 @@
 		1. No
 		2. Work on the UI
 		3. No
+
+4/8/20
+	Riley
+		1. No
+		2. Finish updating mysql code
+		3. I've had issues with converting some sql statements into strings
+
+	Bas
+		1. No
+		2. Finish the client UI
+		3. no
+
+	Johnny
+		1. No
+		2. Work on the client UI
+		3. No

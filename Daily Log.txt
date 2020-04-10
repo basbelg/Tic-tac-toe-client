@@ -117,3 +117,20 @@
 		1. No
 		2. Work on the client UI
 		3. No
+
+
+4/9/20
+	Riley
+		1. Yes
+		2. I will create the game and board classes
+		3. No
+
+	Bas
+		1. Yes
+		2. Continue working on UI and work on the Message hierarchy
+		3. No
+
+	Johnny
+		1. No
+		2. Work on User and Move classes
+		3. No

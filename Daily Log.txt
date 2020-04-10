@@ -37,3 +37,100 @@
 		1. Yes
 		2. Finish the initialization of the singleton manager class
 		3. I don't have any obstacles at the moment
+		
+4/4/20
+	Riley
+		1. Yes
+		2. I will finish creating the mysql database, and I will continue on inserting and retrieving data
+		3. No
+
+	Bas
+		1. Yes
+		2. I will write driver code to test the DB
+		3. No
+
+	Johnny
+		1. Yes
+		2. testing the DBManager class
+		3. no
+
+4/5/20
+	Riley
+		1. Yes
+		2. I will create the game table in the mysql database, and I will finish adding and retrieving data from the database. 
+		3. No
+
+	Bas
+		1. No
+		2. I will test interactions with the database
+		3. I am waiting on the completion of backend code
+
+	Johnny
+		1. Yes
+		2. I will write test code for inserting/updating/getting from the database into the game table
+		3. I am waiting for the creation of the Games table
+		
+4/6/20
+	Riley
+		1. Yes
+		2. Update MySQL
+		3. no
+
+	Bas
+		1. Yes
+		2. Work on client UI
+		3. No
+
+	Johnny
+		1. Yes
+		2. I'll work Server UI
+		3. No
+		
+4/7/20
+	Riley
+		1. No
+		2. Finish updating mysql code
+		3. No
+
+	Bas
+		1. No
+		2. Finish the Ui
+		3. No
+
+	Johnny
+		1. No
+		2. Work on the UI
+		3. No
+
+4/8/20
+	Riley
+		1. No
+		2. Finish updating mysql code
+		3. I've had issues with converting some sql statements into strings
+
+	Bas
+		1. No
+		2. Finish the client UI
+		3. no
+
+	Johnny
+		1. No
+		2. Work on the client UI
+		3. No
+
+
+4/9/20
+	Riley
+		1. Yes
+		2. I will create the game and board classes
+		3. No
+
+	Bas
+		1. Yes
+		2. Continue working on UI and work on the Message hierarchy
+		3. No
+
+	Johnny
+		1. No
+		2. Work on User and Move classes
+		3. No

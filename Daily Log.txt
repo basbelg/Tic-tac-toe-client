@@ -134,3 +134,19 @@
 		1. No
 		2. Work on User and Move classes
 		3. No
+
+4/10/20
+	Riley
+		1. Yes
+		2. Continue working on game and board classes
+		3. No
+
+	Bas
+		1. Yes
+		2. Continue coding the message hierarchy
+		3. no
+
+	Johnny
+		1. Yes
+		2. Finish user and move classes
+		3. no

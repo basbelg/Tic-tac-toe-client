@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.UUID;
 
-public class Game {
+public class TTT_GameData {
     private String id;
     private LocalDateTime startingTime;
     private LocalDateTime endTime;
@@ -13,7 +13,7 @@ public class Game {
     private int startingPlayerId;
     private int winningPlayerId;
 
-    public Game(LocalDateTime startingTime, int player1Id, int player2Id, int startingPlayerId) {
+    public TTT_GameData(LocalDateTime startingTime, int player1Id, int player2Id, int startingPlayerId) {
         id = UUID.randomUUID().toString();
         this.startingTime = startingTime;
         this.endTime = null;
@@ -23,7 +23,7 @@ public class Game {
         this.winningPlayerId = -1;
     }
 
-    public Game(String id, LocalDateTime startingTime, LocalDateTime endTime, int player1Id, int player2Id, int startingPlayerId, int winningPlayerId) {
+    public TTT_GameData(String id, LocalDateTime startingTime, LocalDateTime endTime, int player1Id, int player2Id, int startingPlayerId, int winningPlayerId) {
         this.id = id;
         this.startingTime = startingTime;
         this.endTime = endTime;

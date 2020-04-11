@@ -46,19 +46,19 @@ public class DBManager implements DataSource {
         boolean wasSuccessful = true;
 
         try {
-            if(obj instanceof Game) {
+            if(obj instanceof TTT_GameData) {
                 // insert game into database
-                Game game = (Game) obj;
+                TTT_GameData TTTGameData = (TTT_GameData) obj;
 
                 statement = connection.prepareStatement("insert into game (id, start_time, end_time, player1," +
                         " player2, starting_player, winner) values (?,?,?,?,?,?,?);");
-                statement.setString(1, game.getId());
-                statement.setTimestamp(2, Timestamp.valueOf(game.getStartingTime()));
+                statement.setString(1, TTTGameData.getId());
+                statement.setTimestamp(2, Timestamp.valueOf(TTTGameData.getStartingTime()));
                 statement.setTimestamp(3, null);
-                statement.setInt(4, game.getPlayer1Id());
-                statement.setInt(5, game.getPlayer2Id());
-                statement.setInt(6, game.getStartingPlayerId());
-                statement.setInt(7, game.getWinningPlayerId());
+                statement.setInt(4, TTTGameData.getPlayer1Id());
+                statement.setInt(5, TTTGameData.getPlayer2Id());
+                statement.setInt(6, TTTGameData.getStartingPlayerId());
+                statement.setInt(7, TTTGameData.getWinningPlayerId());
 
                 statement.executeUpdate();
             }
@@ -107,10 +107,10 @@ public class DBManager implements DataSource {
         PreparedStatement statement = null;
 
         try {
-            if(obj instanceof Game) {
-                Game game = (Game) obj;
+            if(obj instanceof TTT_GameData) {
+                TTT_GameData TTTGameData = (TTT_GameData) obj;
                 statement = connection.prepareStatement("delete from game where id = ?;");
-                statement.setString(1, game.getId());
+                statement.setString(1, TTTGameData.getId());
                 statement.executeUpdate();
             }
             else if(obj instanceof User) {
@@ -154,18 +154,18 @@ public class DBManager implements DataSource {
 
                 statement.executeUpdate();
             }
-            else if(obj instanceof Game) {
-                Game game = (Game) obj;
+            else if(obj instanceof TTT_GameData) {
+                TTT_GameData TTTGameData = (TTT_GameData) obj;
 
                 statement = connection.prepareStatement("update game set start_time = ?, end_time = ?, player1 = ?," +
                         " player2 = ?, starting_player = ?, winner = ? where id = ?;");
-                statement.setTimestamp(1, Timestamp.valueOf(game.getStartingTime()));
-                statement.setTimestamp(2, (game.getEndTime() == null)? null :Timestamp.valueOf(game.getEndTime()));
-                statement.setInt(3, game.getPlayer1Id());
-                statement.setInt(4, game.getPlayer2Id());
-                statement.setInt(5, game.getStartingPlayerId());
-                statement.setInt(5, game.getWinningPlayerId());
-                statement.setString(6, game.getId());
+                statement.setTimestamp(1, Timestamp.valueOf(TTTGameData.getStartingTime()));
+                statement.setTimestamp(2, (TTTGameData.getEndTime() == null)? null :Timestamp.valueOf(TTTGameData.getEndTime()));
+                statement.setInt(3, TTTGameData.getPlayer1Id());
+                statement.setInt(4, TTTGameData.getPlayer2Id());
+                statement.setInt(5, TTTGameData.getStartingPlayerId());
+                statement.setInt(5, TTTGameData.getWinningPlayerId());
+                statement.setString(6, TTTGameData.getId());
 
                 statement.executeUpdate();
             }
@@ -192,7 +192,7 @@ public class DBManager implements DataSource {
 
 
         try {
-            if(classType == Game.class) {
+            if(classType == TTT_GameData.class) {
                 statement = connection.prepareStatement("select * from game where id = ?;");
                 statement.setString(1, id);
                 resultSet = statement.executeQuery();
@@ -200,7 +200,7 @@ public class DBManager implements DataSource {
                 resultSet.next();
                 Timestamp end_time = resultSet.getTimestamp("end_time");
                 LocalDateTime end_time_ldt = (end_time == null)? null : end_time.toLocalDateTime();
-                obj = new Game(resultSet.getString("id"),
+                obj = new TTT_GameData(resultSet.getString("id"),
                         resultSet.getTimestamp("start_time").toLocalDateTime(),
                         end_time_ldt,
                         resultSet.getInt("player1"), resultSet.getInt("player2"),
@@ -246,11 +246,11 @@ public class DBManager implements DataSource {
                             resultSet.getString("password"), resultSet.getString("fname"),
                             resultSet.getString("lname"), resultSet.getBoolean("is_active")));
             }
-            else if(classType == Game.class) {
+            else if(classType == TTT_GameData.class) {
                 resultSet = statement.executeQuery("select * from game;");
 
                 while(resultSet.next())
-                    objs.add(new Game(resultSet.getString("id"),
+                    objs.add(new TTT_GameData(resultSet.getString("id"),
                             resultSet.getTimestamp("start_time").toLocalDateTime(),
                             resultSet.getTimestamp("end_time").toLocalDateTime(),
                             resultSet.getInt("player1"), resultSet.getInt("player2"),
@@ -296,14 +296,14 @@ public class DBManager implements DataSource {
                             resultSet.getString("password"), resultSet.getString("fname"),
                             resultSet.getString("lname"), resultSet.getBoolean("is_active")));
             }
-            else if(classType == Game.class) {
+            else if(classType == TTT_GameData.class) {
                 switch (filter) {
                     default:
                         resultSet = statement.executeQuery("select * from game;");
                 }
 
                 while(resultSet.next())
-                    objs.add(new Game(resultSet.getString("id"),
+                    objs.add(new TTT_GameData(resultSet.getString("id"),
                             resultSet.getTimestamp("start_time").toLocalDateTime(),
                             resultSet.getTimestamp("end_time").toLocalDateTime(),
                             resultSet.getInt("player1"), resultSet.getInt("player2"),

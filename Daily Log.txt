@@ -57,7 +57,7 @@
 4/5/20
 	Riley
 		1. Yes
-		2. I will create the game table in the mysql database, and I will finish adding and retrieving data from the database. 
+		2. I will create the TTTGameData table in the mysql database, and I will finish adding and retrieving data from the database.
 		3. No
 
 	Bas
@@ -67,7 +67,7 @@
 
 	Johnny
 		1. Yes
-		2. I will write test code for inserting/updating/getting from the database into the game table
+		2. I will write test code for inserting/updating/getting from the database into the TTTGameData table
 		3. I am waiting for the creation of the Games table
 		
 4/6/20
@@ -122,7 +122,7 @@
 4/9/20
 	Riley
 		1. Yes
-		2. I will create the game and board classes
+		2. I will create the TTTGameData and board classes
 		3. No
 
 	Bas

@@ -51,21 +51,21 @@ class DBManagerTest {
 
     @org.junit.jupiter.api.Test
     void addGame() {
-        Game gameLocal;
-        Game gameFromDB;
+        TTT_GameData TTTGameDataLocal;
+        TTT_GameData TTTGameDataFromDB;
 
         User startingPlayer = (User) DBManager.getInstance().get(User.class, "updated_rbradt");
         User player2 = (User) DBManager.getInstance().get(User.class, "rbradt2");
-        gameLocal = new Game(LocalDateTime.now(), startingPlayer.getId(), player2.getId(), startingPlayer.getId());
+        TTTGameDataLocal = new TTT_GameData(LocalDateTime.now(), startingPlayer.getId(), player2.getId(), startingPlayer.getId());
 
-        DBManager.getInstance().insert(gameLocal);
+        DBManager.getInstance().insert(TTTGameDataLocal);
 
-        gameFromDB = (Game) DBManager.getInstance().get(Game.class, gameLocal.getId());
+        TTTGameDataFromDB = (TTT_GameData) DBManager.getInstance().get(TTT_GameData.class, TTTGameDataLocal.getId());
 
         System.out.printf("id: %s | start: %s | end: %s | p1: %d | p2: %d | sp: %d | wp: %d ",
-                gameFromDB.getId(), gameFromDB.getStartingTime().toString(),
-                (gameFromDB.getEndTime() == null)? "null": gameFromDB.getEndTime().toString(),
-                gameFromDB.getPlayer1Id(), gameFromDB.getPlayer2Id(), gameFromDB.getStartingPlayerId(),
-                gameFromDB.getWinningPlayerId());
+                TTTGameDataFromDB.getId(), TTTGameDataFromDB.getStartingTime().toString(),
+                (TTTGameDataFromDB.getEndTime() == null)? "null": TTTGameDataFromDB.getEndTime().toString(),
+                TTTGameDataFromDB.getPlayer1Id(), TTTGameDataFromDB.getPlayer2Id(), TTTGameDataFromDB.getStartingPlayerId(),
+                TTTGameDataFromDB.getWinningPlayerId());
     }
 }

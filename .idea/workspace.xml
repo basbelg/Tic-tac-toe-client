@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Evaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/sample/DBManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/sample/DBManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,7 @@
       <workItem from="1586351860767" duration="5270000" />
       <workItem from="1586404643803" duration="15206000" />
       <workItem from="1586531841068" duration="1698000" />
-      <workItem from="1586613903053" duration="8704000" />
+      <workItem from="1586613903053" duration="9702000" />
     </task>
     <servers />
   </component>
@@ -175,6 +176,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586618863207" />
+    <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586624765460">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586624765460" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1586532057653">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

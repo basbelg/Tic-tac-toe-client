@@ -4,6 +4,9 @@ import GameInterfaces.Board;
 import GameInterfaces.Evaluator;
 
 public class TTT_Evaluator implements Evaluator {
+    //------------------------------------------------------------------------------------------------------------------
+    //                                                Evaluator Methods
+    //------------------------------------------------------------------------------------------------------------------
     @Override
     public Integer quickEval(Board board) {
         Integer evaluation = null;
@@ -26,6 +29,9 @@ public class TTT_Evaluator implements Evaluator {
         return evaluation;
     }
 
+    //------------------------------------------------------------------------------------------------------------------
+    //                                      TTT_Evaluator Specific Methods
+    //------------------------------------------------------------------------------------------------------------------
     private Integer boardState(TTT_Board board, int depth) {
         Integer evaluation = null;
 

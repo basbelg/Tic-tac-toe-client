@@ -1,11 +1,15 @@
 package TicTacToe;
 
 import GameInterfaces.Board;
+import GameInterfaces.Evaluator;
 
 public class TTT_Board implements Board {
     private int[][] currentBoard;
-    private TTT_Evaluator evaluator;
+    private Evaluator evaluator = new TTT_Evaluator();
 
+    //------------------------------------------------------------------------------------------------------------------
+    //                                                Constructors
+    //------------------------------------------------------------------------------------------------------------------
     public TTT_Board() {currentBoard = new int[][]{{0,0,0},{0,0,0},{0,0,0}};}
 
     public TTT_Board(TTT_Board board) {
@@ -13,6 +17,9 @@ public class TTT_Board implements Board {
             this.currentBoard[i/3][i%3] = board.currentBoard[i/3][i%3];
     }
 
+    //------------------------------------------------------------------------------------------------------------------
+    //                                                Board Methods
+    //------------------------------------------------------------------------------------------------------------------
     @Override
     public int getRowCount() {return 3;}
 
@@ -71,6 +78,9 @@ public class TTT_Board implements Board {
     @Override
     public Object clone() throws CloneNotSupportedException {return new TTT_Board(this);}
 
+    //------------------------------------------------------------------------------------------------------------------
+    //                                       TTT_Board Specific Methods
+    //------------------------------------------------------------------------------------------------------------------
     // returns raw value at row and column
     public int val(int row, int col) {return currentBoard[row][col];}
 }

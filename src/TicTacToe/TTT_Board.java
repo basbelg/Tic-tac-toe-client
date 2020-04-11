@@ -66,17 +66,22 @@ public class TTT_Board implements Board {
 
     @Override
     public void setPosition(int player, int row, int col) throws Exception {
-
+        if(player == 1 && currentBoard[row][col] == 0)
+            currentBoard[row][col] = 1;
+        else if(player == 2 && currentBoard[row][col] == 0)
+            currentBoard[row][col] = -1;
+        else
+            throw new Exception("Illegal move!");
     }
 
     @Override
     public void unsetPosition(int row, int col) throws Exception {
-
+        currentBoard[row][col] = 0;
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        return null;
+        return new TTT_Board(this);
     }
 
     // returns raw value at row and column

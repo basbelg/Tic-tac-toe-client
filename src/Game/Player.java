@@ -1,13 +1,13 @@
 package Game;
 
-public class User
+public class Player
 {
     private String playerID;
     private String userName;
     private String firstName;
     private String lastName;
 
-    public User(String playerID, String userName, String firstName, String lastName) {
+    public Player(String playerID, String userName, String firstName, String lastName) {
         this.playerID = playerID;
         setUserName(userName);
         setFirstName(firstName);

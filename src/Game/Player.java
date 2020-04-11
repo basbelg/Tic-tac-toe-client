@@ -6,12 +6,14 @@ public class Player
     private String userName;
     private String firstName;
     private String lastName;
+    private String password;
 
-    public Player(String playerID, String userName, String firstName, String lastName) {
+    public Player(String playerID, String userName, String firstName, String lastName, String password) {
         this.playerID = playerID;
         setUserName(userName);
         setFirstName(firstName);
         setLastName(lastName);
+        setPassword(password);
     }
 
     public String getPlayerID() {
@@ -40,5 +42,13 @@ public class Player
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

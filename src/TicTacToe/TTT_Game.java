@@ -5,7 +5,7 @@ import GameInterfaces.Game;
 
 import java.util.List;
 
-public class TTTGame implements Game {
+public class TTT_Game implements Game {
     @Override
     public void startGame() throws Exception {
 

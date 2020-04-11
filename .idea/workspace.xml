@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TicTacToe/TTTBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TicTacToe/TTTGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/Evaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Evaluator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameInterfaces/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameInterfaces/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTTBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTTGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +153,8 @@
       <workItem from="1586225667526" duration="10571000" />
       <workItem from="1586351860767" duration="5270000" />
       <workItem from="1586404643803" duration="15206000" />
-      <workItem from="1586531841068" duration="1423000" />
+      <workItem from="1586531841068" duration="1698000" />
+      <workItem from="1586613903053" duration="7185000" />
     </task>
     <servers />
   </component>
@@ -172,10 +174,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="562" y="610" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586194498698" />
-    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser" timestamp="1586537346199">
+    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser" timestamp="1586618863207">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586537346199" />
+    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586618863207" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1586532057653">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -200,9 +202,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586197217080" />
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1586532015685">
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1586613906957">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586532015685" />
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586613906957" />
   </component>
 </project>

@@ -8,7 +8,7 @@ public interface Board extends Cloneable, Serializable
     int getColumnCount();
     void clearBoard();
     boolean hasMovesLeft();
-    int getWinningPlayer();
+    int getWinningPlayer() throws Exception;
     int getPlayerAt(int row, int col) throws Exception;
     void setPosition(int player, int row, int col) throws Exception;
     void unsetPosition(int row, int col) throws Exception;

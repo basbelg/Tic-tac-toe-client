@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Evaluator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +151,7 @@
       <workItem from="1586351860767" duration="5270000" />
       <workItem from="1586404643803" duration="15206000" />
       <workItem from="1586531841068" duration="1698000" />
-      <workItem from="1586613903053" duration="7859000" />
+      <workItem from="1586613903053" duration="8208000" />
     </task>
     <servers />
   </component>

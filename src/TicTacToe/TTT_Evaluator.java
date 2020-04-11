@@ -36,7 +36,7 @@ public class TTT_Evaluator implements Evaluator {
                 board.val(0, 2) + board.val(1,1) + board.val(2,0) == 3 ||
                 board.val(0, 0) + board.val(1,0) + board.val(2,0) == 3 ||
                 board.val(0, 1) + board.val(1,1) + board.val(2,1) == 3 ||
-                board.val(0, 2) + board.val(1,2) + board.val(2,2) == 3 ||)
+                board.val(0, 2) + board.val(1,2) + board.val(2,2) == 3)
             evaluation = Integer.MAX_VALUE - depth;
         else if (board.val(0, 0) + board.val(0,1) + board.val(0,2) == -3 ||
                 board.val(1, 0) + board.val(1,1) + board.val(1,2) == -3 ||
@@ -45,7 +45,7 @@ public class TTT_Evaluator implements Evaluator {
                 board.val(0, 2) + board.val(1,1) + board.val(2,0) == -3 ||
                 board.val(0, 0) + board.val(1,0) + board.val(2,0) == -3 ||
                 board.val(0, 1) + board.val(1,1) + board.val(2,1) == -3 ||
-                board.val(0, 2) + board.val(1,2) + board.val(2,2) == -3 ||)
+                board.val(0, 2) + board.val(1,2) + board.val(2,2) == -3)
             evaluation = Integer.MIN_VALUE + depth;
         else if (board.val(0, 0) != 0 && board.val(0, 1) != 0 && board.val(0, 2) != 0 &&
                 board.val(1, 0) != 0 && board.val(1, 1) != 0 && board.val(1, 2) != 0 &&

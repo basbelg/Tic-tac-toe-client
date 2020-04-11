@@ -3,13 +3,10 @@ package TicTacToe;
 import GameInterfaces.Board;
 
 public class TTT_Board implements Board {
-
     private int[][] currentBoard;
     private TTT_Evaluator evaluator;
 
-    public TTT_Board() {
-        currentBoard = new int[][]{{0,0,0},{0,0,0},{0,0,0}};
-    }
+    public TTT_Board() {currentBoard = new int[][]{{0,0,0},{0,0,0},{0,0,0}};}
 
     public TTT_Board(TTT_Board board) {
         for(int i = 0; i < 9; i++)
@@ -17,14 +14,10 @@ public class TTT_Board implements Board {
     }
 
     @Override
-    public int getRowCount() {
-        return 3;
-    }
+    public int getRowCount() {return 3;}
 
     @Override
-    public int getColumnCount() {
-        return 3;
-    }
+    public int getColumnCount() {return 3;}
 
     @Override
     public void clearBoard() {
@@ -33,9 +26,7 @@ public class TTT_Board implements Board {
     }
 
     @Override
-    public boolean hasMovesLeft() {
-        return evaluator.quickEval(this) == null;
-    }
+    public boolean hasMovesLeft() {return evaluator.quickEval(this) == null;}
 
     @Override
     public int getWinningPlayer() throws Exception{
@@ -75,17 +66,11 @@ public class TTT_Board implements Board {
     }
 
     @Override
-    public void unsetPosition(int row, int col) throws Exception {
-        currentBoard[row][col] = 0;
-    }
+    public void unsetPosition(int row, int col) throws Exception {currentBoard[row][col] = 0;}
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return new TTT_Board(this);
-    }
+    public Object clone() throws CloneNotSupportedException {return new TTT_Board(this);}
 
     // returns raw value at row and column
-    public int val(int row, int col) {
-        return currentBoard[row][col];
-    }
+    public int val(int row, int col) {return currentBoard[row][col];}
 }

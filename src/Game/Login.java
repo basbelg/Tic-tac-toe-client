@@ -9,4 +9,28 @@ public class Login
     public Button newUserButton;
     public TextField enterUsername;
     public TextField enterPassword;
+
+    public void onUsernameChanged()
+    {
+        if(!enterPassword.equals(""))
+        {
+            signInButton.setDisable(false);
+        }
+        else
+        {
+            signInButton.setDisable(true);
+        }
+    }
+
+    public void onPasswordChanged()
+    {
+        if(!enterUsername.equals(""))
+        {
+            signInButton.setDisable(false);
+        }
+        else
+        {
+            signInButton.setDisable(true);
+        }
+    }
 }

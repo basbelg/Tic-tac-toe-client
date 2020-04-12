@@ -8,12 +8,23 @@ public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String password;
+    private boolean isActive;
 
     public User(String username, String firstName, String lastName, String password) {
         this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        isActive = true;
+    }
+
+    public User(int id, String username, String password, String firstName, String lastName, boolean isActive) {
+        this.id = id;
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.isActive = isActive;
     }
 
     public int getId() {
@@ -39,6 +50,8 @@ public class User implements Serializable {
     public String getPassword() {
         return password;
     }
+
+    public boolean isActive() { return isActive; }
 
     public void setId(int id) {
         this.id = id;

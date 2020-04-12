@@ -1,5 +1,7 @@
 package Messages;
 
-public class CreateAccountMessage {
+import java.io.Serializable;
+
+public class CreateAccountMessage implements Serializable {
 
 }

@@ -1,0 +1,168 @@
+1.Did you get done what you said you would for today?
+2.What are you going to do tomorrow?
+3.Any obstacles in your way?
+
+4/1/20
+	Everyone
+		2. Install MySQL
+
+4/2/20
+	Riley
+		1. yes
+		2. Work on inserting and retrieving data from the tables
+		3. no
+
+	Bas
+		1. Yes I did
+		2. I will make the user and match history classes
+		3. no
+
+	Johnny
+		1. Yes
+		2. I will start on creating the DBManager class and it's Singleton implementation
+		3. no
+
+4/3/20
+	Riley
+		1. Yes
+		2. I will continue working on retrieving and inserting data
+		3. I need to know the variables in the classes I'm retrieving and inserting
+
+	Bas
+		1. Yes
+		2. Finish the last class to use for passing info to our DB
+		3. no
+
+	Johnny
+		1. Yes
+		2. Finish the initialization of the singleton manager class
+		3. I don't have any obstacles at the moment
+		
+4/4/20
+	Riley
+		1. Yes
+		2. I will finish creating the mysql database, and I will continue on inserting and retrieving data
+		3. No
+
+	Bas
+		1. Yes
+		2. I will write driver code to test the DB
+		3. No
+
+	Johnny
+		1. Yes
+		2. testing the DBManager class
+		3. no
+
+4/5/20
+	Riley
+		1. Yes
+		2. I will create the TTTGameData table in the mysql database, and I will finish adding and retrieving data from the database.
+		3. No
+
+	Bas
+		1. No
+		2. I will test interactions with the database
+		3. I am waiting on the completion of backend code
+
+	Johnny
+		1. Yes
+		2. I will write test code for inserting/updating/getting from the database into the TTTGameData table
+		3. I am waiting for the creation of the Games table
+		
+4/6/20
+	Riley
+		1. Yes
+		2. Update MySQL
+		3. no
+
+	Bas
+		1. Yes
+		2. Work on client UI
+		3. No
+
+	Johnny
+		1. Yes
+		2. I'll work Server UI
+		3. No
+		
+4/7/20
+	Riley
+		1. No
+		2. Finish updating mysql code
+		3. No
+
+	Bas
+		1. No
+		2. Finish the Ui
+		3. No
+
+	Johnny
+		1. No
+		2. Work on the UI
+		3. No
+
+4/8/20
+	Riley
+		1. No
+		2. Finish updating mysql code
+		3. I've had issues with converting some sql statements into strings
+
+	Bas
+		1. No
+		2. Finish the client UI
+		3. no
+
+	Johnny
+		1. No
+		2. Work on the client UI
+		3. No
+
+
+4/9/20
+	Riley
+		1. Yes
+		2. I will create the TTTGameData and board classes
+		3. No
+
+	Bas
+		1. Yes
+		2. Continue working on UI and work on the Message hierarchy
+		3. No
+
+	Johnny
+		1. No
+		2. Work on User and Move classes
+		3. No
+
+4/10/20
+	Riley
+		1. Yes
+		2. Continue working on game and board classes
+		3. No
+
+	Bas
+		1. Yes
+		2. Continue coding the message hierarchy
+		3. no
+
+	Johnny
+		1. Yes
+		2. Finish user and move classes
+		3. no
+
+4/11/20
+	Riley
+		1. Yes
+		2. Finish implementing tic-tac-toe game class
+		3. No
+
+	Bas
+		1. Yes
+		2. Finish the message hierarchy
+		3. No
+
+	Johnny
+		1. Yes
+		2. Create more of the client side UI
+		3. no

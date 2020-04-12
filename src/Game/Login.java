@@ -33,4 +33,10 @@ public class Login
             signInButton.setDisable(true);
         }
     }
+
+    public void onSignInClicked()
+    {}
+
+    public void onNewUserClicked()
+    {}
 }

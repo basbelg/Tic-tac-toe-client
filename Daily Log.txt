@@ -150,3 +150,19 @@
 		1. Yes
 		2. Finish user and move classes
 		3. no
+
+4/11/20
+	Riley
+		1. Yes
+		2. Finish implementing tic-tac-toe game class
+		3. No
+
+	Bas
+		1. Yes
+		2. Finish the message hierarchy
+		3. No
+
+	Johnny
+		1. Yes
+		2. Create more of the client side UI
+		3. no

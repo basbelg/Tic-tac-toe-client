@@ -69,11 +69,16 @@ public class TTT_Board implements Board {
         else if(player == 2 && currentBoard[row][col] == 0)
             currentBoard[row][col] = -1;
         else
-            throw new Exception("Illegal move!");
+            throw new Exception("Illegal Set Exception: Can not set position at row: " + row + " column: " + col + "!");
     }
 
     @Override
-    public void unsetPosition(int row, int col) throws Exception {currentBoard[row][col] = 0;}
+    public void unsetPosition(int row, int col) throws Exception {
+        if(currentBoard[row][col] == 0)
+            throw new Exception("Illegal Set Exception: Can not unset position at row: " + row + " column: " + col + "!");
+
+        currentBoard[row][col] = 0;
+    }
 
     @Override
     public Object clone() throws CloneNotSupportedException {return new TTT_Board(this);}

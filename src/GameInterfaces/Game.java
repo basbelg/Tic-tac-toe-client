@@ -3,7 +3,7 @@ package GameInterfaces;
 import java.io.Serializable;
 import java.util.List;
 
-    public interface Game  extends Serializable {
+    public interface Game extends Serializable {
         void startGame() throws Exception;
         void endGame() throws Exception;
         boolean isFinished();
@@ -16,7 +16,7 @@ import java.util.List;
         void restart() throws Exception;
 
         int getNextPlayer();
-        int getWinner();
+        int getWinner() throws Exception;
 
         <T extends Move> List<T> getMoveHistory();
 

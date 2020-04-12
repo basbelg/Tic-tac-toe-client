@@ -1,7 +1,7 @@
 package DataClasses;
 
 import java.time.LocalDateTime;
-import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class TTT_GameData {
@@ -13,8 +13,8 @@ public class TTT_GameData {
     private int startingPlayerId;
     private int winningPlayerId;
 
-    public TTT_GameData(LocalDateTime startingTime, int player1Id, int player2Id, int startingPlayerId) {
-        id = UUID.randomUUID().toString();
+    public TTT_GameData(String id, LocalDateTime startingTime, int player1Id, int player2Id, int startingPlayerId) {
+        this.id = id;
         this.startingTime = startingTime;
         this.endTime = null;
         this.player1Id = player1Id;

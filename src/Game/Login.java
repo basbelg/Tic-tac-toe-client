@@ -12,7 +12,7 @@ public class Login
 
     public void onUsernameChanged()
     {
-        if(!enterPassword.equals(""))
+        if(!enterPassword.getText().equals(""))
         {
             signInButton.setDisable(false);
         }
@@ -24,7 +24,7 @@ public class Login
 
     public void onPasswordChanged()
     {
-        if(!enterUsername.equals(""))
+        if(!enterUsername.getText().equals(""))
         {
             signInButton.setDisable(false);
         }

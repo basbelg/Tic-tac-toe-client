@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameInterfaces/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameInterfaces/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +150,7 @@
       <workItem from="1586404643803" duration="15206000" />
       <workItem from="1586531841068" duration="1698000" />
       <workItem from="1586613903053" duration="10581000" />
-      <workItem from="1586700892058" duration="11086000" />
+      <workItem from="1586700892058" duration="11504000" />
     </task>
     <servers />
   </component>

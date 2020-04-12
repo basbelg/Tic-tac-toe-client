@@ -79,6 +79,7 @@ public class TTT_Game implements Game {
     @Override
     public void restart() throws Exception {
         if(active) {
+            moveHistory.clear();
             board.clearBoard();
             turn = 0;
         }

@@ -1,7 +1,9 @@
 package Messages;
 
+import DataClasses.User;
+
 import java.io.Serializable;
 
 public class CreateAccountMessage implements Serializable {
-
+    private User newUser;
 }

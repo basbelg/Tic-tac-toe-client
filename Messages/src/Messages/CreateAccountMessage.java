@@ -10,4 +10,8 @@ public class CreateAccountMessage implements Serializable {
     public CreateAccountMessage(User newUser) {
         this.newUser = newUser;
     }
+
+    public User getNewUser() {
+        return newUser;
+    }
 }

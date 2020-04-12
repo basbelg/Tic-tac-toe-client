@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Game.Login"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="339.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.Login">
+   <children>
+      <Button fx:id="signInButton" layoutX="245.0" layoutY="228.0" mnemonicParsing="false" text="Sign In" />
+      <Button fx:id="newUserButton" layoutX="238.0" layoutY="276.0" mnemonicParsing="false" text="New User" />
+      <Label layoutX="113.0" layoutY="107.0" text="Username:" />
+      <Label layoutX="113.0" layoutY="170.0" text="Password:" />
+      <TextField fx:id="enterUsername" layoutX="197.0" layoutY="103.0" promptText="Enter Username..." />
+      <TextField fx:id="enterPassword" layoutX="197.0" layoutY="166.0" promptText="Enter Password..." />
+   </children>
 </AnchorPane>

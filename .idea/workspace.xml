@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/Register.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/META-INF/Tic-Tac-Toe.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/META-INF/Tic-Tac-Toe.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/database/DataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/database/DataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Tic-Tac-Toe/sample/DBManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Tic-Tac-Toe/sample/DBManagerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameInterfaces/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameInterfaces/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Register.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,17 +252,5 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586701861769" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/TicTacToe/TTT_Game.java</url>
-          <line>13</line>
-          <properties field="active" class="TicTacToe.TTT_Game" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

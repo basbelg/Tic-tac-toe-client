@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="455.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.RegisterController">
+<AnchorPane prefHeight="455.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.RegisterController">
    <children>
-      <Button fx:id="registerButton" layoutX="270.0" layoutY="391.0" mnemonicParsing="false" text="Register" />
+      <Button fx:id="registerButton" layoutX="270.0" layoutY="391.0" mnemonicParsing="false" onMouseClicked="#onRegisterClicked" text="Register" />
       <Label layoutX="81.0" layoutY="78.0" text="First Name:" />
       <Label layoutX="82.0" layoutY="134.0" text="Last Name:" />
       <Label layoutX="83.0" layoutY="190.0" text="Username:" />
@@ -16,6 +16,6 @@
       <TextField fx:id="enterUsername" layoutX="165.0" layoutY="186.0" prefHeight="25.0" prefWidth="270.0" promptText="Enter Username...." />
       <TextField fx:id="enterPassword" layoutX="165.0" layoutY="245.0" prefHeight="25.0" prefWidth="270.0" promptText="Enter Password..." />
       <TextField fx:id="enterConfirmPassword" layoutX="165.0" layoutY="304.0" prefHeight="25.0" prefWidth="270.0" promptText="Confirm Password..." />
-      <Label fx:id="errorLabel" layoutX="458.0" layoutY="70.0" prefHeight="225.0" prefWidth="123.0" />
+      <Label fx:id="errorLabel" layoutX="448.0" layoutY="70.0" prefHeight="263.0" prefWidth="195.0" />
    </children>
 </AnchorPane>

@@ -9,7 +9,8 @@
       <Button fx:id="newUserButton" layoutX="238.0" layoutY="276.0" mnemonicParsing="false" onMouseClicked="#onNewUserClicked" text="New User" />
       <Label layoutX="113.0" layoutY="107.0" text="Username:" />
       <Label layoutX="113.0" layoutY="170.0" text="Password:" />
-      <TextField fx:id="enterUsername" layoutX="197.0" layoutY="103.0" onKeyTyped="#onUsernameChanged" promptText="Enter Username..." />
-      <TextField fx:id="enterPassword" layoutX="197.0" layoutY="166.0" onKeyTyped="#onPasswordChanged" promptText="Enter Password..." />
+      <TextField fx:id="enterUsername" layoutX="197.0" layoutY="103.0" onKeyReleased="#onUsernameChanged" promptText="Enter Username..." />
+      <TextField fx:id="enterPassword" layoutX="197.0" layoutY="166.0" onKeyReleased="#onPasswordChanged" promptText="Enter Password..." />
+      <Label fx:id="invalidLabel" layoutX="370.0" layoutY="99.0" prefHeight="87.0" prefWidth="149.0" />
    </children>
 </AnchorPane>

@@ -7,4 +7,12 @@ public class GameLogMessage {
     public GameLogMessage(String gameId) {
         this.gameId = gameId;
     }
+
+    public String getGameId() {
+        return gameId;
+    }
+
+    public List<Move> getMoveHistory() {
+        return moveHistory;
+    }
 }

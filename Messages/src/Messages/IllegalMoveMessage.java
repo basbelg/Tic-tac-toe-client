@@ -1,6 +1,8 @@
 package Messages;
 
-public class IllegalMoveMessage {
+import java.io.Serializable;
+
+public class IllegalMoveMessage implements Serializable {
     @Override
     public String toString() {
         return "Invalid Move!";

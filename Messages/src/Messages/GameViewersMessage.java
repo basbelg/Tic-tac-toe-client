@@ -2,9 +2,10 @@ package Messages;
 
 import DataClasses.Spectator;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class GameViewersMessage {
+public class GameViewersMessage implements Serializable {
     private String gameId;
     private List<Spectator> spectators;
 

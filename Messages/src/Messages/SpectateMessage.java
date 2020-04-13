@@ -2,7 +2,9 @@ package Messages;
 
 import GameInterfaces.Game;
 
-public class SpectateMessage {
+import java.io.Serializable;
+
+public class SpectateMessage implements Serializable {
     private String gameId;
     private Game gameToSpectate;
 

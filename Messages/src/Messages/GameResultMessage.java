@@ -1,6 +1,8 @@
 package Messages;
 
-public class GameResultMessage {
+import java.io.Serializable;
+
+public class GameResultMessage implements Serializable {
     boolean isPlayer1Win;
 
     public GameResultMessage(boolean isPlayer1Win) {

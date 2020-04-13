@@ -1,6 +1,8 @@
 package Messages;
 
-public class MoveMessage {
+import java.io.Serializable;
+
+public class MoveMessage implements Serializable {
     private Move nextMove;
     private String gameId;
     private int movingPlayerId;

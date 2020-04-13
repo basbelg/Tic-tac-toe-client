@@ -1,6 +1,8 @@
 package Messages;
 
-public class GameLogMessage {
+import java.io.Serializable;
+
+public class GameLogMessage implements Serializable {
     private String gameId;
     private List<Move> moveHistory;
 

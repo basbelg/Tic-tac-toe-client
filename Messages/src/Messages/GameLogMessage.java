@@ -15,4 +15,8 @@ public class GameLogMessage {
     public List<Move> getMoveHistory() {
         return moveHistory;
     }
+
+    public void setMoveHistory(List<Move> moveHistory) {
+        this.moveHistory = moveHistory;
+    }
 }

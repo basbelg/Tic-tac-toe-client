@@ -10,4 +10,12 @@ public class ConnectToLobbyMessage {
         this.lobbyGameId = lobbyGameId;
         this.player2 = player2;
     }
+
+    public String getLobbyGameId() {
+        return lobbyGameId;
+    }
+
+    public User getPlayer2() {
+        return player2;
+    }
 }

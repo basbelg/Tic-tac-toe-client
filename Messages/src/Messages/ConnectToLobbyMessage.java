@@ -2,7 +2,9 @@ package Messages;
 
 import DataClasses.User;
 
-public class ConnectToLobbyMessage {
+import java.io.Serializable;
+
+public class ConnectToLobbyMessage implements Serializable {
     private String lobbyGameId;
     private User player2;
 

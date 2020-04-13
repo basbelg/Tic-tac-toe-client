@@ -8,4 +8,8 @@ public class CreateAIGameMessage {
     public CreateAIGameMessage(Game newAIGame) {
         this.newAIGame = newAIGame;
     }
+
+    public Game getNewAIGame() {
+        return newAIGame;
+    }
 }

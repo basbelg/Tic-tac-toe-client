@@ -8,4 +8,8 @@ public class CreateLobbyMessage {
     public CreateLobbyMessage(Game newTTTGame) {
         this.newTTTGame = newTTTGame;
     }
+
+    public Game getNewTTTGame() {
+        return newTTTGame;
+    }
 }

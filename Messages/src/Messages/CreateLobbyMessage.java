@@ -1,5 +1,7 @@
 package Messages;
 
+import GameInterfaces.Game;
+
 public class CreateLobbyMessage {
-    private Game
+    private Game newTTTGame;
 }

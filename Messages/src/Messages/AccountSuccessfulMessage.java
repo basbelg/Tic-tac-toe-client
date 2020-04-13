@@ -8,4 +8,8 @@ public class AccountSuccessfulMessage {
     public AccountSuccessfulMessage(User createdUser) {
         this.createdUser = createdUser;
     }
+
+    public User getCreatedUser() {
+        return createdUser;
+    }
 }

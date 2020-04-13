@@ -6,6 +6,7 @@ import GameInterfaces.Game;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import Game.Move;
 
 public class TTT_Game implements Game {
     private int turn;
@@ -21,6 +22,8 @@ public class TTT_Game implements Game {
         active = false;
         turn = 0;
     }
+
+
 
     @Override
     public void startGame() throws Exception {
@@ -94,7 +97,7 @@ public class TTT_Game implements Game {
     public int getWinner() throws Exception {return board.getWinningPlayer();}
 
     @Override
-    public <T extends Move> List<T> getMoveHistory() {return moveHistory;}
+    public <T extends Move> List<Move> getMoveHistory() {return moveHistory;}
 
     @Override
     public Board getBoard() throws Exception {
@@ -104,7 +107,7 @@ public class TTT_Game implements Game {
         return board;
     }
 
-    @Override
+   /* @Override
     public void addGameListener(GameListener listener) {
 
     }
@@ -112,5 +115,5 @@ public class TTT_Game implements Game {
     @Override
     public void removeGameListener(GameListener listener) {
 
-    }
+    }*/
 }

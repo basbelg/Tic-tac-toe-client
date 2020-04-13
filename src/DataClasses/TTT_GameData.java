@@ -23,6 +23,16 @@ public class TTT_GameData {
         this.winningPlayerId = -1;
     }
 
+    public TTT_GameData(LocalDateTime startingTime, int player1Id, int player2Id, int startingPlayerId) {
+        id = UUID.randomUUID().toString();
+        this.startingTime = startingTime;
+        this.endTime = null;
+        this.player1Id = player1Id;
+        this.player2Id = player2Id;
+        this.startingPlayerId = startingPlayerId;
+        this.winningPlayerId = -1;
+    }
+
     public TTT_GameData(String id, LocalDateTime startingTime, LocalDateTime endTime, int player1Id, int player2Id, int startingPlayerId, int winningPlayerId) {
         this.id = id;
         this.startingTime = startingTime;

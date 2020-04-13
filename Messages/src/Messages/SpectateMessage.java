@@ -9,4 +9,16 @@ public class SpectateMessage {
     public SpectateMessage(String gameId) {
         this.gameId = gameId;
     }
+
+    public String getGameId() {
+        return gameId;
+    }
+
+    public Game getGameToSpectate() {
+        return gameToSpectate;
+    }
+
+    public void setGameToSpectate(Game gameToSpectate) {
+        this.gameToSpectate = gameToSpectate;
+    }
 }

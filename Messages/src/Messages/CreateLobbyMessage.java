@@ -2,7 +2,9 @@ package Messages;
 
 import GameInterfaces.Game;
 
-public class CreateLobbyMessage {
+import java.io.Serializable;
+
+public class CreateLobbyMessage implements Serializable {
     private Game newTTTGame;
 
     public CreateLobbyMessage(Game newTTTGame) {

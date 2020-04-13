@@ -1,6 +1,8 @@
 package Messages;
 
-public class LoginMessage {
+import java.io.Serializable;
+
+public class LoginMessage implements Serializable {
     private String username;
     private String password;
 

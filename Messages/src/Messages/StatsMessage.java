@@ -1,6 +1,8 @@
 package Messages;
 
-public class StatsMessage {
+import java.io.Serializable;
+
+public class StatsMessage implements Serializable {
     int wins;
     int losses;
     int ties;

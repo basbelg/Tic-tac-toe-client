@@ -1,6 +1,8 @@
 package Messages;
 
-public class DeactivateAccountMessage {
+import java.io.Serializable;
+
+public class DeactivateAccountMessage implements Serializable {
     private int userId;
 
     public DeactivateAccountMessage(int userId) {

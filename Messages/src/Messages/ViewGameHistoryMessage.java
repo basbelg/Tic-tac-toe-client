@@ -1,6 +1,8 @@
 package Messages;
 
-public class ViewGameHistoryMessage {
+import java.io.Serializable;
+
+public class ViewGameHistoryMessage implements Serializable {
     List<List<Move>> gameHistories;
 
     public ViewGameHistoryMessage() {

@@ -1,8 +1,7 @@
-package Game;
+package ClientUI;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import org.w3c.dom.Text;
 
 public class Register
 {

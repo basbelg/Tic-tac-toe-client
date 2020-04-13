@@ -1,4 +1,4 @@
-package Game;
+package ClientUI;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

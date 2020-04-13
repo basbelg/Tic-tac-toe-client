@@ -1,8 +1,6 @@
 package DataClasses;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
 
 public class TTT_GameData {
     private String id;

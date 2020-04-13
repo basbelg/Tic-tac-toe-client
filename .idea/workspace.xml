@@ -2,19 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Game/Register.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Move.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Register.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Spectator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily Log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientUI/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientUI/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientUI/Register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientUI/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Spectator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/Spectator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/sample/DBManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/sample/DBManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -49,12 +52,18 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="R:\CS4B\Tic-Tac-Toe\src\Game" />
+      <recent name="R:\CS4B\Tic-Tac-Toe\src\DataClasses" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.DBManagerTest.addGame">
     <configuration name="DBManagerTest.addGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Tic-Tac-Toe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="Database.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,7 +79,7 @@
       <module name="Tic-Tac-Toe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="Database.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,7 +95,7 @@
       <module name="Tic-Tac-Toe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="Database.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,7 +111,7 @@
       <module name="Tic-Tac-Toe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="Database.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +127,7 @@
       <module name="Tic-Tac-Toe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="Database.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,6 +173,7 @@
       <workItem from="1586613903053" duration="10581000" />
       <workItem from="1586700892058" duration="11878000" />
       <workItem from="1586758638253" duration="2420000" />
+      <workItem from="1586789009327" duration="9214000" />
     </task>
     <servers />
   </component>
@@ -183,14 +193,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="562" y="610" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586194498698" />
-    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser" timestamp="1586618863207">
+    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser" timestamp="1586794721850">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586618863207" />
-    <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586624765460">
+    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586794721850" />
+    <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586801492447">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586624765460" />
+    <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586801492447" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1586532057653">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

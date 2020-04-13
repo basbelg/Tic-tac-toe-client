@@ -1,5 +1,6 @@
-package Game;
+package DataClasses;
 
+// seems identical to user and may be unnecessary
 public class Player
 {
     private String playerID;

@@ -1,4 +1,4 @@
-package Game;
+package DataClasses;
 
 public class Spectator
 {

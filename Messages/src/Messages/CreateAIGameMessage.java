@@ -1,5 +1,7 @@
 package Messages;
 
-public class CreateAIGameMessage {
+import GameInterfaces.Game;
 
+public class CreateAIGameMessage {
+    private Game newAIGame;
 }

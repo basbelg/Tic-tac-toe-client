@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +150,8 @@
       <workItem from="1586404643803" duration="15206000" />
       <workItem from="1586531841068" duration="1698000" />
       <workItem from="1586613903053" duration="10581000" />
-      <workItem from="1586700892058" duration="11504000" />
+      <workItem from="1586700892058" duration="11878000" />
+      <workItem from="1586758638253" duration="1825000" />
     </task>
     <servers />
   </component>
@@ -202,9 +203,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586197217080" />
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1586701861769">
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1586758641305">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586701861769" />
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586758641305" />
   </component>
 </project>

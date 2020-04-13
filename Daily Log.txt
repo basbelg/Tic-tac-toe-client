@@ -166,3 +166,19 @@
 		1. Yes
 		2. Create more of the client side UI
 		3. no
+
+4/12/20
+	Riley
+		1. Yes
+		2. I will finish the game class, and I will create the move and viewer tables in mysql
+		3. I need the Tic-Tac-Toe move class to finish the game class
+
+	Bas
+		1. Yes
+		2. Start working on the Client class (client side)
+		3. No
+
+	Johnny
+		1. Yes
+		2. Finish hooking up Login and Register windows to code that will send the data to the DB.
+		3. No

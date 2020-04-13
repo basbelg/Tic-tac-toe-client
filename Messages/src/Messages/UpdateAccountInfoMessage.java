@@ -10,4 +10,8 @@ public class UpdateAccountInfoMessage implements Serializable {
     public UpdateAccountInfoMessage(User updatedUser) {
         this.updatedUser = updatedUser;
     }
+
+    public User getUpdatedUser() {
+        return updatedUser;
+    }
 }

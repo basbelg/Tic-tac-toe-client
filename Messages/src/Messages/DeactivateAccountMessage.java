@@ -1,9 +1,9 @@
 package Messages;
 
-public class DeactivaeAccountMessage {
+public class DeactivateAccountMessage {
     private int userId;
 
-    public DeactivaeAccountMessage(int userId) {
+    public DeactivateAccountMessage(int userId) {
         this.userId = userId;
     }
 

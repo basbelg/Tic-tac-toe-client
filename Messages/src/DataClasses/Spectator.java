@@ -6,4 +6,8 @@ public class Spectator {
     public Spectator(String username) {
         this.username = username;
     }
+
+    public String getUsername() {
+        return username;
+    }
 }

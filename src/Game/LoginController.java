@@ -1,5 +1,6 @@
 package Game;
 
+import DataClasses.User;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -23,7 +24,7 @@ public class LoginController implements Initializable
     public TextField enterPassword;
     public Label invalidLabel;
 
-    public List<Player> users;
+    public List<User> users;
 
     public void onUsernameChanged()
     {
@@ -52,13 +53,11 @@ public class LoginController implements Initializable
     public void onSignInClicked()
     {
         users= new ArrayList<>();
-        users.add(new Player("1", "Jon", "J", "O", "a"));
-        users.add(new Player("1", "Bas", "J", "O", "b"));
-        users.add(new Player("1", "Ril", "J", "O", "c"));
+        users.add(new User("Jon", "J", "O", "a"));
+        users.add(new User("Bas", "J", "O", "b"));
+        users.add(new User("Ril", "J", "O", "c"));
 
-        Player p = new Player("1", enterUsername.getText(), "J", "O", enterPassword.getText());
-
-        if(contains(p))
+        if(contains(enterUsername.getText(), enterPassword.getText()))
         {
             invalidLabel.setText("Logged in");
         }
@@ -91,11 +90,11 @@ public class LoginController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
-    public boolean contains(Player p)
+    public boolean contains(String username, String pass)
     {
-        for(Player player : users)
+        for(int i = 0; i < users.size(); i++)
         {
-            if(player.getUserName().equals(p.getUserName()) && player.getPassword().equals(p.getPassword()))
+            if(username.equals(users.get(i).getUsername()) && pass.equals(users.get(i).getPassword()))
             {
                 return true;
             }

@@ -1,23 +1,25 @@
 package Game;
 
+import java.sql.Time;
+import java.time.LocalDateTime;
+
 public class Move
 {
-    private String playerID;
     private int player;
     private int row;
     private int col;
+    private LocalDateTime timeMade;
 
-    public Move(String playerID, int player, int row, int col)
+    public Move(int player, int row, int col)
     {
-        this.playerID = playerID;
+        timeMade = LocalDateTime.now();
         this.player = player;
         this.row = row;
         this.col = col;
     }
 
-    public String getPlayerID()
-    {
-        return playerID;
+    public LocalDateTime getTimeMade() {
+        return timeMade;
     }
 
     public int getRow()

@@ -10,4 +10,16 @@ public class MoveMessage {
         this.gameId = gameId;
         this.movingPlayerId = movingPlayerId;
     }
+
+    public Move getNextMove() {
+        return nextMove;
+    }
+
+    public String getGameId() {
+        return gameId;
+    }
+
+    public int getMovingPlayerId() {
+        return movingPlayerId;
+    }
 }

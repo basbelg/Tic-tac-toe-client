@@ -5,5 +5,6 @@ public class StatsMessage {
     int losses;
     int ties;
 
-    
+    public StatsMessage() {
+    }
 }

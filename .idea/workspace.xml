@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Daily Log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Daily Log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/TTT_GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientUI/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientUI/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientUI/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientUI/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game/Spectator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/Spectator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/DataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/sample/DBManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/sample/DBManagerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +158,7 @@
       <workItem from="1586613903053" duration="10581000" />
       <workItem from="1586700892058" duration="11878000" />
       <workItem from="1586758638253" duration="2420000" />
-      <workItem from="1586789009327" duration="9214000" />
+      <workItem from="1586789009327" duration="9787000" />
     </task>
     <servers />
   </component>

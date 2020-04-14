@@ -1,6 +1,5 @@
-package Game;
+package DataClasses;
 
-import java.sql.Time;
 import java.time.LocalDateTime;
 
 public class Move

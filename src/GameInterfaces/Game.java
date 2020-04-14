@@ -2,7 +2,7 @@ package GameInterfaces;
 
 import java.io.Serializable;
 import java.util.List;
-import Game.Move;
+import DataClasses.Move;
 
 public interface Game extends Serializable {
     void startGame() throws Exception;
@@ -19,21 +19,10 @@ public interface Game extends Serializable {
     int getNextPlayer();
     int getWinner() throws Exception;
 
-<<<<<<< HEAD
-        <T extends Move> List<Move> getMoveHistory();
-=======
     <T extends Move> List<T> getMoveHistory();
->>>>>>> origin/Messages
 
     Board getBoard() throws Exception;
 
-<<<<<<< HEAD
-      //  void addGameListener(GameListener listener);
-        //void removeGameListener(GameListener listener);
-    }
-
-=======
-    void addGameListener(GameListener listener);
-    void removeGameListener(GameListener listener);
+    //void addGameListener(GameListener listener);
+    //void removeGameListener(GameListener listener);
 }
->>>>>>> origin/Messages

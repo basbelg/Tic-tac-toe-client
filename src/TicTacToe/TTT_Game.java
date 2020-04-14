@@ -6,7 +6,7 @@ import GameInterfaces.Game;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import Game.Move;
+import DataClasses.Move;
 
 public class TTT_Game implements Game {
     private int turn;
@@ -97,7 +97,7 @@ public class TTT_Game implements Game {
     public int getWinner() throws Exception {return board.getWinningPlayer();}
 
     @Override
-    public <T extends Move> List<Move> getMoveHistory() {return moveHistory;}
+    public <T extends Move> List<T> getMoveHistory() {return (List<T>) moveHistory;}
 
     @Override
     public Board getBoard() throws Exception {

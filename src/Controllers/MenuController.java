@@ -1,8 +1,12 @@
 package Controllers;
 
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class MenuController
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MenuController implements Initializable
 {
     public Button vsPlayerButton;
     public Button vsAIButton;
@@ -10,4 +14,6 @@ public class MenuController
     public Button logoutButton;
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
 }

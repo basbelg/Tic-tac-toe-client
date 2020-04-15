@@ -59,7 +59,21 @@ public class LoginController implements Initializable
 
         if(contains(enterUsername.getText(), enterPassword.getText()))
         {
-            invalidLabel.setText("Logged in");
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                Parent root = loader.load();
+                MenuController mc = loader.getController();
+                Stage stage = (Stage) newUserButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Menu");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
         }
         else
         {

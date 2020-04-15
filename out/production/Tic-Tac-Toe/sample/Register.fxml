@@ -5,7 +5,7 @@
 
 <AnchorPane prefHeight="455.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegisterController">
    <children>
-      <Button fx:id="registerButton" layoutX="270.0" layoutY="391.0" mnemonicParsing="false" onMouseClicked="#onRegisterClicked" text="Register" />
+      <Button fx:id="confirmButton" layoutX="270.0" layoutY="391.0" mnemonicParsing="false" onMouseClicked="#onConfirmClicked" text="Confirm" />
       <Label layoutX="81.0" layoutY="78.0" text="First Name:" />
       <Label layoutX="82.0" layoutY="134.0" text="Last Name:" />
       <Label layoutX="83.0" layoutY="190.0" text="Username:" />

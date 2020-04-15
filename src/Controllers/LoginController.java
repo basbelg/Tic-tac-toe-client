@@ -92,6 +92,7 @@ public class LoginController implements Initializable
             Stage stage = (Stage) newUserButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Register");
+            rc.confirmButton.setText("Register");
             stage.setScene(new Scene(root));
             stage.show();
         }

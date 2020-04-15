@@ -15,7 +15,7 @@ import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable
 {
-    public Button registerButton;
+    public Button confirmButton;
     public TextField enterFirstName;
     public TextField enterLastName;
     public TextField enterUsername;
@@ -23,28 +23,51 @@ public class RegisterController implements Initializable
     public TextField enterConfirmPassword;
     public Label errorLabel;
 
-    public void onRegisterClicked()
+    public void onConfirmClicked()
     {
         if(!enterFirstName.getText().equals("") && !enterLastName.getText().equals("") && !enterUsername.getText().equals("") &&
                 !enterPassword.getText().equals("") && !enterConfirmPassword.getText().equals("") &&
                 enterPassword.getText().equals(enterConfirmPassword.getText()))
         {
             //Send off data to the Player class to be sent to the Server through a thread
-            try
+            if(confirmButton.getText().equals("Register"))
             {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
-                Parent root = loader.load();
-                LoginController lc = loader.getController();
-                Stage stage = (Stage) registerButton.getScene().getWindow();
-                stage.close();
-                stage.setTitle("Login");
-                stage.setScene(new Scene(root));
-                stage.show();
+                try
+                {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
+                    Parent root = loader.load();
+                    LoginController lc = loader.getController();
+                    Stage stage = (Stage) confirmButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Login");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
             }
-            catch(IOException e)
+            else if(confirmButton.getText().equals("Confirm"))
             {
-                e.printStackTrace();
+                try
+                {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
+                    Parent root = loader.load();
+                    AccountController ac = loader.getController();
+                    Stage stage = (Stage) confirmButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Account");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
             }
+
+
 
         }
         else

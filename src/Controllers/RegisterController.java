@@ -1,4 +1,4 @@
-package Game;
+package Controllers;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

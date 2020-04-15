@@ -1,4 +1,4 @@
-package Game;
+package Controllers;
 
 import DataClasses.User;
 import javafx.fxml.FXMLLoader;

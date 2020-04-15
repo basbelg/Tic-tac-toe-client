@@ -1,6 +1,9 @@
 package Messages;
 
+import DataClasses.Move;
+
 import java.io.Serializable;
+import java.util.List;
 
 public class GameLogMessage implements Serializable {
     private String gameId;

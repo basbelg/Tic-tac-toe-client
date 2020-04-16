@@ -18,6 +18,25 @@ public class MenuController implements Initializable
     public Button accountButton;
     public Button logoutButton;
 
+    public void onVsPlayerClicked()
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/VsPlayer.fxml"));
+            Parent root = loader.load();
+            VsPlayerController vpc = loader.getController();
+            Stage stage = (Stage) vsPlayerButton.getScene().getWindow();
+            stage.close();
+            stage.setTitle("Tic-Tac-Toe");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public void onAccountClicked()
     {
         try
@@ -39,7 +58,21 @@ public class MenuController implements Initializable
 
     public void onLogoutClicked()
     {
-        
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
+            Parent root = loader.load();
+            LoginController lc = loader.getController();
+            Stage stage = (Stage) logoutButton.getScene().getWindow();
+            stage.close();
+            stage.setTitle("Login");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -5,18 +5,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AccountController implements Initializable
+public class VsPlayerController implements Initializable
 {
-    public Button modAccountButton;
-    public Button gameHistoryButton;
+    public Button createLobbyButton;
     public Button backButton;
-    public Button statsButton;
+    public ListView activeGamesList;
 
     public void onBackClicked()
     {
@@ -28,26 +28,6 @@ public class AccountController implements Initializable
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Menu");
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
-    }
-
-    public void onModAccountClicked()
-    {
-        try
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Register.fxml"));
-            Parent root = loader.load();
-            RegisterController rc = loader.getController();
-            Stage stage = (Stage) modAccountButton.getScene().getWindow();
-            stage.close();
-            stage.setTitle("Modify Account");
-            rc.confirmButton.setText("Confirm");
             stage.setScene(new Scene(root));
             stage.show();
         }

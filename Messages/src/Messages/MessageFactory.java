@@ -1,4 +1,10 @@
 package Messages;
 
-public class MessageFactory {
+public final class MessageFactory {
+    private MessageFactory() {
+    }
+
+    public static Object getMessage(String type) {
+        return new Object();
+    }
 }

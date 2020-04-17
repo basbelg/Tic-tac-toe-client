@@ -1,12 +1,10 @@
 package Messages;
 
-import GameInterfaces.Game;
-
 import java.io.Serializable;
 
 public class SpectateMessage implements Serializable {
     private String gameId;
-    private Game gameToSpectate;
+    private int[][] gameBoard;
 
     public SpectateMessage(String gameId) {
         this.gameId = gameId;
@@ -16,11 +14,11 @@ public class SpectateMessage implements Serializable {
         return gameId;
     }
 
-    public Game getGameToSpectate() {
-        return gameToSpectate;
+    public int[][] getGameBoard() {
+        return gameBoard;
     }
 
-    public void setGameToSpectate(Game gameToSpectate) {
-        this.gameToSpectate = gameToSpectate;
+    public void setGameBoard(int[][] gameBoard) {
+        this.gameBoard = gameBoard;
     }
 }

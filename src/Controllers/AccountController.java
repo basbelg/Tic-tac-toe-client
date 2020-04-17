@@ -17,6 +17,7 @@ public class AccountController implements Initializable
     public Button gameHistoryButton;
     public Button backButton;
     public Button statsButton;
+    public Button deleteAccountButton;
 
     public void onBackClicked()
     {

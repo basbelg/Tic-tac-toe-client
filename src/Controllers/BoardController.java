@@ -9,7 +9,6 @@ import java.util.ResourceBundle;
 
 public class BoardController implements Initializable
 {
-    public Button moveHistoryButton;
     public Button spectatorsButton;
     public GridPane board;
 

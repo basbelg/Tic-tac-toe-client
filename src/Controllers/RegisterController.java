@@ -15,6 +15,8 @@ import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable
 {
+    //IF ACCOUNTSUCCESSFULMESSAGE IS RECIEVED, UPDATE FIELDS IN CLIENT OBJECT
+    //private Client client;
     public Button confirmButton;
     public TextField enterFirstName;
     public TextField enterLastName;
@@ -29,7 +31,9 @@ public class RegisterController implements Initializable
                 !enterPassword.getText().equals("") && !enterConfirmPassword.getText().equals("") &&
                 enterPassword.getText().equals(enterConfirmPassword.getText()))
         {
-            //Send off data to the Player class to be sent to the Server through a thread
+            //Send off data to the Client class to be sent to the Server through a thread
+            //IF ACCOUNTFAILEDMESSAGE RETURNS, APPEND TO_STRING TO LABEL
+            //DO PLATFORM.RUNLATER(() ->
             if(confirmButton.getText().equals("Register"))
             {
                 try

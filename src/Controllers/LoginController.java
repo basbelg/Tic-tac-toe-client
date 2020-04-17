@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable
 {
+    //private Client client;
     public Button signInButton;
     public Button newUserButton;
     public TextField enterUsername;
@@ -52,6 +53,8 @@ public class LoginController implements Initializable
 
     public void onSignInClicked()
     {
+        //USE CLIENT OBJECT IN CONTROLLER TO SEND USERNAME AND PASSWORD TO SERVER FOR A QUERY
+
         users= new ArrayList<>();
         users.add(new User("Jon", "J", "O", "a"));
         users.add(new User("Bas", "J", "O", "b"));

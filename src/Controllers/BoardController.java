@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 
 public class BoardController implements Initializable
 {
+    //SENDING OUT MOVEMESSAGES, RECEIVING THROUGH UPDATE() MOVESUCCESSFUL AND MOVEFAILED
     public Button spectatorsButton;
     public GridPane board;
 

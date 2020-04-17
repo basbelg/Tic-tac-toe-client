@@ -14,6 +14,9 @@ import java.util.ResourceBundle;
 
 public class VsPlayerController implements Initializable
 {
+    //CREATELOBBY SENDS OUT A CREATE LOBBY MESSAGE TO SERVER
+    //ACTIVE LOBBIES LIST SHOULD BE A LOCAL FIELD CLIENT SIDE (IN CLIENT CLASS)
+    //private Client client;
     public Button createLobbyButton;
     public Button backButton;
     public ListView activeGamesList;

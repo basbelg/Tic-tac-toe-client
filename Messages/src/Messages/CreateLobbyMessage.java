@@ -1,17 +1,17 @@
 package Messages;
 
-import GameInterfaces.Game;
+import TicTacToe.TTT_Game;
 
 import java.io.Serializable;
 
 public class CreateLobbyMessage implements Serializable {
-    private Game newTTTGame;
+    private TTT_Game newTTTGame;
 
-    public CreateLobbyMessage(Game newTTTGame) {
+    public CreateLobbyMessage(TTT_Game newTTTGame) {
         this.newTTTGame = newTTTGame;
     }
 
-    public Game getNewTTTGame() {
+    public TTT_Game getNewTTTGame() {
         return newTTTGame;
     }
 }

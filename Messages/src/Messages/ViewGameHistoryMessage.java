@@ -1,6 +1,9 @@
 package Messages;
 
+import GameInterfaces.Move;
+
 import java.io.Serializable;
+import java.util.List;
 
 public class ViewGameHistoryMessage implements Serializable {
     List<List<Move>> gameHistories;

@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/GameInterfaces/GameListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/GameInterfaces/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/Messages/FullLobbyMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/TicTacToe/TTT_Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/TicTacToe/TTT_Evaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/TicTacToe/TTT_Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/TicTacToe/TTT_Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/GameListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/DataClasses/Move.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/GameInterfaces/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/GameInterfaces/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/CreateAIGameMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/CreateAIGameMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/CreateLobbyMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/CreateLobbyMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/GameLogMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/GameLogMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/MoveMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/MoveMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/ViewGameHistoryMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/ViewGameHistoryMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/Move.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameInterfaces/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameInterfaces/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Evaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Game.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -34,7 +56,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-12.0.2_windows-x64_bin-sdk/javafx-sdk-12.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Messages/src" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28235295" />
@@ -42,10 +64,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="TicTacToe" />
       <recent name="DataClasses" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\basbe\IdeaProjects\Tic-Tac-Toe\Messages\src" />
+      <recent name="C:\Users\basbe\IdeaProjects\Tic-Tac-Toe\src" />
     </key>
   </component>
   <component name="RunDashboard">

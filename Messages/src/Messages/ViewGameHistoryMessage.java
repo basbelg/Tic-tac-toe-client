@@ -9,8 +9,7 @@ public class ViewGameHistoryMessage implements Serializable {
     private int userId;
     List<List<Move>> gameHistories;
 
-    public ViewGameHistoryMessage(int userId) {
-        this.userId = userId;
+    public ViewGameHistoryMessage() {
     }
 
     public int getUserId() {
@@ -19,6 +18,10 @@ public class ViewGameHistoryMessage implements Serializable {
 
     public List<List<Move>> getGameHistories() {
         return gameHistories;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public void setGameHistories(List<List<Move>> gameHistories) {

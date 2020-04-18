@@ -10,9 +10,7 @@ public class GameLogMessage implements Serializable {
     private String gameId;
     private List<Move> moveHistory;
 
-    public GameLogMessage(int userId, String gameId) {
-        this.userId = userId;
-        this.gameId = gameId;
+    public GameLogMessage() {
     }
 
     public int getUserId() {
@@ -25,6 +23,14 @@ public class GameLogMessage implements Serializable {
 
     public List<Move> getMoveHistory() {
         return moveHistory;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public void setGameId(String gameId) {
+        this.gameId = gameId;
     }
 
     public void setMoveHistory(List<Move> moveHistory) {

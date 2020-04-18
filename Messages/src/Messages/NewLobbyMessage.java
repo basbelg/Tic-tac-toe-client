@@ -6,9 +6,7 @@ public class NewLobbyMessage implements Serializable {
     private String creatorUsername;
     private String gameLobbyId;
 
-    public NewLobbyMessage(String creatorUsername, String gameLobbyId) {
-        this.creatorUsername = creatorUsername;
-        this.gameLobbyId = gameLobbyId;
+    public NewLobbyMessage() {
     }
 
     public String getCreatorUsername() {
@@ -17,5 +15,13 @@ public class NewLobbyMessage implements Serializable {
 
     public String getGameLobbyId() {
         return gameLobbyId;
+    }
+
+    public void setCreatorUsername(String creatorUsername) {
+        this.creatorUsername = creatorUsername;
+    }
+
+    public void setGameLobbyId(String gameLobbyId) {
+        this.gameLobbyId = gameLobbyId;
     }
 }

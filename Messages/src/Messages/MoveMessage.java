@@ -11,11 +11,7 @@ public class MoveMessage implements Serializable {
     private String gameId;
     private int movingPlayerId;
 
-    public MoveMessage(Move nextMove, LocalDateTime timeMade, String gameId, int movingPlayerId) {
-        this.nextMove = nextMove;
-        this.timeMade = timeMade;
-        this.gameId = gameId;
-        this.movingPlayerId = movingPlayerId;
+    public MoveMessage() {
     }
 
     public Move getNextMove() {
@@ -32,5 +28,21 @@ public class MoveMessage implements Serializable {
 
     public int getMovingPlayerId() {
         return movingPlayerId;
+    }
+
+    public void setNextMove(Move nextMove) {
+        this.nextMove = nextMove;
+    }
+
+    public void setTimeMade(LocalDateTime timeMade) {
+        this.timeMade = timeMade;
+    }
+
+    public void setGameId(String gameId) {
+        this.gameId = gameId;
+    }
+
+    public void setMovingPlayerId(int movingPlayerId) {
+        this.movingPlayerId = movingPlayerId;
     }
 }

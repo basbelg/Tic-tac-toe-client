@@ -84,15 +84,27 @@ public class Client implements Runnable {
                 Packet p = new Packet("CNT-MSG", msg);
                 output.writeObject(p);
             }
+            else if (msg instanceof CreateAccountMessage) {
+                Packet p = new Packet("CAC-MSG", msg);
+                output.writeObject(p);
+            }
             else if (msg instanceof CreateAIGameMessage) {
                 Packet p = new Packet("CAI-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof CreateLobbyMessage) {
+                Packet p = new Packet("CLB-MSG", msg);
                 output.writeObject(p);
             }
             else if (msg instanceof DeactivateAccountMessage) {
                 Packet p = new Packet("DAC-MSG", msg);
                 output.writeObject(p);
             }
-            else if (msg instanceof PictureMsg) {
+            else if (msg instanceof GameLogMessage) {
+                Packet p = new Packet("LOG-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof PictureMsg) {   // CHANGE FROM HERE
                 Packet p = new Packet("PIC-MSG", msg);
                 output.writeObject(p);
             }

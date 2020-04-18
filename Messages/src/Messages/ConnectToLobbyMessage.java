@@ -10,10 +10,7 @@ public class ConnectToLobbyMessage implements Serializable {
     private User player2;
     private LocalDateTime startTime;
 
-    public ConnectToLobbyMessage(String lobbyGameId, User player2, LocalDateTime startTime) {
-        this.lobbyGameId = lobbyGameId;
-        this.player2 = player2;
-        this.startTime = startTime;
+    public ConnectToLobbyMessage() {
     }
 
     public String getLobbyGameId() {
@@ -26,5 +23,17 @@ public class ConnectToLobbyMessage implements Serializable {
 
     public LocalDateTime getStartTime() {
         return startTime;
+    }
+
+    public void setLobbyGameId(String lobbyGameId) {
+        this.lobbyGameId = lobbyGameId;
+    }
+
+    public void setPlayer2(User player2) {
+        this.player2 = player2;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
     }
 }

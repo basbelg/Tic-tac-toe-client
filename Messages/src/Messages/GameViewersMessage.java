@@ -10,9 +10,7 @@ public class GameViewersMessage implements Serializable {
     private String gameId;
     private List<Spectator> spectators;
 
-    public GameViewersMessage(int userId, String gameId) {
-        this.userId = userId;
-        this.gameId = gameId;
+    public GameViewersMessage() {
     }
 
     public int getUserId() {
@@ -25,6 +23,14 @@ public class GameViewersMessage implements Serializable {
 
     public List<Spectator> getSpectators() {
         return spectators;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public void setGameId(String gameId) {
+        this.gameId = gameId;
     }
 
     public void setSpectators(List<Spectator> spectators) {

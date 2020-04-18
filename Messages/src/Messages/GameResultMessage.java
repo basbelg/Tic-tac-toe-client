@@ -6,9 +6,15 @@ public class GameResultMessage implements Serializable {
     boolean isPlayer1Win;
     boolean isPlayer2Win;
 
-    public GameResultMessage(boolean isPlayer1Win, boolean isPlayer2Win) {
-        this.isPlayer1Win = isPlayer1Win;
-        this.isPlayer2Win = isPlayer2Win;
+    public GameResultMessage() {
+    }
+
+    public void setPlayer1Win(boolean player1Win) {
+        isPlayer1Win = player1Win;
+    }
+
+    public void setPlayer2Win(boolean player2Win) {
+        isPlayer2Win = player2Win;
     }
 
     @Override

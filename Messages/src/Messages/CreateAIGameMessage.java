@@ -8,10 +8,7 @@ public class CreateAIGameMessage implements Serializable {
     private String gameLobbyId; // Player2 of this game will always be an AI player (whose ID is predefined to be 1)
     private LocalDateTime startTime;
 
-    public CreateAIGameMessage(int player1Id, String gameLobbyId, LocalDateTime startTime) {
-        this.player1Id = player1Id;
-        this.gameLobbyId = gameLobbyId;
-        this.startTime = startTime;
+    public CreateAIGameMessage() {
     }
 
     public int getPlayer1Id() {
@@ -24,5 +21,17 @@ public class CreateAIGameMessage implements Serializable {
 
     public LocalDateTime getStartTime() {
         return startTime;
+    }
+
+    public void setPlayer1Id(int player1Id) {
+        this.player1Id = player1Id;
+    }
+
+    public void setGameLobbyId(String gameLobbyId) {
+        this.gameLobbyId = gameLobbyId;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
     }
 }

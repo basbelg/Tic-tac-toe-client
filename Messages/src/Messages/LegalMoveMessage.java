@@ -5,11 +5,14 @@ import GameInterfaces.Move;
 public class LegalMoveMessage {
     private Move nextMove;
 
-    public LegalMoveMessage(Move nextMove) {
-        this.nextMove = nextMove;
+    public LegalMoveMessage() {
     }
 
     public Move getNextMove() {
         return nextMove;
+    }
+
+    public void setNextMove(Move nextMove) {
+        this.nextMove = nextMove;
     }
 }

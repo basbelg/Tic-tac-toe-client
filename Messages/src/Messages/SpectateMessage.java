@@ -7,9 +7,7 @@ public class SpectateMessage implements Serializable {
     private String gameId;
     private int[][] gameBoard;
 
-    public SpectateMessage(int spectatorId, String gameId) {
-        this.spectatorId = spectatorId;
-        this.gameId = gameId;
+    public SpectateMessage() {
     }
 
     public int getSpectatorId() {
@@ -22,6 +20,14 @@ public class SpectateMessage implements Serializable {
 
     public int[][] getGameBoard() {
         return gameBoard;
+    }
+
+    public void setSpectatorId(int spectatorId) {
+        this.spectatorId = spectatorId;
+    }
+
+    public void setGameId(String gameId) {
+        this.gameId = gameId;
     }
 
     public void setGameBoard(int[][] gameBoard) {

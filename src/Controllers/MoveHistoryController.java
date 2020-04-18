@@ -2,15 +2,20 @@ package Controllers;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DeleteAccountController implements Initializable
+public class MoveHistoryController implements Initializable
 {
-    public Button confirmButton;
+    public Label moveNumLabel;
+    public Button nextButton;
+    public Button previousButton;
     public Button cancelButton;
+    public GridPane board;
 
     public void onCancelClicked()
     {

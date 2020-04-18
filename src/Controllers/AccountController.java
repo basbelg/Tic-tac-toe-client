@@ -62,6 +62,26 @@ public class AccountController implements Initializable
         }
     }
 
+    public void onGameHistoriesClicked()
+    {
+        try
+        {
+            //pass in a list of all previous games
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/GameHistories.fxml"));
+            Parent root = loader.load();
+            GameHistoriesController ghc = loader.getController();
+            Stage stage = (Stage) gameHistoryButton.getScene().getWindow();
+            stage.close();
+            stage.setTitle("Game Histories");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
     public void onStatsClicked()
     {
         //SEND W/L/T RATIO OVER TO STATS WINDOW TO BE DISPLAYED (Controller object)
@@ -72,6 +92,24 @@ public class AccountController implements Initializable
             StatsController sc = loader.getController();
             Stage stage = new Stage();
             stage.setTitle("Statistics");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void onDeleteAccountClicked()
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/DeleteAccount.fxml"));
+            Parent root = loader.load();
+            DeleteAccountController dac = loader.getController();
+            Stage stage = new Stage();
+            stage.setTitle("Delete Account");
             stage.setScene(new Scene(root));
             stage.show();
         }

@@ -11,6 +11,6 @@
       <Label layoutX="113.0" layoutY="170.0" text="Password:" />
       <TextField fx:id="enterUsername" layoutX="197.0" layoutY="103.0" onKeyReleased="#onUsernameChanged" promptText="Enter Username..." />
       <TextField fx:id="enterPassword" layoutX="197.0" layoutY="166.0" onKeyReleased="#onPasswordChanged" promptText="Enter Password..." />
-      <Label fx:id="invalidLabel" layoutX="370.0" layoutY="99.0" prefHeight="87.0" prefWidth="149.0" />
+      <Label fx:id="invalidLabel" layoutX="370.0" layoutY="99.0" prefHeight="87.0" prefWidth="149.0" textFill="RED" />
    </children>
 </AnchorPane>

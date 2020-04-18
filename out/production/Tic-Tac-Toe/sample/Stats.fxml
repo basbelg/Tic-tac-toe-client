@@ -2,13 +2,20 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="224.0" prefWidth="393.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StatsController">
    <children>
       <Button fx:id="exitButton" layoutX="164.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#onExitClicked" prefHeight="25.0" prefWidth="65.0" text="Exit" />
-      <Label layoutX="62.0" layoutY="47.0" text="Win/Loss/Tie Ratio:" />
-      <Label layoutX="87.0" layoutY="112.0" text="Games Played:" />
-      <Label fx:id="wltLabel" layoutX="189.0" layoutY="47.0" text="0/0/0" />
-      <Label fx:id="gamesPlayedLabel" layoutX="189.0" layoutY="112.0" text="0" />
+      <Label layoutX="28.0" layoutY="42.0" text="Win/Loss/Tie Ratio:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="65.0" layoutY="107.0" text="Games Played:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="wltLabel" layoutX="215.0" layoutY="47.0" text="0/0/0" />
+      <Label fx:id="gamesPlayedLabel" layoutX="212.0" layoutY="112.0" text="0" />
    </children>
 </AnchorPane>

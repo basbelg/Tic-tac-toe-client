@@ -17,5 +17,6 @@
       <TextField fx:id="enterPassword" layoutX="165.0" layoutY="245.0" prefHeight="25.0" prefWidth="270.0" promptText="Enter Password..." />
       <TextField fx:id="enterConfirmPassword" layoutX="165.0" layoutY="304.0" prefHeight="25.0" prefWidth="270.0" promptText="Confirm Password..." />
       <Label fx:id="errorLabel" layoutX="448.0" layoutY="70.0" prefHeight="263.0" prefWidth="195.0" textFill="RED" />
+      <Button fx:id="cancelButton" layoutX="516.0" layoutY="391.0" mnemonicParsing="false" onMouseClicked="#onCancelClicked" prefHeight="25.0" prefWidth="60.0" text="Cancel" />
    </children>
 </AnchorPane>

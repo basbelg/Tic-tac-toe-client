@@ -18,6 +18,7 @@ public class RegisterController implements Initializable
     //IF ACCOUNTSUCCESSFULMESSAGE IS RECIEVED, UPDATE FIELDS IN CLIENT OBJECT
     //private Client client;
     public Button confirmButton;
+    public Button cancelButton;
     public TextField enterFirstName;
     public TextField enterLastName;
     public TextField enterUsername;
@@ -101,6 +102,43 @@ public class RegisterController implements Initializable
             errorLabel.setText(error.toString());
         }
 
+    }
+
+    public void onCancelClicked()
+    {
+        if(confirmButton.getText().equals("Register"))
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
+                Parent root = loader.load();
+                LoginController lc = loader.getController();
+                Stage stage = (Stage) confirmButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Login");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        else if(confirmButton.getText().equals("Confirm"))
+        {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
+                Parent root = loader.load();
+                AccountController ac = loader.getController();
+                Stage stage = (Stage) confirmButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Account");
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override

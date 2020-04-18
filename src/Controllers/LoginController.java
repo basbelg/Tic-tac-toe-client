@@ -1,5 +1,6 @@
 package Controllers;
 
+import Client.Client;
 import DataClasses.User;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable
 {
-    //private Client client;
+    private Client client;
     public Button signInButton;
     public Button newUserButton;
     public TextField enterUsername;
@@ -108,6 +109,7 @@ public class LoginController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
+    // TEMP: USED TO CHECK USERNAME AND PASSWORD BEFORE WE HAVE CODE TO CONNECT TO A SERVER
     public boolean contains(String username, String pass)
     {
         for(int i = 0; i < users.size(); i++)

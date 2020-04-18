@@ -8,10 +8,11 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AccountController implements Initializable
+public class AccountController implements BaseController, Initializable
 {
     //GAME HISTORY WINDOW, DELETE ACCOUNT WINDOW
     public Button modAccountButton;
@@ -121,4 +122,9 @@ public class AccountController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
+
+    @Override
+    public void update(Serializable msg) {
+
+    }
 }

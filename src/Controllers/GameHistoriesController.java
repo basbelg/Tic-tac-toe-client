@@ -8,10 +8,11 @@ import javafx.stage.Stage;
 
 import javax.swing.text.html.ListView;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GameHistoriesController implements Initializable
+public class GameHistoriesController implements BaseController, Initializable
 {
     public ListView gameList;
     private int doubleClicked = 0;
@@ -42,4 +43,9 @@ public class GameHistoriesController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
+
+    @Override
+    public void update(Serializable msg) {
+
+    }
 }

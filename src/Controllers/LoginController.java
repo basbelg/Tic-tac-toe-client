@@ -12,12 +12,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable
+public class LoginController implements BaseController, Initializable
 {
     private Client client;
     public Button signInButton;
@@ -120,5 +121,10 @@ public class LoginController implements Initializable
             }
         }
         return false;
+    }
+
+    @Override
+    public void update(Serializable msg) {
+
     }
 }

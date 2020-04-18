@@ -9,10 +9,11 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class VsPlayerController implements Initializable
+public class VsPlayerController implements BaseController, Initializable
 {
     //CREATELOBBY SENDS OUT A CREATE LOBBY MESSAGE TO SERVER
     //ACTIVE LOBBIES LIST SHOULD BE A LOCAL FIELD CLIENT SIDE (IN CLIENT CLASS)
@@ -42,4 +43,9 @@ public class VsPlayerController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
+
+    @Override
+    public void update(Serializable msg) {
+        
+    }
 }

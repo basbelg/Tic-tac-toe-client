@@ -8,10 +8,11 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuController implements Initializable
+public class MenuController implements BaseController, Initializable
 {
     public Button vsPlayerButton;
     public Button vsAIButton;
@@ -77,4 +78,9 @@ public class MenuController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
+
+    @Override
+    public void update(Serializable msg) {
+
+    }
 }

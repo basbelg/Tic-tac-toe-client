@@ -5,6 +5,10 @@ public final class MessageFactory {
     }
 
     public static Object getMessage(String type) {
-        return new Object();
+        switch(type) {
+
+        }
+
+        return null;
     }
 }

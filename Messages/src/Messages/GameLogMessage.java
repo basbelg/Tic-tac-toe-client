@@ -6,11 +6,17 @@ import java.io.Serializable;
 import java.util.List;
 
 public class GameLogMessage implements Serializable {
+    private int userId;
     private String gameId;
     private List<Move> moveHistory;
 
-    public GameLogMessage(String gameId) {
+    public GameLogMessage(int userId, String gameId) {
+        this.userId = userId;
         this.gameId = gameId;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 
     public String getGameId() {

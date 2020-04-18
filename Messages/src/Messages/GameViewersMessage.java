@@ -6,11 +6,17 @@ import java.io.Serializable;
 import java.util.List;
 
 public class GameViewersMessage implements Serializable {
+    private int userId;
     private String gameId;
     private List<Spectator> spectators;
 
-    public GameViewersMessage(String gameId) {
+    public GameViewersMessage(int userId, String gameId) {
+        this.userId = userId;
         this.gameId = gameId;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 
     public String getGameId() {

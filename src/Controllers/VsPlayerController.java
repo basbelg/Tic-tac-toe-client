@@ -46,6 +46,6 @@ public class VsPlayerController implements BaseController, Initializable
 
     @Override
     public void update(Serializable msg) {
-        
+
     }
 }

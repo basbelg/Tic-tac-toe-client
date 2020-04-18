@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Messages/src/Messages/InactiveGameMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -207,7 +209,7 @@
       <workItem from="1586613903053" duration="10581000" />
       <workItem from="1586700892058" duration="11504000" />
       <workItem from="1586808104420" duration="6101000" />
-      <workItem from="1587247806381" duration="5740000" />
+      <workItem from="1587245377827" duration="5413000" />
     </task>
     <servers />
   </component>

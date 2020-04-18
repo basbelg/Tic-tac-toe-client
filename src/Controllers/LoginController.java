@@ -1,4 +1,4 @@
-package Game;
+package Controllers;
 
 import DataClasses.User;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable
 {
+    //private Client client;
     public Button signInButton;
     public Button newUserButton;
     public TextField enterUsername;
@@ -52,6 +53,8 @@ public class LoginController implements Initializable
 
     public void onSignInClicked()
     {
+        //USE CLIENT OBJECT IN CONTROLLER TO SEND USERNAME AND PASSWORD TO SERVER FOR A QUERY
+
         users= new ArrayList<>();
         users.add(new User("Jon", "J", "O", "a"));
         users.add(new User("Bas", "J", "O", "b"));
@@ -59,7 +62,21 @@ public class LoginController implements Initializable
 
         if(contains(enterUsername.getText(), enterPassword.getText()))
         {
-            invalidLabel.setText("Logged in");
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                Parent root = loader.load();
+                MenuController mc = loader.getController();
+                Stage stage = (Stage) newUserButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Menu");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
         }
         else
         {
@@ -78,6 +95,7 @@ public class LoginController implements Initializable
             Stage stage = (Stage) newUserButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Register");
+            rc.confirmButton.setText("Register");
             stage.setScene(new Scene(root));
             stage.show();
         }

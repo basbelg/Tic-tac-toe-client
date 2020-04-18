@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AccountController">
+   <children>
+      <Button fx:id="modAccountButton" layoutX="225.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#onModAccountClicked" text="Modify Account" />
+      <Button fx:id="gameHistoryButton" layoutX="225.0" layoutY="166.0" mnemonicParsing="false" onMouseClicked="#onGameHistoriesClicked" prefHeight="25.0" prefWidth="101.0" text="Game Histories" />
+      <Button fx:id="backButton" layoutX="441.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="77.0" text="Back" />
+      <Button fx:id="statsButton" layoutX="225.0" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#onStatsClicked" prefHeight="25.0" prefWidth="101.0" text="Stats" />
+      <Button fx:id="deleteAccountButton" layoutX="225.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#onDeleteAccountClicked" prefHeight="25.0" prefWidth="101.0" text="Delete Account" />
+   </children>
+</AnchorPane>

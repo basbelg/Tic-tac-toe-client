@@ -35,7 +35,9 @@ public class Client implements Runnable {
 
             while(!thread.isInterrupted()) {
                 //read input from server
-                Packet p = (Packet)input.readObject();
+                Packet p = (Packet)input.readObject();  // WHEN RECEIVING A NewLobbyMessage OR A NewAILobbyMessage: APPEND
+                                                        // TO THE ACTIVE LOBBIES LIST, AND CHECK IF THE CURRENT CONTROLLER
+                                                        // IS AN instanceof THE VsPlayerController BEFORE CALLING update
                 String type = p.getType();
                 switch(type) {
                     case "REG-MSG":

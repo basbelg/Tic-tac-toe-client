@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/GameLogMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/GameLogMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/InactiveGameMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/InactiveGameMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/LegalMoveMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/LegalMoveMessage.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +205,7 @@
       <workItem from="1586613903053" duration="10581000" />
       <workItem from="1586700892058" duration="11504000" />
       <workItem from="1586808104420" duration="6101000" />
-      <workItem from="1587245377827" duration="7426000" />
+      <workItem from="1587245377827" duration="8064000" />
     </task>
     <servers />
   </component>

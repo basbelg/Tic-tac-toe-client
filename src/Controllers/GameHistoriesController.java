@@ -63,7 +63,7 @@ public class GameHistoriesController implements BaseController, Initializable
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
                 Parent root = loader.load();
                 MoveHistoryController mhc = loader.getController();
-                mhc.passInfo(client);
+                mhc.passInfo((GameLogMessage) msg);
                 Stage stage = new Stage();
                 stage.setTitle("Move History");
                 stage.setScene(new Scene(root));

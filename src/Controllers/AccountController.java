@@ -71,7 +71,6 @@ public class AccountController implements BaseController, Initializable
     {
         try
         {
-            //pass in a list of all previous games
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/GameHistories.fxml"));
             Parent root = loader.load();
             GameHistoriesController ghc = loader.getController();

@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import DataClasses.GameInfo;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -82,9 +83,9 @@ public class GameHistoriesController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
 
-        for(String s : client.getGameIds())
+        for(GameInfo g : client.getGames())
         {
-            gameList.getItems().add(new Label(s));
+            gameList.getItems().add(new Label("VS. " + g.getPlayer2Username() + "\t" + g.getStartTime().toString()));
         }
     }
 }

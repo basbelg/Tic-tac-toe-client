@@ -1,6 +1,8 @@
 package Messages;
 
-public class InactiveGameMessage {
+import java.io.Serializable;
+
+public class InactiveGameMessage implements Serializable {
     String finishedGameId;
 
     public InactiveGameMessage() {

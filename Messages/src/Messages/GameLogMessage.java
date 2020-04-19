@@ -3,12 +3,18 @@ package Messages;
 import GameInterfaces.Move;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class GameLogMessage implements Serializable {
     private int userId;
     private String gameId;
-    private List<Move> moveHistory;
+    private String winner;
+    private String player1Username;
+    private String player2Username;
+    private LocalDateTime gameStarted;
+    private LocalDateTime gameEnded;
+    private List<Move> moveHistory; //TO-DO: MAYBE ADD THE TIME THE MOVE WAS MADE IN THE MOVE CLASS
 
     public GameLogMessage() {
     }
@@ -21,6 +27,26 @@ public class GameLogMessage implements Serializable {
         return gameId;
     }
 
+    public String getWinner() {
+        return winner;
+    }
+
+    public String getPlayer1Username() {
+        return player1Username;
+    }
+
+    public String getPlayer2Username() {
+        return player2Username;
+    }
+
+    public LocalDateTime getGameStarted() {
+        return gameStarted;
+    }
+
+    public LocalDateTime getGameEnded() {
+        return gameEnded;
+    }
+
     public List<Move> getMoveHistory() {
         return moveHistory;
     }
@@ -31,6 +57,26 @@ public class GameLogMessage implements Serializable {
 
     public void setGameId(String gameId) {
         this.gameId = gameId;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
+
+    public void setPlayer1Username(String player1Username) {
+        this.player1Username = player1Username;
+    }
+
+    public void setPlayer2Username(String player2Username) {
+        this.player2Username = player2Username;
+    }
+
+    public void setGameStarted(LocalDateTime gameStarted) {
+        this.gameStarted = gameStarted;
+    }
+
+    public void setGameEnded(LocalDateTime gameEnded) {
+        this.gameEnded = gameEnded;
     }
 
     public void setMoveHistory(List<Move> moveHistory) {

@@ -1,11 +1,13 @@
 package Controllers;
 
 import Client.Client;
+import DataClasses.GameInfo;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
@@ -56,20 +58,23 @@ public class GameHistoriesController implements BaseController, Initializable
     @Override
     public void update(Serializable msg)
     {
-        try
+        if(!(GameLogMessage) msg.getMoveHistory().equals(null))
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
-            Parent root = loader.load();
-            MoveHistoryController mhc = loader.getController();
-            mhc.passInfo(client);
-            Stage stage = new Stage();
-            stage.setTitle("Move History");
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
+                Parent root = loader.load();
+                MoveHistoryController mhc = loader.getController();
+                mhc.passInfo((GameLogMessage) msg);
+                Stage stage = new Stage();
+                stage.setTitle("Move History");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -77,5 +82,10 @@ public class GameHistoriesController implements BaseController, Initializable
     {
         this.client = client;
         client.setController(this);
+
+        for(GameInfo g : client.getGames())
+        {
+            gameList.getItems().add(new Label("VS. " + g.getPlayer2Username() + "\t" + g.getStartTime().toString()));
+        }
     }
 }

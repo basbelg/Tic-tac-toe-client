@@ -27,6 +27,8 @@ public final class MessageFactory {
 
             case "GRE-MSG": return new GameResultMessage();
 
+            case "GMP-MSG": return new GamesPlayedMessage();
+
             case "GVW-MSG": return new GameViewersMessage();
 
             case "ILM-MSG": return new IllegalMoveMessage();

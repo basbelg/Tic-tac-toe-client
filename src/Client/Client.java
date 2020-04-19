@@ -1,6 +1,7 @@
 package Client;
 
 import Controllers.BaseController;
+import DataClasses.GameInfo;
 import DataClasses.User;
 
 import java.io.IOException;
@@ -12,12 +13,7 @@ import java.util.List;
 
 public class Client implements Runnable {
     private BaseController controller;
-    private List<String> gameIds;
-
-    public List<String> getGameIds() {
-        return gameIds;
-    }
-
+    private List<GameInfo> games;
     private Socket clientSocket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
@@ -148,5 +144,10 @@ public class Client implements Runnable {
 
     public void setController(BaseController con) {
         controller = con;
+    }
+
+
+    public List<GameInfo> getGames() {
+        return games;
     }
 }

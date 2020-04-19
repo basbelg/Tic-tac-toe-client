@@ -10,8 +10,7 @@ public class GameViewersMessage implements Serializable {
     private String gameId;
     private List<Spectator> spectators;
 
-    public GameViewersMessage() {
-    }
+    public GameViewersMessage() {}
 
     public int getUserId() {
         return userId;

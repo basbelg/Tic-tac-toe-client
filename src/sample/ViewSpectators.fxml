@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.ViewSpectatorsController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="399.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewSpectatorsController">
+   <children>
+      <ListView fx:id="spectatorsList" layoutX="25.0" layoutY="14.0" prefHeight="328.0" prefWidth="346.0" />
+      <Button fx:id="closeButton" layoutX="303.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#onCloseClicked" prefHeight="25.0" prefWidth="68.0" text="Close" />
+   </children>
 </AnchorPane>

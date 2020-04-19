@@ -1,17 +1,23 @@
 package Controllers;
 
+import Client.Client;
 import GameInterfaces.Move;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class MoveHistoryController implements Initializable
+public class MoveHistoryController implements BaseController, Initializable
 {
     public Label moveNumLabel;
     public Button nextButton;
@@ -23,18 +29,36 @@ public class MoveHistoryController implements Initializable
     private GameLogMessage glm;
     private int moveCounter = 0;
     private String turn = "X";
+    private Client client;
 
     public void onCancelClicked()
     {
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/GameHistories.fxml"));
+            Parent root = loader.load();
+            GameHistoriesController ghc = loader.getController();
+            ghc.passInfo(client);
+            Stage stage = (Stage) cancelButton.getScene().getWindow();
+            stage.close();
+            stage.setTitle("Game Histories");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
-    public void passInfo(GameLogMessage glm)
+    public void passInfo(Client client, GameLogMessage glm)
     {
+        this.client = client;
+        client.setController(this);
         this.glm = glm;
 
         int x = glm.getMoveHistory().get(0).getNextMove().getRow();
@@ -73,7 +97,10 @@ public class MoveHistoryController implements Initializable
 
     public void onSpectatorsClicked()
     {
-
+        GameViewersMessage gvm = (GameViewersMessage) MessageFactory.getMessage("GVW-MSG");
+        gvm.setUserId(glm.getUserId());
+        gvm.setGameId(glm.getGameId());
+        client.update(gvm);
     }
 
     private String getTurn()
@@ -87,6 +114,29 @@ public class MoveHistoryController implements Initializable
         {
             turn = "X";
             return "O";
+        }
+    }
+
+    @Override
+    public void update(Serializable msg)
+    {
+        if(msg instanceof GameViewersMessage)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
+                Parent root = loader.load();
+                ViewSpectatorsController vsc = loader.getController();
+                vsc.passInfo(((GameViewersMessage) msg).getSpectators());
+                Stage stage = new Stage();
+                stage.setTitle("Spectators");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 }

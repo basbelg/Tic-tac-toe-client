@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
@@ -80,5 +81,10 @@ public class GameHistoriesController implements BaseController, Initializable
     {
         this.client = client;
         client.setController(this);
+
+        for(String s : client.getGameIds())
+        {
+            gameList.getItems().add(new Label(s));
+        }
     }
 }

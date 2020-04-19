@@ -20,14 +20,12 @@ import java.util.ResourceBundle;
 
 public class LoginController implements BaseController, Initializable
 {
-    //private Client client;
+    private Client client = new Client(this);
     public Button signInButton;
     public Button newUserButton;
     public TextField enterUsername;
     public TextField enterPassword;
     public Label invalidLabel;
-
-    public List<User> users;
 
     public void onUsernameChanged()
     {
@@ -55,36 +53,10 @@ public class LoginController implements BaseController, Initializable
 
     public void onSignInClicked()
     {
-        //USE CLIENT OBJECT IN CONTROLLER TO SEND USERNAME AND PASSWORD TO SERVER FOR A QUERY
-
-        users= new ArrayList<>();
-        users.add(new User("Jon", "J", "O", "a"));
-        users.add(new User("Bas", "J", "O", "b"));
-        users.add(new User("Ril", "J", "O", "c"));
-
-        if(contains(enterUsername.getText(), enterPassword.getText()))
-        {
-            try
-            {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
-                Parent root = loader.load();
-                MenuController mc = loader.getController();
-                Stage stage = (Stage) newUserButton.getScene().getWindow();
-                stage.close();
-                stage.setTitle("Menu");
-                stage.setScene(new Scene(root));
-                stage.show();
-            }
-            catch(IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        else
-        {
-            invalidLabel.setText("INVALID CREDENTIALS");
-        }
-
+        LoginMessage lgm = (LoginMessage) MessageFactory.getMessage("LOG-MSG");
+        lgm.setUsername(enterUsername.getText());
+        lgm.setPassword(enterPassword.getText());
+        client.update(lgm);
     }
 
     public void onNewUserClicked()
@@ -94,6 +66,7 @@ public class LoginController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Register.fxml"));
             Parent root = loader.load();
             RegisterController rc = loader.getController();
+            rc.passInfo(client);
             Stage stage = (Stage) newUserButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Register");
@@ -110,21 +83,33 @@ public class LoginController implements BaseController, Initializable
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
-    // TEMP: USED TO CHECK USERNAME AND PASSWORD BEFORE WE HAVE CODE TO CONNECT TO A SERVER
-    public boolean contains(String username, String pass)
+    @Override
+    public void update(Serializable msg)
     {
-        for(int i = 0; i < users.size(); i++)
+        if(msg instanceof LoginSuccessfulMessage)
         {
-            if(username.equals(users.get(i).getUsername()) && pass.equals(users.get(i).getPassword()))
+            client.setUser(((LoginSuccessfulMessage) msg).getUser());
+            try
             {
-                return true;
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                Parent root = loader.load();
+                MenuController mc = loader.getController();
+                mc.passInfo(client);
+                Stage stage = (Stage) newUserButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Menu");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
             }
         }
-        return false;
-    }
-
-    @Override
-    public void update(Serializable msg) {
+        else if(msg instanceof LoginFailedMessage)
+        {
+            invalidLabel.setText(((LoginFailedMessage) msg).toString());
+        }
 
     }
 }

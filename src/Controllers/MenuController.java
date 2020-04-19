@@ -1,5 +1,6 @@
 package Controllers;
 
+import Client.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -14,6 +15,7 @@ import java.util.ResourceBundle;
 
 public class MenuController implements BaseController, Initializable
 {
+    private Client client;
     public Button vsPlayerButton;
     public Button vsAIButton;
     public Button accountButton;
@@ -26,6 +28,7 @@ public class MenuController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/VsPlayer.fxml"));
             Parent root = loader.load();
             VsPlayerController vpc = loader.getController();
+            vpc.passInfo(client);
             Stage stage = (Stage) vsPlayerButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Tic-Tac-Toe");
@@ -45,6 +48,7 @@ public class MenuController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
             Parent root = loader.load();
             AccountController ac = loader.getController();
+            ac.passInfo(client);
             Stage stage = (Stage) accountButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Account");
@@ -80,7 +84,11 @@ public class MenuController implements BaseController, Initializable
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     @Override
-    public void update(Serializable msg) {
+    public void update(Serializable msg) {}
 
+    public void passInfo(Client client)
+    {
+        this.client = client;
+        client.setController(this);
     }
 }

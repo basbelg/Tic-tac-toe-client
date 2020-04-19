@@ -25,4 +25,6 @@ public class MoveHistoryController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
+
+    public void passInfo(){}
 }

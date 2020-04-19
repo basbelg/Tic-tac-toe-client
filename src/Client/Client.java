@@ -8,9 +8,16 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
+import java.util.List;
 
 public class Client implements Runnable {
     private BaseController controller;
+    private List<String> gameIds;
+
+    public List<String> getGameIds() {
+        return gameIds;
+    }
+
     private Socket clientSocket;
     private ObjectInputStream input;
     private ObjectOutputStream output;
@@ -106,8 +113,28 @@ public class Client implements Runnable {
                 Packet p = new Packet("LOG-MSG", msg);
                 output.writeObject(p);
             }
-            else if (msg instanceof PictureMsg) {   // CHANGE FROM HERE
-                Packet p = new Packet("PIC-MSG", msg);
+            else if (msg instanceof GameViewersMessage) {   // CHANGE FROM HERE
+                Packet p = new Packet("GVW-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof LoginMessage)
+            {
+                Packet p = new Packet("LOG-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof MoveMessage)
+            {
+                Packet p = new Packet("MOV-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof SpectateMessage)
+            {
+                Packet p = new Packet("SPC-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof UpdateAccountInfoMessage)
+            {
+                Packet p = new Packet("UPA-MSG", msg);
                 output.writeObject(p);
             }
             else {
@@ -119,7 +146,7 @@ public class Client implements Runnable {
         }
     }
 
-    public void SetController(BaseController con) {
+    public void setController(BaseController con) {
         controller = con;
     }
 }

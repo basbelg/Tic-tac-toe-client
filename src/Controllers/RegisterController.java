@@ -1,5 +1,7 @@
 package Controllers;
 
+import Client.Client;
+import DataClasses.User;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -17,7 +19,7 @@ import java.util.ResourceBundle;
 public class RegisterController implements BaseController, Initializable
 {
     //IF ACCOUNTSUCCESSFULMESSAGE IS RECIEVED, UPDATE FIELDS IN CLIENT OBJECT
-    //private Client client;
+    private Client client;
     public Button confirmButton;
     public Button cancelButton;
     public TextField enterFirstName;
@@ -36,45 +38,10 @@ public class RegisterController implements BaseController, Initializable
             //Send off data to the Client class to be sent to the Server through a thread
             //IF ACCOUNTFAILEDMESSAGE RETURNS, APPEND TO_STRING TO LABEL
             //DO PLATFORM.RUNLATER(() ->
-            if(confirmButton.getText().equals("Register"))
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
-                    Parent root = loader.load();
-                    LoginController lc = loader.getController();
-                    Stage stage = (Stage) confirmButton.getScene().getWindow();
-                    stage.close();
-                    stage.setTitle("Login");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            else if(confirmButton.getText().equals("Confirm"))
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
-                    Parent root = loader.load();
-                    AccountController ac = loader.getController();
-                    Stage stage = (Stage) confirmButton.getScene().getWindow();
-                    stage.close();
-                    stage.setTitle("Account");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-
-
-
+            User newUser = new User(enterUsername.getText(), enterFirstName.getText(), enterLastName.getText(), enterPassword.getText());
+            CreateAccountMessage cam = (CreateAccountMessage) MessageFactory.getMessage("CAC-MSG");
+            cam.setNewUser(newUser);
+            client.update(cam);
         }
         else
         {
@@ -146,7 +113,72 @@ public class RegisterController implements BaseController, Initializable
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     @Override
-    public void update(Serializable msg) {
+    public void update(Serializable msg)
+    {
+        if(confirmButton.getText().equals("Register"))
+        {
+            if(msg instanceof AccountSuccessfulMessage)
+            {
+                try
+                {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
+                    Parent root = loader.load();
+                    LoginController lc = loader.getController();
+                    Stage stage = (Stage) confirmButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Login");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+            else if(msg instanceof AccountFailedMessage)
+            {
+                errorLabel.setText(((AccountFailedMessage) msg).toString());
+            }
+        }
+        else if(confirmButton.getText().equals("Confirm"))
+        {
+            if(msg instanceof AccountSuccessfulMessage)
+            {
+                try
+                {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
+                    Parent root = loader.load();
+                    AccountController ac = loader.getController();
+                    Stage stage = (Stage) confirmButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Account");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+            else if(msg instanceof AccountFailedMessage)
+            {
+                errorLabel.setText(((AccountFailedMessage) msg).toString());
+            }
+        }
+    }
 
+    public void passInfo(Client client)
+    {
+        this.client = client;
+        client.setController(this);
+
+        if(confirmButton.getText().equals("Confirm"))
+        {
+            enterUsername.setText(client.getUser().getUsername());
+            enterFirstName.setText(client.getUser().getFirstName());
+            enterLastName.setText(client.getUser().getLastName());
+            enterPassword.setText(client.getUser().getPassword());
+            enterConfirmPassword.setText(client.getUser().getPassword());
+        }
     }
 }

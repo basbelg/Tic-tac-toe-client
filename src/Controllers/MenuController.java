@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import DataClasses.GameInfo;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class MenuController implements BaseController, Initializable
@@ -39,6 +41,14 @@ public class MenuController implements BaseController, Initializable
         {
             e.printStackTrace();
         }
+    }
+
+    public void onVsAIClicked()
+    {
+        CreateAIGameMessage cam = (CreateAIGameMessage) MessageFactory.getMessage("CAI-MSG");
+        cam.setPlayer1Id(client.getUser().getId());
+        cam.setStartTime(LocalDateTime.now());
+        client.update(cam);
     }
 
     public void onAccountClicked()
@@ -84,7 +94,30 @@ public class MenuController implements BaseController, Initializable
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     @Override
-    public void update(Serializable msg) {}
+    public void update(Serializable msg)
+    {
+        if(msg instanceof CreateAIGameMessage)
+        {
+            client.getGames().add(new GameInfo("AI", ((CreateAIGameMessage) msg).getStartTime(), ((CreateAIGameMessage) msg).getGameId()));
+
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
+                Parent root = loader.load();
+                BoardController bc = loader.getController();
+                bc.passInfo(client, ((CreateAIGameMessage) msg).getGameId());
+                Stage stage = (Stage) vsAIButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Tic-Tac-Toe (Vs. AI)");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public void passInfo(Client client)
     {

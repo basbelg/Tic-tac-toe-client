@@ -102,7 +102,7 @@ public class AccountController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/DeleteAccount.fxml"));
             Parent root = loader.load();
             DeleteAccountController dac = loader.getController();
-            dac.passInfo(client);
+            dac.passInfo(client.getUser().getId());
             Stage stage = new Stage();
             stage.setTitle("Delete Account");
             stage.setScene(new Scene(root));

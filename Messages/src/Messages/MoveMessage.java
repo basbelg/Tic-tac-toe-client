@@ -1,25 +1,19 @@
 package Messages;
 
-import GameInterfaces.Move;
+import DataClasses.MoveInfo;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 public class MoveMessage implements Serializable {
-    private Move nextMove;
-    private LocalDateTime timeMade;
+    private MoveInfo moveInfo;
     private String gameId;
     private int movingPlayerId;
 
     public MoveMessage() {
     }
 
-    public Move getNextMove() {
-        return nextMove;
-    }
-
-    public LocalDateTime getTimeMade() {
-        return timeMade;
+    public MoveInfo getMoveInfo() {
+        return moveInfo;
     }
 
     public String getGameId() {
@@ -30,12 +24,8 @@ public class MoveMessage implements Serializable {
         return movingPlayerId;
     }
 
-    public void setNextMove(Move nextMove) {
-        this.nextMove = nextMove;
-    }
-
-    public void setTimeMade(LocalDateTime timeMade) {
-        this.timeMade = timeMade;
+    public void setMoveInfo(MoveInfo moveInfo) {
+        this.moveInfo = moveInfo;
     }
 
     public void setGameId(String gameId) {

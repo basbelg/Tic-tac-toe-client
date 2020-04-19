@@ -1,5 +1,6 @@
 package Controllers;
 
+import Client.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -15,6 +16,7 @@ import java.util.ResourceBundle;
 
 public class GameHistoriesController implements BaseController, Initializable
 {
+    private Client client;
     public ListView gameList;
     public Button backButton;
     public Button viewMoveHistoryButton;
@@ -22,20 +24,10 @@ public class GameHistoriesController implements BaseController, Initializable
     public void onViewMoveHistoryClicked()
     {
         //send in move history of game selected
-        try
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
-            Parent root = loader.load();
-            MoveHistoryController mhc = loader.getController();
-            Stage stage = new Stage();
-            stage.setTitle("Move History");
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
+        GameLogMessage glm = (GameLogMessage) MessageFactory.getMessage("GLG-MSG");
+        glm.setUserId(client.getUser().getId());
+        glm.setGameId(client.getGameIds().get(gameList.getSelectionModel().getSelectedIndex()));
+        client.update(glm);
     }
 
     public void onBackClicked()
@@ -45,6 +37,7 @@ public class GameHistoriesController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
             Parent root = loader.load();
             AccountController ac = loader.getController();
+            ac.passInfo(client);
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Account");
@@ -61,7 +54,28 @@ public class GameHistoriesController implements BaseController, Initializable
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     @Override
-    public void update(Serializable msg) {
+    public void update(Serializable msg)
+    {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
+            Parent root = loader.load();
+            MoveHistoryController mhc = loader.getController();
+            mhc.passInfo(client);
+            Stage stage = new Stage();
+            stage.setTitle("Move History");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
+    public void passInfo(Client client)
+    {
+        this.client = client;
+        client.setController(this);
     }
 }

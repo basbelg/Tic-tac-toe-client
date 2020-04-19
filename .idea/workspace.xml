@@ -5,6 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

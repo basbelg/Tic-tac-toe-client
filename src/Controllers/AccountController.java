@@ -1,5 +1,6 @@
 package Controllers;
 
+import Client.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -15,6 +16,7 @@ import java.util.ResourceBundle;
 public class AccountController implements BaseController, Initializable
 {
     //GAME HISTORY WINDOW, DELETE ACCOUNT WINDOW
+    private Client client;
     public Button modAccountButton;
     public Button gameHistoryButton;
     public Button backButton;
@@ -28,6 +30,7 @@ public class AccountController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
             Parent root = loader.load();
             MenuController mc = loader.getController();
+            mc.passInfo(client);
             Stage stage = (Stage) backButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Menu");
@@ -50,10 +53,11 @@ public class AccountController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Register.fxml"));
             Parent root = loader.load();
             RegisterController rc = loader.getController();
+            rc.confirmButton.setText("Confirm");
+            rc.passInfo(client);
             Stage stage = (Stage) modAccountButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Modify Account");
-            rc.confirmButton.setText("Confirm");
             stage.setScene(new Scene(root));
             stage.show();
         }
@@ -71,6 +75,7 @@ public class AccountController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/GameHistories.fxml"));
             Parent root = loader.load();
             GameHistoriesController ghc = loader.getController();
+            ghc.passInfo(client);
             Stage stage = (Stage) gameHistoryButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Game Histories");
@@ -91,6 +96,7 @@ public class AccountController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Stats.fxml"));
             Parent root = loader.load();
             StatsController sc = loader.getController();
+            sc.passInfo(client);
             Stage stage = new Stage();
             stage.setTitle("Statistics");
             stage.setScene(new Scene(root));
@@ -109,6 +115,7 @@ public class AccountController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/DeleteAccount.fxml"));
             Parent root = loader.load();
             DeleteAccountController dac = loader.getController();
+            dac.passInfo(client);
             Stage stage = new Stage();
             stage.setTitle("Delete Account");
             stage.setScene(new Scene(root));
@@ -126,5 +133,11 @@ public class AccountController implements BaseController, Initializable
     @Override
     public void update(Serializable msg) {
 
+    }
+
+    public void passInfo(Client client)
+    {
+        this.client = client;
+        client.setController(this);
     }
 }

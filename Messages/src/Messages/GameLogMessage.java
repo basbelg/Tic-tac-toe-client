@@ -1,6 +1,6 @@
 package Messages;
 
-import GameInterfaces.Move;
+import DataClasses.MoveInfo;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -14,7 +14,7 @@ public class GameLogMessage implements Serializable {
     private String player2Username;
     private LocalDateTime gameStarted;
     private LocalDateTime gameEnded;
-    private List<Move> moveHistory; //TO-DO: MAYBE ADD THE TIME THE MOVE WAS MADE IN THE MOVE CLASS
+    private List<MoveInfo> moveHistory;
 
     public GameLogMessage() {
     }
@@ -47,7 +47,7 @@ public class GameLogMessage implements Serializable {
         return gameEnded;
     }
 
-    public List<Move> getMoveHistory() {
+    public List<MoveInfo> getMoveHistory() {
         return moveHistory;
     }
 
@@ -79,7 +79,7 @@ public class GameLogMessage implements Serializable {
         this.gameEnded = gameEnded;
     }
 
-    public void setMoveHistory(List<Move> moveHistory) {
+    public void setMoveHistory(List<MoveInfo> moveHistory) {
         this.moveHistory = moveHistory;
     }
 }

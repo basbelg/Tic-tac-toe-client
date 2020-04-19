@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements BaseController, Initializable
 {
-    private Client client;
+    //private Client client;
     public Button signInButton;
     public Button newUserButton;
     public TextField enterUsername;

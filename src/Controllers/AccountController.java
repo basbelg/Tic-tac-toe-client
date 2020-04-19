@@ -90,21 +90,9 @@ public class AccountController implements BaseController, Initializable
     public void onStatsClicked()
     {
         //SEND W/L/T RATIO OVER TO STATS WINDOW TO BE DISPLAYED (Controller object)
-        try
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Stats.fxml"));
-            Parent root = loader.load();
-            StatsController sc = loader.getController();
-            sc.passInfo(client);
-            Stage stage = new Stage();
-            stage.setTitle("Statistics");
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
+        StatsMessage sm = (StatsMessage) MessageFactory.getMessage("STS-MSG");
+        client.update(sm);
+
     }
 
     public void onDeleteAccountClicked()
@@ -130,7 +118,26 @@ public class AccountController implements BaseController, Initializable
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 
     @Override
-    public void update(Serializable msg) {
+    public void update(Serializable msg)
+    {
+        if(msg instanceof StatsMessage)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Stats.fxml"));
+                Parent root = loader.load();
+                StatsController sc = loader.getController();
+                sc.passInfo((StatsMessage) msg);
+                Stage stage = new Stage();
+                stage.setTitle("Statistics");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
 
     }
 

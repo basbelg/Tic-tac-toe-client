@@ -21,6 +21,12 @@ public class StatsController implements Initializable
         stage.close();
     }
 
+    public void passInfo(StatsMessage stats)
+    {
+        wltLabel.setText(stats.getWins() + "/" + stats.getLosses() + "/" + stats.getTies());
+        gamesPlayedLabel.setText(((Integer)(stats.getWins() + stats.getLosses() + stats.getTies())).toString());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
 }

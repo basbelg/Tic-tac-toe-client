@@ -2,7 +2,7 @@ package Messages;
 
 public class StatsMessage {
     int wins;
-    int loses;
+    int losses;
     int ties;
 
     public StatsMessage() {
@@ -16,12 +16,12 @@ public class StatsMessage {
         this.wins = wins;
     }
 
-    public int getLoses() {
-        return loses;
+    public int getLosses() {
+        return losses;
     }
 
-    public void setLoses(int loses) {
-        this.loses = loses;
+    public void setLosses(int loses) {
+        this.losses = losses;
     }
 
     public int getTies() {

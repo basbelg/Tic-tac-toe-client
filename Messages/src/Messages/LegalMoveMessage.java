@@ -2,7 +2,9 @@ package Messages;
 
 import GameInterfaces.Move;
 
-public class LegalMoveMessage {
+import java.io.Serializable;
+
+public class LegalMoveMessage implements Serializable {
     private Move nextMove;
 
     public LegalMoveMessage() {

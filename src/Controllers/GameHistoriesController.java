@@ -83,7 +83,7 @@ public class GameHistoriesController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
 
-        
+
 
         for(GameInfo g : client.getGames())
         {

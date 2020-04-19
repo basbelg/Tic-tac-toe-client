@@ -1,7 +1,6 @@
 package Controllers;
 
 import Client.Client;
-import GameInterfaces.Move;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -14,7 +13,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class MoveHistoryController implements BaseController, Initializable

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/MoveHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/MoveHistory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,9 +36,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.19.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-13.0.2_windows-x64_bin-sdk/javafx-sdk-13.0.2/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28235295" />
     <property name="recentsLimit" value="5" />
@@ -91,7 +89,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Tic-Tac-Toe" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\jtols\Downloads\openjfx-12.0.2_windows-x64_bin-sdk\javafx-sdk-12.0.2\lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\basbe\Downloads\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -213,7 +211,7 @@
       <workItem from="1586613903053" duration="10581000" />
       <workItem from="1586700892058" duration="11504000" />
       <workItem from="1586808104420" duration="6101000" />
-      <workItem from="1587245377827" duration="8182000" />
+      <workItem from="1587245377827" duration="8514000" />
     </task>
     <servers />
   </component>

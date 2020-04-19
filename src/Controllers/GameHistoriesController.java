@@ -56,20 +56,23 @@ public class GameHistoriesController implements BaseController, Initializable
     @Override
     public void update(Serializable msg)
     {
-        try
+        if(!(GameLogMessage) msg.getMoveHistory().equals(null))
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
-            Parent root = loader.load();
-            MoveHistoryController mhc = loader.getController();
-            mhc.passInfo(client);
-            Stage stage = new Stage();
-            stage.setTitle("Move History");
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
+                Parent root = loader.load();
+                MoveHistoryController mhc = loader.getController();
+                mhc.passInfo(client);
+                Stage stage = new Stage();
+                stage.setTitle("Move History");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 

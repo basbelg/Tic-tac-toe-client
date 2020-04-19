@@ -83,6 +83,8 @@ public class GameHistoriesController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
 
+        
+
         for(GameInfo g : client.getGames())
         {
             gameList.getItems().add(new Label("VS. " + g.getPlayer2Username() + "\t" + g.getStartTime().toString()));

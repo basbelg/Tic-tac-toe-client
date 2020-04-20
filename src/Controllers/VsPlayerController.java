@@ -1,11 +1,13 @@
 package Controllers;
 
 import Client.Client;
+import DataClasses.LobbyInfo;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
@@ -88,6 +90,30 @@ public class VsPlayerController implements BaseController, Initializable
                 e.printStackTrace();
             }
         }
+        else if(msg instanceof InactiveGameMessage)
+        {
+            activeGamesList.getItems().clear();
+            for(LobbyInfo l : client.getActiveGames())
+            {
+                activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+            }
+        }
+        else if(msg instanceof NewAILobbyMessage)
+        {
+            activeGamesList.getItems().clear();
+            for(LobbyInfo l : client.getActiveGames())
+            {
+                activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+            }
+        }
+        else if(msg instanceof NewLobbyMessage)
+        {
+            activeGamesList.getItems().clear();
+            for(LobbyInfo l : client.getActiveGames())
+            {
+                activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+            }
+        }
     }
 
     public void onCreateLobbyClicked()
@@ -109,5 +135,10 @@ public class VsPlayerController implements BaseController, Initializable
     {
         this.client = client;
         client.setController(this);
+
+        for(LobbyInfo l : client.getActiveGames())
+        {
+            activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+        }
     }
 }

@@ -184,6 +184,25 @@ public class BoardController implements BaseController, Initializable
             isInGame = false;
             closeButton.setVisible(true);
         }
+        else if(msg instanceof InactiveGameMessage)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                Parent root = loader.load();
+                MenuController mc = loader.getController();
+                mc.passInfo(client);
+                Stage stage = (Stage) closeButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Menu");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void onCloseClicked()
@@ -191,22 +210,5 @@ public class BoardController implements BaseController, Initializable
         InactiveGameMessage igm = (InactiveGameMessage) MessageFactory.getMessage("IAG-MSG");
         igm.setFinishedGameId(gameId);
         client.update(igm);
-
-        try
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
-            Parent root = loader.load();
-            MenuController mc = loader.getController();
-            mc.passInfo(client);
-            Stage stage = (Stage) closeButton.getScene().getWindow();
-            stage.close();
-            stage.setTitle("Menu");
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
     }
 }

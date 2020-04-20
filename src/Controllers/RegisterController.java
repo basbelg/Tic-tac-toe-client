@@ -21,6 +21,7 @@ public class RegisterController implements BaseController, Initializable
 {
     //IF ACCOUNTSUCCESSFULMESSAGE IS RECIEVED, UPDATE FIELDS IN CLIENT OBJECT
     private Client client;
+    private User newUser;
     public Button confirmButton;
     public Button cancelButton;
     public TextField enterFirstName;
@@ -39,7 +40,8 @@ public class RegisterController implements BaseController, Initializable
             //Send off data to the Client class to be sent to the Server through a thread
             //IF ACCOUNTFAILEDMESSAGE RETURNS, APPEND TO_STRING TO LABEL
             //DO PLATFORM.RUNLATER(() ->
-            User newUser = new User(enterUsername.getText(), enterFirstName.getText(), enterLastName.getText(), enterPassword.getText());
+            newUser = new User(enterUsername.getText(), enterFirstName.getText(), enterLastName.getText(), enterPassword.getText());
+            newUser.setId(client.getUser().getId());
             CreateAccountMessage cam = (CreateAccountMessage) MessageFactory.getMessage("CAC-MSG");
             cam.setNewUser(newUser);
             client.update(cam);
@@ -133,6 +135,7 @@ public class RegisterController implements BaseController, Initializable
                 }
             } else if (confirmButton.getText().equals("Confirm")) {
                 if (msg instanceof AccountSuccessfulMessage) {
+                    client.setUser(newUser);
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
                         Parent root = loader.load();

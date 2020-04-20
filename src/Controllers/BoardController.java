@@ -3,12 +3,15 @@ package Controllers;
 import Client.Client;
 import DataClasses.MoveInfo;
 import TicTacToe.TTT_Move;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -25,12 +28,12 @@ public class BoardController implements BaseController, Initializable
     public Button spectatorsButton;
     public GridPane board;
     public Label outLabel;
+    public Button closeButton;
     private Client client;
     private String gameId;
-    private int moveTurn = 1;
     private boolean isTurn;
     private boolean isSpectator = false;
-    private boolean gameStarted;
+    private boolean isInGame;
     private int playerNumber;
     private String player1Username;
     private String player2Username;
@@ -45,23 +48,25 @@ public class BoardController implements BaseController, Initializable
         if(msg instanceof CreateAIGameMessage)
         {
             this.gameId = ((CreateAIGameMessage) msg).getGameLobbyId();
-            gameStarted = true;
+            isInGame = true;
         }
         else if(msg instanceof CreateLobbyMessage)
         {
             this.gameId = ((CreateLobbyMessage) msg).getGameLobbyId();
-            gameStarted = false;
+            isInGame = false;
         }
         else if(msg instanceof ConnectToLobbyMessage)
         {
-            gameStarted = true;
+            isInGame = true;
             this.gameId = ((ConnectToLobbyMessage) msg).getLobbyGameId();
         }
         else if(msg instanceof SpectateMessage)
         {
+            isInGame = true;
             this.gameId = ((SpectateMessage) msg).getLobbyGameId();
             isSpectator = true;
         }
+        closeButton.setVisible(!isInGame);
     }
 
     public void onBoardClicked()
@@ -71,7 +76,15 @@ public class BoardController implements BaseController, Initializable
             MoveMessage mm = (MoveMessage) MessageFactory.getMessage();
             mm.setMovingPlayerId(client.getUser().getId());
             mm.setGameId(gameId);
-            mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, row, column), LocalDateTime.now()));
+
+            board.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    Node node = (Node) mouseEvent.getSource();
+                    int row = GridPane.getRowIndex(node);
+                    mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
+                }
+            });
             client.update(mm);
         }
 
@@ -93,9 +106,10 @@ public class BoardController implements BaseController, Initializable
     {
         if(msg instanceof ConnectToLobbyMessage)
         {
-            gameStarted = true;
+            isInGame = true;
+            closeButton.setVisible(false);
         }
-        if(gameStarted)
+        if(isInGame)
         {
             if(msg instanceof LegalMoveMessage)
             {
@@ -125,6 +139,11 @@ public class BoardController implements BaseController, Initializable
                 {
                     e.printStackTrace();
                 }
+            }
+            else if(msg instanceof GameResultMessage)
+            {
+                gameStarted = false;
+                closeButton.setVisible(true);
             }
         }
 

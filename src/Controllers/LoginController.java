@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -83,30 +84,25 @@ public class LoginController implements BaseController, Initializable
     @Override
     public void update(Serializable msg)
     {
-        if(msg instanceof LoginSuccessfulMessage)
-        {
-            client.setUser(((LoginSuccessfulMessage) msg).getUser());
-            try
-            {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
-                Parent root = loader.load();
-                MenuController mc = loader.getController();
-                mc.passInfo(client);
-                Stage stage = (Stage) newUserButton.getScene().getWindow();
-                stage.close();
-                stage.setTitle("Menu");
-                stage.setScene(new Scene(root));
-                stage.show();
+        Platform.runLater(() -> {
+            if (msg instanceof LoginSuccessfulMessage) {
+                client.setUser(((LoginSuccessfulMessage) msg).getUser());
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                    Parent root = loader.load();
+                    MenuController mc = loader.getController();
+                    mc.passInfo(client);
+                    Stage stage = (Stage) newUserButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Menu");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else if (msg instanceof LoginFailedMessage) {
+                invalidLabel.setText(((LoginFailedMessage) msg).toString());
             }
-            catch(IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        else if(msg instanceof LoginFailedMessage)
-        {
-            invalidLabel.setText(((LoginFailedMessage) msg).toString());
-        }
-
+        });
     }
 }

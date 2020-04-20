@@ -2,6 +2,7 @@ package Controllers;
 
 import Client.Client;
 import DataClasses.User;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -45,29 +46,26 @@ public class RegisterController implements BaseController, Initializable
         }
         else
         {
-            StringBuffer error = new StringBuffer();
-            if(enterFirstName.getText().equals(""))
-            {
-                error.append("Please enter your first name!\n");
-            }
-            if(enterLastName.getText().equals(""))
-            {
-                error.append("Please enter your last name!\n");
-            }
-            if(enterUsername.getText().equals(""))
-            {
-                error.append("Please enter a valid username!\n");
-            }
-            if(enterPassword.getText().equals(""))
-            {
-                error.append("Please enter a valid password!\n");
-            }
-            if(!enterPassword.getText().equals(enterConfirmPassword.getText()) && !enterPassword.getText().equals(""))
-            {
-                error.append("Passwords do NOT match!\n");
-            }
+            Platform.runLater(() -> {
+                StringBuffer error = new StringBuffer();
+                if (enterFirstName.getText().equals("")) {
+                    error.append("Please enter your first name!\n");
+                }
+                if (enterLastName.getText().equals("")) {
+                    error.append("Please enter your last name!\n");
+                }
+                if (enterUsername.getText().equals("")) {
+                    error.append("Please enter a valid username!\n");
+                }
+                if (enterPassword.getText().equals("")) {
+                    error.append("Please enter a valid password!\n");
+                }
+                if (!enterPassword.getText().equals(enterConfirmPassword.getText()) && !enterPassword.getText().equals("")) {
+                    error.append("Passwords do NOT match!\n");
+                }
 
-            errorLabel.setText(error.toString());
+                errorLabel.setText(error.toString());
+            });
         }
 
     }
@@ -115,56 +113,43 @@ public class RegisterController implements BaseController, Initializable
     @Override
     public void update(Serializable msg)
     {
-        if(confirmButton.getText().equals("Register"))
-        {
-            if(msg instanceof AccountSuccessfulMessage)
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
-                    Parent root = loader.load();
-                    LoginController lc = loader.getController();
-                    Stage stage = (Stage) confirmButton.getScene().getWindow();
-                    stage.close();
-                    stage.setTitle("Login");
-                    stage.setScene(new Scene(root));
-                    stage.show();
+        Platform.runLater(() -> {
+            if (confirmButton.getText().equals("Register")) {
+                if (msg instanceof AccountSuccessfulMessage) {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
+                        Parent root = loader.load();
+                        LoginController lc = loader.getController();
+                        Stage stage = (Stage) confirmButton.getScene().getWindow();
+                        stage.close();
+                        stage.setTitle("Login");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else if (msg instanceof AccountFailedMessage) {
+                    errorLabel.setText(((AccountFailedMessage) msg).toString());
                 }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            else if(msg instanceof AccountFailedMessage)
-            {
-                errorLabel.setText(((AccountFailedMessage) msg).toString());
-            }
-        }
-        else if(confirmButton.getText().equals("Confirm"))
-        {
-            if(msg instanceof AccountSuccessfulMessage)
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
-                    Parent root = loader.load();
-                    AccountController ac = loader.getController();
-                    Stage stage = (Stage) confirmButton.getScene().getWindow();
-                    stage.close();
-                    stage.setTitle("Account");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
+            } else if (confirmButton.getText().equals("Confirm")) {
+                if (msg instanceof AccountSuccessfulMessage) {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
+                        Parent root = loader.load();
+                        AccountController ac = loader.getController();
+                        Stage stage = (Stage) confirmButton.getScene().getWindow();
+                        stage.close();
+                        stage.setTitle("Account");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else if (msg instanceof AccountFailedMessage) {
+                    errorLabel.setText(((AccountFailedMessage) msg).toString());
                 }
             }
-            else if(msg instanceof AccountFailedMessage)
-            {
-                errorLabel.setText(((AccountFailedMessage) msg).toString());
-            }
-        }
+        });
     }
 
     public void passInfo(Client client)
@@ -172,13 +157,14 @@ public class RegisterController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
 
-        if(confirmButton.getText().equals("Confirm"))
-        {
-            enterUsername.setText(client.getUser().getUsername());
-            enterFirstName.setText(client.getUser().getFirstName());
-            enterLastName.setText(client.getUser().getLastName());
-            enterPassword.setText(client.getUser().getPassword());
-            enterConfirmPassword.setText(client.getUser().getPassword());
-        }
+        Platform.runLater(() -> {
+            if (confirmButton.getText().equals("Confirm")) {
+                enterUsername.setText(client.getUser().getUsername());
+                enterFirstName.setText(client.getUser().getFirstName());
+                enterLastName.setText(client.getUser().getLastName());
+                enterPassword.setText(client.getUser().getPassword());
+                enterConfirmPassword.setText(client.getUser().getPassword());
+            }
+        });
     }
 }

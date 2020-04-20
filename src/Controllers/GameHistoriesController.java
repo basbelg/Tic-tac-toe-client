@@ -2,6 +2,7 @@ package Controllers;
 
 import Client.Client;
 import DataClasses.GameInfo;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -58,34 +59,28 @@ public class GameHistoriesController implements BaseController, Initializable
     @Override
     public void update(Serializable msg)
     {
-        if(msg instanceof GameLogMessage)
-        {
-            if(!(GameLogMessage) msg.getMoveHistory().equals(null))
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
-                    Parent root = loader.load();
-                    MoveHistoryController mhc = loader.getController();
-                    mhc.passInfo((GameLogMessage) msg);
-                    Stage stage = new Stage();
-                    stage.setTitle("Move History");
-                    stage.setScene(new Scene(root));
-                    stage.show();
+        Platform.runLater(() -> {
+            if (msg instanceof GameLogMessage) {
+                if (!((GameLogMessage) msg.getMoveHistory().equals(null))) {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
+                        Parent root = loader.load();
+                        MoveHistoryController mhc = loader.getController();
+                        mhc.passInfo((GameLogMessage) msg);
+                        Stage stage = new Stage();
+                        stage.setTitle("Move History");
+                        stage.setScene(new Scene(root));
+                        stage.show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
+            } else if (msg instanceof GamesPlayedMessage) {
+                for (GamesPlayedMessage g : ((GamesPlayedMessage) msg).getGameInfoList) {
+                    gameList.getItems().add(new Label("VS. " + g.getPlayer2Username + "\t" + g.getStartTime().toString()));
                 }
             }
-        }
-        else if(msg instanceof GamesPlayedMessage)
-        {
-            for(GamesPlayedMessage g : ((GamesPlayedMessage) msg).getGameInfoList)
-            {
-                gameList.getItems().add(new Label("VS. " + g.getPlayer2Username + "\t" + g.getStartTime().toString()));
-            }
-        }
+        });
     }
 
     public void passInfo(Client client)

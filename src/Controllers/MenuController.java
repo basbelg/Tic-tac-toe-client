@@ -98,14 +98,12 @@ public class MenuController implements BaseController, Initializable
     {
         if(msg instanceof CreateAIGameMessage)
         {
-            client.getGames().add(new GameInfo("AI", ((CreateAIGameMessage) msg).getStartTime(), ((CreateAIGameMessage) msg).getGameId()));
-
             try
             {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
                 Parent root = loader.load();
                 BoardController bc = loader.getController();
-                bc.passInfo(client, ((CreateAIGameMessage) msg).getGameId());
+                bc.passInfo(client, msg, 1);
                 Stage stage = (Stage) vsAIButton.getScene().getWindow();
                 stage.close();
                 stage.setTitle("Tic-Tac-Toe (Vs. AI)");

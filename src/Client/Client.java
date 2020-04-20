@@ -13,7 +13,6 @@ import java.util.List;
 
 public class Client implements Runnable {
     private BaseController controller;
-    private List<GameInfo> games;
     private Socket clientSocket;
     private ObjectInputStream input;
     private ObjectOutputStream output;

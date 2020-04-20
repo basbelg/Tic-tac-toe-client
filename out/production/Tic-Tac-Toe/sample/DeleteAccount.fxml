@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="224.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DeleteAccountController">
    <children>
-      <Button fx:id="confirmButton" layoutX="77.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Confirm" textFill="RED" />
+      <Button fx:id="confirmButton" layoutX="77.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#onConfirmClicked" prefHeight="25.0" prefWidth="68.0" text="Confirm" textFill="RED" />
       <Button fx:id="cancelButton" cancelButton="true" layoutX="256.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#onCancelClicked" prefHeight="25.0" prefWidth="68.0" text="Cancel" textFill="#3f00ff" />
       <Label layoutX="20.0" layoutY="63.0" text="Are you sure you want to delete your account?">
          <font>

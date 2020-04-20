@@ -27,7 +27,9 @@ public class BoardController implements BaseController, Initializable
     //SENDING OUT MOVEMESSAGES, RECEIVING THROUGH UPDATE() MOVESUCCESSFUL AND MOVEFAILED
     public Button spectatorsButton;
     public GridPane board;
-    public Label outLabel;
+    public Label errorLabel;
+    public Label winnerLabel;
+    public Label turnLabel;
     public Button closeButton;
     private Client client;
     private String gameId;
@@ -77,13 +79,10 @@ public class BoardController implements BaseController, Initializable
             mm.setMovingPlayerId(client.getUser().getId());
             mm.setGameId(gameId);
 
-            board.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    Node node = (Node) mouseEvent.getSource();
-                    int row = GridPane.getRowIndex(node);
-                    mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
-                }
+            board.setOnMouseClicked(mouseEvent -> {
+                Node node = (Node) mouseEvent.getSource();
+                int row = GridPane.getRowIndex(node);
+                mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
             });
             client.update(mm);
         }
@@ -120,7 +119,7 @@ public class BoardController implements BaseController, Initializable
             }
             else if(msg instanceof IllegalMoveMessage)
             {
-                outLabel.setText(((IllegalMoveMessage) msg).toString());
+                errorLabel.setText(((IllegalMoveMessage) msg).toString());
             }
             else if(msg instanceof GameViewersMessage)
             {
@@ -142,7 +141,7 @@ public class BoardController implements BaseController, Initializable
             }
             else if(msg instanceof GameResultMessage)
             {
-                gameStarted = false;
+                isInGame = false;
                 closeButton.setVisible(true);
             }
         }

@@ -2,10 +2,11 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BoardController">
+<AnchorPane fx:id="turnLabel" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BoardController">
    <children>
-      <GridPane fx:id="board" gridLinesVisible="true" layoutX="215.0" layoutY="50.0" maxHeight="300.0" maxWidth="300.0" minHeight="300.0" minWidth="300.0" onMouseClicked="#onBoardClicked" prefHeight="300.0" prefWidth="300.0">
+      <GridPane fx:id="board" gridLinesVisible="true" layoutX="215.0" layoutY="67.0" maxHeight="300.0" maxWidth="300.0" minHeight="300.0" minWidth="300.0" onMouseClicked="#onBoardClicked" prefHeight="300.0" prefWidth="300.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -18,7 +19,13 @@
         </rowConstraints>
       </GridPane>
       <Button fx:id="spectatorsButton" layoutX="46.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#onSpectatorsClicked" prefHeight="25.0" prefWidth="87.0" text="Spectators" />
-      <Label fx:id="outLabel" layoutX="46.0" layoutY="185.0" prefHeight="165.0" prefWidth="138.0" textFill="RED" />
+      <Label fx:id="errorLabel" layoutX="46.0" layoutY="316.0" prefHeight="34.0" prefWidth="138.0" textFill="RED" />
       <Button fx:id="closeButton" layoutX="46.0" layoutY="151.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" text="Close" />
+      <Label layoutX="46.0" layoutY="200.0" prefHeight="34.0" prefWidth="138.0" />
+      <Label fx:id="winnerLabel" layoutX="216.0" layoutY="14.0" prefHeight="49.0" prefWidth="300.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

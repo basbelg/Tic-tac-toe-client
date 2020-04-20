@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f681d6b2-7e08-4e29-9a19-1a48bbdd96cc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DataClasses/Minimax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataClasses/TTT_Evaluator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/AI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameInterfaces/Evaluator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -216,7 +220,7 @@
       <workItem from="1587328170747" duration="4088000" />
       <workItem from="1587350842625" duration="3671000" />
       <workItem from="1587371506863" duration="1267000" />
-      <workItem from="1587411133350" duration="760000" />
+      <workItem from="1587411133350" duration="3217000" />
     </task>
     <servers />
   </component>

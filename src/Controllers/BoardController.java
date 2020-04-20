@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import DataClasses.Minimax;
 import DataClasses.MoveInfo;
 import TicTacToe.TTT_Move;
 import javafx.application.Platform;
@@ -37,6 +38,8 @@ public class BoardController implements BaseController, Initializable
     private int playerNumber;   // 0 if the client is a spectator
     private String player1Username;
     private String player2Username;
+    private Minimax aiPlayer;
+    private int[][] aiBoard = new int[3][3];
 
 
     public void passInfo(Client client, Serializable msg, int playerNumber)
@@ -113,7 +116,7 @@ public class BoardController implements BaseController, Initializable
 
             board.setOnMouseClicked(mouseEvent -> {
                 Node node = (Node) mouseEvent.getSource();
-                mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
+                mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now());
             });
             client.update(mm);
         }
@@ -145,6 +148,16 @@ public class BoardController implements BaseController, Initializable
                 board.add(tile, ((LegalMoveMessage) msg).getMove().getColumn(), ((LegalMoveMessage) msg).getMove().getRow());
 
                 turnLabel.setText((isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!"));
+
+                if(player2Username.equals("AI Player")) {
+                    aiBoard[((LegalMoveMessage) msg).getMove().getRow()][((LegalMoveMessage) msg).getMove().getColumn()] = 1; // Player's last turn
+                    int pos = aiPlayer.generateTurn(aiBoard);
+                    MoveMessage mm = (MoveMessage) MessageFactory.getMessage();
+                    mm.setMovingPlayerId(1);
+                    mm.setGameId(gameId);
+                    mm.setMoveInfo(new MoveInfo(new TTT_Move(2, pos/3, pos%3), LocalDateTime.now()));
+                }
+
             } else if (msg instanceof IllegalMoveMessage) {
                 errorLabel.setText(((IllegalMoveMessage) msg).toString());
             } else if (msg instanceof GameViewersMessage) {

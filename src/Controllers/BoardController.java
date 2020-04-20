@@ -45,13 +45,16 @@ public class BoardController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
         isTurn = (playerNumber == 1);
+
         if(msg instanceof CreateAIGameMessage)
         {
+            this.player1Username = client.getUser().getUsername();
             this.gameId = ((CreateAIGameMessage) msg).getGameLobbyId();
             isInGame = true;
         }
         else if(msg instanceof CreateLobbyMessage)
         {
+            this.player1Username = client.getUser().getUsername();
             this.gameId = ((CreateLobbyMessage) msg).getGameLobbyId();
             isInGame = false;
         }
@@ -59,6 +62,8 @@ public class BoardController implements BaseController, Initializable
         {
             isInGame = true;
             this.gameId = ((ConnectToLobbyMessage) msg).getLobbyGameId();
+            this.player1Username = ((ConnectToLobbyMessage) msg).getPlayer1();
+            this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
         }
         else if(msg instanceof SpectateMessage)
         {
@@ -71,7 +76,7 @@ public class BoardController implements BaseController, Initializable
 
     public void onBoardClicked()
     {
-        if(isTurn && !isSpectator)
+        if(isTurn && !isSpectator && isInGame)
         {
             MoveMessage mm = (MoveMessage) MessageFactory.getMessage();
             mm.setMovingPlayerId(client.getUser().getId());
@@ -108,45 +113,41 @@ public class BoardController implements BaseController, Initializable
         {
             isInGame = true;
             closeButton.setVisible(false);
+            this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
         }
-        if(isInGame)
+        else if(msg instanceof LegalMoveMessage)
         {
-            if(msg instanceof LegalMoveMessage)
+            isTurn = ((LegalMoveMessage) msg).getNextMove().getPlayer() != playerNumber;
+            Label tile = new Label(playerNumber == 1 ? "X" : "O");
+            tile.setFont(new Font(36));
+            board.add(tile, ((LegalMoveMessage) msg).getMove().getColumn(), ((LegalMoveMessage) msg).getMove().getColumn());
+        }
+        else if(msg instanceof IllegalMoveMessage)
+        {
+            outLabel.setText(((IllegalMoveMessage) msg).toString());
+        }
+        else if(msg instanceof GameViewersMessage)
+        {
+            try
             {
-                isTurn = ((LegalMoveMessage) msg).getNextMove().getPlayer() != playerNumber;
-                Label tile = new Label(playerNumber == 1 ? "X" : "O");
-                tile.setFont(new Font(36));
-                board.add(new Label(playerNumber == 1 ? "X" : "O"), ((LegalMoveMessage) msg).getMove().getColumn(), ((LegalMoveMessage) msg).getMove().getColumn());
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
+                Parent root = loader.load();
+                ViewSpectatorsController vsc = loader.getController();
+                vsc.passInfo(((GameViewersMessage) msg).getSpectators());
+                Stage stage = new Stage();
+                stage.setTitle("Spectators");
+                stage.setScene(new Scene(root));
+                stage.show();
             }
-            else if(msg instanceof IllegalMoveMessage)
+            catch(IOException e)
             {
-                outLabel.setText(((IllegalMoveMessage) msg).toString());
-            }
-            else if(msg instanceof GameViewersMessage)
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
-                    Parent root = loader.load();
-                    ViewSpectatorsController vsc = loader.getController();
-                    vsc.passInfo(((GameViewersMessage) msg).getSpectators());
-                    Stage stage = new Stage();
-                    stage.setTitle("Spectators");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            else if(msg instanceof GameResultMessage)
-            {
-                gameStarted = false;
-                closeButton.setVisible(true);
+                e.printStackTrace();
             }
         }
-
+        else if(msg instanceof GameResultMessage)
+        {
+            gameStarted = false;
+            closeButton.setVisible(true);
+        }
     }
-
 }

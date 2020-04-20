@@ -2,6 +2,7 @@ package Client;
 
 import Controllers.BaseController;
 import DataClasses.GameInfo;
+import DataClasses.LobbyInfo;
 import DataClasses.User;
 
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Client implements Runnable {
@@ -19,11 +21,13 @@ public class Client implements Runnable {
     private Thread thread;
     private int port;
     private User user;
+    private List<LobbyInfo> allActiveGames;
 
     public Client(BaseController controller)
     {
         port = 8000;
         this.controller = controller;
+        this.allActiveGames = new ArrayList<>();
         thread = new Thread(this);
         thread.start();
     }

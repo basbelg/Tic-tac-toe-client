@@ -11,6 +11,8 @@ public final class MessageFactory {
 
             case "ACS-MSG": return new AccountSuccessfulMessage();
 
+            case "AAG-MSG": return new AllActiveGamesMessage();
+
             case "CNT-MSG": return new ConnectToLobbyMessage();
 
             case "CAC-MSG": return new CreateAccountMessage();

@@ -3,7 +3,6 @@ package Controllers;
 import Client.Client;
 import DataClasses.MoveInfo;
 import TicTacToe.TTT_Move;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -11,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -33,10 +31,9 @@ public class BoardController implements BaseController, Initializable
     public Button closeButton;
     private Client client;
     private String gameId;
-    private boolean isTurn;
-    private boolean isSpectator = false;
+    private boolean isPlayer1Turn;
     private boolean isInGame;
-    private int playerNumber;
+    private int playerNumber;   // 0 if the client is a spectator
     private String player1Username;
     private String player2Username;
 
@@ -46,28 +43,68 @@ public class BoardController implements BaseController, Initializable
         this.playerNumber = playerNumber;
         this.client = client;
         client.setController(this);
-        isTurn = (playerNumber == 1);
+
         if(msg instanceof CreateAIGameMessage)
         {
+            isPlayer1Turn = true;
+            this.player1Username = client.getUser().getUsername();
+            this.player2Username = "AI Player";
             this.gameId = ((CreateAIGameMessage) msg).getGameLobbyId();
             isInGame = true;
+
+            turnLabel.setText(player1Username + "\'s turn!");
         }
         else if(msg instanceof CreateLobbyMessage)
         {
+            isPlayer1Turn = true;
+            this.player1Username = client.getUser().getUsername();
             this.gameId = ((CreateLobbyMessage) msg).getGameLobbyId();
             isInGame = false;
+
+            turnLabel.setText(player1Username + "\'s turn!");
         }
         else if(msg instanceof ConnectToLobbyMessage)
         {
+            isPlayer1Turn = true;
             isInGame = true;
             this.gameId = ((ConnectToLobbyMessage) msg).getLobbyGameId();
+            this.player1Username = ((ConnectToLobbyMessage) msg).getPlayer1();
+            this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
+
+            turnLabel.setText(player1Username + "\'s turn!");
         }
         else if(msg instanceof SpectateMessage)
         {
             isInGame = true;
             this.gameId = ((SpectateMessage) msg).getLobbyGameId();
-            isSpectator = true;
+            int[][] spectatorBoard = ((SpectateMessage) msg).getGameBoard();
+            int turn = 1;
+
+            for(int i = 0; i < spectatorBoard.length; ++i)
+            {
+                for(int j = 0; j < spectatorBoard[i].length; ++j)
+                {
+                    if(spectatorBoard[i][j] == 1)
+                    {
+                        Label tile = new Label("X");
+                        tile.setFont(new Font(36));
+                        board.add(tile, j, i);
+                        ++turn;
+                    }
+                    else if(spectatorBoard[i][j] == -1)
+                    {
+                        Label tile = new Label("O");
+                        tile.setFont(new Font(36));
+                        board.add(tile, j, i);
+                        ++turn;
+                    }
+                }
+            }
+
+            isPlayer1Turn = (turn % 2) == 1;
+            turnLabel.setText(isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!");
         }
+
         closeButton.setVisible(!isInGame);
     }
 
@@ -75,7 +112,7 @@ public class BoardController implements BaseController, Initializable
 
     public void onBoardClicked()
     {
-        if(isTurn && !isSpectator)
+        if(((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame)
         {
             MoveMessage mm = (MoveMessage) MessageFactory.getMessage();
             mm.setMovingPlayerId(client.getUser().getId());
@@ -83,7 +120,6 @@ public class BoardController implements BaseController, Initializable
 
             board.setOnMouseClicked(mouseEvent -> {
                 Node node = (Node) mouseEvent.getSource();
-                int row = GridPane.getRowIndex(node);
                 mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
             });
             client.update(mm);
@@ -109,45 +145,68 @@ public class BoardController implements BaseController, Initializable
         {
             isInGame = true;
             closeButton.setVisible(false);
+            this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
         }
-        if(isInGame)
+        else if(msg instanceof LegalMoveMessage)
         {
-            if(msg instanceof LegalMoveMessage)
+            isPlayer1Turn = !isPlayer1Turn;
+            Label tile = new Label((((LegalMoveMessage) msg).getMove().getPlayer()) == 1 ? "X" : "O");
+            tile.setFont(new Font(36));
+            board.add(tile, ((LegalMoveMessage) msg).getMove().getColumn(), ((LegalMoveMessage) msg).getMove().getRow());
+
+            turnLabel.setText((isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!"));
+        }
+        else if(msg instanceof IllegalMoveMessage)
+        {
+            errorLabel.setText(((IllegalMoveMessage) msg).toString());
+        }
+        else if(msg instanceof GameViewersMessage)
+        {
+            try
             {
-                isTurn = ((LegalMoveMessage) msg).getNextMove().getPlayer() != playerNumber;
-                Label tile = new Label(playerNumber == 1 ? "X" : "O");
-                tile.setFont(new Font(36));
-                board.add(new Label(playerNumber == 1 ? "X" : "O"), ((LegalMoveMessage) msg).getMove().getColumn(), ((LegalMoveMessage) msg).getMove().getColumn());
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
+                Parent root = loader.load();
+                ViewSpectatorsController vsc = loader.getController();
+                vsc.passInfo(((GameViewersMessage) msg).getSpectators());
+                Stage stage = new Stage();
+                stage.setTitle("Spectators");
+                stage.setScene(new Scene(root));
+                stage.show();
             }
-            else if(msg instanceof IllegalMoveMessage)
+            catch(IOException e)
             {
-                errorLabel.setText(((IllegalMoveMessage) msg).toString());
-            }
-            else if(msg instanceof GameViewersMessage)
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
-                    Parent root = loader.load();
-                    ViewSpectatorsController vsc = loader.getController();
-                    vsc.passInfo(((GameViewersMessage) msg).getSpectators());
-                    Stage stage = new Stage();
-                    stage.setTitle("Spectators");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            else if(msg instanceof GameResultMessage)
-            {
-                isInGame = false;
-                closeButton.setVisible(true);
+                e.printStackTrace();
             }
         }
-
+        else if(msg instanceof GameResultMessage)
+        {
+            winnerLabel.setText(((GameResultMessage) msg).toString());
+            isInGame = false;
+            closeButton.setVisible(true);
+        }
     }
 
+    public void onCloseClicked()
+    {
+        InactiveGameMessage igm = (InactiveGameMessage) MessageFactory.getMessage("IAG-MSG");
+        igm.setFinishedGameId(gameId);
+        client.update(igm);
+
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+            Parent root = loader.load();
+            MenuController mc = loader.getController();
+            mc.passInfo(client);
+            Stage stage = (Stage) closeButton.getScene().getWindow();
+            stage.close();
+            stage.setTitle("Menu");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
 }

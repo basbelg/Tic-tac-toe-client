@@ -82,7 +82,7 @@ public class MoveHistoryController implements BaseController, Initializable
             board.add(new Label(getTurn()), y, x);
             moveNumLabel.setText(((Integer) (moveCounter + 1)).toString() + "/" + glm.getMoveHistory().size().toString());
             timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
-            playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username() ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!")));
+            playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
 
             if (moveCounter >= (glm.getMoveHistory().size() - 1)) {
                 nextButton.setDisable(true);

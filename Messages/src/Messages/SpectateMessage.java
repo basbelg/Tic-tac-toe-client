@@ -5,6 +5,8 @@ import java.io.Serializable;
 public class SpectateMessage implements Serializable {
     private int spectatorId;
     private String gameId;
+    private String player1Username;
+    private String player2Username;
     private int[][] gameBoard;
 
     public SpectateMessage() {
@@ -18,6 +20,14 @@ public class SpectateMessage implements Serializable {
         return gameId;
     }
 
+    public String getPlayer1Username() {
+        return player1Username;
+    }
+
+    public String getPlayer2Username() {
+        return player2Username;
+    }
+
     public int[][] getGameBoard() {
         return gameBoard;
     }
@@ -28,6 +38,14 @@ public class SpectateMessage implements Serializable {
 
     public void setGameId(String gameId) {
         this.gameId = gameId;
+    }
+
+    public void setPlayer1Username(String player1Username) {
+        this.player1Username = player1Username;
+    }
+
+    public void setPlayer2Username(String player2Username) {
+        this.player2Username = player2Username;
     }
 
     public void setGameBoard(int[][] gameBoard) {

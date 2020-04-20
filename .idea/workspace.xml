@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f681d6b2-7e08-4e29-9a19-1a48bbdd96cc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/DataClasses/LobbyInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Messages/src/Messages/AllActiveGamesMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataClasses/LobbyInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/ConnectToLobbyMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/ConnectToLobbyMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/SpectateMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/SpectateMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Board.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/DeleteAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/DeleteAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/VsPlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/VsPlayer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Board.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,6 +226,7 @@
       <workItem from="1587245377827" duration="8514000" />
       <workItem from="1587288741310" duration="8000" />
       <workItem from="1587328170747" duration="4088000" />
+      <workItem from="1587350842625" duration="802000" />
     </task>
     <servers />
   </component>

@@ -63,9 +63,10 @@ public class MoveHistoryController implements BaseController, Initializable
         int y = glm.getMoveHistory().get(0).getNextMove().getColumn();
         board.add(new Label(getTurn()), y, x);
 
-        moveNumLabel.setText("1/" + glm.getMoveHistory.size().toString());
-        timeLabel.setText(glm.getMoveHistory.get(0).getTimeMade().toString());
-        playerLabel.setText(glm.getPlayer1Username());
+        moveNumLabel.setText("1/" + glm.getMoveHistory().size().toString());
+        timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
+        playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
+        previousButton.setDisable(true);
     }
 
     public void onNextClicked()
@@ -75,10 +76,18 @@ public class MoveHistoryController implements BaseController, Initializable
         int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
         int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
         board.add(new Label(getTurn()), y, x);
-        moveNumLabel.setText(((Integer)(moveCounter + 1)).toString() + "/" + glm.getMoveHistory.size().toString());
-        timeLabel.setText(glm.getMoveHistory.get(moveCounter).getTimeMade().toString());
-        playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? glm.getPlayer2Username() : glm.getPlayer1Username());
+        moveNumLabel.setText(((Integer)(moveCounter + 1)).toString() + "/" + glm.getMoveHistory().size().toString());
+        timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
+        playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username() ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!")));
 
+        if(moveCounter >= (glm.getMoveHistory().size() - 1))
+        {
+            nextButton.setDisable(true);
+        }
+        else if(previousButton.isDisable())
+        {
+            previousButton.setDisable(false);
+        }
     }
 
     public void onPreviousClicked()
@@ -89,8 +98,17 @@ public class MoveHistoryController implements BaseController, Initializable
         int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
         board.add(new Label(""), y, x);
         moveNumLabel.setText(moveCounter.toString() + "/" + glm.getMoveHistory.size().toString());
-        timeLabel.setText(glm.getMoveHistory.get(moveCounter).getTimeMade().toString());
+        timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
         playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? glm.getPlayer2Username() : glm.getPlayer1Username());
+
+        if(moveCounter <= 0)
+        {
+            previousButton.setDisable(true);
+        }
+        else if(nextButton.isDisable())
+        {
+            nextButton.setDisable(false);
+        }
     }
 
     public void onSpectatorsClicked()

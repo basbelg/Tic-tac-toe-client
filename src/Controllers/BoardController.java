@@ -71,6 +71,8 @@ public class BoardController implements BaseController, Initializable
         closeButton.setVisible(!isInGame);
     }
 
+
+
     public void onBoardClicked()
     {
         if(isTurn && !isSpectator)

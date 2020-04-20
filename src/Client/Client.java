@@ -200,6 +200,11 @@ public class Client implements Runnable {
                 Packet p = new Packet("GVW-MSG", msg);
                 output.writeObject(p);
             }
+            else if (msg instanceof InactiveGameMessage)
+            {
+                Packet p = new Packet("IAG-MSG");
+                output.writeObject(p);
+            }
             else if (msg instanceof LoginMessage)
             {
                 Packet p = new Packet("LOG-MSG", msg);

@@ -2,6 +2,7 @@ package Controllers;
 
 import Client.Client;
 import DataClasses.LobbyInfo;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -52,68 +53,52 @@ public class VsPlayerController implements BaseController, Initializable
 
     @Override
     public void update(Serializable msg) {
-        if(msg instanceof ConnectToLobbyMessage)
-        {
-            try
-            {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
-                Parent root = loader.load();
-                BoardController bc = loader.getController();
-                bc.passInfo(client, msg, 2);
-                Stage stage = (Stage) joinLobbyButton.getScene().getWindow();
-                stage.close();
-                stage.setTitle("Tic-Tac-Toe (Vs. Player)");
-                stage.setScene(new Scene(root));
-                stage.show();
+        Platform.runLater(() -> {
+            if (msg instanceof ConnectToLobbyMessage) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
+                    Parent root = loader.load();
+                    BoardController bc = loader.getController();
+                    bc.passInfo(client, msg, 2);
+                    Stage stage = (Stage) joinLobbyButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Tic-Tac-Toe (Vs. Player)");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else if (msg instanceof SpectateMessage) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
+                    Parent root = loader.load();
+                    BoardController bc = loader.getController();
+                    bc.passInfo(client, msg, 0);
+                    Stage stage = (Stage) joinLobbyButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Tic-Tac-Toe (Vs. Player)");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else if (msg instanceof InactiveGameMessage) {
+                activeGamesList.getItems().clear();
+                for (LobbyInfo l : client.getActiveGames()) {
+                    activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+                }
+            } else if (msg instanceof NewAILobbyMessage) {
+                activeGamesList.getItems().clear();
+                for (LobbyInfo l : client.getActiveGames()) {
+                    activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+                }
+            } else if (msg instanceof NewLobbyMessage) {
+                activeGamesList.getItems().clear();
+                for (LobbyInfo l : client.getActiveGames()) {
+                    activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+                }
             }
-            catch(IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        else if(msg instanceof SpectateMessage)
-        {
-            try
-            {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
-                Parent root = loader.load();
-                BoardController bc = loader.getController();
-                bc.passInfo(client, msg, 0);
-                Stage stage = (Stage) joinLobbyButton.getScene().getWindow();
-                stage.close();
-                stage.setTitle("Tic-Tac-Toe (Vs. Player)");
-                stage.setScene(new Scene(root));
-                stage.show();
-            }
-            catch(IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        else if(msg instanceof InactiveGameMessage)
-        {
-            activeGamesList.getItems().clear();
-            for(LobbyInfo l : client.getActiveGames())
-            {
-                activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
-            }
-        }
-        else if(msg instanceof NewAILobbyMessage)
-        {
-            activeGamesList.getItems().clear();
-            for(LobbyInfo l : client.getActiveGames())
-            {
-                activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
-            }
-        }
-        else if(msg instanceof NewLobbyMessage)
-        {
-            activeGamesList.getItems().clear();
-            for(LobbyInfo l : client.getActiveGames())
-            {
-                activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
-            }
-        }
+        });
     }
 
     public void onCreateLobbyClicked()
@@ -136,9 +121,10 @@ public class VsPlayerController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
 
-        for(LobbyInfo l : client.getActiveGames())
-        {
-            activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
-        }
+        Platform.runLater(() -> {
+            for (LobbyInfo l : client.getActiveGames()) {
+                activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+            }
+        });
     }
 }

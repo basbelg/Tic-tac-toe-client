@@ -3,7 +3,6 @@ package Client;
 import Controllers.BaseController;
 import Controllers.BoardController;
 import Controllers.VsPlayerController;
-import DataClasses.GameInfo;
 import DataClasses.LobbyInfo;
 import DataClasses.User;
 
@@ -24,12 +23,14 @@ public class Client implements Runnable {
     private int port;
     private User user;
     private List<LobbyInfo> allActiveGames;
+    private String currentGameId;
 
     public Client(BaseController controller)
     {
         port = 8000;
         this.controller = controller;
         this.allActiveGames = new ArrayList<>();
+        currentGameId = "No Game";
         thread = new Thread(this);
         thread.start();
     }
@@ -62,10 +63,17 @@ public class Client implements Runnable {
                         break;
                     case "CNT-MSG":
                         ConnectToLobbyMessage clm = (ConnectToLobbyMessage)p.getData();
+                        currentGameId = clm.getLobbyGameId();
                         controller.update(clm);
+                        break;
+                    case "CAI-MSG":
+                        CreateAIGameMessage calm = (CreateAIGameMessage)p.getData();
+                        currentGameId = calm.getGameLobbyId();
+                        controller.update(calm);
                         break;
                     case "CLB-MSG":
                         CreateLobbyMessage clbm = (CreateLobbyMessage)p.getData();
+                        currentGameId = clbm.getGameLobbyId();
                         controller.update(clbm);
                         break;
                     case "GLG-MSG":
@@ -74,6 +82,7 @@ public class Client implements Runnable {
                         break;
                     case "GRE-MSG":
                         GameResultMessage grm = (GameResultMessage)p.getData();
+                        currentGameId = "No Game";
                         controller.update(grm);
                         break;
                     case "GMP-MSG":
@@ -104,7 +113,9 @@ public class Client implements Runnable {
                         }
                         else if(controller instanceof BoardController)
                         {
-                            controller.update(igm);
+                            if(currentGameId.equals(igm.getFinishedGameId())) {
+                                controller.update(igm);
+                            }
                         }
                         break;
                     case "LEM-MSG":
@@ -148,7 +159,6 @@ public class Client implements Runnable {
                         user = upm.getUpdatedUser();
                         break;
 
-
                     default:
                         System.out.println("ERROR");
                 }
@@ -172,7 +182,11 @@ public class Client implements Runnable {
 
     public void update(Serializable msg) {
         try {
-            if (msg instanceof ConnectToLobbyMessage) {
+            if(msg instanceof AllActiveGamesMessage) {
+                Packet p = new Packet("AAG-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof ConnectToLobbyMessage) {
                 Packet p = new Packet("CNT-MSG", msg);
                 output.writeObject(p);
             }

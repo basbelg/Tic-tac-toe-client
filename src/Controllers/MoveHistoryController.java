@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -59,56 +60,56 @@ public class MoveHistoryController implements BaseController, Initializable
         client.setController(this);
         this.glm = glm;
 
-        int x = glm.getMoveHistory().get(0).getNextMove().getRow();
-        int y = glm.getMoveHistory().get(0).getNextMove().getColumn();
-        board.add(new Label(getTurn()), y, x);
+        Platform.runLater(() -> {
+            int x = glm.getMoveHistory().get(0).getNextMove().getRow();
+            int y = glm.getMoveHistory().get(0).getNextMove().getColumn();
+            board.add(new Label(getTurn()), y, x);
 
-        moveNumLabel.setText("1/" + glm.getMoveHistory().size().toString());
-        timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
-        playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
-        previousButton.setDisable(true);
+            moveNumLabel.setText("1/" + glm.getMoveHistory().size().toString());
+            timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
+            playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
+            previousButton.setDisable(true);
+        });
     }
 
     public void onNextClicked()
     {
-        moveCounter++;
+        Platform.runLater(() -> {
+            moveCounter++;
 
-        int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
-        int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
-        board.add(new Label(getTurn()), y, x);
-        moveNumLabel.setText(((Integer)(moveCounter + 1)).toString() + "/" + glm.getMoveHistory().size().toString());
-        timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
-        playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username() ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!")));
+            int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
+            int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
+            board.add(new Label(getTurn()), y, x);
+            moveNumLabel.setText(((Integer) (moveCounter + 1)).toString() + "/" + glm.getMoveHistory().size().toString());
+            timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
+            playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username() ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!")));
 
-        if(moveCounter >= (glm.getMoveHistory().size() - 1))
-        {
-            nextButton.setDisable(true);
-        }
-        else if(previousButton.isDisable())
-        {
-            previousButton.setDisable(false);
-        }
+            if (moveCounter >= (glm.getMoveHistory().size() - 1)) {
+                nextButton.setDisable(true);
+            } else if (previousButton.isDisable()) {
+                previousButton.setDisable(false);
+            }
+        });
     }
 
     public void onPreviousClicked()
     {
-        moveCounter--;
+        Platform.runLater(() -> {
+            int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
+            int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
+            moveCounter--;
 
-        int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
-        int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
-        board.add(new Label(""), y, x);
-        moveNumLabel.setText(moveCounter.toString() + "/" + glm.getMoveHistory.size().toString());
-        timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
-        playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? glm.getPlayer2Username() : glm.getPlayer1Username());
+            board.add(new Label(""), y, x);
+            moveNumLabel.setText(moveCounter.toString() + "/" + glm.getMoveHistory.size().toString());
+            timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
+            playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? glm.getPlayer2Username() : glm.getPlayer1Username());
 
-        if(moveCounter <= 0)
-        {
-            previousButton.setDisable(true);
-        }
-        else if(nextButton.isDisable())
-        {
-            nextButton.setDisable(false);
-        }
+            if (moveCounter <= 0) {
+                previousButton.setDisable(true);
+            } else if (nextButton.isDisable()) {
+                nextButton.setDisable(false);
+            }
+        });
     }
 
     public void onSpectatorsClicked()
@@ -131,6 +132,8 @@ public class MoveHistoryController implements BaseController, Initializable
             turn = "X";
             return "O";
         }
+
+        return "ERROR";
     }
 
     @Override

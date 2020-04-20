@@ -1,5 +1,6 @@
 package Controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,8 +24,10 @@ public class StatsController implements Initializable
 
     public void passInfo(StatsMessage stats)
     {
-        wltLabel.setText(stats.getWins() + "/" + stats.getLosses() + "/" + stats.getTies());
-        gamesPlayedLabel.setText(((Integer)(stats.getWins() + stats.getLosses() + stats.getTies())).toString());
+        Platform.runLater(() -> {
+            wltLabel.setText(stats.getWins() + "/" + stats.getLosses() + "/" + stats.getTies());
+            gamesPlayedLabel.setText(((Integer) (stats.getWins() + stats.getLosses() + stats.getTies())).toString());
+        });
     }
 
     @Override

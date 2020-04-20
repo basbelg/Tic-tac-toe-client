@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -47,24 +48,22 @@ public class AccountController implements BaseController, Initializable
     {
         //Send off data to the Client class to be sent to the Server through a thread
         //IF ACCOUNTFAILEDMESSAGE RETURNS, APPEND TO_STRING TO LABEL
-        //DO PLATFORM.RUNLATER(() ->
-        try
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Register.fxml"));
-            Parent root = loader.load();
-            RegisterController rc = loader.getController();
-            rc.confirmButton.setText("Confirm");
-            rc.passInfo(client);
-            Stage stage = (Stage) modAccountButton.getScene().getWindow();
-            stage.close();
-            stage.setTitle("Modify Account");
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
+        Platform.runLater(() -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Register.fxml"));
+                Parent root = loader.load();
+                RegisterController rc = loader.getController();
+                rc.confirmButton.setText("Confirm");
+                rc.passInfo(client);
+                Stage stage = (Stage) modAccountButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Modify Account");
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 
     public void onGameHistoriesClicked()
@@ -102,8 +101,9 @@ public class AccountController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/DeleteAccount.fxml"));
             Parent root = loader.load();
             DeleteAccountController dac = loader.getController();
-            dac.passInfo(client.getUser().getId());
-            Stage stage = new Stage();
+            dac.passInfo(client);
+            Stage stage = (Stage) deleteAccountButton.getScene().getWindow();
+            stage.close();
             stage.setTitle("Delete Account");
             stage.setScene(new Scene(root));
             stage.show();

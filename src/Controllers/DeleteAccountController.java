@@ -1,5 +1,6 @@
 package Controllers;
 
+import Client.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -16,18 +17,32 @@ public class DeleteAccountController implements BaseController, Initializable
 {
     public Button confirmButton;
     public Button cancelButton;
-    private int userId;
+    private Client client;
 
     public void onCancelClicked()
     {
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
+            Parent root = loader.load();
+            AccountController ac = loader.getController();
+            ac.passInfo(client);
+            Stage stage = (Stage) cancelButton.getScene().getWindow();
+            stage.close();
+            stage.setTitle("Account");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void onConfirmClicked()
     {
         DeactivateAccountMessage dam = (DeactivateAccountMessage) MessageFactory.getMessage();
-        dam.setUserId(userId);
+        dam.setUserId(client.getUser().getId());
 
         try
         {
@@ -45,9 +60,9 @@ public class DeleteAccountController implements BaseController, Initializable
         }
     }
 
-    public void passInfo(int userId)
+    public void passInfo(Client client)
     {
-        this.userId = userId;
+        this.client = client;
     }
 
     @Override

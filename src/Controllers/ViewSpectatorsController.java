@@ -1,6 +1,7 @@
 package Controllers;
 
 import DataClasses.Spectator;
+import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -25,10 +26,11 @@ public class ViewSpectatorsController implements Initializable
 
     public void passInfo(List<Spectator> spectators)
     {
-        for(Spectator s : spectators)
-        {
-            spectatorsList.getItems().add(new Label(s.getUsername()));
-        }
+        Platform.runLater(() -> {
+            for (Spectator s : spectators) {
+                spectatorsList.getItems().add(new Label(s.getUsername()));
+            }
+        });
     }
 
     @Override

@@ -87,6 +87,11 @@ public class LoginController implements BaseController, Initializable
         Platform.runLater(() -> {
             if (msg instanceof LoginSuccessfulMessage) {
                 client.setUser(((LoginSuccessfulMessage) msg).getUser());
+
+                AllActiveGamesMessage aagm = (AllActiveGamesMessage) MessageFactory.getMessage("AAG-MSG");
+                aagm.setSenderId(client.getUser().getId());
+                client.update(aagm);
+
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
                     Parent root = loader.load();

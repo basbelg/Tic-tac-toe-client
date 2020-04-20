@@ -101,6 +101,8 @@ public class BoardController implements BaseController, Initializable
         });
     }
 
+
+
     public void onBoardClicked()
     {
         if(((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame)
@@ -158,10 +160,31 @@ public class BoardController implements BaseController, Initializable
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else if (msg instanceof GameResultMessage) {
+            }
+            else if(msg instanceof GameResultMessage)
+            {
                 winnerLabel.setText(((GameResultMessage) msg).toString());
                 isInGame = false;
                 closeButton.setVisible(true);
+            }
+            else if(msg instanceof InactiveGameMessage)
+            {
+                try
+                {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                    Parent root = loader.load();
+                    MenuController mc = loader.getController();
+                    mc.passInfo(client);
+                    Stage stage = (Stage) closeButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Menu");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -171,22 +194,5 @@ public class BoardController implements BaseController, Initializable
         InactiveGameMessage igm = (InactiveGameMessage) MessageFactory.getMessage("IAG-MSG");
         igm.setFinishedGameId(gameId);
         client.update(igm);
-
-        try
-        {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
-            Parent root = loader.load();
-            MenuController mc = loader.getController();
-            mc.passInfo(client);
-            Stage stage = (Stage) closeButton.getScene().getWindow();
-            stage.close();
-            stage.setTitle("Menu");
-            stage.setScene(new Scene(root));
-            stage.show();
-        }
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
     }
 }

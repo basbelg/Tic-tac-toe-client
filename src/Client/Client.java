@@ -1,6 +1,8 @@
 package Client;
 
 import Controllers.BaseController;
+import Controllers.BoardController;
+import Controllers.VsPlayerController;
 import DataClasses.GameInfo;
 import DataClasses.LobbyInfo;
 import DataClasses.User;
@@ -46,25 +48,107 @@ public class Client implements Runnable {
                                                         // IS AN instanceof THE VsPlayerController BEFORE CALLING update
                 String type = p.getType();
                 switch(type) {
-                    case "REG-MSG":
-                        RegistrationMsg rm = (RegistrationMsg)p.getData();
-                        for(String sc : rm.getSubscribedChannels()) {
-                            subscribedChannels.add(sc);
+                    case "ACF-MSG":
+                        AccountFailedMessage afm = (AccountFailedMessage)p.getData();
+                        controller.update(afm);
+                        break;
+                    case "ACS-MSG":
+                        AccountSuccessfulMessage asm = (AccountSuccessfulMessage)p.getData();
+                        controller.update(asm);
+                        break;
+                    case "AAG-MSG":
+                        AllActiveGamesMessage agm = (AllActiveGamesMessage)p.getData();
+                        allActiveGames = agm.getAllActiveGames();
+                        break;
+                    case "CNT-MSG":
+                        ConnectToLobbyMessage clm = (ConnectToLobbyMessage)p.getData();
+                        controller.update(clm);
+                        break;
+                    case "CLB-MSG":
+                        CreateLobbyMessage clbm = (CreateLobbyMessage)p.getData();
+                        controller.update(clbm);
+                        break;
+                    case "GLG-MSG":
+                        GameLogMessage glm = (GameLogMessage)p.getData();
+                        controller.update(glm);
+                        break;
+                    case "GRE-MSG":
+                        GameResultMessage grm = (GameResultMessage)p.getData();
+                        controller.update(grm);
+                        break;
+                    case "GMP-MSG":
+                        GamesPlayedMessage gpm = (GamesPlayedMessage)p.getData();
+                        controller.update(gpm);
+                        break;
+                    case "GVW-MSG":
+                        GameViewersMessage gvm = (GameViewersMessage)p.getData();
+                        controller.update(gvm);
+                        break;
+                    case "ILM-MSG":
+                        IllegalMoveMessage ilm = (IllegalMoveMessage)p.getData();
+                        controller.update(ilm);
+                        break;
+                    case "IAG-MSG":
+                        InactiveGameMessage igm = (InactiveGameMessage)p.getData();
+                        for(int i = 0; i < allActiveGames.size(); i++)
+                        {
+                            if(allActiveGames.get(i).getLobbyId().equals(igm.getFinishedGameId()))
+                            {
+                                allActiveGames.remove(i);
+                                break;
+                            }
                         }
-                        controller.update(rm);
+                        if(controller instanceof VsPlayerController)
+                        {
+                            controller.update(igm);
+                        }
+                        else if(controller instanceof BoardController)
+                        {
+                            controller.update(igm);
+                        }
                         break;
-                    case "PIC-MSG":
-                        PictureMsg pm = (PictureMsg)p.getData();
-                        controller.update(pm);
+                    case "LEM-MSG":
+                        LegalMoveMessage lmm = (LegalMoveMessage)p.getData();
+                        controller.update(lmm);
                         break;
-                    case "CNG-MSG":
-                        ChangeChannelMsg cm = (ChangeChannelMsg)p.getData();
-                        controller.update(cm);
+                    case "LOF-MSG":
+                        LoginFailedMessage lfm = (LoginFailedMessage)p.getData();
+                        controller.update(lfm);
                         break;
-                    case "TXT-MSG":
-                        ChannelMsg tm = (ChannelMsg)p.getData();
-                        controller.update(tm);
+                    case "LOS-MSG":
+                        LoginSuccessfulMessage lsm = (LoginSuccessfulMessage)p.getData();
+                        controller.update(lsm);
                         break;
+                    case "NAI-MSG":
+                        NewAILobbyMessage naim = (NewAILobbyMessage)p.getData();
+                        allActiveGames.add(new LobbyInfo(naim.getCreatorUsername(), naim.getGameLobbyId(), 2));
+                        if(controller instanceof VsPlayerController)
+                        {
+                            controller.update(naim);
+                        }
+                        break;
+                    case "NLB-MSG":
+                        NewLobbyMessage nlm = (NewLobbyMessage)p.getData();
+                        allActiveGames.add(new LobbyInfo(nlm.getCreatorUsername(), nlm.getGameLobbyId(), 1));
+                        if(controller instanceof VsPlayerController)
+                        {
+                            controller.update(nlm);
+                        }
+                        break;
+                    case "SPC-MSG":
+                        SpectateMessage spm = (SpectateMessage)p.getData();
+                        controller.update(spm);
+                        break;
+                    case "STS-MSG":
+                        StatsMessage stm = (StatsMessage)p.getData();
+                        controller.update(stm);
+                        break;
+                    case "UPA-MSG":
+                        UpdateAccountInfoMessage upm = (UpdateAccountInfoMessage)p.getData();
+                        user = upm.getUpdatedUser();
+                        break;
+
+
                     default:
                         System.out.println("ERROR");
                 }
@@ -116,6 +200,11 @@ public class Client implements Runnable {
                 Packet p = new Packet("GVW-MSG", msg);
                 output.writeObject(p);
             }
+            else if (msg instanceof InactiveGameMessage)
+            {
+                Packet p = new Packet("IAG-MSG");
+                output.writeObject(p);
+            }
             else if (msg instanceof LoginMessage)
             {
                 Packet p = new Packet("LOG-MSG", msg);
@@ -150,7 +239,7 @@ public class Client implements Runnable {
     }
 
 
-    public List<GameInfo> getGames() {
-        return games;
+    public List<LobbyInfo> getActiveGames() {
+        return allActiveGames;
     }
 }

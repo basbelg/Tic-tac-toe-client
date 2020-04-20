@@ -156,6 +156,7 @@ public class BoardController implements BaseController, Initializable
                     mm.setMovingPlayerId(1);
                     mm.setGameId(gameId);
                     mm.setMoveInfo(new MoveInfo(new TTT_Move(2, pos/3, pos%3), LocalDateTime.now()));
+                    client.update(mm);
                 }
 
             } else if (msg instanceof IllegalMoveMessage) {

@@ -2,6 +2,9 @@ package Controllers;
 
 import Client.Client;
 import DataClasses.GameInfo;
+import Messages.GameLogMessage;
+import Messages.GamesPlayedMessage;
+import Messages.MessageFactory;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -64,12 +67,12 @@ public class GameHistoriesController implements BaseController, Initializable
     {
         Platform.runLater(() -> {
             if (msg instanceof GameLogMessage) {
-                if (!((GameLogMessage) msg.getMoveHistory().equals(null))) {
+                if (!((GameLogMessage) msg).getMoveHistory().equals(null)) {
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
                         Parent root = loader.load();
                         MoveHistoryController mhc = loader.getController();
-                        mhc.passInfo((GameLogMessage) msg);
+                        mhc.passInfo(client, (GameLogMessage) msg);
                         Stage stage = new Stage();
                         stage.setTitle("Move History");
                         stage.setScene(new Scene(root));
@@ -81,7 +84,7 @@ public class GameHistoriesController implements BaseController, Initializable
             } else if (msg instanceof GamesPlayedMessage) {
                 List<GameInfo> games = ((GamesPlayedMessage) msg).getGameInfoList();
                 for (GameInfo g : games) {
-                    gameList.getItems().add(new Label("VS. " + g.getPlayer2Username + "\t" + g.getStartTime().toString()));
+                    gameList.getItems().add(new Label("VS. " + g.getPlayer2Username() + "\t" + g.getStartTime().toString()));
                     gameIds.add(g.getGameId());
                 }
             }

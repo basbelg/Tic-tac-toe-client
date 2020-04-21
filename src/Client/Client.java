@@ -5,6 +5,7 @@ import Controllers.BoardController;
 import Controllers.VsPlayerController;
 import DataClasses.LobbyInfo;
 import DataClasses.User;
+import Messages.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -216,7 +217,7 @@ public class Client implements Runnable {
             }
             else if (msg instanceof InactiveGameMessage)
             {
-                Packet p = new Packet("IAG-MSG");
+                Packet p = new Packet("IAG-MSG", msg);
                 output.writeObject(p);
             }
             else if (msg instanceof LoginMessage)

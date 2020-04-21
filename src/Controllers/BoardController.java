@@ -3,6 +3,7 @@ package Controllers;
 import Client.Client;
 import DataClasses.Minimax;
 import DataClasses.MoveInfo;
+import Messages.*;
 import TicTacToe.TTT_Move;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -74,7 +75,7 @@ public class BoardController implements BaseController, Initializable
                 turnLabel.setText(player1Username + "\'s turn!");
             } else if (msg instanceof SpectateMessage) {
                 isInGame = true;
-                this.gameId = ((SpectateMessage) msg).getLobbyGameId();
+                this.gameId = ((SpectateMessage) msg).getGameId();
                 this.player1Username = ((SpectateMessage) msg).getPlayer1Username();
                 this.player2Username = ((SpectateMessage) msg).getPlayer2Username();
                 int[][] spectatorBoard = ((SpectateMessage) msg).getGameBoard();
@@ -110,13 +111,13 @@ public class BoardController implements BaseController, Initializable
     {
         if(((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame)
         {
-            MoveMessage mm = (MoveMessage) MessageFactory.getMessage();
+            MoveMessage mm = (MoveMessage) MessageFactory.getMessage("MOV-MSG");
             mm.setMovingPlayerId(client.getUser().getId());
             mm.setGameId(gameId);
 
             board.setOnMouseClicked(mouseEvent -> {
                 Node node = (Node) mouseEvent.getSource();
-                mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now());
+                mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
             });
             client.update(mm);
         }
@@ -143,16 +144,16 @@ public class BoardController implements BaseController, Initializable
                 this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
             } else if (msg instanceof LegalMoveMessage) {
                 isPlayer1Turn = !isPlayer1Turn;
-                Label tile = new Label((((LegalMoveMessage) msg).getMove().getPlayer()) == 1 ? "X" : "O");
+                Label tile = new Label((((LegalMoveMessage) msg).getNextMove().getPlayer()) == 1 ? "X" : "O");
                 tile.setFont(new Font(36));
-                board.add(tile, ((LegalMoveMessage) msg).getMove().getColumn(), ((LegalMoveMessage) msg).getMove().getRow());
+                board.add(tile, ((LegalMoveMessage) msg).getNextMove().getColumn(), ((LegalMoveMessage) msg).getNextMove().getRow());
 
                 turnLabel.setText((isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!"));
 
                 if(player2Username.equals("AI Player")) {
-                    aiBoard[((LegalMoveMessage) msg).getMove().getRow()][((LegalMoveMessage) msg).getMove().getColumn()] = 1; // Player's last turn
+                    aiBoard[((LegalMoveMessage) msg).getNextMove().getRow()][((LegalMoveMessage) msg).getNextMove().getColumn()] = 1; // Player's last turn
                     int pos = aiPlayer.generateTurn(aiBoard);
-                    MoveMessage mm = (MoveMessage) MessageFactory.getMessage();
+                    MoveMessage mm = (MoveMessage) MessageFactory.getMessage("MOV-MSG");
                     mm.setMovingPlayerId(1);
                     mm.setGameId(gameId);
                     mm.setMoveInfo(new MoveInfo(new TTT_Move(2, pos/3, pos%3), LocalDateTime.now()));

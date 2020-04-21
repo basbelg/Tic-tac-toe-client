@@ -1,6 +1,9 @@
 package Controllers;
 
 import Client.Client;
+import Messages.GameLogMessage;
+import Messages.GameViewersMessage;
+import Messages.MessageFactory;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -65,7 +68,7 @@ public class MoveHistoryController implements BaseController, Initializable
             int y = glm.getMoveHistory().get(0).getNextMove().getColumn();
             board.add(new Label(getTurn()), y, x);
 
-            moveNumLabel.setText("1/" + glm.getMoveHistory().size().toString());
+            moveNumLabel.setText("1/" + glm.getMoveHistory().size());
             timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
             playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
             previousButton.setDisable(true);
@@ -80,7 +83,7 @@ public class MoveHistoryController implements BaseController, Initializable
             int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
             int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
             board.add(new Label(getTurn()), y, x);
-            moveNumLabel.setText(((Integer) (moveCounter + 1)).toString() + "/" + glm.getMoveHistory().size().toString());
+            moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
             timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
             playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
 
@@ -100,7 +103,7 @@ public class MoveHistoryController implements BaseController, Initializable
             moveCounter--;
 
             board.add(new Label(""), y, x);
-            moveNumLabel.setText(moveCounter.toString() + "/" + glm.getMoveHistory.size().toString());
+            moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
             timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
             playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? glm.getPlayer2Username() : glm.getPlayer1Username());
 

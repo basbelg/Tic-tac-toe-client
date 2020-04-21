@@ -2,6 +2,7 @@ package Controllers;
 
 import Client.Client;
 import DataClasses.User;
+import Messages.*;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -46,7 +47,7 @@ public class RegisterController implements BaseController, Initializable
                 newUser = new User(enterUsername.getText(), enterFirstName.getText(), enterLastName.getText(), enterPassword.getText());
                 newUser.setId(client.getUser().getId());
                 UpdateAccountInfoMessage uam = (UpdateAccountInfoMessage) MessageFactory.getMessage("UPA-MSG");
-                uam.setNewUser(newUser);
+                uam.setUpdatedUser(newUser);
                 client.update(uam);
             }
         }

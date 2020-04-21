@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Messages:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Messages_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Messages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/GameResultMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/GameResultMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/StatsMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/StatsMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DeleteAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DeleteAccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/StatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/StatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +55,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-12.0.2_windows-x64_bin-sdk/javafx-sdk-12.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -89,7 +108,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Tic-Tac-Toe" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\jtols\Downloads\openjfx-12.0.2_windows-x64_bin-sdk\javafx-sdk-12.0.2\lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\basbe\Downloads\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -184,7 +203,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f681d6b2-7e08-4e29-9a19-1a48bbdd96cc" name="Default Changelist" comment="" />
+      <changelist id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="" />
       <created>1586069670856</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -218,6 +237,7 @@
       <workItem from="1587350842625" duration="3671000" />
       <workItem from="1587371506863" duration="1267000" />
       <workItem from="1587411133350" duration="3547000" />
+      <workItem from="1587453641452" duration="2155000" />
     </task>
     <servers />
   </component>

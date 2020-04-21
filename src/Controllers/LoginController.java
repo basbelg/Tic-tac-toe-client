@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import Messages.*;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

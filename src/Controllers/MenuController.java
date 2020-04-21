@@ -2,6 +2,8 @@ package Controllers;
 
 import Client.Client;
 import DataClasses.GameInfo;
+import Messages.CreateAIGameMessage;
+import Messages.MessageFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;

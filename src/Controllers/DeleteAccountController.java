@@ -1,6 +1,8 @@
 package Controllers;
 
 import Client.Client;
+import Messages.DeactivateAccountMessage;
+import Messages.MessageFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -41,7 +43,7 @@ public class DeleteAccountController implements BaseController, Initializable
 
     public void onConfirmClicked()
     {
-        DeactivateAccountMessage dam = (DeactivateAccountMessage) MessageFactory.getMessage();
+        DeactivateAccountMessage dam = (DeactivateAccountMessage) MessageFactory.getMessage("DAC-MSG");
         dam.setUserId(client.getUser().getId());
 
         try

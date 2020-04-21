@@ -15,6 +15,8 @@ import javafx.scene.control.Button;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class GameHistoriesController implements BaseController, Initializable
@@ -23,13 +25,14 @@ public class GameHistoriesController implements BaseController, Initializable
     public ListView gameList;
     public Button backButton;
     public Button viewMoveHistoryButton;
+    private List<String> gameIds = new ArrayList<>();
 
     public void onViewMoveHistoryClicked()
     {
         //send in move history of game selected
         GameLogMessage glm = (GameLogMessage) MessageFactory.getMessage("GLG-MSG");
         glm.setUserId(client.getUser().getId());
-        glm.setGameId(client.getGameIds().get(gameList.getSelectionModel().getSelectedIndex()));
+        glm.setGameId(gameIds.get(gameList.getSelectionModel().getSelectedIndex()));
         client.update(glm);
     }
 
@@ -76,8 +79,10 @@ public class GameHistoriesController implements BaseController, Initializable
                     }
                 }
             } else if (msg instanceof GamesPlayedMessage) {
-                for (GamesPlayedMessage g : ((GamesPlayedMessage) msg).getGameInfoList) {
+                List<GameInfo> games = ((GamesPlayedMessage) msg).getGameInfoList();
+                for (GameInfo g : games) {
                     gameList.getItems().add(new Label("VS. " + g.getPlayer2Username + "\t" + g.getStartTime().toString()));
+                    gameIds.add(g.getGameId());
                 }
             }
         });
@@ -89,7 +94,7 @@ public class GameHistoriesController implements BaseController, Initializable
         client.setController(this);
 
         GamesPlayedMessage gpm = (GamesPlayedMessage) MessageFactory.getMessage("GMP-MSG");
-        gmp.setPlayerId(client.getUser().getId());
-        client.update(gmp);
+        gpm.setPlayerId(client.getUser().getId());
+        client.update(gpm);
     }
 }

@@ -6,7 +6,17 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="" />
+    <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/GameInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/GameInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/LobbyInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/LobbyInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/MoveInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/MoveInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/Spectator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/Spectator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/META-INF/Tic-Tac-Toe.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/META-INF/Tic-Tac-Toe.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +47,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="R:/CS4B/Tic_Tac_Toe_Server/ServerClasses.jar!/" />
+    <property name="last_opened_file_path" value="R:/CS4B/Tic-Tac-Toe" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -210,6 +220,8 @@
       <workItem from="1587411133350" duration="3547000" />
       <workItem from="1587453641452" duration="2155000" />
       <workItem from="1587528047561" duration="29003000" />
+      <workItem from="1587573373195" duration="1447000" />
+      <workItem from="1587579909899" duration="2350000" />
     </task>
     <servers />
   </component>
@@ -238,10 +250,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="359" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1586072746289" />
-    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587528235693">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587573405315">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587528235693" />
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587573405315" />
     <state x="562" y="610" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586194498698">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -250,41 +262,41 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586618863207" />
-    <state x="488" y="593" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587528118775">
+    <state x="488" y="593" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587573384140">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="488" y="593" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587528118775" />
+    <state x="488" y="593" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587573384140" />
     <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586624765460">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586624765460" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1587557238751">
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1587579927643">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1587557238751" />
-    <state width="1234" height="210" key="GridCell.Tab.0.bottom" timestamp="1587569868323">
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1587579927643" />
+    <state width="1234" height="210" key="GridCell.Tab.0.bottom" timestamp="1587581844812">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="210" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1587569868323" />
-    <state width="1234" height="210" key="GridCell.Tab.0.center" timestamp="1587569868323">
+    <state width="1234" height="210" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1587581844812" />
+    <state width="1234" height="210" key="GridCell.Tab.0.center" timestamp="1587581844812">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="210" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1587569868323" />
-    <state width="1234" height="210" key="GridCell.Tab.0.left" timestamp="1587569868323">
+    <state width="1234" height="210" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1587581844812" />
+    <state width="1234" height="210" key="GridCell.Tab.0.left" timestamp="1587581844812">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="210" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1587569868323" />
-    <state width="1234" height="210" key="GridCell.Tab.0.right" timestamp="1587569868323">
+    <state width="1234" height="210" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1587581844812" />
+    <state width="1234" height="210" key="GridCell.Tab.0.right" timestamp="1587581844812">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="210" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1587569868323" />
-    <state x="432" y="317" key="SettingsEditor" timestamp="1587557243998">
+    <state width="1234" height="210" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1587581844812" />
+    <state x="432" y="317" key="SettingsEditor" timestamp="1587573397073">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1587557243998" />
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1586701861769">
+    <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1587573397073" />
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1587579913031">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586701861769" />
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587579913031" />
   </component>
 </project>

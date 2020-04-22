@@ -147,6 +147,7 @@ public class RegisterController implements BaseController, Initializable
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
                         Parent root = loader.load();
                         AccountController ac = loader.getController();
+                        ac.passInfo(client);
                         Stage stage = (Stage) confirmButton.getScene().getWindow();
                         stage.close();
                         stage.setTitle("Account");

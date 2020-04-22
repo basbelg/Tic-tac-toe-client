@@ -6,25 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Messages_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Messages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/GameResultMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/GameResultMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/StatsMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/StatsMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/DeleteAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DeleteAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/StatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/StatsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" afterDir="false" />
-    </list>
+    <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +219,7 @@
       <workItem from="1587350842625" duration="3671000" />
       <workItem from="1587371506863" duration="1267000" />
       <workItem from="1587411133350" duration="3547000" />
-      <workItem from="1587453641452" duration="2155000" />
+      <workItem from="1587453641452" duration="2316000" />
     </task>
     <servers />
   </component>

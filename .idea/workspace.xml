@@ -1,59 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="Messages:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/ServerClasses.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/DataClasses/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/DataClasses/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/GameInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/GameInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/LobbyInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/LobbyInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/MoveInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/MoveInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/Spectator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/Spectator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/GameInterfaces/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/GameInterfaces/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/AccountFailedMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/AccountFailedMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/AccountSuccessfulMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/AccountSuccessfulMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/AllActiveGamesMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/AllActiveGamesMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/ConnectToLobbyMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/ConnectToLobbyMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/CreateAIGameMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/CreateAIGameMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/CreateAccountMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/CreateAccountMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/CreateLobbyMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/CreateLobbyMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/DeactivateAccountMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/DeactivateAccountMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/FullLobbyMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/FullLobbyMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/GameLogMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/GameLogMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/GameResultMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/GameResultMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/GameViewersMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/GameViewersMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/GamesPlayedMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/GamesPlayedMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/IllegalMoveMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/IllegalMoveMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/InactiveGameMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/InactiveGameMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/LegalMoveMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/LegalMoveMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/LoginFailedMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/LoginFailedMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/LoginMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/LoginMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/LoginSuccessfulMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/LoginSuccessfulMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/MessageFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/MessageFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/MoveMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/MoveMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/NewAILobbyMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/NewAILobbyMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/NewLobbyMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/NewLobbyMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/Packet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/Packet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/SpectateMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/SpectateMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/StatsMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/StatsMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/UpdateAccountInfoMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/UpdateAccountInfoMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/DeleteAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/DeleteAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/GameHistoriesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/GameHistoriesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MoveHistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MoveHistoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/StatsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/StatsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/ViewSpectatorsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/ViewSpectatorsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/VsPlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/VsPlayerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/GameInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/GameInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/LobbyInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/LobbyInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/Minimax.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/Minimax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/MoveInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/MoveInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/Spectator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/Spectator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/TTT_Evaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/TTT_Evaluator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/DataClasses/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/GameInterfaces/AI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/GameInterfaces/AI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/GameInterfaces/Evaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/GameInterfaces/Evaluator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/GameInterfaces/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/GameInterfaces/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/META-INF/Tic-Tac-Toe.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/META-INF/Tic-Tac-Toe.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/TicTacToe/TTT_Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/TicTacToe/TTT_Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ViewSpectatorsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ViewSpectatorsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/GameInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/LobbyInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/MoveInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/Spectator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/User.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="FxmlFile" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1a6xLAja2iKBWTfNIgGVwGG4LrC" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar!/" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.28235295" />
-    <property name="recentsLimit" value="5" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="DataClasses" />
-      <recent name="TicTacToe" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\basbe\IdeaProjects\Tic-Tac-Toe\Messages\src" />
-      <recent name="C:\Users\basbe\IdeaProjects\Tic-Tac-Toe\src" />
-    </key>
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -66,227 +102,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="12" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Tic-Tac-Toe" />
       <option name="VM_PARAMETERS" value="--module-path C:\Users\basbe\Downloads\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib --add-modules javafx.controls,javafx.fxml" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DBManagerTest.addGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Tic-Tac-Toe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sample" />
-      <option name="MAIN_CLASS_NAME" value="sample.DBManagerTest" />
-      <option name="METHOD_NAME" value="addGame" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBManagerTest.addUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Tic-Tac-Toe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sample" />
-      <option name="MAIN_CLASS_NAME" value="sample.DBManagerTest" />
-      <option name="METHOD_NAME" value="addUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBManagerTest.printAllActiveUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Tic-Tac-Toe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sample" />
-      <option name="MAIN_CLASS_NAME" value="sample.DBManagerTest" />
-      <option name="METHOD_NAME" value="printAllActiveUsers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DBManagerTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Tic-Tac-Toe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sample" />
-      <option name="MAIN_CLASS_NAME" value="sample.DBManagerTest" />
-      <option name="METHOD_NAME" value="updateUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DBManagerTest.addGame" />
-      <item itemvalue="JUnit.DBManagerTest.addUser" />
-      <item itemvalue="JUnit.DBManagerTest.printAllActiveUsers" />
-      <item itemvalue="JUnit.DBManagerTest.updateUser" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.DBManagerTest.printAllActiveUsers" />
-        <item itemvalue="JUnit.DBManagerTest.addUser" />
-        <item itemvalue="JUnit.DBManagerTest.updateUser" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="" />
-      <created>1586069670856</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1586069670856</updated>
-      <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1585022140072" duration="9000" />
-      <workItem from="1585986468859" duration="61000" />
-      <workItem from="1585987753551" duration="2017000" />
-      <workItem from="1586067413398" duration="1636000" />
-      <workItem from="1586501609770" duration="27000" />
-      <workItem from="1586501843419" duration="596000" />
-      <workItem from="1586669163258" duration="3367000" />
-      <workItem from="1586723745114" duration="1596000" />
-      <workItem from="1586069672141" duration="100000" />
-      <workItem from="1586069786323" duration="1438000" />
-      <workItem from="1586072815401" duration="1060000" />
-      <workItem from="1586073888312" duration="23000" />
-      <workItem from="1586073922950" duration="52000" />
-      <workItem from="1586084580420" duration="13362000" />
-      <workItem from="1586149913158" duration="25694000" />
-      <workItem from="1586225667526" duration="10571000" />
-      <workItem from="1586351860767" duration="5270000" />
-      <workItem from="1586404643803" duration="15206000" />
-      <workItem from="1586531841068" duration="1698000" />
-      <workItem from="1586613903053" duration="10581000" />
-      <workItem from="1586700892058" duration="11504000" />
-      <workItem from="1586808104420" duration="6101000" />
-      <workItem from="1587245377827" duration="8514000" />
-      <workItem from="1587288741310" duration="8000" />
-      <workItem from="1587328170747" duration="4088000" />
-      <workItem from="1587350842625" duration="3671000" />
-      <workItem from="1587371506863" duration="1267000" />
-      <workItem from="1587411133350" duration="3547000" />
-      <workItem from="1587453641452" duration="2316000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="872" y="359" key="#Project_Structure" timestamp="1586072746289">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="872" y="359" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1586072746289" />
-    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586072638458">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586072638458" />
-    <state x="562" y="610" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586194498698">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="562" y="610" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586194498698" />
-    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser" timestamp="1586618863207">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586618863207" />
-    <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586624765460">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586624765460" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1586532057653">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1586532057653" />
-    <state width="1234" height="212" key="GridCell.Tab.0.bottom" timestamp="1586448390564">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="212" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1586448390564" />
-    <state width="1234" height="212" key="GridCell.Tab.0.center" timestamp="1586448390563">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="212" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1586448390563" />
-    <state width="1234" height="212" key="GridCell.Tab.0.left" timestamp="1586448390563">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="212" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1586448390563" />
-    <state width="1234" height="212" key="GridCell.Tab.0.right" timestamp="1586448390563">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1234" height="212" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1586448390563" />
-    <state x="432" y="317" key="SettingsEditor" timestamp="1586197217080">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1586197217080" />
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1586701861769">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586701861769" />
   </component>
 </project>

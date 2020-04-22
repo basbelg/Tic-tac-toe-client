@@ -3,8 +3,8 @@ package Client;
 import Controllers.BaseController;
 import Controllers.BoardController;
 import Controllers.VsPlayerController;
-import DataClasses.LobbyInfo;
 import DataClasses.User;
+import DataClasses.*;
 import Messages.*;
 
 import java.io.IOException;
@@ -170,6 +170,15 @@ public class Client implements Runnable {
         }
         finally {
             System.out.println("client thread terminated");
+        }
+    }
+
+    public void terminateThread() {
+        thread.interrupt();
+        try {
+            input.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

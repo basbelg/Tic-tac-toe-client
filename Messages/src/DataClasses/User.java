@@ -77,4 +77,8 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void setIsActive(boolean active) {
+        this.isActive = active;
+    }
 }

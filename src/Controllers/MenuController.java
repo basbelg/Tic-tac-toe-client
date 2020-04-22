@@ -1,7 +1,6 @@
 package Controllers;
 
 import Client.Client;
-import DataClasses.GameInfo;
 import Messages.CreateAIGameMessage;
 import Messages.MessageFactory;
 import javafx.fxml.FXMLLoader;
@@ -81,6 +80,7 @@ public class MenuController implements BaseController, Initializable
             Parent root = loader.load();
             LoginController lc = loader.getController();
             Stage stage = (Stage) logoutButton.getScene().getWindow();
+            client.terminateThread();
             stage.close();
             stage.setTitle("Login");
             stage.setScene(new Scene(root));

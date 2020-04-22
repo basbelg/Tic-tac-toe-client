@@ -38,13 +38,13 @@ public class RegisterController implements BaseController, Initializable
                 !enterPassword.getText().equals("") && !enterConfirmPassword.getText().equals("") &&
                 enterPassword.getText().equals(enterConfirmPassword.getText()))
         {
+            newUser = new User(enterUsername.getText(), enterFirstName.getText(), enterLastName.getText(), enterPassword.getText());
             if(confirmButton.getText().equals("Register")) {
                 CreateAccountMessage cam = (CreateAccountMessage) MessageFactory.getMessage("CAC-MSG");
                 cam.setNewUser(newUser);
                 client.update(cam);
             }
             else if (confirmButton.getText().equals("Confirm")) {
-                newUser = new User(enterUsername.getText(), enterFirstName.getText(), enterLastName.getText(), enterPassword.getText());
                 newUser.setId(client.getUser().getId());
                 UpdateAccountInfoMessage uam = (UpdateAccountInfoMessage) MessageFactory.getMessage("UPA-MSG");
                 uam.setUpdatedUser(newUser);
@@ -130,6 +130,7 @@ public class RegisterController implements BaseController, Initializable
                         LoginController lc = loader.getController();
                         Stage stage = (Stage) confirmButton.getScene().getWindow();
                         stage.close();
+                        client.terminateThread();
                         stage.setTitle("Login");
                         stage.setScene(new Scene(root));
                         stage.show();
@@ -146,6 +147,7 @@ public class RegisterController implements BaseController, Initializable
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
                         Parent root = loader.load();
                         AccountController ac = loader.getController();
+                        ac.passInfo(client);
                         Stage stage = (Stage) confirmButton.getScene().getWindow();
                         stage.close();
                         stage.setTitle("Account");

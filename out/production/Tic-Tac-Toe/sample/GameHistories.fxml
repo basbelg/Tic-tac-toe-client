@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane onMouseClicked="#onBackClicked" prefHeight="435.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameHistoriesController">
+   <children>
+      <ListView fx:id="gameList" layoutX="15.0" layoutY="36.0" prefHeight="342.0" prefWidth="403.0" />
+      <Button fx:id="backButton" layoutX="321.0" layoutY="396.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefWidth="59.0" text="Back" />
+      <Button fx:id="viewMoveHistoryButton" layoutX="53.0" layoutY="396.0" mnemonicParsing="false" onMouseClicked="#onViewMoveHistoryClicked" text="View Move History" />
+   </children>
+</AnchorPane>

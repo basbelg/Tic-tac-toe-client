@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MoveHistoryController">
+   <children>
+      <GridPane fx:id="board" gridLinesVisible="true" layoutX="177.0" layoutY="50.0" maxHeight="300.0" maxWidth="300.0" minHeight="300.0" minWidth="300.0" prefHeight="300.0" prefWidth="300.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <Button fx:id="previousButton" layoutX="491.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#onPreviousClicked" prefHeight="25.0" prefWidth="74.0" text="Previous" />
+      <Button fx:id="nextButton" layoutX="491.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#onNextClicked" prefHeight="25.0" prefWidth="74.0" text="Next" />
+      <Label layoutX="30.0" layoutY="42.0" text="Move:" />
+      <Label fx:id="moveNumLabel" layoutX="75.0" layoutY="42.0" text="0/0" />
+      <Button fx:id="cancelButton" layoutX="491.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#onCancelClicked" prefHeight="25.0" prefWidth="74.0" text="Cancel" />
+      <Button layoutX="491.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#onSpectatorsClicked" prefHeight="25.0" prefWidth="74.0" text="Spectators" />
+      <Label layoutX="16.0" layoutY="86.0" text="Time Made:" />
+      <Label fx:id="timeLabel" layoutX="93.0" layoutY="86.0" text="0:00 am" />
+      <Label layoutX="33.0" layoutY="134.0" text="Player:" />
+      <Label fx:id="playerLabel" layoutX="84.0" layoutY="134.0" text="N/A" />
+   </children>
+</AnchorPane>

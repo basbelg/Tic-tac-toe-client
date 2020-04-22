@@ -41,7 +41,7 @@
 4/4/20
 	Riley
 		1. Yes
-		2. I will finish creating the mysql Database, and I will continue on inserting and retrieving data
+		2. I will finish creating the mysql database, and I will continue on inserting and retrieving data
 		3. No
 
 	Bas
@@ -57,17 +57,17 @@
 4/5/20
 	Riley
 		1. Yes
-		2. I will create the TTTGameData table in the mysql Database, and I will finish adding and retrieving data from the Database.
+		2. I will create the TTTGameData table in the mysql database, and I will finish adding and retrieving data from the database.
 		3. No
 
 	Bas
 		1. No
-		2. I will test interactions with the Database
+		2. I will test interactions with the database
 		3. I am waiting on the completion of backend code
 
 	Johnny
 		1. Yes
-		2. I will write test code for inserting/updating/getting from the Database into the TTTGameData table
+		2. I will write test code for inserting/updating/getting from the database into the TTTGameData table
 		3. I am waiting for the creation of the Games table
 		
 4/6/20
@@ -166,19 +166,3 @@
 		1. Yes
 		2. Create more of the client side UI
 		3. no
-
-4/12/20
-	Riley
-		1. Yes
-		2. I will finish the game class, and I will create the move and viewer tables in mysql
-		3. I need the Tic-Tac-Toe move class to finish the game class
-
-	Bas
-		1. Yes
-		2. Start working on the Client class (client side)
-		3. No
-
-	Johnny
-		1. Yes
-		2. Finish hooking up Login and Register windows to code that will send the data to the DB.
-		3. No

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ServerClasses">
+    <CLASSES>
+      <root url="jar://R:/CS4B/Tic_Tac_Toe_Server/ServerClasses.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

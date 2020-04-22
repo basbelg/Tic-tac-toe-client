@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.VsPlayerController">
+   <children>
+      <Button fx:id="backButton" layoutX="274.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="68.0" text="Back" />
+      <ListView fx:id="activeGamesList" layoutX="24.0" layoutY="46.0" prefHeight="273.0" prefWidth="304.0" />
+      <Label layoutX="24.0" layoutY="21.0" prefHeight="25.0" prefWidth="200.0" text="Active Games" />
+      <Button fx:id="createLobbyButton" layoutX="24.0" layoutY="343.0" mnemonicParsing="false" onMouseClicked="#onCreateLobbyClicked" prefHeight="25.0" prefWidth="91.0" text="Create Lobby" />
+      <Button fx:id="joinLobbyButton" layoutX="124.0" layoutY="343.0" mnemonicParsing="false" onMouseClicked="#onJoinLobbyClicked" prefHeight="25.0" prefWidth="91.0" text="Join Lobby" />
+   </children>
+</AnchorPane>

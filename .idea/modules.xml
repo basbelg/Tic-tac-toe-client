@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Messages/Messages.iml" filepath="$PROJECT_DIR$/Messages/Messages.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tic-Tac-Toe.iml" filepath="$PROJECT_DIR$/Tic-Tac-Toe.iml" />
     </modules>
   </component>

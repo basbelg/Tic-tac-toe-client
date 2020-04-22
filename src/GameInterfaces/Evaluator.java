@@ -1,6 +1,6 @@
 package GameInterfaces;
 
 public interface Evaluator {
-    Integer quickEval(Board board);
-    Integer weightedEval(Board board, Object weight);
+    Integer evaluate(int[][] board);
+    Integer evaluate(int[][] board, int depth);
 }

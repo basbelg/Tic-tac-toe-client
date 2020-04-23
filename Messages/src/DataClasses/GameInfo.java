@@ -1,8 +1,9 @@
 package DataClasses;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class GameInfo
+public class GameInfo implements Serializable
 {
     private String player2Username;
     private LocalDateTime startTime;

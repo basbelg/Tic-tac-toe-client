@@ -1,6 +1,8 @@
 package DataClasses;
 
-public class LobbyInfo {
+import java.io.Serializable;
+
+public class LobbyInfo implements Serializable {
     private String creatorUsername;
     private String lobbyId;
     private int playerCount;

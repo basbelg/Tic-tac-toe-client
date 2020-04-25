@@ -7,23 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/ServerClasses.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/DataClasses/GameInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/DataClasses/GameInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/DataClasses/LobbyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/DataClasses/LobbyInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/DataClasses/MoveInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/DataClasses/MoveInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/GameInterfaces/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/GameInterfaces/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/GameInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/GameInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/LobbyInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/LobbyInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/MoveInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/MoveInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messages/GameInterfaces/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/GameInterfaces/Move.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/GameViewersMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/GameViewersMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +61,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587592248629</updated>
-      <workItem from="1587592270342" duration="14327000" />
+      <workItem from="1587592270342" duration="14526000" />
+      <workItem from="1587718335728" duration="687000" />
+      <workItem from="1587796344830" duration="3342000" />
     </task>
     <servers />
   </component>
@@ -88,7 +75,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

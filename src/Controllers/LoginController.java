@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -23,7 +24,7 @@ public class LoginController implements BaseController, Initializable
     public Button signInButton;
     public Button newUserButton;
     public TextField enterUsername;
-    public TextField enterPassword;
+    public PasswordField enterPassword;
     public Label invalidLabel;
 
     public void onUsernameChanged()

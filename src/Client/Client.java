@@ -3,8 +3,8 @@ package Client;
 import Controllers.BaseController;
 import Controllers.BoardController;
 import Controllers.VsPlayerController;
-import DataClasses.LobbyInfo;
 import DataClasses.User;
+import DataClasses.*;
 import Messages.*;
 
 import java.io.IOException;

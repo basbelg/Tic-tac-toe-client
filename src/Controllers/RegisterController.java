@@ -87,6 +87,7 @@ public class RegisterController implements BaseController, Initializable
                 Parent root = loader.load();
                 LoginController lc = loader.getController();
                 Stage stage = (Stage) confirmButton.getScene().getWindow();
+                client.terminateThread();
                 stage.close();
                 stage.setTitle("Login");
                 stage.setScene(new Scene(root));

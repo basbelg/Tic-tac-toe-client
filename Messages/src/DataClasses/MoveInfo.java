@@ -2,9 +2,10 @@ package DataClasses;
 
 import GameInterfaces.Move;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class MoveInfo {
+public class MoveInfo implements Serializable {
     private Move nextMove;
     private LocalDateTime timeMade;
 

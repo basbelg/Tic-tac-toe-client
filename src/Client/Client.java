@@ -77,6 +77,19 @@ public class Client implements Runnable {
                         currentGameId = clbm.getGameLobbyId();
                         controller.update(clbm);
                         break;
+                    case "FUL-MSG":
+                        FullLobbyMessage flm = (FullLobbyMessage)p.getData();
+                        for(LobbyInfo lobbyInfo : allActiveGames) {
+                            if(lobbyInfo.getLobbyId().equals(flm.getLobbyGameId())) {
+                                lobbyInfo.setPlayerCount(2);
+                                break;
+                            }
+                        }
+                        if(controller instanceof VsPlayerController)
+                        {
+                            controller.update(flm);
+                        }
+                        break;
                     case "GLG-MSG":
                         GameLogMessage glm = (GameLogMessage)p.getData();
                         controller.update(glm);
@@ -112,12 +125,12 @@ public class Client implements Runnable {
                         {
                             controller.update(igm);
                         }
-                        else if(controller instanceof BoardController)
+                        /*else if(controller instanceof BoardController) // TODO : Not needed (also need to handle full lobby message)
                         {
                             if(currentGameId.equals(igm.getFinishedGameId())) {
                                 controller.update(igm);
                             }
-                        }
+                        }*/
                         break;
                     case "LEM-MSG":
                         LegalMoveMessage lmm = (LegalMoveMessage)p.getData();

@@ -8,7 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/DataClasses/LobbyInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/DataClasses/LobbyInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/DataClasses/LobbyInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/DataClasses/LobbyInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +27,7 @@
   <component name="ProjectId" id="1aujCXovhKCCj5IFTImEkl4wvO2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar!/" />
@@ -63,7 +69,12 @@
       <updated>1587592248629</updated>
       <workItem from="1587592270342" duration="14526000" />
       <workItem from="1587718335728" duration="687000" />
-      <workItem from="1587796344830" duration="3342000" />
+      <workItem from="1587796344830" duration="3900000" />
+      <workItem from="1587865885393" duration="5365000" />
+      <workItem from="1587895474387" duration="516000" />
+      <workItem from="1588041006773" duration="2351000" />
+      <workItem from="1588144855247" duration="2880000" />
+      <workItem from="1588196323647" duration="4878000" />
     </task>
     <servers />
   </component>

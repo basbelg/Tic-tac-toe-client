@@ -98,6 +98,11 @@ public class VsPlayerController implements BaseController, Initializable
                 for (LobbyInfo l : client.getActiveGames()) {
                     activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
                 }
+            } else if (msg instanceof FullLobbyMessage) {
+                activeGamesList.getItems().clear();
+                for (LobbyInfo l : client.getActiveGames()) {
+                    activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
+                }
             }
         });
     }
@@ -111,6 +116,7 @@ public class VsPlayerController implements BaseController, Initializable
 
     public void onJoinLobbyClicked()
     {
+        // TODO : Set the lobby ID
         ConnectToLobbyMessage clm = (ConnectToLobbyMessage) MessageFactory.getMessage("CNT-MSG");
         clm.setPlayer2(client.getUser().getUsername());
         clm.setStartTime(LocalDateTime.now());

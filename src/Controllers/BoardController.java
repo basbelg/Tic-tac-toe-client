@@ -101,7 +101,7 @@ public class BoardController implements BaseController, Initializable
                 turnLabel.setText(isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!");
             }
 
-            closeButton.setVisible(!isInGame);
+            closeButton.setVisible(false /*!isInGame*/);
         });
     }
 
@@ -161,7 +161,7 @@ public class BoardController implements BaseController, Initializable
                 }
 
             } else if (msg instanceof IllegalMoveMessage) {
-                errorLabel.setText(((IllegalMoveMessage) msg).toString());
+                errorLabel.setText(msg.toString());
             } else if (msg instanceof GameViewersMessage) {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
@@ -178,36 +178,30 @@ public class BoardController implements BaseController, Initializable
             }
             else if(msg instanceof GameResultMessage)
             {
-                winnerLabel.setText(((GameResultMessage) msg).toString());
+                winnerLabel.setText(msg.toString());
                 isInGame = false;
                 closeButton.setVisible(true);
-            }
-            else if(msg instanceof InactiveGameMessage)
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
-                    Parent root = loader.load();
-                    MenuController mc = loader.getController();
-                    mc.passInfo(client);
-                    Stage stage = (Stage) closeButton.getScene().getWindow();
-                    stage.close();
-                    stage.setTitle("Menu");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
             }
         });
     }
 
     public void onCloseClicked()
     {
-        InactiveGameMessage igm = (InactiveGameMessage) MessageFactory.getMessage("IAG-MSG");
-        igm.setFinishedGameId(gameId);
-        client.update(igm);
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+            Parent root = loader.load();
+            MenuController mc = loader.getController();
+            mc.passInfo(client);
+            Stage stage = (Stage) closeButton.getScene().getWindow();
+            stage.close();
+            stage.setTitle("Menu");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

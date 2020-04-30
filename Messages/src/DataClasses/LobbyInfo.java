@@ -2,7 +2,7 @@ package DataClasses;
 
 import java.io.Serializable;
 
-public class LobbyInfo implements Serializable {
+public class LobbyInfo implements Serializable{
     private String creatorUsername;
     private String lobbyId;
     private int playerCount;
@@ -23,5 +23,17 @@ public class LobbyInfo implements Serializable {
 
     public int getPlayerCount() {
         return playerCount;
+    }
+
+    public void setCreatorUsername(String creatorUsername) {
+        this.creatorUsername = creatorUsername;
+    }
+
+    public void setLobbyId(String lobbyId) {
+        this.lobbyId = lobbyId;
+    }
+
+    public void setPlayerCount(int playerCount) {
+        this.playerCount = playerCount;
     }
 }

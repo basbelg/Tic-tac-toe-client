@@ -36,10 +36,11 @@ public class BoardController implements BaseController, Initializable
     private String gameId;
     private boolean isPlayer1Turn;
     private boolean isInGame;
+    private boolean isPendingMove;
     private int playerNumber;   // 0 if the client is a spectator
     private String player1Username;
     private String player2Username;
-    private Minimax aiPlayer;
+    private Minimax aiPlayer = new Minimax();
     private int[][] aiBoard = new int[3][3];
 
 
@@ -47,6 +48,7 @@ public class BoardController implements BaseController, Initializable
     {
         this.playerNumber = playerNumber;
         this.client = client;
+        this.isPendingMove = false;
         client.setController(this);
 
         Platform.runLater(() -> {
@@ -101,7 +103,7 @@ public class BoardController implements BaseController, Initializable
                 turnLabel.setText(isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!");
             }
 
-            closeButton.setVisible(!isInGame);
+            closeButton.setVisible(false /*!isInGame*/);
         });
     }
 
@@ -109,7 +111,7 @@ public class BoardController implements BaseController, Initializable
 
     public void onBoardClicked()
     {
-        if(((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame)
+        if(((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame && !isPendingMove)
         {
             MoveMessage mm = (MoveMessage) MessageFactory.getMessage("MOV-MSG");
             mm.setMovingPlayerId(client.getUser().getId());
@@ -119,6 +121,7 @@ public class BoardController implements BaseController, Initializable
                 Node node = (Node) mouseEvent.getSource();
                 mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
             });
+            isPendingMove = true;
             client.update(mm);
         }
     }
@@ -144,11 +147,13 @@ public class BoardController implements BaseController, Initializable
                 this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
             } else if (msg instanceof LegalMoveMessage) {
                 isPlayer1Turn = !isPlayer1Turn;
+                isPendingMove = false;
                 Label tile = new Label((((LegalMoveMessage) msg).getNextMove().getPlayer()) == 1 ? "X" : "O");
                 tile.setFont(new Font(36));
                 board.add(tile, ((LegalMoveMessage) msg).getNextMove().getColumn(), ((LegalMoveMessage) msg).getNextMove().getRow());
 
                 turnLabel.setText((isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!"));
+                errorLabel.setText("");
 
                 if(player2Username.equals("AI Player")) {
                     aiBoard[((LegalMoveMessage) msg).getNextMove().getRow()][((LegalMoveMessage) msg).getNextMove().getColumn()] = 1; // Player's last turn
@@ -161,7 +166,8 @@ public class BoardController implements BaseController, Initializable
                 }
 
             } else if (msg instanceof IllegalMoveMessage) {
-                errorLabel.setText(((IllegalMoveMessage) msg).toString());
+                isPendingMove = false;
+                errorLabel.setText(msg.toString());
             } else if (msg instanceof GameViewersMessage) {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
@@ -178,36 +184,30 @@ public class BoardController implements BaseController, Initializable
             }
             else if(msg instanceof GameResultMessage)
             {
-                winnerLabel.setText(((GameResultMessage) msg).toString());
+                winnerLabel.setText(msg.toString());
                 isInGame = false;
                 closeButton.setVisible(true);
-            }
-            else if(msg instanceof InactiveGameMessage)
-            {
-                try
-                {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
-                    Parent root = loader.load();
-                    MenuController mc = loader.getController();
-                    mc.passInfo(client);
-                    Stage stage = (Stage) closeButton.getScene().getWindow();
-                    stage.close();
-                    stage.setTitle("Menu");
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
             }
         });
     }
 
     public void onCloseClicked()
     {
-        InactiveGameMessage igm = (InactiveGameMessage) MessageFactory.getMessage("IAG-MSG");
-        igm.setFinishedGameId(gameId);
-        client.update(igm);
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+            Parent root = loader.load();
+            MenuController mc = loader.getController();
+            mc.passInfo(client);
+            Stage stage = (Stage) closeButton.getScene().getWindow();
+            stage.close();
+            stage.setTitle("Menu");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

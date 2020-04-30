@@ -45,6 +45,7 @@ public class DeleteAccountController implements BaseController, Initializable
     {
         DeactivateAccountMessage dam = (DeactivateAccountMessage) MessageFactory.getMessage("DAC-MSG");
         dam.setUserId(client.getUser().getId());
+        client.update(dam);
 
         try
         {

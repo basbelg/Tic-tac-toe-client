@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Messages/src/Messages/ConcedeMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Messages/src/Messages/ConnectFailedMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Messages.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DeleteAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DeleteAccountController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +239,7 @@
       <workItem from="1587982869751" duration="4904000" />
       <workItem from="1588042639848" duration="4366000" />
       <workItem from="1588139983098" duration="8828000" />
-      <workItem from="1588218730437" duration="701000" />
+      <workItem from="1588218730437" duration="1421000" />
     </task>
     <servers />
   </component>

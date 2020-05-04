@@ -3,6 +3,7 @@ package Controllers;
 import Client.Client;
 import Messages.CreateAIGameMessage;
 import Messages.MessageFactory;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -98,25 +99,23 @@ public class MenuController implements BaseController, Initializable
     @Override
     public void update(Serializable msg)
     {
-        if(msg instanceof CreateAIGameMessage)
-        {
-            try
-            {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
-                Parent root = loader.load();
-                BoardController bc = loader.getController();
-                bc.passInfo(client, msg, 1);
-                Stage stage = (Stage) vsAIButton.getScene().getWindow();
-                stage.close();
-                stage.setTitle("Tic-Tac-Toe (Vs. AI)");
-                stage.setScene(new Scene(root));
-                stage.show();
+        Platform.runLater(() -> {
+            if (msg instanceof CreateAIGameMessage) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
+                    Parent root = loader.load();
+                    BoardController bc = loader.getController();
+                    bc.passInfo(client, msg, 1);
+                    Stage stage = (Stage) vsAIButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Tic-Tac-Toe (Vs. AI)");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-            catch(IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
+        });
     }
 
     public void passInfo(Client client)

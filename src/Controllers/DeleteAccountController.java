@@ -53,6 +53,7 @@ public class DeleteAccountController implements BaseController, Initializable
             Parent root = loader.load();
             Stage stage = (Stage) confirmButton.getScene().getWindow();
             stage.close();
+            client.terminateThread();
             stage.setTitle("Login");
             stage.setScene(new Scene(root));
             stage.show();

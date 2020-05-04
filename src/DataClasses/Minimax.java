@@ -7,6 +7,12 @@ public class Minimax implements AI
 {
     private static Evaluator Eval = new TTT_Evaluator();
 
+    public Evaluator getEvaluator()
+    {
+        return Eval;
+    }
+
+
     public int generateTurn(int[][] board) {
         int turn = 0;
         int pos;

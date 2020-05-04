@@ -7,9 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tic-Tac-Toe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tic-Tac-Toe.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/DeleteAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/DeleteAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/VsPlayerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/VsPlayerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/TicTacToe/TTT_Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/TicTacToe/TTT_Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Board.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataClasses/Minimax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataClasses/Minimax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TicTacToe/TTT_Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToe/TTT_Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Board.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -241,7 +251,10 @@
       <workItem from="1588042639848" duration="4366000" />
       <workItem from="1588139983098" duration="8828000" />
       <workItem from="1588218730437" duration="1421000" />
-      <workItem from="1588323889182" duration="59000" />
+      <workItem from="1588323889182" duration="592000" />
+      <workItem from="1588405626296" duration="5259000" />
+      <workItem from="1588462632742" duration="16347000" />
+      <workItem from="1588540872519" duration="9530000" />
     </task>
     <servers />
   </component>

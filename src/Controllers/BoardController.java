@@ -148,7 +148,7 @@ public class BoardController implements BaseController, Initializable
                         {
                             tile.setText("X");
                         }
-                        else
+                        else if(!isPlayer1Turn && playerNumber == 2)
                         {
                             tile.setText("O");
                         }

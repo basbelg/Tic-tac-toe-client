@@ -69,7 +69,24 @@ public class VsPlayerController implements BaseController, Initializable
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else if (msg instanceof SpectateMessage) {
+            }
+            else if (msg instanceof CreateLobbyMessage)
+            {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
+                    Parent root = loader.load();
+                    BoardController bc = loader.getController();
+                    bc.passInfo(client, msg, 1);
+                    Stage stage = (Stage) createLobbyButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Tic-Tac-Toe (Vs. Player)");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else if (msg instanceof SpectateMessage) {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Board.fxml"));
                     Parent root = loader.load();

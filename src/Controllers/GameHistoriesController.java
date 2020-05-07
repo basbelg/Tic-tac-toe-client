@@ -28,15 +28,22 @@ public class GameHistoriesController implements BaseController, Initializable
     public ListView gameList;
     public Button backButton;
     public Button viewMoveHistoryButton;
-    private List<String> gameIds = new ArrayList<>();
+    private List<GameInfo> gamesPlayed = new ArrayList<>();
 
     public void onViewMoveHistoryClicked()
     {
-        //send in move history of game selected
-        GameLogMessage glm = (GameLogMessage) MessageFactory.getMessage("GLG-MSG");
-        glm.setUserId(client.getUser().getId());
-        glm.setGameId(gameIds.get(gameList.getSelectionModel().getSelectedIndex()));
-        client.update(glm);
+        try
+        {
+            //send in move history of game selected
+            GameLogMessage glm = (GameLogMessage) MessageFactory.getMessage("GLG-MSG");
+            glm.setUserId(client.getUser().getId());
+            glm.setGameId(gamesPlayed.get(gameList.getSelectionModel().getSelectedIndex()).getGameId());
+            client.update(glm);
+        }
+        catch(IndexOutOfBoundsException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     public void onBackClicked()
@@ -67,13 +74,14 @@ public class GameHistoriesController implements BaseController, Initializable
     {
         Platform.runLater(() -> {
             if (msg instanceof GameLogMessage) {
-                if (!((GameLogMessage) msg).getMoveHistory().equals(null)) {
+                if (((GameLogMessage) msg).getMoveHistory() != null) {
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/MoveHistory.fxml"));
                         Parent root = loader.load();
                         MoveHistoryController mhc = loader.getController();
                         mhc.passInfo(client, (GameLogMessage) msg);
-                        Stage stage = new Stage();
+                        Stage stage = (Stage) viewMoveHistoryButton.getScene().getWindow();
+                        stage.close();
                         stage.setTitle("Move History");
                         stage.setScene(new Scene(root));
                         stage.show();
@@ -81,11 +89,24 @@ public class GameHistoriesController implements BaseController, Initializable
                         e.printStackTrace();
                     }
                 }
-            } else if (msg instanceof GamesPlayedMessage) {
-                List<GameInfo> games = ((GamesPlayedMessage) msg).getGameInfoList();
-                for (GameInfo g : games) {
-                    gameList.getItems().add(new Label("VS. " + g.getPlayer2Username() + "\t" + g.getStartTime().toString()));
-                    gameIds.add(g.getGameId());
+            }
+            else if (msg instanceof GamesPlayedMessage)
+            {
+                gamesPlayed = ((GamesPlayedMessage) msg).getGameInfoList();
+                if(gamesPlayed != null)
+                {
+                    for(GameInfo gi : gamesPlayed)
+                    {
+                        StringBuffer out = new StringBuffer();
+
+                        out.append("VS. " + gi.getPlayer2Username() + "\t\tTime Started: " + (gi.getStartTime().toString()));
+
+                        gameList.getItems().add(new Label(out.toString()));
+                    }
+                }
+                else
+                {
+                    gameList.getItems().add(new Label("NO GAMES PLAYED"));
                 }
             }
         });

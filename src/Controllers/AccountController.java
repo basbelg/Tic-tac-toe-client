@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import Messages.GamesPlayedMessage;
 import Messages.MessageFactory;
 import Messages.StatsMessage;
 import javafx.application.Platform;

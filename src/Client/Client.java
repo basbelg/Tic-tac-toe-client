@@ -204,6 +204,7 @@ public class Client implements Runnable {
     }
 
     public void update(Serializable msg) {
+
         try {
             if(msg instanceof AllActiveGamesMessage) {
                 Packet p = new Packet("AAG-MSG", msg);
@@ -230,7 +231,12 @@ public class Client implements Runnable {
                 output.writeObject(p);
             }
             else if (msg instanceof GameLogMessage) {
-                Packet p = new Packet("LOG-MSG", msg);
+                Packet p = new Packet("GLG-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof GamesPlayedMessage)
+            {
+                Packet p = new Packet("GMP-MSG", msg);
                 output.writeObject(p);
             }
             else if (msg instanceof GameViewersMessage) {   // CHANGE FROM HERE

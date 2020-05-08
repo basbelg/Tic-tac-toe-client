@@ -7,16 +7,21 @@ import Messages.MessageFactory;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MoveHistoryController implements BaseController, Initializable
@@ -24,16 +29,26 @@ public class MoveHistoryController implements BaseController, Initializable
     public Label moveNumLabel;
     public Button nextButton;
     public Button previousButton;
-    public Button cancelButton;
+    public Button backButton;
     public GridPane board;
     public Label timeLabel;
     public Label playerLabel;
+    public Label tile00;
+    public Label tile01;
+    public Label tile02;
+    public Label tile10;
+    public Label tile11;
+    public Label tile12;
+    public Label tile20;
+    public Label tile21;
+    public Label tile22;
+    public Label winnerLabel;
     private GameLogMessage glm;
     private int moveCounter = 0;
     private String turn = "X";
     private Client client;
 
-    public void onCancelClicked()
+    public void onBackClicked()
     {
         try
         {
@@ -41,7 +56,7 @@ public class MoveHistoryController implements BaseController, Initializable
             Parent root = loader.load();
             GameHistoriesController ghc = loader.getController();
             ghc.passInfo(client);
-            Stage stage = (Stage) cancelButton.getScene().getWindow();
+            Stage stage = (Stage) backButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Game Histories");
             stage.setScene(new Scene(root));
@@ -63,10 +78,25 @@ public class MoveHistoryController implements BaseController, Initializable
         client.setController(this);
         this.glm = glm;
 
+        List<Node> boardTiles = new ArrayList<>();
+        boardTiles.add(tile00);
+        boardTiles.add(tile01);
+        boardTiles.add(tile02);
+        boardTiles.add(tile10);
+        boardTiles.add(tile11);
+        boardTiles.add(tile12);
+        boardTiles.add(tile20);
+        boardTiles.add(tile21);
+        boardTiles.add(tile22);
+
+        for(Node node : boardTiles) {
+            Label tile = (Label) node;
+            tile.setTextAlignment(TextAlignment.CENTER);
+            tile.setFont(new Font(36));
+        }
+
         Platform.runLater(() -> {
-            int x = glm.getMoveHistory().get(0).getNextMove().getRow();
-            int y = glm.getMoveHistory().get(0).getNextMove().getColumn();
-            board.add(new Label(getTurn()), y, x);
+            placeMove();
 
             moveNumLabel.setText("1/" + glm.getMoveHistory().size());
             timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
@@ -78,19 +108,21 @@ public class MoveHistoryController implements BaseController, Initializable
     public void onNextClicked()
     {
         Platform.runLater(() -> {
-            moveCounter++;
+            if(moveCounter < glm.getMoveHistory().size())
+            {
+                moveCounter++;
 
-            int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
-            int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
-            board.add(new Label(getTurn()), y, x);
-            moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
-            timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
-            playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
+                placeMove();
+                moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
+                timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
+                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s turn!") ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
 
-            if (moveCounter >= (glm.getMoveHistory().size() - 1)) {
-                nextButton.setDisable(true);
-            } else if (previousButton.isDisable()) {
-                previousButton.setDisable(false);
+                if (moveCounter >= (glm.getMoveHistory().size() - 1)) {
+                    nextButton.setDisable(true);
+                    winnerLabel.setText(glm.getWinner());
+                } else if (previousButton.isDisable()) {
+                    previousButton.setDisable(false);
+                }
             }
         });
     }
@@ -98,19 +130,58 @@ public class MoveHistoryController implements BaseController, Initializable
     public void onPreviousClicked()
     {
         Platform.runLater(() -> {
-            int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
-            int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
-            moveCounter--;
+            if(moveCounter >= 0)
+            {
+                int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
+                int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
+                moveCounter--;
 
-            board.add(new Label(""), y, x);
-            moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
-            timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
-            playerLabel.setText(playerLabel.getText().equals(glm.getPlayer1Username()) ? glm.getPlayer2Username() : glm.getPlayer1Username());
+                if(x == 0 && y == 0)
+                {
+                    tile00.setText("");
+                }
+                else if(x == 0 && y == 1)
+                {
+                    tile01.setText("");
+                }
+                else if(x == 0 && y == 2)
+                {
+                    tile02.setText("");
+                }
+                else if(x == 1 && y == 0)
+                {
+                    tile10.setText("");
+                }
+                else if(x == 1 && y == 1)
+                {
+                    tile11.setText("");
+                }
+                else if(x == 1 && y == 2)
+                {
+                    tile12.setText("");
+                }
+                else if(x == 2 && y == 0)
+                {
+                    tile20.setText("");
+                }
+                else if(x == 2 && y == 1)
+                {
+                    tile21.setText("");
+                }
+                else if(x == 2 && y == 2)
+                {
+                    tile22.setText("");
+                }
+                moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
+                timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
+                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s turn!") ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
 
-            if (moveCounter <= 0) {
-                previousButton.setDisable(true);
-            } else if (nextButton.isDisable()) {
-                nextButton.setDisable(false);
+                if (moveCounter <= 0) {
+                    previousButton.setDisable(true);
+                } else if (nextButton.isDisable()) {
+                    nextButton.setDisable(false);
+                    winnerLabel.setText("");
+                }
             }
         });
     }
@@ -142,23 +213,64 @@ public class MoveHistoryController implements BaseController, Initializable
     @Override
     public void update(Serializable msg)
     {
-        if(msg instanceof GameViewersMessage)
+        Platform.runLater(() -> {
+            if (msg instanceof GameViewersMessage) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
+                    Parent root = loader.load();
+                    ViewSpectatorsController vsc = loader.getController();
+                    vsc.passInfo(((GameViewersMessage) msg).getSpectators());
+                    Stage stage = new Stage();
+                    stage.setTitle("Spectators");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void placeMove()
+    {
+        int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
+        int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
+        if(x == 0 && y == 0)
         {
-            try
-            {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/ViewSpectators.fxml"));
-                Parent root = loader.load();
-                ViewSpectatorsController vsc = loader.getController();
-                vsc.passInfo(((GameViewersMessage) msg).getSpectators());
-                Stage stage = new Stage();
-                stage.setTitle("Spectators");
-                stage.setScene(new Scene(root));
-                stage.show();
-            }
-            catch(IOException e)
-            {
-                e.printStackTrace();
-            }
+            tile00.setText(getTurn());
+        }
+        else if(x == 0 && y == 1)
+        {
+            tile01.setText(getTurn());
+        }
+        else if(x == 0 && y == 2)
+        {
+            tile02.setText(getTurn());
+        }
+        else if(x == 1 && y == 0)
+        {
+            tile10.setText(getTurn());
+        }
+        else if(x == 1 && y == 1)
+        {
+            tile11.setText(getTurn());
+        }
+        else if(x == 1 && y == 2)
+        {
+            tile12.setText(getTurn());
+        }
+        else if(x == 2 && y == 0)
+        {
+            tile20.setText(getTurn());
+        }
+        else if(x == 2 && y == 1)
+        {
+            tile21.setText(getTurn());
+        }
+        else if(x == 2 && y == 2)
+        {
+            tile22.setText(getTurn());
         }
     }
+
 }

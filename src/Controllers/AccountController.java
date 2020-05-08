@@ -1,6 +1,7 @@
 package Controllers;
 
 import Client.Client;
+import Messages.GamesPlayedMessage;
 import Messages.MessageFactory;
 import Messages.StatsMessage;
 import javafx.application.Platform;
@@ -122,25 +123,26 @@ public class AccountController implements BaseController, Initializable
     @Override
     public void update(Serializable msg)
     {
-        if(msg instanceof StatsMessage)
-        {
-            try
+        Platform.runLater(() -> {
+            if(msg instanceof StatsMessage)
             {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Stats.fxml"));
-                Parent root = loader.load();
-                StatsController sc = loader.getController();
-                sc.passInfo((StatsMessage) msg);
-                Stage stage = new Stage();
-                stage.setTitle("Statistics");
-                stage.setScene(new Scene(root));
-                stage.show();
+                try
+                {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Stats.fxml"));
+                    Parent root = loader.load();
+                    StatsController sc = loader.getController();
+                    sc.passInfo((StatsMessage) msg);
+                    Stage stage = new Stage();
+                    stage.setTitle("Statistics");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
             }
-            catch(IOException e)
-            {
-                e.printStackTrace();
-            }
-        }
-
+        });
     }
 
     public void passInfo(Client client)

@@ -7,7 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Messages/src/Messages/StopSpectatingMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/LoginFailedMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/LoginFailedMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/StatsMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/StatsMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/LoginFailedMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/LoginFailedMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/StatsMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/StatsMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Client/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/AccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/StatsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/StatsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Stats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Stats.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/StatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/StatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Stats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Stats.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/VsPlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/VsPlayer.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,10 +49,10 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -42,7 +60,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28235295" />
     <property name="recentsLimit" value="5" />
@@ -94,7 +112,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Tic-Tac-Toe" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\basbe\Downloads\openjfx-13.0.2_windows-x64_bin-sdk\javafx-sdk-13.0.2\lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\jtols\Downloads\openjfx-12.0.2_windows-x64_bin-sdk\javafx-sdk-12.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -194,14 +212,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586069670856</updated>
-      <workItem from="1587592270342" duration="14526000" />
-      <workItem from="1587718335728" duration="687000" />
-      <workItem from="1587796344830" duration="3900000" />
-      <workItem from="1587865885393" duration="5365000" />
-      <workItem from="1587895474387" duration="516000" />
-      <workItem from="1588041006773" duration="2351000" />
-      <workItem from="1588144855247" duration="2880000" />
-      <workItem from="1588196323647" duration="4878000" />
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1585022140072" duration="9000" />
       <workItem from="1585986468859" duration="61000" />
@@ -240,6 +250,20 @@
       <workItem from="1588139983098" duration="8828000" />
       <workItem from="1588218730437" duration="1689000" />
       <workItem from="1588318311324" duration="1838000" />
+      <workItem from="1588218730437" duration="1421000" />
+      <workItem from="1588323889182" duration="592000" />
+      <workItem from="1588405626296" duration="5259000" />
+      <workItem from="1588462632742" duration="16347000" />
+      <workItem from="1588540872519" duration="15170000" />
+      <workItem from="1588586225360" duration="397000" />
+      <workItem from="1588618999658" duration="6244000" />
+      <workItem from="1588643420124" duration="336000" />
+      <workItem from="1588139983098" duration="10133000" />
+      <workItem from="1588215412910" duration="3140000" />
+      <workItem from="1588223889254" duration="7278000" />
+      <workItem from="1588734226399" duration="5648000" />
+      <workItem from="1588745209442" duration="6980000" />
+      <workItem from="1588797951602" duration="16387000" />
     </task>
     <servers />
   </component>
@@ -280,41 +304,57 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1085" y="410" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1586618863207" />
-    <state x="488" y="593" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587983077431">
+    <state x="488" y="593" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1588223910562">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="488" y="593" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1587983077431" />
+    <state x="488" y="593" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588223910562" />
     <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1586624765460">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586624765460" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1587983125190">
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1588223933909">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1587983125190" />
-    <state width="1234" height="211" key="GridCell.Tab.0.bottom" timestamp="1588190351397">
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1588223933909" />
+    <state width="1234" height="491" key="GridCell.Tab.0.bottom" timestamp="1588611419736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="211" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588190351397" />
-    <state width="1234" height="211" key="GridCell.Tab.0.center" timestamp="1588190351396">
+    <state width="1234" height="491" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state width="1234" height="491" key="GridCell.Tab.0.center" timestamp="1588611419736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="211" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588190351396" />
-    <state width="1234" height="211" key="GridCell.Tab.0.left" timestamp="1588190351396">
+    <state width="1234" height="491" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state width="1234" height="491" key="GridCell.Tab.0.left" timestamp="1588611419736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="211" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588190351396" />
-    <state width="1234" height="211" key="GridCell.Tab.0.right" timestamp="1588190351396">
+    <state width="1234" height="491" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state width="1234" height="491" key="GridCell.Tab.0.right" timestamp="1588611419736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="211" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588190351396" />
-    <state x="432" y="317" key="SettingsEditor" timestamp="1587983128484">
+    <state width="1234" height="491" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state width="1234" height="491" key="GridCell.Tab.1.bottom" timestamp="1588611419736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1587983128484" />
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1588042640177">
+    <state width="1234" height="491" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state width="1234" height="491" key="GridCell.Tab.1.center" timestamp="1588611419736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588042640177" />
+    <state width="1234" height="491" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state width="1234" height="491" key="GridCell.Tab.1.left" timestamp="1588611419736">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state width="1234" height="491" key="GridCell.Tab.1.right" timestamp="1588611419736">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1234" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state x="432" y="317" key="SettingsEditor" timestamp="1588580311066">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1588580311066" />
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1588215932807">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="976" y="524" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588215932807" />
   </component>
 </project>

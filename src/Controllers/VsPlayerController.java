@@ -3,6 +3,7 @@ package Controllers;
 import Client.Client;
 import DataClasses.LobbyInfo;
 import Messages.*;
+import com.mysql.cj.protocol.Message;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,6 +29,7 @@ public class VsPlayerController implements BaseController, Initializable
     public Button backButton;
     public ListView activeGamesList;
     public Button joinLobbyButton;
+    public Button spectateButton;
 
     public void onBackClicked()
     {
@@ -94,7 +96,7 @@ public class VsPlayerController implements BaseController, Initializable
                     bc.passInfo(client, msg, 0);
                     Stage stage = (Stage) joinLobbyButton.getScene().getWindow();
                     stage.close();
-                    stage.setTitle("Tic-Tac-Toe (Vs. Player)");
+                    stage.setTitle("Tic-Tac-Toe (Spectating)");
                     stage.setScene(new Scene(root));
                     stage.show();
                 } catch (IOException e) {
@@ -133,7 +135,6 @@ public class VsPlayerController implements BaseController, Initializable
 
     public void onJoinLobbyClicked()
     {
-        // TODO : Set the lobby ID
         ConnectToLobbyMessage clm = (ConnectToLobbyMessage) MessageFactory.getMessage("CNT-MSG");
 
         /*String creator = ((Label) activeGamesList.getSelectionModel().getSelectedItem()).getText();
@@ -148,6 +149,14 @@ public class VsPlayerController implements BaseController, Initializable
         clm.setPlayer2(client.getUser().getUsername());
         clm.setStartTime(LocalDateTime.now());
         client.update(clm);
+    }
+
+    public void onSpectateClicked()
+    {
+        SpectateMessage spm = (SpectateMessage) MessageFactory.getMessage("SPC-MSG");
+        spm.setSpectatorId(client.getUser().getId());
+        spm.setGameId(client.getActiveGames().get(activeGamesList.getSelectionModel().getSelectedIndex()).getLobbyId());
+        client.update(spm);
     }
 
     public void passInfo(Client client)

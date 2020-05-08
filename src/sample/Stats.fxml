@@ -11,11 +11,27 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="65.0" layoutY="107.0" text="Games Played:">
+      <Label layoutX="65.0" layoutY="85.0" text="Games Played:">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label fx:id="wltLabel" layoutX="215.0" layoutY="47.0" text="0/0/0" />
-      <Label fx:id="gamesPlayedLabel" layoutX="212.0" layoutY="112.0" text="0" />
+      <Label fx:id="wltLabel" layoutX="207.0" layoutY="42.0" text="0/0/0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="gamesPlayedLabel" layoutX="202.0" layoutY="85.0" text="0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="51.0" layoutY="128.0" text="Win Percentage:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="winPercentLabel" layoutX="205.0" layoutY="128.0" text="0%">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

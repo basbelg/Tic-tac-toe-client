@@ -263,6 +263,11 @@ public class Client implements Runnable {
                 Packet p = new Packet("SPC-MSG", msg);
                 output.writeObject(p);
             }
+            else if(msg instanceof StatsMessage)
+            {
+                Packet p = new Packet("STS-MSG", msg);
+                output.writeObject(p);
+            }
             else if (msg instanceof UpdateAccountInfoMessage)
             {
                 Packet p = new Packet("UPA-MSG", msg);

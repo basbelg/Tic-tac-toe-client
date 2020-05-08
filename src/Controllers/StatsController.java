@@ -16,6 +16,7 @@ public class StatsController implements Initializable
     public Label wltLabel;
     public Label gamesPlayedLabel;
     public Button exitButton;
+    public Label winPercentLabel;
 
     public void onExitClicked()
     {
@@ -26,8 +27,20 @@ public class StatsController implements Initializable
     public void passInfo(StatsMessage stats)
     {
         Platform.runLater(() -> {
+            int gamesPlayed = stats.getLosses() + stats.getTies() + stats.getWins();
+            StringBuffer winPercent = new StringBuffer();
+
             wltLabel.setText(stats.getWins() + "/" + stats.getLosses() + "/" + stats.getTies());
-            gamesPlayedLabel.setText(((Integer) (stats.getWins() + stats.getLosses() + stats.getTies())).toString());
+            gamesPlayedLabel.setText(String.valueOf(gamesPlayed));
+            if(gamesPlayed <= 0)
+            {
+                winPercent.append("0%");
+            }
+            else
+            {
+               winPercent.append((int)(((double) stats.getWins()) / gamesPlayed * 100) + "%");
+            }
+            winPercentLabel.setText(winPercent.toString());
         });
     }
 

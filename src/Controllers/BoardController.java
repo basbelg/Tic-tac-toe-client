@@ -67,7 +67,75 @@ public class BoardController implements BaseController, Initializable
         this.isPendingMove = false;
         client.setController(this);
 
+
+
         Platform.runLater(() -> {
+
+                List<Node> boardTiles = new ArrayList<>();
+                boardTiles.add(tile00);
+                boardTiles.add(tile01);
+                boardTiles.add(tile02);
+                boardTiles.add(tile10);
+                boardTiles.add(tile11);
+                boardTiles.add(tile12);
+                boardTiles.add(tile20);
+                boardTiles.add(tile21);
+                boardTiles.add(tile22);
+
+
+                for(Node node : boardTiles)
+                {
+                    Label tile = (Label) node;
+                    tile.setTextAlignment(TextAlignment.CENTER);
+                    tile.setFont(new Font(36));
+
+                    if(playerNumber != 0)
+                    {
+                        tile.setOnMouseEntered(new EventHandler<MouseEvent>() {
+                            @Override
+                            public void handle(MouseEvent mouseEvent) {
+                                if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
+                                    if(isPlayer1Turn && playerNumber == 1)
+                                    {
+                                        tile.setText("X");
+                                    }
+                                    else if(!isPlayer1Turn && playerNumber == 2)
+                                    {
+                                        tile.setText("O");
+                                    }
+                                }
+                            }
+                        });
+
+                        tile.setOnMouseExited(new EventHandler<MouseEvent>() {
+                            @Override
+                            public void handle(MouseEvent mouseEvent) {
+                                if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
+                                    tile.setText("");
+                                }
+                            }
+                        });
+
+                        tile.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                            @Override
+                            public void handle(MouseEvent mouseEvent) {
+                                if(((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame && !isPendingMove) {
+                                    MoveMessage mm = (MoveMessage) MessageFactory.getMessage("MOV-MSG");
+                                    mm.setMovingPlayerId(client.getUser().getId());
+                                    mm.setGameId(gameId);
+                                    Node node = (Node) mouseEvent.getSource();
+                                    mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
+
+                                    isPendingMove = true;
+                                    client.update(mm);
+                                }
+                            }
+                        });
+                    }
+
+                }
+
+
             if (msg instanceof CreateAIGameMessage) {
                 isPlayer1Turn = true;
                 this.player1Username = client.getUser().getUsername();
@@ -102,14 +170,11 @@ public class BoardController implements BaseController, Initializable
                 for (int i = 0; i < spectatorBoard.length; ++i) {
                     for (int j = 0; j < spectatorBoard[i].length; ++j) {
                         if (spectatorBoard[i][j] == 1) {
-                            Label tile = new Label("X");
-                            tile.setFont(new Font(36));
-                            board.add(tile, j, i);
+                            placeMove(i, j, "X");
                             ++turn;
-                        } else if (spectatorBoard[i][j] == -1) {
-                            Label tile = new Label("O");
-                            tile.setFont(new Font(36));
-                            board.add(tile, j, i);
+                        }
+                        else if (spectatorBoard[i][j] == -1) {
+                            placeMove(i, j, "O");
                             ++turn;
                         }
                     }
@@ -121,67 +186,6 @@ public class BoardController implements BaseController, Initializable
 
             closeButton.setVisible(false /*!isInGame*/);
         });
-
-        List<Node> boardTiles = new ArrayList<>();
-        boardTiles.add(tile00);
-        boardTiles.add(tile01);
-        boardTiles.add(tile02);
-        boardTiles.add(tile10);
-        boardTiles.add(tile11);
-        boardTiles.add(tile12);
-        boardTiles.add(tile20);
-        boardTiles.add(tile21);
-        boardTiles.add(tile22);
-
-
-        for(Node node : boardTiles)
-        {
-            Label tile = (Label) node;
-            tile.setTextAlignment(TextAlignment.CENTER);
-            tile.setFont(new Font(36));
-
-            tile.setOnMouseEntered(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
-                        if(isPlayer1Turn && playerNumber == 1)
-                        {
-                            tile.setText("X");
-                        }
-                        else if(!isPlayer1Turn && playerNumber == 2)
-                        {
-                            tile.setText("O");
-                        }
-                    }
-                }
-            });
-
-            tile.setOnMouseExited(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
-                        tile.setText("");
-                    }
-                }
-            });
-
-            tile.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    if(((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame && !isPendingMove) {
-                        MoveMessage mm = (MoveMessage) MessageFactory.getMessage("MOV-MSG");
-                        mm.setMovingPlayerId(client.getUser().getId());
-                        mm.setGameId(gameId);
-                        Node node = (Node) mouseEvent.getSource();
-                        mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
-
-                        isPendingMove = true;
-                        client.update(mm);
-                    }
-                }
-            });
-
-        }
     }
 
     public void onSpectatorsClicked()
@@ -254,7 +258,7 @@ public class BoardController implements BaseController, Initializable
 
                 errorLabel.setText("");
 
-                if (!isFinished && aiPlayer.getEvaluator().evaluate(tttBoard) == null)
+                if (playerNumber != 0 && !isFinished && aiPlayer.getEvaluator().evaluate(tttBoard) == null)
                 {
                     turnLabel.setText((isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!"));
 
@@ -316,4 +320,45 @@ public class BoardController implements BaseController, Initializable
             e.printStackTrace();
         }
     }
+
+    private void placeMove(int row, int col, String turn)
+    {
+        if(row == 0 && col == 0)
+        {
+            tile00.setText(turn);
+        }
+        else if(row == 0 && col == 1)
+        {
+            tile01.setText(turn);
+        }
+        else if(row == 0 && col == 2)
+        {
+            tile02.setText(turn);
+        }
+        else if(row == 1 && col == 0)
+        {
+            tile10.setText(turn);
+        }
+        else if(row == 1 && col == 1)
+        {
+            tile11.setText(turn);
+        }
+        else if(row == 1 && col == 2)
+        {
+            tile12.setText(turn);
+        }
+        else if(row == 2 && col == 0)
+        {
+            tile20.setText(turn);
+        }
+        else if(row == 2 && col == 1)
+        {
+            tile21.setText(turn);
+        }
+        else if(row == 2 && col == 2)
+        {
+            tile22.setText(turn);
+        }
+    }
+
 }

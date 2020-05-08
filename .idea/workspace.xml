@@ -7,19 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Messages/src/Messages/StopSpectatingMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/LoginFailedMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/LoginFailedMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/MessageFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Messages/src/Messages/StatsMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Messages/src/Messages/StatsMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/LoginFailedMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/LoginFailedMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messages/Messages/StatsMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messages/Messages/StatsMessage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Client/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/AccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/AccountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/GameHistoriesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/GameHistoriesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MoveHistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MoveHistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/MoveHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/MoveHistory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/StatsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/StatsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Stats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Stats.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/GameHistoriesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ViewSpectatorsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ViewSpectatorsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/GameHistories.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/GameHistories.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MoveHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MoveHistory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/StatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/StatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/VsPlayerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Stats.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Stats.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/VsPlayer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/VsPlayer.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +60,7 @@
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Messages_jar/Messages.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28235295" />
     <property name="recentsLimit" value="5" />
@@ -255,7 +261,7 @@
       <workItem from="1588223889254" duration="7278000" />
       <workItem from="1588734226399" duration="5648000" />
       <workItem from="1588745209442" duration="6980000" />
-      <workItem from="1588797951602" duration="5471000" />
+      <workItem from="1588797951602" duration="16387000" />
     </task>
     <servers />
   </component>

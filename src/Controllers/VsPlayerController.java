@@ -137,14 +137,6 @@ public class VsPlayerController implements BaseController, Initializable
     {
         ConnectToLobbyMessage clm = (ConnectToLobbyMessage) MessageFactory.getMessage("CNT-MSG");
 
-        /*String creator = ((Label) activeGamesList.getSelectionModel().getSelectedItem()).getText();
-        creator = creator.substring(0, creator.indexOf('\''));
-        for (LobbyInfo lobbyInfo : client.getActiveGames())
-            if (creator.equals(lobbyInfo.getCreatorUsername())) {
-                clm.setLobbyGameId(lobbyInfo.getLobbyId());
-                break;
-            }*/
-
         clm.setLobbyGameId(client.getActiveGames().get(activeGamesList.getSelectionModel().getSelectedIndex()).getLobbyId());
         clm.setPlayer2(client.getUser().getUsername());
         clm.setStartTime(LocalDateTime.now());

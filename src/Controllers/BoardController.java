@@ -213,48 +213,8 @@ public class BoardController implements BaseController, Initializable
                 tttBoard[((LegalMoveMessage) msg).getNextMove().getRow()][((LegalMoveMessage) msg).getNextMove().getColumn()] = (isPlayer1Turn ? 1 : -1); // Player's last turn
                 isPlayer1Turn = !isPlayer1Turn;
                 isPendingMove = false;
-                Label tile = null;
-                if(((LegalMoveMessage) msg).getNextMove().getRow() == 0 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 0)
-                {
-                    tile = tile00;
-                }
-                else if(((LegalMoveMessage) msg).getNextMove().getRow() == 0 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 1)
-                {
-                    tile = tile01;
-                }
-                else if(((LegalMoveMessage) msg).getNextMove().getRow() == 0 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 2)
-                {
-                    tile = tile02;
-                }
-                else if(((LegalMoveMessage) msg).getNextMove().getRow() == 1 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 0)
-                {
-                    tile = tile10;
-                }
-                else if(((LegalMoveMessage) msg).getNextMove().getRow() == 1 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 1)
-                {
-                    tile = tile11;
-                }
-                else if(((LegalMoveMessage) msg).getNextMove().getRow() == 1 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 2)
-                {
-                    tile = tile12;
-                }
-                else if(((LegalMoveMessage) msg).getNextMove().getRow() == 2 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 0)
-                {
-                    tile = tile20;
-                }
-                else if(((LegalMoveMessage) msg).getNextMove().getRow() == 2 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 1)
-                {
-                    tile = tile21;
-                }
-                else if(((LegalMoveMessage) msg).getNextMove().getRow() == 2 && ((LegalMoveMessage) msg).getNextMove().getColumn() == 2)
-                {
-                    tile = tile22;
-                }
 
-                tile.setText((((LegalMoveMessage) msg).getNextMove().getPlayer()) == 1 ? "X" : "O");
-                tile.setFont(new Font(36));
-                tile.setTextAlignment(TextAlignment.CENTER);
-               // board.add(tile, ((LegalMoveMessage) msg).getNextMove().getColumn(), ((LegalMoveMessage) msg).getNextMove().getRow());
+                placeMove(((LegalMoveMessage) msg).getNextMove().getRow(), ((LegalMoveMessage) msg).getNextMove().getColumn(), (((LegalMoveMessage) msg).getNextMove().getPlayer()) == 1 ? "X" : "O");
 
                 errorLabel.setText("");
 

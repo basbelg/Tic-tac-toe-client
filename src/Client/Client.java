@@ -33,6 +33,7 @@ public class Client implements Runnable {
         this.allActiveGames = new ArrayList<>();
         currentGameId = "No Game";
         thread = new Thread(this);
+        thread.setDaemon(true); // Close thread when window closes
         thread.start();
     }
 

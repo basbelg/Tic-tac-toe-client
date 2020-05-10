@@ -5,6 +5,7 @@ import DataClasses.Minimax;
 import DataClasses.MoveInfo;
 import Messages.*;
 import TicTacToe.TTT_Move;
+import com.mysql.cj.protocol.Message;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -142,14 +143,14 @@ public class BoardController implements BaseController, Initializable
                 this.player2Username = "AI Player";
                 this.gameId = ((CreateAIGameMessage) msg).getGameLobbyId();
                 isInGame = true;
-
+                closeButton.setText("Concede");
                 turnLabel.setText(player1Username + "\'s turn!");
             } else if (msg instanceof CreateLobbyMessage) {
                 isPlayer1Turn = true;
                 this.player1Username = client.getUser().getUsername();
                 this.gameId = ((CreateLobbyMessage) msg).getGameLobbyId();
                 isInGame = false;
-
+                closeButton.setText("Leave Game");
                 turnLabel.setText(player1Username + "\'s turn!");
             } else if (msg instanceof ConnectToLobbyMessage) {
                 isPlayer1Turn = true;
@@ -157,7 +158,7 @@ public class BoardController implements BaseController, Initializable
                 this.gameId = ((ConnectToLobbyMessage) msg).getLobbyGameId();
                 this.player1Username = ((ConnectToLobbyMessage) msg).getPlayer1();
                 this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
-
+                closeButton.setText("Concede");
                 turnLabel.setText(player1Username + "\'s turn!");
             } else if (msg instanceof SpectateMessage) {
                 isInGame = true;
@@ -182,9 +183,8 @@ public class BoardController implements BaseController, Initializable
 
                 isPlayer1Turn = (turn % 2) == 1;
                 turnLabel.setText(isPlayer1Turn ? player1Username + "\'s turn!" : player2Username + "\'s turn!");
+                closeButton.setText("Stop Spectating");
             }
-
-            closeButton.setVisible(false /*!isInGame*/);
         });
     }
 
@@ -205,7 +205,7 @@ public class BoardController implements BaseController, Initializable
         Platform.runLater(() -> {
             if (msg instanceof ConnectToLobbyMessage) {
                 isInGame = true;
-                closeButton.setVisible(false);
+                closeButton.setText("Concede");
                 this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
             }
             else if (msg instanceof LegalMoveMessage)
@@ -250,34 +250,95 @@ public class BoardController implements BaseController, Initializable
                     e.printStackTrace();
                 }
             }
+            else if(msg instanceof InactiveGameMessage)
+            {
+                try
+                {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                    Parent root = loader.load();
+                    MenuController mc = loader.getController();
+                    mc.passInfo(client);
+                    Stage stage = (Stage) closeButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Menu");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
+
+            }
+            else if(msg instanceof StopSpectatingMessage)
+            {
+                try
+                {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                    Parent root = loader.load();
+                    MenuController mc = loader.getController();
+                    mc.passInfo(client);
+                    Stage stage = (Stage) closeButton.getScene().getWindow();
+                    stage.close();
+                    stage.setTitle("Menu");
+                    stage.setScene(new Scene(root));
+                    stage.show();
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
             else if(msg instanceof GameResultMessage)
             {
                 winnerLabel.setText(msg.toString());
                 turnLabel.setText("");
                 isInGame = false;
                 isFinished = true;
-                closeButton.setVisible(true);
+                closeButton.setText("Leave Game");
             }
         });
     }
 
     public void onCloseClicked()
     {
-        try
+        if(isFinished)
         {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
-            Parent root = loader.load();
-            MenuController mc = loader.getController();
-            mc.passInfo(client);
-            Stage stage = (Stage) closeButton.getScene().getWindow();
-            stage.close();
-            stage.setTitle("Menu");
-            stage.setScene(new Scene(root));
-            stage.show();
+            try
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
+                Parent root = loader.load();
+                MenuController mc = loader.getController();
+                mc.passInfo(client);
+                Stage stage = (Stage) closeButton.getScene().getWindow();
+                stage.close();
+                stage.setTitle("Menu");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
         }
-        catch(IOException e)
+        else if(!isInGame)
         {
-            e.printStackTrace();
+            InactiveGameMessage im = (InactiveGameMessage) MessageFactory.getMessage("IAG-MSG");
+            im.setFinishedGameId(gameId);
+            client.update(im);
+        }
+        else if(playerNumber != 0)
+        {
+            ConcedeMessage cm = (ConcedeMessage) MessageFactory.getMessage("CNC-MSG");
+            cm.setGameId(gameId);
+            client.update(cm);
+        }
+        else if(playerNumber == 0)
+        {
+            StopSpectatingMessage ssm = (StopSpectatingMessage) MessageFactory.getMessage("SSP-MSG");
+            ssm.setGameId(gameId);
+            ssm.setPlayerId(client.getUser().getId());
+            client.update(ssm);
         }
     }
 

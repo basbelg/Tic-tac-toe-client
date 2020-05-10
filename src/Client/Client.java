@@ -6,6 +6,7 @@ import Controllers.VsPlayerController;
 import DataClasses.User;
 import DataClasses.*;
 import Messages.*;
+import javafx.scene.paint.Stop;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -122,16 +123,13 @@ public class Client implements Runnable {
                                 break;
                             }
                         }
-                        if(controller instanceof VsPlayerController)
+                        if(controller instanceof VsPlayerController || (currentGameId.equals(igm.getFinishedGameId()) && controller instanceof BoardController))
                         {
                             controller.update(igm);
-                        }
-                        /*else if(controller instanceof BoardController) // TODO : Not needed (also need to handle full lobby message)
-                        {
-                            if(currentGameId.equals(igm.getFinishedGameId())) {
-                                controller.update(igm);
+                            if(controller instanceof BoardController) {
+                                currentGameId = "No Game";
                             }
-                        }*/
+                        }
                         break;
                     case "LEM-MSG":
                         LegalMoveMessage lmm = (LegalMoveMessage)p.getData();
@@ -163,7 +161,13 @@ public class Client implements Runnable {
                         break;
                     case "SPC-MSG":
                         SpectateMessage spm = (SpectateMessage)p.getData();
+                        currentGameId = spm.getGameId();
                         controller.update(spm);
+                        break;
+                    case "SSP-MSG":
+                        StopSpectatingMessage ssm = (StopSpectatingMessage)p.getData();
+                        currentGameId = "No Game";
+                        controller.update(ssm);
                         break;
                     case "STS-MSG":
                         StatsMessage stm = (StatsMessage)p.getData();
@@ -211,6 +215,10 @@ public class Client implements Runnable {
                 Packet p = new Packet("AAG-MSG", msg);
                 output.writeObject(p);
             }
+            else if (msg instanceof ConcedeMessage) {
+                Packet p = new Packet("CNC-MSG", msg);
+                output.writeObject(p);
+            }
             else if (msg instanceof ConnectToLobbyMessage) {
                 Packet p = new Packet("CNT-MSG", msg);
                 output.writeObject(p);
@@ -235,8 +243,7 @@ public class Client implements Runnable {
                 Packet p = new Packet("GLG-MSG", msg);
                 output.writeObject(p);
             }
-            else if (msg instanceof GamesPlayedMessage)
-            {
+            else if (msg instanceof GamesPlayedMessage) {
                 Packet p = new Packet("GMP-MSG", msg);
                 output.writeObject(p);
             }
@@ -262,6 +269,11 @@ public class Client implements Runnable {
             else if (msg instanceof SpectateMessage)
             {
                 Packet p = new Packet("SPC-MSG", msg);
+                output.writeObject(p);
+            }
+            else if (msg instanceof StopSpectatingMessage)
+            {
+                Packet p = new Packet("SSP-MSG", msg);
                 output.writeObject(p);
             }
             else if(msg instanceof StatsMessage)

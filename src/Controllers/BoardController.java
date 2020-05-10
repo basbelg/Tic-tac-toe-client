@@ -151,7 +151,8 @@ public class BoardController implements BaseController, Initializable
                 this.gameId = ((CreateLobbyMessage) msg).getGameLobbyId();
                 isInGame = false;
                 closeButton.setText("Leave Game");
-                turnLabel.setText(player1Username + "\'s turn!");
+                winnerLabel.setText("Waiting for player...");
+                turnLabel.setText("");
             } else if (msg instanceof ConnectToLobbyMessage) {
                 isPlayer1Turn = true;
                 isInGame = true;
@@ -159,6 +160,7 @@ public class BoardController implements BaseController, Initializable
                 this.player1Username = ((ConnectToLobbyMessage) msg).getPlayer1();
                 this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
                 closeButton.setText("Concede");
+                winnerLabel.setText(player1Username + " VS. " + player2Username);
                 turnLabel.setText(player1Username + "\'s turn!");
             } else if (msg instanceof SpectateMessage) {
                 isInGame = true;
@@ -193,6 +195,7 @@ public class BoardController implements BaseController, Initializable
         GameViewersMessage gvm = (GameViewersMessage) MessageFactory.getMessage("GVW-MSG");
         gvm.setUserId(client.getUser().getId());
         gvm.setGameId(gameId);
+        gvm.setGameActive(true);
         client.update(gvm);
     }
 
@@ -205,8 +208,10 @@ public class BoardController implements BaseController, Initializable
         Platform.runLater(() -> {
             if (msg instanceof ConnectToLobbyMessage) {
                 isInGame = true;
-                closeButton.setText("Concede");
                 this.player2Username = ((ConnectToLobbyMessage) msg).getPlayer2();
+                closeButton.setText("Concede");
+                turnLabel.setText(player2Username + " has connected. \n" + player1Username + "\'s turn!");
+                winnerLabel.setText(player1Username + " VS. " + player2Username);
             }
             else if (msg instanceof LegalMoveMessage)
             {

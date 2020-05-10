@@ -2,11 +2,10 @@ package Client;
 
 import Controllers.BaseController;
 import Controllers.BoardController;
-import Controllers.VsPlayerController;
+import Controllers.MenuController;
 import DataClasses.User;
 import DataClasses.*;
 import Messages.*;
-import javafx.scene.paint.Stop;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -87,7 +86,7 @@ public class Client implements Runnable {
                                 break;
                             }
                         }
-                        if(controller instanceof VsPlayerController)
+                        if(controller instanceof MenuController)
                         {
                             controller.update(flm);
                         }
@@ -123,7 +122,7 @@ public class Client implements Runnable {
                                 break;
                             }
                         }
-                        if(controller instanceof VsPlayerController || (currentGameId.equals(igm.getFinishedGameId()) && controller instanceof BoardController))
+                        if(controller instanceof MenuController || (currentGameId.equals(igm.getFinishedGameId()) && controller instanceof BoardController))
                         {
                             controller.update(igm);
                             if(controller instanceof BoardController) {
@@ -146,7 +145,7 @@ public class Client implements Runnable {
                     case "NAI-MSG":
                         NewAILobbyMessage naim = (NewAILobbyMessage)p.getData();
                         allActiveGames.add(new LobbyInfo(naim.getCreatorUsername(), naim.getGameLobbyId(), 2));
-                        if(controller instanceof VsPlayerController)
+                        if(controller instanceof MenuController)
                         {
                             controller.update(naim);
                         }
@@ -154,7 +153,7 @@ public class Client implements Runnable {
                     case "NLB-MSG":
                         NewLobbyMessage nlm = (NewLobbyMessage)p.getData();
                         allActiveGames.add(new LobbyInfo(nlm.getCreatorUsername(), nlm.getGameLobbyId(), 1));
-                        if(controller instanceof VsPlayerController)
+                        if(controller instanceof MenuController)
                         {
                             controller.update(nlm);
                         }

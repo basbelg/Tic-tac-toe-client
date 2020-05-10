@@ -38,9 +38,9 @@
                </Label>
          </children>
       </GridPane>
-      <Button fx:id="spectatorsButton" layoutX="46.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#onSpectatorsClicked" prefHeight="25.0" prefWidth="87.0" text="Spectators" />
+      <Button fx:id="spectatorsButton" layoutX="46.0" layoutY="109.0" mnemonicParsing="false" onMouseClicked="#onSpectatorsClicked" prefHeight="25.0" prefWidth="129.0" text="Spectators" />
       <Label fx:id="errorLabel" layoutX="46.0" layoutY="316.0" prefHeight="34.0" prefWidth="138.0" textFill="RED" />
-      <Button fx:id="closeButton" layoutX="46.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#onCloseClicked" prefHeight="25.0" prefWidth="87.0" text="Close" />
+      <Button fx:id="closeButton" layoutX="46.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#onCloseClicked" prefHeight="25.0" prefWidth="129.0" text="Close" />
       <Label fx:id="turnLabel" layoutX="46.0" layoutY="200.0" prefHeight="34.0" prefWidth="138.0" />
       <Label fx:id="winnerLabel" layoutX="216.0" layoutY="14.0" prefHeight="49.0" prefWidth="300.0">
          <font>

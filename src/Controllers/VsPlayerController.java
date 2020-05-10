@@ -145,6 +145,13 @@ public class VsPlayerController implements BaseController, Initializable
 
     public void onSpectateClicked()
     {
+        /*
+        if(game no in progress
+        {
+            cant spec
+        }
+
+         */
         SpectateMessage spm = (SpectateMessage) MessageFactory.getMessage("SPC-MSG");
         spm.setSpectatorId(client.getUser().getId());
         spm.setGameId(client.getActiveGames().get(activeGamesList.getSelectionModel().getSelectedIndex()).getLobbyId());

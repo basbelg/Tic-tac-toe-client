@@ -96,12 +96,24 @@ public class MoveHistoryController implements BaseController, Initializable
         }
 
         Platform.runLater(() -> {
-            placeMove();
+            if(glm.getMoveHistory().size() == 0)
+            {
+                winnerLabel.setText(glm.getWinner());
+            }
+            else if(glm.getMoveHistory().size() != 0)
+            {
+                placeMove();
 
-            moveNumLabel.setText("1/" + glm.getMoveHistory().size());
-            timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
-            playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
-            previousButton.setDisable(true);
+                moveNumLabel.setText("1/" + glm.getMoveHistory().size());
+                timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
+                playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
+                previousButton.setDisable(true);
+                if(glm.getMoveHistory().size() == 1)
+                {
+                    nextButton.setDisable(true);
+                    winnerLabel.setText(glm.getWinner());
+                }
+            }
         });
     }
 
@@ -120,7 +132,7 @@ public class MoveHistoryController implements BaseController, Initializable
                 if (moveCounter >= (glm.getMoveHistory().size() - 1)) {
                     nextButton.setDisable(true);
                     winnerLabel.setText(glm.getWinner());
-                } else if (previousButton.isDisable()) {
+                } if (previousButton.isDisable()) {
                     previousButton.setDisable(false);
                 }
             }
@@ -129,6 +141,7 @@ public class MoveHistoryController implements BaseController, Initializable
 
     public void onPreviousClicked()
     {
+        swapTurn();
         Platform.runLater(() -> {
             if(moveCounter >= 0)
             {
@@ -178,7 +191,7 @@ public class MoveHistoryController implements BaseController, Initializable
 
                 if (moveCounter <= 0) {
                     previousButton.setDisable(true);
-                } else if (nextButton.isDisable()) {
+                } if (nextButton.isDisable()) {
                     nextButton.setDisable(false);
                     winnerLabel.setText("");
                 }
@@ -194,20 +207,16 @@ public class MoveHistoryController implements BaseController, Initializable
         client.update(gvm);
     }
 
-    private String getTurn()
+    private void swapTurn()
     {
         if(turn.equals("X"))
         {
             turn = "O";
-            return "X";
         }
         else if(turn.equals("O"))
         {
             turn = "X";
-            return "O";
         }
-
-        return "ERROR";
     }
 
     @Override
@@ -237,39 +246,48 @@ public class MoveHistoryController implements BaseController, Initializable
         int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
         if(x == 0 && y == 0)
         {
-            tile00.setText(getTurn());
+            tile00.setText(turn);
+            swapTurn();
         }
         else if(x == 0 && y == 1)
         {
-            tile01.setText(getTurn());
+            tile01.setText(turn);
+            swapTurn();
         }
         else if(x == 0 && y == 2)
         {
-            tile02.setText(getTurn());
+            tile02.setText(turn);
+            swapTurn();
         }
         else if(x == 1 && y == 0)
         {
-            tile10.setText(getTurn());
+            tile10.setText(turn);
+            swapTurn();
         }
         else if(x == 1 && y == 1)
         {
-            tile11.setText(getTurn());
+            tile11.setText(turn);
+            swapTurn();
         }
         else if(x == 1 && y == 2)
         {
-            tile12.setText(getTurn());
+            tile12.setText(turn);
+            swapTurn();
         }
         else if(x == 2 && y == 0)
         {
-            tile20.setText(getTurn());
+            tile20.setText(turn);
+            swapTurn();
         }
         else if(x == 2 && y == 1)
         {
-            tile21.setText(getTurn());
+            tile21.setText(turn);
+            swapTurn();
         }
         else if(x == 2 && y == 2)
         {
-            tile22.setText(getTurn());
+            tile22.setText(turn);
+            swapTurn();
         }
     }
 

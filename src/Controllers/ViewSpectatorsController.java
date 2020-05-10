@@ -34,7 +34,7 @@ public class ViewSpectatorsController implements Initializable
             }
             else
             {
-                spectatorsList.getItems().add(new Label("There are no spectators for this match"));
+                spectatorsList.getItems().add(new Label("No spectators for this match"));
             }
 
         });

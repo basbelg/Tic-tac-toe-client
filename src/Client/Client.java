@@ -78,6 +78,9 @@ public class Client implements Runnable {
                         currentGameId = clbm.getGameLobbyId();
                         controller.update(clbm);
                         break;
+                    case "COF-MSG":
+                        ConnectFailedMessage cfm = (ConnectFailedMessage)p.getData();
+                        controller.update(cfm);
                     case "FUL-MSG":
                         FullLobbyMessage flm = (FullLobbyMessage)p.getData();
                         for(LobbyInfo lobbyInfo : allActiveGames) {

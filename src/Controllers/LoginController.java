@@ -56,6 +56,8 @@ public class LoginController implements BaseController, Initializable
         LoginMessage lgm = (LoginMessage) MessageFactory.getMessage("LOG-MSG");
         lgm.setUsername(enterUsername.getText());
         lgm.setPassword(enterPassword.getText());
+        signInButton.setDisable(true);
+        newUserButton.setDisable(true);
         client.update(lgm);
     }
 
@@ -108,7 +110,9 @@ public class LoginController implements BaseController, Initializable
                     e.printStackTrace();
                 }
             } else if (msg instanceof LoginFailedMessage) {
-                invalidLabel.setText(((LoginFailedMessage) msg).toString());
+                newUserButton.setDisable(false);
+                signInButton.setDisable(false);
+                invalidLabel.setText(msg.toString());
             }
         });
     }

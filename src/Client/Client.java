@@ -125,9 +125,6 @@ public class Client implements Runnable {
                         if(controller instanceof MenuController || (currentGameId.equals(igm.getFinishedGameId()) && controller instanceof BoardController))
                         {
                             controller.update(igm);
-                            if(controller instanceof BoardController) {
-                                currentGameId = "No Game";
-                            }
                         }
                         break;
                     case "LEM-MSG":
@@ -160,7 +157,6 @@ public class Client implements Runnable {
                         break;
                     case "SPC-MSG":
                         SpectateMessage spm = (SpectateMessage)p.getData();
-                        currentGameId = spm.getGameId();
                         controller.update(spm);
                         break;
                     case "SSP-MSG":
@@ -268,6 +264,7 @@ public class Client implements Runnable {
             else if (msg instanceof SpectateMessage)
             {
                 Packet p = new Packet("SPC-MSG", msg);
+                currentGameId = ((SpectateMessage) msg).getGameId();
                 output.writeObject(p);
             }
             else if (msg instanceof StopSpectatingMessage)
@@ -301,5 +298,13 @@ public class Client implements Runnable {
 
     public List<LobbyInfo> getActiveGames() {
         return allActiveGames;
+    }
+
+    public String getCurrentGameId() {
+        return currentGameId;
+    }
+
+    public void setCurrentGameId(String currentGameId) {
+        this.currentGameId = currentGameId;
     }
 }

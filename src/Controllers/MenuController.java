@@ -122,12 +122,19 @@ public class MenuController implements BaseController, Initializable
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else if (msg instanceof InactiveGameMessage) {
+            }
+            else if (msg instanceof InactiveGameMessage) {
                 activeGamesList.getItems().clear();
                 for (LobbyInfo l : client.getActiveGames()) {
                     activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
                 }
-            } else if (msg instanceof NewAILobbyMessage) {
+                if(client.getCurrentGameId().equals(((InactiveGameMessage) msg).getFinishedGameId()))
+                {
+                    errorLabel.setText("This lobby is not longer active!");
+                    client.setCurrentGameId("No Game");
+                }
+            }
+            else if (msg instanceof NewAILobbyMessage) {
                 activeGamesList.getItems().clear();
                 for (LobbyInfo l : client.getActiveGames()) {
                     activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
@@ -185,7 +192,7 @@ public class MenuController implements BaseController, Initializable
         }
         else if(client.getActiveGames().get(activeGamesList.getSelectionModel().getSelectedIndex()).getPlayerCount() == 2)
         {
-            //TODO: POP UP WINDOW ASKING IF PLAYER WANTS TO SPECTATE INSTEAD
+            errorLabel.setText("This lobby is full! Try spectating.");
         }
         else if(activeGamesList.getSelectionModel().getSelectedIndex() >= 0)
         {

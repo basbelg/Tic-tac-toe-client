@@ -174,6 +174,7 @@ public class Client implements Runnable {
                     case "UPA-MSG":
                         UpdateAccountInfoMessage upm = (UpdateAccountInfoMessage)p.getData();
                         user = upm.getUpdatedUser();
+                        controller.update(upm);
                         break;
 
                     default:

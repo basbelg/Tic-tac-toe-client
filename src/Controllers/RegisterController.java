@@ -124,7 +124,6 @@ public class RegisterController implements BaseController, Initializable
     public void update(Serializable msg)
     {
         Platform.runLater(() -> {
-            if (confirmButton.getText().equals("Register")) {
                 if (msg instanceof AccountSuccessfulMessage) {
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
@@ -140,10 +139,10 @@ public class RegisterController implements BaseController, Initializable
                         e.printStackTrace();
                     }
                 } else if (msg instanceof AccountFailedMessage) {
-                    errorLabel.setText(((AccountFailedMessage) msg).toString());
+                    finishedWaitingForServer();
+                    errorLabel.setText(msg.toString());
                 }
-            } else if (confirmButton.getText().equals("Confirm")) {
-                if (msg instanceof AccountSuccessfulMessage) {
+                else if (msg instanceof UpdateAccountInfoMessage) {
                     client.setUser(newUser);
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
@@ -158,11 +157,7 @@ public class RegisterController implements BaseController, Initializable
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (msg instanceof AccountFailedMessage) {
-                    finishedWaitingForServer();
-                    errorLabel.setText(msg.toString());
                 }
-            }
         });
     }
 

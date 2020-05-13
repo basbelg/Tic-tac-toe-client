@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -105,7 +106,11 @@ public class MoveHistoryController implements BaseController, Initializable
                 placeMove();
 
                 moveNumLabel.setText("1/" + glm.getMoveHistory().size());
-                timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
+                LocalDateTime time = glm.getMoveHistory().get(0).getTimeMade();
+                timeLabel.setText((time.getMonth().toString()) + " " +
+                        time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
+                        ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
+                        ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
                 playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
                 previousButton.setDisable(true);
                 if(glm.getMoveHistory().size() == 1)
@@ -126,7 +131,11 @@ public class MoveHistoryController implements BaseController, Initializable
 
                 placeMove();
                 moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
-                timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
+                LocalDateTime time = glm.getMoveHistory().get(moveCounter).getTimeMade();
+                timeLabel.setText((time.getMonth().toString()) + " " +
+                        time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
+                        ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
+                        ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
                 playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s turn!") ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
 
                 if (moveCounter >= (glm.getMoveHistory().size() - 1)) {
@@ -186,7 +195,11 @@ public class MoveHistoryController implements BaseController, Initializable
                     tile22.setText("");
                 }
                 moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
-                timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
+                LocalDateTime time = glm.getMoveHistory().get(moveCounter).getTimeMade();
+                timeLabel.setText((time.getMonth().toString()) + " " +
+                        time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
+                        ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
+                        ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
                 playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s turn!") ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
 
                 if (moveCounter <= 0) {
@@ -290,5 +303,4 @@ public class MoveHistoryController implements BaseController, Initializable
             swapTurn();
         }
     }
-
 }

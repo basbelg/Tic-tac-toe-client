@@ -47,6 +47,7 @@ public class GameHistoriesController implements BaseController, Initializable
             else if(gameList.getSelectionModel().getSelectedIndex() >= 0)
             {
                 //send in move history of game selected
+                waitingForServer();
                 GameLogMessage glm = (GameLogMessage) MessageFactory.getMessage("GLG-MSG");
                 glm.setUserId(client.getUser().getId());
                 glm.setGameId(gamesPlayed.get(gameList.getSelectionModel().getSelectedIndex()).getGameId());
@@ -86,6 +87,7 @@ public class GameHistoriesController implements BaseController, Initializable
     public void update(Serializable msg)
     {
         Platform.runLater(() -> {
+            finishedWaitingForServer();
             if (msg instanceof GameLogMessage) {
                 if (((GameLogMessage) msg).getMoveHistory() != null) {
                     try {
@@ -129,7 +131,10 @@ public class GameHistoriesController implements BaseController, Initializable
                     {
                         StringBuffer out = new StringBuffer();
 
-                        out.append("VS. " + gi.getPlayer2Username() + "\t\tTime Started: " + (gi.getStartTime().toString()));
+                        out.append(String.format("VS. %-19s", gi.getPlayer2Username()) + "\t\tTime Started: " + (gi.getStartTime().getMonth().toString()) + " " +
+                                    gi.getStartTime().getDayOfMonth() + ", " + gi.getStartTime().getYear() + " at " + (gi.getStartTime().getHour() < 10 ? ("0" + gi.getStartTime().getHour()) : gi.getStartTime().getHour()) +
+                                    ":" + (gi.getStartTime().getMinute() < 10 ? ("0" + gi.getStartTime().getMinute()) : gi.getStartTime().getMinute()) +
+                                    ":" + (gi.getStartTime().getSecond() < 10 ? ("0" + gi.getStartTime().getSecond()) : gi.getStartTime().getSecond()));
 
                         gameList.getItems().add(new Label(out.toString()));
                     }
@@ -147,8 +152,21 @@ public class GameHistoriesController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
 
+        waitingForServer();
         GamesPlayedMessage gpm = (GamesPlayedMessage) MessageFactory.getMessage("GMP-MSG");
         gpm.setPlayerId(client.getUser().getId());
         client.update(gpm);
+    }
+
+    private void waitingForServer()
+    {
+        backButton.setDisable(true);
+        viewMoveHistoryButton.setDisable(true);
+    }
+
+    private void finishedWaitingForServer()
+    {
+        backButton.setDisable(false);
+        viewMoveHistoryButton.setDisable(false);
     }
 }

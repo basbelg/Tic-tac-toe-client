@@ -38,6 +38,7 @@ public class RegisterController implements BaseController, Initializable
                 !enterPassword.getText().equals("") && !enterConfirmPassword.getText().equals("") &&
                 enterPassword.getText().equals(enterConfirmPassword.getText()))
         {
+            waitingForServer();
             newUser = new User(enterUsername.getText(), enterFirstName.getText(), enterLastName.getText(), enterPassword.getText());
             if(confirmButton.getText().equals("Register")) {
                 CreateAccountMessage cam = (CreateAccountMessage) MessageFactory.getMessage("CAC-MSG");
@@ -123,7 +124,6 @@ public class RegisterController implements BaseController, Initializable
     public void update(Serializable msg)
     {
         Platform.runLater(() -> {
-            if (confirmButton.getText().equals("Register")) {
                 if (msg instanceof AccountSuccessfulMessage) {
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Login.fxml"));
@@ -139,10 +139,10 @@ public class RegisterController implements BaseController, Initializable
                         e.printStackTrace();
                     }
                 } else if (msg instanceof AccountFailedMessage) {
-                    errorLabel.setText(((AccountFailedMessage) msg).toString());
+                    finishedWaitingForServer();
+                    errorLabel.setText(msg.toString());
                 }
-            } else if (confirmButton.getText().equals("Confirm")) {
-                if (msg instanceof AccountSuccessfulMessage) {
+                else if (msg instanceof UpdateAccountInfoMessage) {
                     client.setUser(newUser);
                     try {
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
@@ -157,10 +157,7 @@ public class RegisterController implements BaseController, Initializable
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                } else if (msg instanceof AccountFailedMessage) {
-                    errorLabel.setText(((AccountFailedMessage) msg).toString());
                 }
-            }
         });
     }
 
@@ -178,5 +175,17 @@ public class RegisterController implements BaseController, Initializable
                 enterConfirmPassword.setText(client.getUser().getPassword());
             }
         });
+    }
+
+    private void waitingForServer()
+    {
+        cancelButton.setDisable(true);
+        confirmButton.setDisable(true);
+    }
+
+    private void finishedWaitingForServer()
+    {
+        cancelButton.setDisable(false);
+        confirmButton.setDisable(false);
     }
 }

@@ -122,12 +122,20 @@ public class MenuController implements BaseController, Initializable
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else if (msg instanceof InactiveGameMessage) {
+            }
+            else if (msg instanceof InactiveGameMessage) {
                 activeGamesList.getItems().clear();
                 for (LobbyInfo l : client.getActiveGames()) {
                     activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
                 }
-            } else if (msg instanceof NewAILobbyMessage) {
+                if(client.getCurrentGameId().equals(((InactiveGameMessage) msg).getFinishedGameId()))
+                {
+                    finishedWaitingForServer();
+                    errorLabel.setText("This lobby is not longer active!");
+                    client.setCurrentGameId("No Game");
+                }
+            }
+            else if (msg instanceof NewAILobbyMessage) {
                 activeGamesList.getItems().clear();
                 for (LobbyInfo l : client.getActiveGames()) {
                     activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
@@ -143,6 +151,11 @@ public class MenuController implements BaseController, Initializable
                     activeGamesList.getItems().add(new Label(l.getCreatorUsername() + "\'s Game\t " + l.getPlayerCount() + "/2"));
                 }
             }
+            else if (msg instanceof ConnectFailedMessage)
+            {
+                errorLabel.setText(msg.toString());
+                finishedWaitingForServer();
+            }
         });
     }
 
@@ -150,6 +163,7 @@ public class MenuController implements BaseController, Initializable
     {
         CreateLobbyMessage clm = (CreateLobbyMessage) MessageFactory.getMessage("CLB-MSG");
         clm.setPlayer1Id(client.getUser().getId());
+        waitForServer();
         client.update(clm);
     }
 
@@ -185,7 +199,7 @@ public class MenuController implements BaseController, Initializable
         }
         else if(client.getActiveGames().get(activeGamesList.getSelectionModel().getSelectedIndex()).getPlayerCount() == 2)
         {
-            //TODO: POP UP WINDOW ASKING IF PLAYER WANTS TO SPECTATE INSTEAD
+            errorLabel.setText("This lobby is full! Try spectating.");
         }
         else if(activeGamesList.getSelectionModel().getSelectedIndex() >= 0)
         {
@@ -194,6 +208,7 @@ public class MenuController implements BaseController, Initializable
             clm.setLobbyGameId(client.getActiveGames().get(activeGamesList.getSelectionModel().getSelectedIndex()).getLobbyId());
             clm.setPlayer2(client.getUser().getUsername());
             clm.setStartTime(LocalDateTime.now());
+            waitForServer();
             client.update(clm);
         }
 
@@ -218,6 +233,7 @@ public class MenuController implements BaseController, Initializable
             SpectateMessage spm = (SpectateMessage) MessageFactory.getMessage("SPC-MSG");
             spm.setSpectatorId(client.getUser().getId());
             spm.setGameId(client.getActiveGames().get(activeGamesList.getSelectionModel().getSelectedIndex()).getLobbyId());
+            waitForServer();
             client.update(spm);
         }
 
@@ -227,6 +243,7 @@ public class MenuController implements BaseController, Initializable
         CreateAIGameMessage cam = (CreateAIGameMessage) MessageFactory.getMessage("CAI-MSG");
         cam.setPlayer1Id(client.getUser().getId());
         cam.setStartTime(LocalDateTime.now());
+        waitForServer();
         client.update(cam);
     }
 
@@ -242,5 +259,25 @@ public class MenuController implements BaseController, Initializable
 
             welcomeLabel.setText("Welcome, " + client.getUser().getUsername() + ".");
         });
+    }
+
+    private void waitForServer()
+    {
+        createLobbyButton.setDisable(true);
+        logoutButton.setDisable(true);
+        spectateButton.setDisable(true);
+        accountButton.setDisable(true);
+        joinLobbyButton.setDisable(true);
+        vsAIButton.setDisable(true);
+    }
+
+    private void finishedWaitingForServer()
+    {
+        createLobbyButton.setDisable(false);
+        logoutButton.setDisable(false);
+        spectateButton.setDisable(false);
+        accountButton.setDisable(false);
+        joinLobbyButton.setDisable(false);
+        vsAIButton.setDisable(false);
     }
 }

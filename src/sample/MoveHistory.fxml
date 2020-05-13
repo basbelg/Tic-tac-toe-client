@@ -36,10 +36,7 @@
       <Button fx:id="backButton" layoutX="504.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="74.0" text="Back" />
       <Button layoutX="504.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#onSpectatorsClicked" prefHeight="25.0" prefWidth="74.0" text="Spectators" />
       <Label layoutX="16.0" layoutY="86.0" text="Time Made:" />
-      <Label fx:id="timeLabel" layoutX="84.0" layoutY="74.0" prefHeight="41.0" prefWidth="100.0" text="0:00 am">
-         <font>
-            <Font size="9.0" />
-         </font></Label>
+      <Label fx:id="timeLabel" layoutX="84.0" layoutY="67.0" prefHeight="56.0" prefWidth="100.0" text="N/A" />
       <Label layoutX="33.0" layoutY="134.0" text="Player:" />
       <Label fx:id="playerLabel" layoutX="84.0" layoutY="134.0" text="N/A" />
       <Label fx:id="winnerLabel" layoutX="191.0" layoutY="9.0" prefHeight="41.0" prefWidth="300.0">

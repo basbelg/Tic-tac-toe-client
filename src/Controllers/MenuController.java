@@ -156,6 +156,10 @@ public class MenuController implements BaseController, Initializable
                 errorLabel.setText(msg.toString());
                 finishedWaitingForServer();
             }
+            else if (msg instanceof UpdateAccountInfoMessage)
+            {
+                welcomeLabel.setText("Welcome, " + client.getUser().getUsername() + ".");
+            }
         });
     }
 

@@ -3,6 +3,7 @@ package Client;
 import Controllers.BaseController;
 import Controllers.BoardController;
 import Controllers.MenuController;
+import Controllers.RegisterController;
 import DataClasses.User;
 import DataClasses.*;
 import Messages.*;
@@ -174,7 +175,10 @@ public class Client implements Runnable {
                     case "UPA-MSG":
                         UpdateAccountInfoMessage upm = (UpdateAccountInfoMessage)p.getData();
                         user = upm.getUpdatedUser();
-                        controller.update(upm);
+                        if(controller instanceof MenuController || controller instanceof RegisterController)
+                        {
+                            controller.update(upm);
+                        }
                         break;
 
                     default:

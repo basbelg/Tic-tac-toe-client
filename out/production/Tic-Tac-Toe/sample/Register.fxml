@@ -40,7 +40,7 @@
             <TextField fx:id="enterLastName" prefHeight="25.0" prefWidth="270.0" promptText="Enter Last Name..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="enterUsername" prefHeight="25.0" prefWidth="270.0" promptText="Enter Username...." GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="Username:" GridPane.rowIndex="5" />
-            <Label fx:id="errorUsernameLabel" prefHeight="34.0" prefWidth="337.0" textFill="RED" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Label fx:id="errorUsernameLabel" prefHeight="34.0" prefWidth="337.0" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font></Label>

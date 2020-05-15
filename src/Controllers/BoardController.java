@@ -83,53 +83,43 @@ public class BoardController implements BaseController, Initializable
                 boardTiles.add(tile21);
                 boardTiles.add(tile22);
 
-
                 for(Node node : boardTiles)
                 {
                     Label tile = (Label) node;
-                    tile.setTextAlignment(TextAlignment.CENTER);
-                    tile.setFont(new Font(36));
+                    //tile.setTextAlignment(TextAlignment.CENTER);
+                    //tile.setFont(new Font(36));
 
                     if(playerNumber != 0)
                     {
-                        tile.setOnMouseEntered(new EventHandler<MouseEvent>() {
-                            @Override
-                            public void handle(MouseEvent mouseEvent) {
-                                if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
-                                    if(isPlayer1Turn && playerNumber == 1)
-                                    {
-                                        tile.setText("X");
-                                    }
-                                    else if(!isPlayer1Turn && playerNumber == 2)
-                                    {
-                                        tile.setText("O");
-                                    }
+                        tile.setOnMouseEntered(mouseEvent -> {
+                            if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
+                                if(isPlayer1Turn && playerNumber == 1)
+                                {
+                                    tile.setText("X");
+                                }
+                                else if(!isPlayer1Turn && playerNumber == 2)
+                                {
+                                    tile.setText("O");
                                 }
                             }
                         });
 
-                        tile.setOnMouseExited(new EventHandler<MouseEvent>() {
-                            @Override
-                            public void handle(MouseEvent mouseEvent) {
-                                if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
-                                    tile.setText("");
-                                }
+                        tile.setOnMouseExited(mouseEvent -> {
+                            if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
+                                tile.setText("");
                             }
                         });
 
-                        tile.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                            @Override
-                            public void handle(MouseEvent mouseEvent) {
-                                if(((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame && !isPendingMove) {
-                                    MoveMessage mm = (MoveMessage) MessageFactory.getMessage("MOV-MSG");
-                                    mm.setMovingPlayerId(client.getUser().getId());
-                                    mm.setGameId(gameId);
-                                    Node node = (Node) mouseEvent.getSource();
-                                    mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node), GridPane.getColumnIndex(node)), LocalDateTime.now()));
+                        tile.setOnMouseClicked(mouseEvent -> {
+                            if (((isPlayer1Turn && playerNumber == 1) || (!isPlayer1Turn && playerNumber == 2)) && isInGame && !isPendingMove) {
+                                MoveMessage mm = (MoveMessage) MessageFactory.getMessage("MOV-MSG");
+                                mm.setMovingPlayerId(client.getUser().getId());
+                                mm.setGameId(gameId);
+                                Node node1 = (Node) mouseEvent.getSource();
+                                mm.setMoveInfo(new MoveInfo(new TTT_Move(playerNumber, GridPane.getRowIndex(node1), GridPane.getColumnIndex(node1)), LocalDateTime.now()));
 
-                                    isPendingMove = true;
-                                    client.update(mm);
-                                }
+                                isPendingMove = true;
+                                client.update(mm);
                             }
                         });
                     }

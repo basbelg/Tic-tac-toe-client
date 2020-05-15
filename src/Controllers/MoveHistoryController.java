@@ -44,6 +44,7 @@ public class MoveHistoryController implements BaseController, Initializable
     public Label tile21;
     public Label tile22;
     public Label winnerLabel;
+    public Label outTimeMadeLabel;
     private GameLogMessage glm;
     private int moveCounter = 0;
     private String turn = "X";
@@ -78,6 +79,7 @@ public class MoveHistoryController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
         this.glm = glm;
+        outTimeMadeLabel.setText("Time\nMade:");
 
         List<Node> boardTiles = new ArrayList<>();
         boardTiles.add(tile00);
@@ -111,7 +113,7 @@ public class MoveHistoryController implements BaseController, Initializable
                         time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
                         ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
                         ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
-                playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
+                playerLabel.setText(glm.getPlayer1Username() + "\'s move!");
                 previousButton.setDisable(true);
                 if(glm.getMoveHistory().size() == 1)
                 {
@@ -136,7 +138,7 @@ public class MoveHistoryController implements BaseController, Initializable
                         time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
                         ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
                         ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
-                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s turn!") ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
+                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s move!") ? (glm.getPlayer2Username() + "\'s move!") : (glm.getPlayer1Username() + "\'s move!"));
 
                 if (moveCounter >= (glm.getMoveHistory().size() - 1)) {
                     nextButton.setDisable(true);
@@ -200,7 +202,7 @@ public class MoveHistoryController implements BaseController, Initializable
                         time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
                         ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
                         ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
-                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s turn!") ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
+                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s move!") ? (glm.getPlayer2Username() + "\'s move!") : (glm.getPlayer1Username() + "\'s move!"));
 
                 if (moveCounter <= 0) {
                     previousButton.setDisable(true);

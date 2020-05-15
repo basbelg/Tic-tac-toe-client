@@ -30,10 +30,22 @@ public class RegisterController implements BaseController, Initializable
     public TextField enterUsername;
     public TextField enterPassword;
     public TextField enterConfirmPassword;
+    public Label errorFNameLabel;
+    public Label errorLNameLabel;
+    public Label errorUsernameLabel;
+    public Label errorPasswordLabel;
+    public Label errorConfirmPasswordLabel;
     public Label errorLabel;
 
     public void onConfirmClicked()
     {
+        errorFNameLabel.setText("");
+        errorLNameLabel.setText("");
+        errorUsernameLabel.setText("");
+        errorPasswordLabel.setText("");
+        errorConfirmPasswordLabel.setText("");
+        errorLabel.setText("");
+
         if(!enterFirstName.getText().equals("") && !enterLastName.getText().equals("") && !enterUsername.getText().equals("") &&
                 !enterPassword.getText().equals("") && !enterConfirmPassword.getText().equals("") &&
                 enterPassword.getText().equals(enterConfirmPassword.getText()))
@@ -55,24 +67,21 @@ public class RegisterController implements BaseController, Initializable
         else
         {
             Platform.runLater(() -> {
-                StringBuffer error = new StringBuffer();
                 if (enterFirstName.getText().equals("")) {
-                    error.append("Please enter your first name!\n");
+                    errorFNameLabel.setText("Please enter your first name!\n");
                 }
                 if (enterLastName.getText().equals("")) {
-                    error.append("Please enter your last name!\n");
+                    errorLNameLabel.setText("Please enter your last name!\n");
                 }
                 if (enterUsername.getText().equals("")) {
-                    error.append("Please enter a valid username!\n");
+                    errorUsernameLabel.setText("Please enter a valid username!\n");
                 }
                 if (enterPassword.getText().equals("")) {
-                    error.append("Please enter a valid password!\n");
+                    errorPasswordLabel.setText("Please enter a valid password!\n");
                 }
                 if (!enterPassword.getText().equals(enterConfirmPassword.getText()) && !enterPassword.getText().equals("")) {
-                    error.append("Passwords do NOT match!\n");
+                    errorConfirmPasswordLabel.setText("Passwords do NOT match!\n");
                 }
-
-                errorLabel.setText(error.toString());
             });
         }
 

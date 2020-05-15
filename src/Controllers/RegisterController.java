@@ -143,20 +143,32 @@ public class RegisterController implements BaseController, Initializable
                     errorLabel.setText(msg.toString());
                 }
                 else if (msg instanceof UpdateAccountInfoMessage) {
-                    client.setUser(newUser);
-                    try {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
-                        Parent root = loader.load();
-                        AccountController ac = loader.getController();
-                        ac.passInfo(client);
-                        Stage stage = (Stage) confirmButton.getScene().getWindow();
-                        stage.close();
-                        stage.setTitle("Account");
-                        stage.setScene(new Scene(root));
-                        stage.show();
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                    if(confirmButton.isDisable())
+                    {
+                        try {
+                            FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Account.fxml"));
+                            Parent root = loader.load();
+                            AccountController ac = loader.getController();
+                            ac.passInfo(client);
+                            Stage stage = (Stage) confirmButton.getScene().getWindow();
+                            stage.close();
+                            stage.setTitle("Account");
+                            stage.setScene(new Scene(root));
+                            stage.show();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
+                    else
+                    {
+                        User newUser = ((UpdateAccountInfoMessage) msg).getUpdatedUser();
+                        enterUsername.setText(newUser.getUsername());
+                        enterFirstName.setText(newUser.getFirstName());
+                        enterLastName.setText(newUser.getLastName());
+                        enterPassword.setText(newUser.getPassword());
+                        enterConfirmPassword.setText(newUser.getPassword());
+                    }
+
                 }
         });
     }

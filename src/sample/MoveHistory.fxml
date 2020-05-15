@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MoveHistoryController">
+<AnchorPane prefHeight="400.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MoveHistoryController">
    <children>
-      <GridPane fx:id="board" gridLinesVisible="true" layoutX="191.0" layoutY="50.0" maxHeight="300.0" maxWidth="300.0" minHeight="300.0" minWidth="300.0" prefHeight="300.0" prefWidth="300.0">
+      <GridPane fx:id="board" gridLinesVisible="true" layoutX="203.0" layoutY="38.0" maxHeight="300.0" maxWidth="300.0" minHeight="300.0" minWidth="300.0" prefHeight="300.0" prefWidth="300.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -29,19 +29,32 @@
             <Label fx:id="tile22" alignment="CENTER" prefHeight="145.0" prefWidth="159.0" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button fx:id="previousButton" layoutX="504.0" layoutY="91.0" mnemonicParsing="false" onMouseClicked="#onPreviousClicked" prefHeight="25.0" prefWidth="74.0" text="Previous" />
-      <Button fx:id="nextButton" layoutX="504.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#onNextClicked" prefHeight="25.0" prefWidth="74.0" text="Next" />
-      <Label layoutX="30.0" layoutY="42.0" text="Move:" />
-      <Label fx:id="moveNumLabel" layoutX="75.0" layoutY="42.0" text="0/0" />
-      <Button fx:id="backButton" layoutX="504.0" layoutY="325.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="74.0" text="Back" />
-      <Button layoutX="504.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#onSpectatorsClicked" prefHeight="25.0" prefWidth="74.0" text="Spectators" />
-      <Label layoutX="16.0" layoutY="86.0" text="Time Made:" />
-      <Label fx:id="timeLabel" layoutX="84.0" layoutY="67.0" prefHeight="56.0" prefWidth="100.0" text="N/A" />
-      <Label layoutX="33.0" layoutY="134.0" text="Player:" />
-      <Label fx:id="playerLabel" layoutX="84.0" layoutY="134.0" text="N/A" />
-      <Label fx:id="winnerLabel" layoutX="191.0" layoutY="9.0" prefHeight="41.0" prefWidth="300.0">
+      <Button fx:id="previousButton" layoutX="203.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#onPreviousClicked" prefHeight="25.0" prefWidth="86.0" text="&lt;&lt; Previous" />
+      <Button fx:id="nextButton" layoutX="417.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#onNextClicked" prefHeight="25.0" prefWidth="86.0" text="Next &gt;&gt;" />
+      <Button fx:id="backButton" layoutX="524.0" layoutY="364.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="74.0" text="Back" />
+      <Button layoutX="14.0" layoutY="41.0" mnemonicParsing="false" onMouseClicked="#onSpectatorsClicked" prefHeight="25.0" prefWidth="74.0" text="Spectators" />
+      <Label fx:id="winnerLabel" layoutX="203.0" prefHeight="41.0" prefWidth="300.0">
          <font>
             <Font size="18.0" />
          </font></Label>
+      <GridPane fx:id="moveInfoGrid" layoutX="14.0" layoutY="90.0" prefHeight="110.0" prefWidth="182.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="81.0" minWidth="10.0" prefWidth="56.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="126.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Move:" />
+            <Label fx:id="moveNumLabel" text="0/0" GridPane.columnIndex="1" />
+            <Label fx:id="outTimeMadeLabel" text="Time Made:" GridPane.rowIndex="1" />
+            <Label fx:id="timeLabel" prefHeight="47.0" prefWidth="125.0" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Turn:" GridPane.rowIndex="2" />
+            <Label fx:id="playerLabel" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

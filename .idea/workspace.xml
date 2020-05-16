@@ -8,13 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MoveHistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Account.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Account.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MoveHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MoveHistory.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/ViewSpectators.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/ViewSpectators.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -261,7 +256,8 @@
       <workItem from="1589324307086" duration="4221000" />
       <workItem from="1589341774539" duration="9184000" />
       <workItem from="1589421850230" duration="8059000" />
-      <workItem from="1589529845872" duration="4292000" />
+      <workItem from="1589529845872" duration="7250000" />
+      <workItem from="1589606745067" duration="1479000" />
     </task>
     <servers />
   </component>

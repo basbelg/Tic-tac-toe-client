@@ -10,8 +10,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MoveHistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MoveHistoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Board.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Board.fxml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,7 +51,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-12.0.2_windows-x64_bin-sdk/javafx-sdk-12.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javafx-sdk-13.0.2/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -59,18 +68,6 @@
       <recent name="C:\Users\basbe\IdeaProjects\Tic-Tac-Toe\Messages\src" />
       <recent name="C:\Users\basbe\IdeaProjects\Tic-Tac-Toe\src" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -92,11 +89,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" singleton="false">
-      <option name="ALTERNATIVE_JRE_PATH" value="12" />
+      <option name="ALTERNATIVE_JRE_PATH" value="13" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Tic-Tac-Toe" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\jtols\Downloads\openjfx-12.0.2_windows-x64_bin-sdk\javafx-sdk-12.0.2\lib --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Smart\Documents\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -231,17 +228,6 @@
       <workItem from="1587579909899" duration="2629000" />
       <workItem from="1587982869751" duration="4904000" />
       <workItem from="1588042639848" duration="4366000" />
-      <workItem from="1588139983098" duration="8828000" />
-      <workItem from="1588218730437" duration="1689000" />
-      <workItem from="1588318311324" duration="1838000" />
-      <workItem from="1588218730437" duration="1421000" />
-      <workItem from="1588323889182" duration="592000" />
-      <workItem from="1588405626296" duration="5259000" />
-      <workItem from="1588462632742" duration="16347000" />
-      <workItem from="1588540872519" duration="15170000" />
-      <workItem from="1588586225360" duration="397000" />
-      <workItem from="1588618999658" duration="6244000" />
-      <workItem from="1588643420124" duration="336000" />
       <workItem from="1588139983098" duration="10133000" />
       <workItem from="1588215412910" duration="3140000" />
       <workItem from="1588223889254" duration="7278000" />
@@ -269,13 +255,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="362" key="#Notifications" timestamp="1587983088998">
@@ -286,10 +271,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="359" key="#Project_Structure/0.0.2560.1400@0.0.2560.1400" timestamp="1586072746289" />
-    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588007972830">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589523679076">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588007972830" />
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589523679076" />
     <state x="562" y="610" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586194498698">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -306,26 +291,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1159" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1586624765460" />
-    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1588223933909">
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1588687451344">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1588223933909" />
-    <state width="1234" height="491" key="GridCell.Tab.0.bottom" timestamp="1588611419736">
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1588687451344" />
+    <state width="2517" height="249" key="GridCell.Tab.0.bottom" timestamp="1589573719275">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="491" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
-    <state width="1234" height="491" key="GridCell.Tab.0.center" timestamp="1588611419736">
+    <state width="2517" height="249" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1589573719275" />
+    <state width="2517" height="249" key="GridCell.Tab.0.center" timestamp="1589573719274">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="491" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
-    <state width="1234" height="491" key="GridCell.Tab.0.left" timestamp="1588611419736">
+    <state width="2517" height="249" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1589573719274" />
+    <state width="2517" height="249" key="GridCell.Tab.0.left" timestamp="1589573719274">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="491" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
-    <state width="1234" height="491" key="GridCell.Tab.0.right" timestamp="1588611419736">
+    <state width="2517" height="249" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1589573719274" />
+    <state width="2517" height="249" key="GridCell.Tab.0.right" timestamp="1589573719275">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="491" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
+    <state width="2517" height="249" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1589573719275" />
     <state width="1234" height="491" key="GridCell.Tab.1.bottom" timestamp="1588611419736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -342,10 +327,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1234" height="491" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588611419736" />
-    <state x="432" y="317" key="SettingsEditor" timestamp="1588580311066">
+    <state x="432" y="317" key="SettingsEditor" timestamp="1589567373106">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1588580311066" />
+    <state x="432" y="317" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1589567373106" />
     <state x="976" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1588215932807">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -28,17 +29,30 @@ public class GameHistoriesController implements BaseController, Initializable
     public ListView gameList;
     public Button backButton;
     public Button viewMoveHistoryButton;
+    public Label errorLabel;
     private List<GameInfo> gamesPlayed = new ArrayList<>();
 
     public void onViewMoveHistoryClicked()
     {
         try
         {
-            //send in move history of game selected
-            GameLogMessage glm = (GameLogMessage) MessageFactory.getMessage("GLG-MSG");
-            glm.setUserId(client.getUser().getId());
-            glm.setGameId(gamesPlayed.get(gameList.getSelectionModel().getSelectedIndex()).getGameId());
-            client.update(glm);
+            if(gameList.getItems().size() <= 0)
+            {
+                errorLabel.setText("There are no games to view!");
+            }
+            else if(gameList.getSelectionModel().getSelectedIndex() < 0)
+            {
+                errorLabel.setText("Please select a game to view!");
+            }
+            else if(gameList.getSelectionModel().getSelectedIndex() >= 0)
+            {
+                //send in move history of game selected
+                waitingForServer();
+                GameLogMessage glm = (GameLogMessage) MessageFactory.getMessage("GLG-MSG");
+                glm.setUserId(client.getUser().getId());
+                glm.setGameId(gamesPlayed.get(gameList.getSelectionModel().getSelectedIndex()).getGameId());
+                client.update(glm);
+            }
         }
         catch(IndexOutOfBoundsException e)
         {
@@ -73,6 +87,7 @@ public class GameHistoriesController implements BaseController, Initializable
     public void update(Serializable msg)
     {
         Platform.runLater(() -> {
+            finishedWaitingForServer();
             if (msg instanceof GameLogMessage) {
                 if (((GameLogMessage) msg).getMoveHistory() != null) {
                     try {
@@ -93,13 +108,33 @@ public class GameHistoriesController implements BaseController, Initializable
             else if (msg instanceof GamesPlayedMessage)
             {
                 gamesPlayed = ((GamesPlayedMessage) msg).getGameInfoList();
-                if(gamesPlayed != null)
+                if(gamesPlayed.size() != 0)
                 {
+                    for (int i = 0, max_idx; i < gamesPlayed.size() - 1; i++)
+                    {
+                        // Find the minimum element in unsorted array
+                        max_idx = i;
+                        for (int j = i + 1; j < gamesPlayed.size(); j++)
+                        {
+                            if (gamesPlayed.get(j).getStartTime().isAfter(gamesPlayed.get(max_idx).getStartTime()))
+                            {
+                                max_idx = j;
+                            }
+
+                        }
+                        GameInfo temp = gamesPlayed.get(max_idx);
+                        gamesPlayed.set(max_idx, gamesPlayed.get(i));
+                        gamesPlayed.set(i, temp);
+                    }
+
                     for(GameInfo gi : gamesPlayed)
                     {
                         StringBuffer out = new StringBuffer();
 
-                        out.append("VS. " + gi.getPlayer2Username() + "\t\tTime Started: " + (gi.getStartTime().toString()));
+                        out.append(String.format("VS. %-19s", gi.getPlayer2Username()) + "\t\tTime Started: " + (gi.getStartTime().getMonth().toString()) + " " +
+                                    gi.getStartTime().getDayOfMonth() + ", " + gi.getStartTime().getYear() + " at " + (gi.getStartTime().getHour() < 10 ? ("0" + gi.getStartTime().getHour()) : gi.getStartTime().getHour()) +
+                                    ":" + (gi.getStartTime().getMinute() < 10 ? ("0" + gi.getStartTime().getMinute()) : gi.getStartTime().getMinute()) +
+                                    ":" + (gi.getStartTime().getSecond() < 10 ? ("0" + gi.getStartTime().getSecond()) : gi.getStartTime().getSecond()));
 
                         gameList.getItems().add(new Label(out.toString()));
                     }
@@ -117,8 +152,21 @@ public class GameHistoriesController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
 
+        waitingForServer();
         GamesPlayedMessage gpm = (GamesPlayedMessage) MessageFactory.getMessage("GMP-MSG");
         gpm.setPlayerId(client.getUser().getId());
         client.update(gpm);
+    }
+
+    private void waitingForServer()
+    {
+        backButton.setDisable(true);
+        viewMoveHistoryButton.setDisable(true);
+    }
+
+    private void finishedWaitingForServer()
+    {
+        backButton.setDisable(false);
+        viewMoveHistoryButton.setDisable(false);
     }
 }

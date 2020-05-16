@@ -2,7 +2,8 @@ package Client;
 
 import Controllers.BaseController;
 import Controllers.BoardController;
-import Controllers.VsPlayerController;
+import Controllers.MenuController;
+import Controllers.RegisterController;
 import DataClasses.User;
 import DataClasses.*;
 import Messages.*;
@@ -78,6 +79,9 @@ public class Client implements Runnable {
                         currentGameId = clbm.getGameLobbyId();
                         controller.update(clbm);
                         break;
+                    case "COF-MSG":
+                        ConnectFailedMessage cfm = (ConnectFailedMessage)p.getData();
+                        controller.update(cfm);
                     case "FUL-MSG":
                         FullLobbyMessage flm = (FullLobbyMessage)p.getData();
                         for(LobbyInfo lobbyInfo : allActiveGames) {
@@ -86,7 +90,7 @@ public class Client implements Runnable {
                                 break;
                             }
                         }
-                        if(controller instanceof VsPlayerController)
+                        if(controller instanceof MenuController)
                         {
                             controller.update(flm);
                         }
@@ -122,16 +126,10 @@ public class Client implements Runnable {
                                 break;
                             }
                         }
-                        if(controller instanceof VsPlayerController)
+                        if(controller instanceof MenuController || (currentGameId.equals(igm.getFinishedGameId()) && controller instanceof BoardController))
                         {
                             controller.update(igm);
                         }
-                        /*else if(controller instanceof BoardController) // TODO : Not needed (also need to handle full lobby message)
-                        {
-                            if(currentGameId.equals(igm.getFinishedGameId())) {
-                                controller.update(igm);
-                            }
-                        }*/
                         break;
                     case "LEM-MSG":
                         LegalMoveMessage lmm = (LegalMoveMessage)p.getData();
@@ -148,7 +146,7 @@ public class Client implements Runnable {
                     case "NAI-MSG":
                         NewAILobbyMessage naim = (NewAILobbyMessage)p.getData();
                         allActiveGames.add(new LobbyInfo(naim.getCreatorUsername(), naim.getGameLobbyId(), 2));
-                        if(controller instanceof VsPlayerController)
+                        if(controller instanceof MenuController)
                         {
                             controller.update(naim);
                         }
@@ -156,7 +154,7 @@ public class Client implements Runnable {
                     case "NLB-MSG":
                         NewLobbyMessage nlm = (NewLobbyMessage)p.getData();
                         allActiveGames.add(new LobbyInfo(nlm.getCreatorUsername(), nlm.getGameLobbyId(), 1));
-                        if(controller instanceof VsPlayerController)
+                        if(controller instanceof MenuController)
                         {
                             controller.update(nlm);
                         }
@@ -165,6 +163,11 @@ public class Client implements Runnable {
                         SpectateMessage spm = (SpectateMessage)p.getData();
                         controller.update(spm);
                         break;
+                    case "SSP-MSG":
+                        StopSpectatingMessage ssm = (StopSpectatingMessage)p.getData();
+                        currentGameId = "No Game";
+                        controller.update(ssm);
+                        break;
                     case "STS-MSG":
                         StatsMessage stm = (StatsMessage)p.getData();
                         controller.update(stm);
@@ -172,6 +175,10 @@ public class Client implements Runnable {
                     case "UPA-MSG":
                         UpdateAccountInfoMessage upm = (UpdateAccountInfoMessage)p.getData();
                         user = upm.getUpdatedUser();
+                        if(controller instanceof MenuController || controller instanceof RegisterController)
+                        {
+                            controller.update(upm);
+                        }
                         break;
 
                     default:
@@ -211,6 +218,10 @@ public class Client implements Runnable {
                 Packet p = new Packet("AAG-MSG", msg);
                 output.writeObject(p);
             }
+            else if (msg instanceof ConcedeMessage) {
+                Packet p = new Packet("CNC-MSG", msg);
+                output.writeObject(p);
+            }
             else if (msg instanceof ConnectToLobbyMessage) {
                 Packet p = new Packet("CNT-MSG", msg);
                 output.writeObject(p);
@@ -235,8 +246,7 @@ public class Client implements Runnable {
                 Packet p = new Packet("GLG-MSG", msg);
                 output.writeObject(p);
             }
-            else if (msg instanceof GamesPlayedMessage)
-            {
+            else if (msg instanceof GamesPlayedMessage) {
                 Packet p = new Packet("GMP-MSG", msg);
                 output.writeObject(p);
             }
@@ -262,6 +272,12 @@ public class Client implements Runnable {
             else if (msg instanceof SpectateMessage)
             {
                 Packet p = new Packet("SPC-MSG", msg);
+                currentGameId = ((SpectateMessage) msg).getGameId();
+                output.writeObject(p);
+            }
+            else if (msg instanceof StopSpectatingMessage)
+            {
+                Packet p = new Packet("SSP-MSG", msg);
                 output.writeObject(p);
             }
             else if(msg instanceof StatsMessage)
@@ -290,5 +306,13 @@ public class Client implements Runnable {
 
     public List<LobbyInfo> getActiveGames() {
         return allActiveGames;
+    }
+
+    public String getCurrentGameId() {
+        return currentGameId;
+    }
+
+    public void setCurrentGameId(String currentGameId) {
+        this.currentGameId = currentGameId;
     }
 }

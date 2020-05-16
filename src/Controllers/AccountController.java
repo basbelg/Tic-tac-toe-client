@@ -93,6 +93,7 @@ public class AccountController implements BaseController, Initializable
     {
         //SEND W/L/T RATIO OVER TO STATS WINDOW TO BE DISPLAYED (Controller object)
         StatsMessage sm = (StatsMessage) MessageFactory.getMessage("STS-MSG");
+        waitingForServer();
         client.update(sm);
 
     }
@@ -124,6 +125,7 @@ public class AccountController implements BaseController, Initializable
     public void update(Serializable msg)
     {
         Platform.runLater(() -> {
+            finishedWaitingForServer();
             if(msg instanceof StatsMessage)
             {
                 try
@@ -149,5 +151,21 @@ public class AccountController implements BaseController, Initializable
     {
         this.client = client;
         client.setController(this);
+    }
+
+    private void waitingForServer()
+    {
+        backButton.setDisable(true);
+        gameHistoryButton.setDisable(true);
+        modAccountButton.setDisable(true);
+        deleteAccountButton.setDisable(true);
+    }
+
+    private void finishedWaitingForServer()
+    {
+        backButton.setDisable(false);
+        gameHistoryButton.setDisable(false);
+        modAccountButton.setDisable(false);
+        deleteAccountButton.setDisable(false);
     }
 }

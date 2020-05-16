@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -43,6 +44,7 @@ public class MoveHistoryController implements BaseController, Initializable
     public Label tile21;
     public Label tile22;
     public Label winnerLabel;
+    public Label outTimeMadeLabel;
     private GameLogMessage glm;
     private int moveCounter = 0;
     private String turn = "X";
@@ -77,6 +79,7 @@ public class MoveHistoryController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
         this.glm = glm;
+        outTimeMadeLabel.setText("Time\nMade:");
 
         List<Node> boardTiles = new ArrayList<>();
         boardTiles.add(tile00);
@@ -96,12 +99,28 @@ public class MoveHistoryController implements BaseController, Initializable
         }
 
         Platform.runLater(() -> {
-            placeMove();
+            if(glm.getMoveHistory().size() == 0)
+            {
+                winnerLabel.setText(glm.getWinner());
+            }
+            else if(glm.getMoveHistory().size() != 0)
+            {
+                placeMove();
 
-            moveNumLabel.setText("1/" + glm.getMoveHistory().size());
-            timeLabel.setText(glm.getMoveHistory().get(0).getTimeMade().toString());
-            playerLabel.setText(glm.getPlayer1Username() + "\'s turn!");
-            previousButton.setDisable(true);
+                moveNumLabel.setText("1/" + glm.getMoveHistory().size());
+                LocalDateTime time = glm.getMoveHistory().get(0).getTimeMade();
+                timeLabel.setText((time.getMonth().toString()) + " " +
+                        time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
+                        ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
+                        ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
+                playerLabel.setText(glm.getPlayer1Username() + "\'s move!");
+                previousButton.setDisable(true);
+                if(glm.getMoveHistory().size() == 1)
+                {
+                    nextButton.setDisable(true);
+                    winnerLabel.setText(glm.getWinner());
+                }
+            }
         });
     }
 
@@ -114,13 +133,17 @@ public class MoveHistoryController implements BaseController, Initializable
 
                 placeMove();
                 moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
-                timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
-                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s turn!") ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
+                LocalDateTime time = glm.getMoveHistory().get(moveCounter).getTimeMade();
+                timeLabel.setText((time.getMonth().toString()) + " " +
+                        time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
+                        ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
+                        ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
+                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s move!") ? (glm.getPlayer2Username() + "\'s move!") : (glm.getPlayer1Username() + "\'s move!"));
 
                 if (moveCounter >= (glm.getMoveHistory().size() - 1)) {
                     nextButton.setDisable(true);
                     winnerLabel.setText(glm.getWinner());
-                } else if (previousButton.isDisable()) {
+                } if (previousButton.isDisable()) {
                     previousButton.setDisable(false);
                 }
             }
@@ -129,6 +152,7 @@ public class MoveHistoryController implements BaseController, Initializable
 
     public void onPreviousClicked()
     {
+        swapTurn();
         Platform.runLater(() -> {
             if(moveCounter >= 0)
             {
@@ -173,12 +197,16 @@ public class MoveHistoryController implements BaseController, Initializable
                     tile22.setText("");
                 }
                 moveNumLabel.setText((moveCounter + 1) + "/" + glm.getMoveHistory().size());
-                timeLabel.setText(glm.getMoveHistory().get(moveCounter).getTimeMade().toString());
-                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s turn!") ? (glm.getPlayer2Username() + "\'s turn!") : (glm.getPlayer1Username() + "\'s turn!"));
+                LocalDateTime time = glm.getMoveHistory().get(moveCounter).getTimeMade();
+                timeLabel.setText((time.getMonth().toString()) + " " +
+                        time.getDayOfMonth() + ", " + time.getYear() + "\n at " + (time.getHour() < 10 ? ("0" + time.getHour()) : time.getHour()) +
+                        ":" + (time.getMinute() < 10 ? ("0" + time.getMinute()) : time.getMinute()) +
+                        ":" + (time.getSecond() < 10 ? ("0" + time.getSecond()) : time.getSecond()));
+                playerLabel.setText((playerLabel.getText()).equals(glm.getPlayer1Username() + "\'s move!") ? (glm.getPlayer2Username() + "\'s move!") : (glm.getPlayer1Username() + "\'s move!"));
 
                 if (moveCounter <= 0) {
                     previousButton.setDisable(true);
-                } else if (nextButton.isDisable()) {
+                } if (nextButton.isDisable()) {
                     nextButton.setDisable(false);
                     winnerLabel.setText("");
                 }
@@ -194,20 +222,16 @@ public class MoveHistoryController implements BaseController, Initializable
         client.update(gvm);
     }
 
-    private String getTurn()
+    private void swapTurn()
     {
         if(turn.equals("X"))
         {
             turn = "O";
-            return "X";
         }
         else if(turn.equals("O"))
         {
             turn = "X";
-            return "O";
         }
-
-        return "ERROR";
     }
 
     @Override
@@ -237,40 +261,48 @@ public class MoveHistoryController implements BaseController, Initializable
         int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();
         if(x == 0 && y == 0)
         {
-            tile00.setText(getTurn());
+            tile00.setText(turn);
+            swapTurn();
         }
         else if(x == 0 && y == 1)
         {
-            tile01.setText(getTurn());
+            tile01.setText(turn);
+            swapTurn();
         }
         else if(x == 0 && y == 2)
         {
-            tile02.setText(getTurn());
+            tile02.setText(turn);
+            swapTurn();
         }
         else if(x == 1 && y == 0)
         {
-            tile10.setText(getTurn());
+            tile10.setText(turn);
+            swapTurn();
         }
         else if(x == 1 && y == 1)
         {
-            tile11.setText(getTurn());
+            tile11.setText(turn);
+            swapTurn();
         }
         else if(x == 1 && y == 2)
         {
-            tile12.setText(getTurn());
+            tile12.setText(turn);
+            swapTurn();
         }
         else if(x == 2 && y == 0)
         {
-            tile20.setText(getTurn());
+            tile20.setText(turn);
+            swapTurn();
         }
         else if(x == 2 && y == 1)
         {
-            tile21.setText(getTurn());
+            tile21.setText(turn);
+            swapTurn();
         }
         else if(x == 2 && y == 2)
         {
-            tile22.setText(getTurn());
+            tile22.setText(turn);
+            swapTurn();
         }
     }
-
 }

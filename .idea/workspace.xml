@@ -7,19 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbf8dc4d-6b41-4f73-8fd2-fe25636aa7d9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController$3.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/BoardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MoveHistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/MoveHistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/Controllers/RegisterController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Board.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Tic-Tac-Toe/sample/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/BoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Board.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +41,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javafx-sdk-13.0.2/lib" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/openjfx-12.0.2_windows-x64_bin-sdk/javafx-sdk-12.0.2/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28235295" />
     <property name="recentsLimit" value="5" />
@@ -68,6 +58,18 @@
       <recent name="C:\Users\basbe\IdeaProjects\Tic-Tac-Toe\Messages\src" />
       <recent name="C:\Users\basbe\IdeaProjects\Tic-Tac-Toe\src" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -89,11 +91,11 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" singleton="false">
-      <option name="ALTERNATIVE_JRE_PATH" value="13" />
+      <option name="ALTERNATIVE_JRE_PATH" value="12" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="Tic-Tac-Toe" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Smart\Documents\javafx-sdk-13.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\jtols\Downloads\openjfx-12.0.2_windows-x64_bin-sdk\javafx-sdk-12.0.2\lib --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -255,12 +257,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="232" y="362" key="#Notifications" timestamp="1587983088998">

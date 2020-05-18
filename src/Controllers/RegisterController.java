@@ -197,6 +197,10 @@ public class RegisterController implements BaseController, Initializable
                 enterPassword.setText(client.getUser().getPassword());
                 enterConfirmPassword.setText(client.getUser().getPassword());
             }
+            else
+            {
+                titleLabel.setText("Register");
+            }
         });
     }
 

@@ -36,6 +36,7 @@ public class RegisterController implements BaseController, Initializable
     public Label errorPasswordLabel;
     public Label errorConfirmPasswordLabel;
     public Label errorLabel;
+    public Label titleLabel;
 
     public void onConfirmClicked()
     {
@@ -189,11 +190,16 @@ public class RegisterController implements BaseController, Initializable
 
         Platform.runLater(() -> {
             if (confirmButton.getText().equals("Confirm")) {
+                titleLabel.setText("Modify Account");
                 enterUsername.setText(client.getUser().getUsername());
                 enterFirstName.setText(client.getUser().getFirstName());
                 enterLastName.setText(client.getUser().getLastName());
                 enterPassword.setText(client.getUser().getPassword());
                 enterConfirmPassword.setText(client.getUser().getPassword());
+            }
+            else
+            {
+                titleLabel.setText("Register");
             }
         });
     }

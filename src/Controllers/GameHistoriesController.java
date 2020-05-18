@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
@@ -39,10 +40,12 @@ public class GameHistoriesController implements BaseController, Initializable
             if(gameList.getItems().size() <= 0)
             {
                 errorLabel.setText("There are no games to view!");
+                errorLabel.setVisible(true);
             }
             else if(gameList.getSelectionModel().getSelectedIndex() < 0)
             {
                 errorLabel.setText("Please select a game to view!");
+                errorLabel.setVisible(true);
             }
             else if(gameList.getSelectionModel().getSelectedIndex() >= 0)
             {
@@ -88,6 +91,7 @@ public class GameHistoriesController implements BaseController, Initializable
     {
         Platform.runLater(() -> {
             finishedWaitingForServer();
+            Label label = null;
             if (msg instanceof GameLogMessage) {
                 if (((GameLogMessage) msg).getMoveHistory() != null) {
                     try {
@@ -136,12 +140,14 @@ public class GameHistoriesController implements BaseController, Initializable
                                     ":" + (gi.getStartTime().getMinute() < 10 ? ("0" + gi.getStartTime().getMinute()) : gi.getStartTime().getMinute()) +
                                     ":" + (gi.getStartTime().getSecond() < 10 ? ("0" + gi.getStartTime().getSecond()) : gi.getStartTime().getSecond()));
 
-                        gameList.getItems().add(new Label(out.toString()));
+                        label = new Label(out.toString());
+                        gameList.getItems().add(label);
                     }
                 }
                 else
                 {
-                    gameList.getItems().add(new Label("NO GAMES PLAYED"));
+                    label = new Label("NO GAMES PLAYED");
+                    gameList.getItems().add(label);
                 }
             }
         });
@@ -152,6 +158,7 @@ public class GameHistoriesController implements BaseController, Initializable
         this.client = client;
         client.setController(this);
 
+        errorLabel.setVisible(false);
         waitingForServer();
         GamesPlayedMessage gpm = (GamesPlayedMessage) MessageFactory.getMessage("GMP-MSG");
         gpm.setPlayerId(client.getUser().getId());
@@ -168,5 +175,10 @@ public class GameHistoriesController implements BaseController, Initializable
     {
         backButton.setDisable(false);
         viewMoveHistoryButton.setDisable(false);
+    }
+
+    public void onGameListClicked()
+    {
+        errorLabel.setVisible(false);
     }
 }

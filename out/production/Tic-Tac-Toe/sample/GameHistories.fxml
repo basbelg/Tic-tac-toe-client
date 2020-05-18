@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="475.0" prefWidth="405.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameHistoriesController">
+<AnchorPane prefHeight="549.0" prefWidth="405.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameHistoriesController">
    <children>
-      <ListView fx:id="gameList" layoutX="15.0" layoutY="36.0" prefHeight="316.0" prefWidth="370.0" />
-      <Button fx:id="backButton" layoutX="311.0" layoutY="385.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="74.0" text="Back" />
-      <Button fx:id="viewMoveHistoryButton" layoutX="15.0" layoutY="385.0" mnemonicParsing="false" onMouseClicked="#onViewMoveHistoryClicked" text="View Move History" />
-      <Label fx:id="errorLabel" layoutX="15.0" layoutY="419.0" prefHeight="48.0" prefWidth="370.0" textFill="RED" />
+      <ListView fx:id="gameList" layoutX="18.0" layoutY="106.0" onMouseClicked="#onGameListClicked" prefHeight="316.0" prefWidth="370.0" style="-fx-background-color: #1f1f23;" />
+      <Button fx:id="backButton" layoutX="317.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Back" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Button fx:id="viewMoveHistoryButton" layoutX="18.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#onViewMoveHistoryClicked" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="View Move History" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="18.0" layoutY="422.0" prefHeight="37.0" prefWidth="370.0" style="-fx-background-color: #1f1f23;" textFill="RED">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutY="25.0" prefHeight="17.0" prefWidth="407.0" style="-fx-background-color: #1f1f23;" text="Game History" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Light" size="50.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
    </children>
 </AnchorPane>

@@ -92,12 +92,6 @@ public class MoveHistoryController implements BaseController, Initializable
         boardTiles.add(tile21);
         boardTiles.add(tile22);
 
-        for(Node node : boardTiles) {
-            Label tile = (Label) node;
-            tile.setTextAlignment(TextAlignment.CENTER);
-            tile.setFont(new Font(36));
-        }
-
         Platform.runLater(() -> {
             if(glm.getMoveHistory().size() == 0)
             {
@@ -154,7 +148,7 @@ public class MoveHistoryController implements BaseController, Initializable
     {
         swapTurn();
         Platform.runLater(() -> {
-            if(moveCounter >= 0)
+            if(moveCounter > 0)
             {
                 int x = glm.getMoveHistory().get(moveCounter).getNextMove().getRow();
                 int y = glm.getMoveHistory().get(moveCounter).getNextMove().getColumn();

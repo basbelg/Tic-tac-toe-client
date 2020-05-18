@@ -292,11 +292,13 @@ public class BoardController implements BaseController, Initializable
                 isFinished = true;
                 closeButton.setText("Leave Game");
             }
+            finishedWaitingForServer();
         });
     }
 
     public void onCloseClicked()
     {
+        waitingForServer();
         if(isFinished)
         {
             try
@@ -375,6 +377,18 @@ public class BoardController implements BaseController, Initializable
         {
             tile22.setText(turn);
         }
+    }
+
+    private void waitingForServer()
+    {
+        closeButton.setDisable(true);
+        spectatorsButton.setDisable(true);
+    }
+
+    private void finishedWaitingForServer()
+    {
+        closeButton.setDisable(false);
+        spectatorsButton.setDisable(false);
     }
 
 }

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="361.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AccountController">
+<AnchorPane prefHeight="410.0" prefWidth="440.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AccountController">
    <children>
-      <Button fx:id="backButton" layoutX="328.0" layoutY="322.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="77.0" text="Back" />
-      <GridPane layoutX="170.0" layoutY="61.0" prefHeight="240.0" prefWidth="101.0">
+      <Button fx:id="backButton" layoutX="324.0" layoutY="363.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Back" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <GridPane layoutX="170.0" layoutY="107.0" prefHeight="240.0" prefWidth="101.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -17,11 +22,31 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="modAccountButton" mnemonicParsing="false" onMouseClicked="#onModAccountClicked" text="Modify Account" />
-            <Button fx:id="gameHistoryButton" mnemonicParsing="false" onMouseClicked="#onGameHistoriesClicked" prefHeight="25.0" prefWidth="101.0" text="Game Histories" GridPane.rowIndex="1" />
-            <Button fx:id="statsButton" mnemonicParsing="false" onMouseClicked="#onStatsClicked" prefHeight="25.0" prefWidth="101.0" text="Stats" GridPane.rowIndex="2" />
-            <Button fx:id="deleteAccountButton" mnemonicParsing="false" onMouseClicked="#onDeleteAccountClicked" prefHeight="25.0" prefWidth="101.0" text="Delete Account" GridPane.rowIndex="3" />
+            <Button fx:id="modAccountButton" defaultButton="true" mnemonicParsing="false" onMouseClicked="#onModAccountClicked" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Modify Account" textFill="WHITE">
+               <effect>
+                  <Bloom />
+               </effect></Button>
+            <Button fx:id="gameHistoryButton" mnemonicParsing="false" onMouseClicked="#onGameHistoriesClicked" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Game Histories" textFill="WHITE" GridPane.rowIndex="1">
+               <effect>
+                  <Bloom />
+               </effect></Button>
+            <Button fx:id="statsButton" mnemonicParsing="false" onMouseClicked="#onStatsClicked" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Career Statistics" textFill="WHITE" GridPane.rowIndex="2">
+               <effect>
+                  <Bloom />
+               </effect></Button>
+            <Button fx:id="deleteAccountButton" mnemonicParsing="false" onMouseClicked="#onDeleteAccountClicked" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Delete Account" textFill="WHITE" GridPane.rowIndex="3">
+               <effect>
+                  <Bloom />
+               </effect></Button>
          </children>
       </GridPane>
+      <Label alignment="CENTER" layoutY="25.0" prefHeight="59.0" prefWidth="441.0" style="-fx-background-color: #1f1f23;" text="Account" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Light" size="50.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
    </children>
 </AnchorPane>

@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewSpectatorsController">
+<AnchorPane prefHeight="477.0" prefWidth="370.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ViewSpectatorsController">
    <children>
-      <ListView fx:id="spectatorsList" layoutX="25.0" layoutY="14.0" prefHeight="328.0" prefWidth="281.0" />
-      <Button fx:id="closeButton" layoutX="238.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onCloseClicked" prefHeight="25.0" prefWidth="68.0" text="Close" />
+      <ListView fx:id="spectatorsList" layoutX="28.0" layoutY="117.0" prefHeight="285.0" prefWidth="314.0" style="-fx-background-color: #1f1f23;" />
+      <Button fx:id="closeButton" layoutX="267.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#onCloseClicked" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Close" textFill="RED">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Label alignment="CENTER" layoutY="27.0" prefHeight="17.0" prefWidth="371.0" style="-fx-background-color: #1f1f23;" text="Spectators" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Light" size="50.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
    </children>
 </AnchorPane>

@@ -26,15 +26,18 @@ public class ViewSpectatorsController implements Initializable
     public void passInfo(List<Spectator> spectators)
     {
         Platform.runLater(() -> {
+            Label label = null;
             if(!spectators.isEmpty())
             {
                 for (Spectator s : spectators) {
-                    spectatorsList.getItems().add(new Label("User: " + s.getUsername()));
+                    label = new Label("User: " + s.getUsername());
+                    spectatorsList.getItems().add(label);
                 }
             }
             else
             {
-                spectatorsList.getItems().add(new Label("No spectators for this match"));
+                label = new Label("No spectators for this match");
+                spectatorsList.getItems().add(label);
             }
 
         });

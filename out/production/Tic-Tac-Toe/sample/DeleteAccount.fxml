@@ -20,7 +20,7 @@
             <Font size="18.0" />
          </font>
          <effect>
-            <Bloom />
+            <Bloom threshold="0.16" />
          </effect>
       </Label>
       <Label alignment="CENTER" layoutY="29.0" prefHeight="59.0" prefWidth="425.0" style="-fx-background-color: #1f1f23;" stylesheets="@label.css" text="Delete Account" textFill="#ff1e1e">
@@ -28,7 +28,7 @@
             <Font name="Yu Gothic Light" size="50.0" />
          </font>
          <effect>
-            <Bloom />
+            <Bloom threshold="0.16" />
          </effect>
       </Label>
    </children>

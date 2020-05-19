@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="224.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DeleteAccountController">
+<AnchorPane prefHeight="265.0" prefWidth="424.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DeleteAccountController">
    <children>
-      <Button fx:id="confirmButton" layoutX="77.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#onConfirmClicked" prefHeight="25.0" prefWidth="68.0" text="Confirm" textFill="RED" />
-      <Button fx:id="cancelButton" cancelButton="true" layoutX="256.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#onCancelClicked" prefHeight="25.0" prefWidth="68.0" text="Cancel" textFill="#3f00ff" />
-      <Label layoutX="20.0" layoutY="63.0" text="Are you sure you want to delete your account?">
+      <Button fx:id="confirmButton" layoutX="73.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#onConfirmClicked" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Confirm" textFill="#55ff00">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Button fx:id="cancelButton" cancelButton="true" layoutX="281.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#onCancelClicked" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Cancel" textFill="RED">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Label alignment="CENTER" layoutY="106.0" prefHeight="27.0" prefWidth="425.0" style="-fx-background-color: #1f1f23;" text="Are you sure you want to delete your account?" textFill="#ff1e1e" wrapText="true">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
+         <effect>
+            <Bloom />
+         </effect>
+      </Label>
+      <Label alignment="CENTER" layoutY="29.0" prefHeight="59.0" prefWidth="425.0" style="-fx-background-color: #1f1f23;" text="Delete Account" textFill="#ff1e1e">
+         <font>
+            <Font name="Yu Gothic Light" size="50.0" />
+         </font>
+         <effect>
+            <Bloom />
+         </effect>
       </Label>
    </children>
 </AnchorPane>

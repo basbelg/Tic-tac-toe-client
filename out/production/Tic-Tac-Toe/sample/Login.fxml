@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="370.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+<AnchorPane prefHeight="370.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
    <children>
       <Button fx:id="signInButton" disable="true" layoutX="325.0" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#onSignInClicked" prefHeight="25.0" prefWidth="67.0" stylesheets="@button.css" text="Sign In" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
-      <Button fx:id="newUserButton" layoutX="210.0" layoutY="281.0" mnemonicParsing="false" onMouseClicked="#onNewUserClicked" stylesheets="@button.css" text="New User" textFill="WHITE">
+      <Button fx:id="newUserButton" layoutX="210.0" layoutY="278.0" mnemonicParsing="false" onMouseClicked="#onNewUserClicked" stylesheets="@button.css" text="New User" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
@@ -41,25 +38,25 @@
          <effect>
             <Bloom />
          </effect></PasswordField>
-      <Label layoutX="37.0" layoutY="29.0" styleClass="text" stylesheets="@label.css" text="Tic-" textFill="WHITE">
+      <Label layoutX="52.0" layoutY="34.0" styleClass="text" stylesheets="@label.css" text="Tic-" textFill="WHITE">
          <font>
-            <Font name="Yu Gothic Light" size="96.0" />
+            <Font name="Yu Gothic Light" size="90.0" />
          </font>
          <effect>
             <Bloom />
          </effect>
       </Label>
-      <Label layoutX="202.0" layoutY="29.0" styleClass="text" stylesheets="@label.css" text="Tac" textFill="WHITE">
+      <Label layoutX="210.0" layoutY="35.0" styleClass="text" stylesheets="@label.css" text="Tac" textFill="WHITE">
          <font>
-            <Font name="Yu Gothic Regular" size="96.0" />
+            <Font name="Yu Gothic Regular" size="90.0" />
          </font>
          <effect>
             <Bloom />
          </effect>
       </Label>
-      <Label layoutX="366.0" layoutY="29.0" styleClass="text" stylesheets="@label.css" text="-Toe" textFill="WHITE">
+      <Label layoutX="365.0" layoutY="34.0" styleClass="text" stylesheets="@label.css" text="-Toe" textFill="WHITE">
          <font>
-            <Font name="Yu Gothic Light" size="96.0" />
+            <Font name="Yu Gothic Light" size="90.0" />
          </font>
          <effect>
             <Bloom />

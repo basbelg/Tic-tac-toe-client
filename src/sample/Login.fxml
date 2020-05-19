@@ -38,25 +38,25 @@
          <effect>
             <Bloom />
          </effect></PasswordField>
-      <Label layoutX="37.0" layoutY="29.0" styleClass="text" stylesheets="@label.css" text="Tic-" textFill="WHITE">
+      <Label layoutX="52.0" layoutY="34.0" styleClass="text" stylesheets="@label.css" text="Tic-" textFill="WHITE">
          <font>
-            <Font name="Yu Gothic Light" size="96.0" />
+            <Font name="Yu Gothic Light" size="90.0" />
          </font>
          <effect>
             <Bloom />
          </effect>
       </Label>
-      <Label layoutX="202.0" layoutY="29.0" styleClass="text" stylesheets="@label.css" text="Tac" textFill="WHITE">
+      <Label layoutX="210.0" layoutY="35.0" styleClass="text" stylesheets="@label.css" text="Tac" textFill="WHITE">
          <font>
-            <Font name="Yu Gothic Regular" size="96.0" />
+            <Font name="Yu Gothic Regular" size="90.0" />
          </font>
          <effect>
             <Bloom />
          </effect>
       </Label>
-      <Label layoutX="366.0" layoutY="29.0" styleClass="text" stylesheets="@label.css" text="-Toe" textFill="WHITE">
+      <Label layoutX="365.0" layoutY="34.0" styleClass="text" stylesheets="@label.css" text="-Toe" textFill="WHITE">
          <font>
-            <Font name="Yu Gothic Light" size="96.0" />
+            <Font name="Yu Gothic Light" size="90.0" />
          </font>
          <effect>
             <Bloom />

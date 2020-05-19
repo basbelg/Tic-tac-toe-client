@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="538.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MenuController">
    <children>
-      <Button fx:id="logoutButton" layoutX="495.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#onLogoutClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Logout" textFill="WHITE">
+      <Button fx:id="logoutButton" layoutX="492.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#onLogoutClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Logout" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
@@ -16,23 +16,23 @@
          <effect>
             <Bloom />
          </effect></Label>
-      <Button fx:id="createLobbyButton" layoutX="340.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#onCreateLobbyClicked" prefHeight="71.0" prefWidth="249.0" stylesheets="@button.css" text="Create Lobby" textFill="WHITE">
+      <Button fx:id="createLobbyButton" layoutX="334.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#onCreateLobbyClicked" prefHeight="71.0" prefWidth="249.0" stylesheets="@button.css" text="Create Lobby" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
-      <Button fx:id="joinLobbyButton" layoutX="340.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#onJoinLobbyClicked" prefHeight="71.0" prefWidth="249.0" stylesheets="@button.css" text="Join Lobby" textFill="WHITE">
+      <Button fx:id="joinLobbyButton" layoutX="334.0" layoutY="267.0" mnemonicParsing="false" onMouseClicked="#onJoinLobbyClicked" prefHeight="71.0" prefWidth="249.0" stylesheets="@button.css" text="Join Lobby" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
-      <Button fx:id="spectateButton" layoutX="340.0" layoutY="413.0" mnemonicParsing="false" onMouseClicked="#onSpectateClicked" prefHeight="71.0" prefWidth="249.0" stylesheets="@button.css" text="Spectate" textFill="WHITE">
+      <Button fx:id="spectateButton" layoutX="334.0" layoutY="413.0" mnemonicParsing="false" onMouseClicked="#onSpectateClicked" prefHeight="71.0" prefWidth="249.0" stylesheets="@button.css" text="Spectate" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
-      <Button fx:id="accountButton" layoutX="394.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#onAccountClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Account" textFill="WHITE">
+      <Button fx:id="accountButton" layoutX="391.0" layoutY="499.0" mnemonicParsing="false" onMouseClicked="#onAccountClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Account" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
-      <Button fx:id="vsAIButton" layoutX="340.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#onVsAIClicked" prefHeight="71.0" prefWidth="249.0" stylesheets="@button.css" text="Play Vs. AI" textFill="WHITE">
+      <Button fx:id="vsAIButton" layoutX="334.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#onVsAIClicked" prefHeight="71.0" prefWidth="249.0" stylesheets="@button.css" text="Play Vs. AI" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
@@ -47,7 +47,7 @@
          <effect>
             <Bloom threshold="0.06" />
          </effect></Label>
-      <Label layoutX="50.0" layoutY="14.0" stylesheets="@label.css" text="Tic-" textFill="WHITE">
+      <Label layoutX="50.0" layoutY="14.0" stylesheets="@label.css" text="Tic-" textFill="#e6f564">
          <font>
             <Font name="Yu Gothic Light" size="90.0" />
          </font>
@@ -55,7 +55,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label layoutX="204.0" layoutY="14.0" stylesheets="@label.css" text="Tac" textFill="WHITE">
+      <Label layoutX="204.0" layoutY="14.0" stylesheets="@label.css" text="Tac" textFill="#85c1f8">
          <font>
             <Font name="Yu Gothic Regular" size="90.0" />
          </font>
@@ -63,7 +63,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label layoutX="358.0" layoutY="14.0" stylesheets="@label.css" text="-Toe" textFill="WHITE">
+      <Label layoutX="358.0" layoutY="14.0" stylesheets="@label.css" text="-Toe" textFill="#f88d9f">
          <font>
             <Font name="Yu Gothic Light" size="90.0" />
          </font>

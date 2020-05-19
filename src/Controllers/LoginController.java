@@ -68,11 +68,11 @@ public class LoginController implements BaseController, Initializable
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Register.fxml"));
             Parent root = loader.load();
             RegisterController rc = loader.getController();
+            rc.confirmButton.setText("Register");
             rc.passInfo(client);
             Stage stage = (Stage) newUserButton.getScene().getWindow();
             stage.close();
             stage.setTitle("Register");
-            rc.confirmButton.setText("Register");
             stage.setScene(new Scene(root));
             stage.show();
         }
@@ -96,6 +96,12 @@ public class LoginController implements BaseController, Initializable
                 aagm.setSenderId(client.getUser().getId());
                 client.update(aagm);
 
+            } else if (msg instanceof LoginFailedMessage) {
+                newUserButton.setDisable(false);
+                signInButton.setDisable(false);
+                invalidLabel.setText(msg.toString());
+            }
+            else if(msg instanceof AllActiveGamesMessage) {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("../sample/Menu.fxml"));
                     Parent root = loader.load();
@@ -109,10 +115,6 @@ public class LoginController implements BaseController, Initializable
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else if (msg instanceof LoginFailedMessage) {
-                newUserButton.setDisable(false);
-                signInButton.setDisable(false);
-                invalidLabel.setText(msg.toString());
             }
         });
     }

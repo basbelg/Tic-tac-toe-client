@@ -63,6 +63,7 @@ public class Client implements Runnable {
                     case "AAG-MSG":
                         AllActiveGamesMessage agm = (AllActiveGamesMessage)p.getData();
                         allActiveGames = agm.getAllActiveGames();
+                        controller.update(agm);
                         break;
                     case "CNT-MSG":
                         ConnectToLobbyMessage clm = (ConnectToLobbyMessage)p.getData();

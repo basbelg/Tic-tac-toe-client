@@ -19,69 +19,69 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="tile00" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="0">
-               <effect>
-                  <Bloom />
-               </effect>
+            <Label fx:id="tile00" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="0">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
-            <Label fx:id="tile01" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="0">
+               </font>
                <effect>
                   <Bloom />
-               </effect>
+               </effect></Label>
+            <Label fx:id="tile01" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
-            <Label fx:id="tile02" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="0">
+               </font>
                <effect>
                   <Bloom />
-               </effect>
+               </effect></Label>
+            <Label fx:id="tile02" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="0">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
-            <Label fx:id="tile10" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               </font>
                <effect>
                   <Bloom />
-               </effect>
+               </effect></Label>
+            <Label fx:id="tile10" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="1">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
-            <Label fx:id="tile11" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               </font>
                <effect>
                   <Bloom />
-               </effect>
+               </effect></Label>
+            <Label fx:id="tile11" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
-            <Label fx:id="tile12" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               </font>
                <effect>
                   <Bloom />
-               </effect>
+               </effect></Label>
+            <Label fx:id="tile12" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
-            <Label fx:id="tile20" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="2">
+               </font>
                <effect>
                   <Bloom />
-               </effect>
+               </effect></Label>
+            <Label fx:id="tile20" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="2">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
-            <Label fx:id="tile21" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               </font>
                <effect>
                   <Bloom />
-               </effect>
+               </effect></Label>
+            <Label fx:id="tile21" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
-            <Label fx:id="tile22" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               </font>
                <effect>
                   <Bloom />
-               </effect>
+               </effect></Label>
+            <Label fx:id="tile22" alignment="CENTER" prefHeight="121.0" prefWidth="188.0" style="-fx-border-color: black;" stylesheets="@label.css" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font name="Yu Gothic Light" size="72.0" />
-               </font></Label>
+               </font>
+               <effect>
+                  <Bloom />
+               </effect></Label>
          </children>
       </GridPane>
       <Button fx:id="previousButton" layoutX="389.0" layoutY="452.0" mnemonicParsing="false" onMouseClicked="#onPreviousClicked" prefHeight="25.0" prefWidth="86.0" stylesheets="@button.css" text="&lt;&lt; Previous" textFill="WHITE">
@@ -117,12 +117,12 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="outTimeMadeLabel" layoutX="147.0" layoutY="469.0" prefHeight="17.0" prefWidth="73.0" text="Time Made:" textFill="WHITE">
+      <Label fx:id="outTimeMadeLabel" layoutX="176.0" layoutY="469.0" prefHeight="17.0" prefWidth="73.0" text="Time Made:" textFill="WHITE">
          <effect>
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="timeLabel" layoutX="226.0" layoutY="454.0" prefHeight="47.0" prefWidth="117.0" text="N/A" textFill="WHITE">
+      <Label fx:id="timeLabel" layoutX="255.0" layoutY="454.0" prefHeight="47.0" prefWidth="117.0" text="N/A" textFill="WHITE">
          <effect>
             <Bloom />
          </effect>

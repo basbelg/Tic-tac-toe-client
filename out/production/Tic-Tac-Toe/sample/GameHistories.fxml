@@ -7,12 +7,12 @@
 
 <AnchorPane prefHeight="549.0" prefWidth="405.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameHistoriesController">
    <children>
-      <ListView fx:id="gameList" layoutX="18.0" layoutY="106.0" onMouseClicked="#onGameListClicked" prefHeight="316.0" prefWidth="370.0" style="-fx-background-color: #1f1f23;" />
-      <Button fx:id="backButton" layoutX="317.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Back" textFill="WHITE">
+      <ListView fx:id="gameList" layoutX="18.0" layoutY="106.0" onMouseClicked="#onGameListClicked" prefHeight="316.0" prefWidth="370.0" style="-fx-background-color: #1f1f23;" stylesheets="@list.css" />
+      <Button fx:id="backButton" layoutX="317.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#onBackClicked" prefHeight="25.0" prefWidth="74.0" stylesheets="@button.css" text="Back" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
-      <Button fx:id="viewMoveHistoryButton" layoutX="18.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#onViewMoveHistoryClicked" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="View Move History" textFill="WHITE">
+      <Button fx:id="viewMoveHistoryButton" layoutX="18.0" layoutY="484.0" mnemonicParsing="false" onMouseClicked="#onViewMoveHistoryClicked" stylesheets="@button.css" text="View Move History" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
@@ -20,7 +20,7 @@
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font></Label>
-      <Label alignment="CENTER" layoutY="25.0" prefHeight="17.0" prefWidth="407.0" style="-fx-background-color: #1f1f23;" text="Game History" textFill="WHITE">
+      <Label alignment="CENTER" layoutY="25.0" prefHeight="17.0" prefWidth="407.0" style="-fx-background-color: #1f1f23;" stylesheets="@label.css" text="Game History" textFill="WHITE">
          <font>
             <Font name="Yu Gothic Light" size="50.0" />
          </font>

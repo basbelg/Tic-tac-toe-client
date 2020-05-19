@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="311.0" prefWidth="393.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StatsController">
    <children>
-      <Button fx:id="exitButton" layoutX="157.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#onExitClicked" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Exit" textFill="RED">
+      <Button fx:id="exitButton" layoutX="157.0" layoutY="258.0" mnemonicParsing="false" onMouseClicked="#onExitClicked" prefHeight="25.0" prefWidth="80.0" stylesheets="@button.css" text="Exit" textFill="#ff8989">
          <effect>
             <Bloom />
          </effect></Button>
@@ -54,7 +54,7 @@
             </Label>
          </children>
       </GridPane>
-      <Label alignment="CENTER" layoutY="26.0" prefHeight="59.0" prefWidth="394.0" style="-fx-background-color: #1f1f23;" text="Career Statistics" textFill="WHITE">
+      <Label alignment="CENTER" layoutY="26.0" prefHeight="59.0" prefWidth="394.0" style="-fx-background-color: #1f1f23;" stylesheets="@label.css" text="Career Statistics" textFill="WHITE">
          <font>
             <Font name="Yu Gothic Light" size="50.0" />
          </font>

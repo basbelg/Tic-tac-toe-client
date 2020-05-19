@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="339.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
    <children>
-      <Button fx:id="signInButton" disable="true" layoutX="238.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#onSignInClicked" prefHeight="25.0" prefWidth="67.0" text="Sign In" />
-      <Button fx:id="newUserButton" layoutX="238.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#onNewUserClicked" text="New User" />
+      <Button fx:id="signInButton" disable="true" layoutX="238.0" layoutY="246.0" mnemonicParsing="false" onMouseClicked="#onSignInClicked" prefHeight="25.0" prefWidth="67.0" stylesheets="@button.css" text="Sign In" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Button fx:id="newUserButton" layoutX="238.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#onNewUserClicked" stylesheets="@button.css" text="New User" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
       <Label layoutX="112.0" layoutY="91.0" text="Username:" />
       <Label layoutX="115.0" layoutY="147.0" text="Password:" />
       <TextField fx:id="enterUsername" layoutX="197.0" layoutY="87.0" onKeyReleased="#onUsernameChanged" prefHeight="25.0" prefWidth="184.0" promptText="Enter Username..." />

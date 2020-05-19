@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="427.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MenuController">
    <children>
-      <Button fx:id="logoutButton" layoutX="91.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#onLogoutClicked" prefHeight="25.0" prefWidth="91.0" text="Logout" />
-      <ListView fx:id="activeGamesList" layoutX="269.0" layoutY="76.0" prefHeight="273.0" prefWidth="304.0" />
+      <Button fx:id="logoutButton" layoutX="91.0" layoutY="257.0" mnemonicParsing="false" onMouseClicked="#onLogoutClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Logout" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <ListView fx:id="activeGamesList" layoutX="269.0" layoutY="76.0" prefHeight="273.0" prefWidth="304.0" styleClass="list-cell" stylesheets="@list.css" />
       <Label layoutX="269.0" layoutY="51.0" prefHeight="25.0" prefWidth="200.0" text="Active Games" />
-      <Button fx:id="createLobbyButton" layoutX="89.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#onCreateLobbyClicked" prefHeight="25.0" prefWidth="91.0" text="Create Lobby" />
-      <Button fx:id="joinLobbyButton" layoutX="269.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#onJoinLobbyClicked" prefHeight="25.0" prefWidth="91.0" text="Join Lobby" />
-      <Button fx:id="spectateButton" layoutX="488.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#onSpectateClicked" prefHeight="25.0" prefWidth="91.0" text="Spectate" />
-      <Button fx:id="accountButton" layoutX="91.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#onAccountClicked" prefHeight="25.0" prefWidth="91.0" text="Account" />
-      <Button fx:id="vsAIButton" layoutX="91.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#onVsAIClicked" prefHeight="25.0" prefWidth="91.0" text="Play Vs. AI" />
+      <Button fx:id="createLobbyButton" layoutX="89.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#onCreateLobbyClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Create Lobby" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Button fx:id="joinLobbyButton" layoutX="269.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#onJoinLobbyClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Join Lobby" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Button fx:id="spectateButton" layoutX="488.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#onSpectateClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Spectate" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Button fx:id="accountButton" layoutX="91.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#onAccountClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Account" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
+      <Button fx:id="vsAIButton" layoutX="91.0" layoutY="144.0" mnemonicParsing="false" onMouseClicked="#onVsAIClicked" prefHeight="25.0" prefWidth="91.0" stylesheets="@button.css" text="Play Vs. AI" textFill="WHITE">
+         <effect>
+            <Bloom />
+         </effect></Button>
       <Label fx:id="errorLabel" layoutX="9.0" layoutY="302.0" prefHeight="89.0" prefWidth="249.0" textFill="RED" />
       <Label fx:id="welcomeLabel" layoutX="14.0" layoutY="25.0" text="Welcome, User">
          <font>

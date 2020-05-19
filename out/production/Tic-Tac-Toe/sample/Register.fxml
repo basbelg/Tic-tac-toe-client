@@ -7,11 +7,11 @@
 
 <AnchorPane prefHeight="486.0" prefWidth="592.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegisterController">
    <children>
-      <Button fx:id="confirmButton" defaultButton="true" layoutX="257.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#onConfirmClicked" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Confirm" textFill="WHITE">
+      <Button fx:id="confirmButton" defaultButton="true" layoutX="257.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#onConfirmClicked" prefHeight="25.0" prefWidth="85.0" stylesheets="@button.css" text="Confirm" textFill="WHITE">
          <effect>
             <Bloom />
          </effect></Button>
-      <Button fx:id="cancelButton" cancelButton="true" layoutX="466.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#onCancelClicked" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #1f1f23; -fx-background-radius: 0;" text="Cancel" textFill="RED">
+      <Button fx:id="cancelButton" cancelButton="true" layoutX="466.0" layoutY="428.0" mnemonicParsing="false" onMouseClicked="#onCancelClicked" prefHeight="25.0" prefWidth="85.0" stylesheets="@button.css" text="Cancel" textFill="#ff8989">
          <effect>
             <Bloom />
          </effect></Button>
@@ -69,7 +69,7 @@
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font></Label>
-      <Label fx:id="titleLabel" alignment="CENTER" layoutY="25.0" prefHeight="59.0" prefWidth="592.0" style="-fx-background-color: #1f1f23;" textFill="WHITE">
+      <Label fx:id="titleLabel" alignment="CENTER" layoutY="25.0" prefHeight="59.0" prefWidth="592.0" style="-fx-background-color: #1f1f23;" stylesheets="@label.css" textFill="WHITE">
          <font>
             <Font name="Yu Gothic Light" size="50.0" />
          </font>

@@ -26,31 +26,49 @@
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <Bloom />
+               </effect>
             </Label>
             <Label text="Win Percentage:" textFill="WHITE" GridPane.rowIndex="2">
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <Bloom />
+               </effect>
             </Label>
             <Label text="Games Played:" textFill="WHITE" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <Bloom />
+               </effect>
             </Label>
             <Label fx:id="gamesPlayedLabel" text="0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <Bloom />
+               </effect>
             </Label>
             <Label fx:id="wltLabel" text="0/0/0" textFill="WHITE" GridPane.columnIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <Bloom />
+               </effect>
             </Label>
             <Label text="Win/Loss/Tie Ratio:" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
+               <effect>
+                  <Bloom />
+               </effect>
             </Label>
          </children>
       </GridPane>

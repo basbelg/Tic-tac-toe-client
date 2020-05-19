@@ -11,7 +11,7 @@
          <effect>
             <Bloom />
          </effect></Button>
-      <GridPane alignment="CENTER" layoutX="4.0" layoutY="86.0" prefHeight="270.0" prefWidth="433.0">
+      <GridPane alignment="CENTER" layoutX="10.0" layoutY="92.0" prefHeight="270.0" prefWidth="421.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -22,19 +22,19 @@
             <RowConstraints minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="modAccountButton" defaultButton="true" mnemonicParsing="false" onMouseClicked="#onModAccountClicked" prefHeight="65.0" prefWidth="433.0" stylesheets="@button.css" text="Modify Account" textFill="WHITE">
+            <Button fx:id="modAccountButton" defaultButton="true" mnemonicParsing="false" onMouseClicked="#onModAccountClicked" prefHeight="65.0" prefWidth="420.0" stylesheets="@button.css" text="Modify Account" textFill="WHITE">
                <effect>
                   <Bloom />
                </effect></Button>
-            <Button fx:id="gameHistoryButton" mnemonicParsing="false" onMouseClicked="#onGameHistoriesClicked" prefHeight="66.0" prefWidth="433.0" stylesheets="@button.css" text="Game Histories" textFill="WHITE" GridPane.rowIndex="1">
+            <Button fx:id="gameHistoryButton" mnemonicParsing="false" onMouseClicked="#onGameHistoriesClicked" prefHeight="66.0" prefWidth="420.0" stylesheets="@button.css" text="Game Histories" textFill="WHITE" GridPane.rowIndex="1">
                <effect>
                   <Bloom />
                </effect></Button>
-            <Button fx:id="statsButton" mnemonicParsing="false" onMouseClicked="#onStatsClicked" prefHeight="65.0" prefWidth="445.0" stylesheets="@button.css" text="Career Statistics" textFill="WHITE" GridPane.rowIndex="2">
+            <Button fx:id="statsButton" mnemonicParsing="false" onMouseClicked="#onStatsClicked" prefHeight="65.0" prefWidth="420.0" stylesheets="@button.css" text="Career Statistics" textFill="WHITE" GridPane.rowIndex="2">
                <effect>
                   <Bloom />
                </effect></Button>
-            <Button fx:id="deleteAccountButton" mnemonicParsing="false" onMouseClicked="#onDeleteAccountClicked" prefHeight="65.0" prefWidth="442.0" stylesheets="@button.css" text="Delete Account" textFill="WHITE" GridPane.rowIndex="3">
+            <Button fx:id="deleteAccountButton" mnemonicParsing="false" onMouseClicked="#onDeleteAccountClicked" prefHeight="65.0" prefWidth="420.0" stylesheets="@button.css" text="Delete Account" textFill="WHITE" GridPane.rowIndex="3">
                <effect>
                   <Bloom />
                </effect></Button>

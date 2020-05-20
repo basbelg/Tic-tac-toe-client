@@ -92,7 +92,7 @@ public class BoardController implements BaseController, Initializable
                     if(playerNumber != 0)
                     {
                         tile.setOnMouseEntered(mouseEvent -> {
-                            if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
+                            if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0 && !isFinished) {
                                 if(isPlayer1Turn && playerNumber == 1)
                                 {
                                     tile.setText("X");
@@ -105,7 +105,7 @@ public class BoardController implements BaseController, Initializable
                         });
 
                         tile.setOnMouseExited(mouseEvent -> {
-                            if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0) {
+                            if (tttBoard[board.getRowIndex(node)][board.getColumnIndex(node)] == 0 && !isFinished) {
                                 tile.setText("");
                             }
                         });

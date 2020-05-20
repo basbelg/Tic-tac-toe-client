@@ -36,10 +36,13 @@
          <effect>
             <Bloom />
          </effect></Button>
-      <Label fx:id="errorLabel" layoutX="48.0" layoutY="492.0" prefHeight="41.0" prefWidth="249.0" textFill="#fc5757">
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="48.0" layoutY="492.0" prefHeight="41.0" prefWidth="249.0" textFill="#fc5757">
          <effect>
             <Bloom />
-         </effect></Label>
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
       <Label fx:id="welcomeLabel" alignment="CENTER" layoutX="75.0" layoutY="120.0" prefHeight="54.0" prefWidth="466.0" stylesheets="@label.css" text="Welcome, User" textFill="WHITE">
          <font>
             <Font name="Yu Gothic Light" size="42.0" />
